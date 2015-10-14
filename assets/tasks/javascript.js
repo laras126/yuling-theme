@@ -1,8 +1,8 @@
 module.exports = function(grunt, config) {
     
     var jsFileList = [
-    	config.jsConcatDir + 'modernizr-custom.js',
-        config.jsSrcDir + '*.js'
+        config.jsSrcDir + 'plugins.js',
+        config.jsSrcDir + '_main.js',
     ];  
 
     console.log(jsFileList);
@@ -20,17 +20,6 @@ module.exports = function(grunt, config) {
             ],
         },
         
-		bower_concat: {
-			all: {
-			    dest: config.jsSrcDir + 'bower.js',
-			    cssDest: config.cssDir + 'bower.css',
-			    exclude: [
-					'jquery',
-			      	'modernizr'
-			    ]
-			}
-		},
-
 		concat: {
 	        options: {
 	        },

@@ -27,7 +27,6 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('js', [
-        'bower_concat',
         // 'jshint',
         'concat',
         'uglify'
