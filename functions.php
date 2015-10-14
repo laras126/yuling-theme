@@ -43,7 +43,6 @@
 		}
 
 		function add_to_context($context){
-			$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 			$context['menu'] = new TimberMenu();
 			$context['site'] = $this;
 
@@ -86,6 +85,12 @@
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 			wp_enqueue_script('jquery');
+
+			wp_register_script('picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), null);
+			wp_register_script('lazysizes', get_template_directory_uri() . '/assets/js/vendor/lazysizes.min.js', array(), null);
+			
+			wp_enqueue_script('picturefill');
+			wp_enqueue_script('lazysizes');
 		}
 
 		// Enqueue stylesheet and scripts. Use minified for production.
