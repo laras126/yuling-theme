@@ -794,6 +794,19 @@ th {
   a .icon:hover {
     fill: #1C7FA6; }
 
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem; }
+  .gallery__thumb {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    flex: 0 0 50%;
+    max-width: 50%; }
+
 .tease__meta {
   color: #9E9E9E;
   font-size: 0.825rem;

@@ -15,7 +15,6 @@ $sizes: (
   sixth:  16.66666667%
 );
 
-// Spaghetti for dinner?
 
 @mixin cell($size: false, $direction: false, $guttered: true, $is_first: true) {
 
