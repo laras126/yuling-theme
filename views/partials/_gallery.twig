@@ -1,3 +1,9 @@
-{% for image in gallery %}
-	<img src="{{image.url|resize(500)}}" alt="{{image.title}}">
-{% endfor %}
+<div class="gallery{{class ? ' gallery--' ~ class}}">
+
+	{% for image in gallery %}
+		<div class="gallery__thumb">
+			<img src="{{image.url|resize(500, 500)}}" alt="{{image.title}}">
+		</div>
+	{% endfor %}
+
+</div>

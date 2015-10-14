@@ -1,0 +1,7 @@
+.gallery {
+	@include grid;
+
+	&__thumb {
+		@include cell($size: half);
+	}
+}
