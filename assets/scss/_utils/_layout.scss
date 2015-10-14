@@ -16,6 +16,7 @@ $sizes: (
 );
 
 
+
 @mixin cell($size: false, $direction: false, $guttered: true, $is_first: true) {
 
     @if $is_first == true {
@@ -89,9 +90,7 @@ $sizes: (
 
 
 
-/// @group bleeds
-/// @description [Bleed an element slightly out of its container.]
-
+// Bleeds
 @mixin bleed($size: -3%) {
 	@include bp(md) {
 		margin-right: $size;
