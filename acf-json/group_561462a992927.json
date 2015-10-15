@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -24,11 +24,56 @@
             "disabled": 0
         },
         {
+            "key": "field_562003856afe1",
+            "label": "Double Sided",
+            "name": "double_sided",
+            "type": "true_false",
+            "instructions": "Check if the piece is double sided.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
             "key": "field_56146396d95de",
             "label": "Styles of Printing",
             "name": "styles_of_printing",
+            "type": "select",
+            "instructions": "Add the options available for printing. Hold down the Command key to select multiple.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Flat Printing": "Flat Printing",
+                "Flat Printing with Foil Stamping": "Flat Printing with Foil Stamping",
+                "Letterpress": "Letterpress",
+                "Letterpress with Foil-Stamping": "Letterpress with Foil-Stamping",
+                "Foil-Stamping": "Foil-Stamping"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_5620048641221",
+            "label": "Freeform Info",
+            "name": "freeform_info",
             "type": "repeater",
-            "instructions": "Add the options available for printing.",
+            "instructions": "A place for information that might not be relevant to every piece.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,15 +87,36 @@
             "button_label": "Add Row",
             "sub_fields": [
                 {
-                    "key": "field_56153a54bf527",
-                    "label": "Medium",
-                    "name": "medium",
+                    "key": "field_562004ab41222",
+                    "label": "Title",
+                    "name": "title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "e.g. Paper Stock",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 33,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_562004eb41223",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "e.g. Matte",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 66,
                         "class": "",
                         "id": ""
                     },
@@ -133,5 +199,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1444231791
+    "modified": 1444939821
 }
