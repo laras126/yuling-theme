@@ -1,0 +1,5 @@
+{% extends "blocks/block.twig" %}
+
+{% block content %}
+	{% include 'partials/_gallery.twig' with { gallery: block.gallery, class: 'piece' } %}
+{% endblock %}
