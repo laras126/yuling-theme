@@ -645,6 +645,86 @@
                     "max": ""
                 },
                 {
+                    "key": "5620099b2360a",
+                    "name": "block_gallery",
+                    "label": "Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_562009ae2360b",
+                            "label": "Gallery",
+                            "name": "gallery",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_56200a54833a8",
+                            "label": "Container",
+                            "name": "container",
+                            "type": "radio",
+                            "instructions": "Select a size for this block. Medium is recommended for text.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 66,
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sm": "Small",
+                                "md": "Medium",
+                                "lg": "Large",
+                                "full": "Full"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "md",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_56200a52833a7",
+                            "label": "Class",
+                            "name": "class",
+                            "type": "text",
+                            "instructions": "Add any extra classes here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 33,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "558aeb4a163d5",
                     "name": "block_quote",
                     "label": "Quote",
@@ -954,5 +1034,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1444244654
+    "modified": 1444940405
 }
