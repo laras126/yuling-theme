@@ -38,9 +38,9 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('build', [
-        'modernizr',
         'concat',
         'uglify',
+        'sass',
         'autoprefixer',
         'cssmin'
     ]);
