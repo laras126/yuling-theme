@@ -5,30 +5,31 @@
 {% set h_role = ' role="' ~ role ~ '"' %}
 
 <header{{ class ? h_class }}{{role ? h_role }}>
+	{% block header_content %}
+
 	<div class="contain--md">
-		{% block header_content %}
-			{% if post.header_display == 'image' %}
+		<h1>{{post.post_title}}</h1>
+		<p>{{post.header_tagline}}</p>
+		<p>{{post.header_summary}}</p>
+	</div>	
 
-				{% set desktop = TimberImage(post.header_image_desktop).src %}
-				{% set tablet = TimberImage(post.header_image_tablet).src %}
-				{% set mobile = TimberImage(post.header_image_mobile).src %}
+	{% if post.header_display == 'image' %}
+		<div class="contain--lg">
+			{% set desktop = TimberImage(post.header_image_desktop).src %}
+			{% set tablet = TimberImage(post.header_image_tablet).src %}
+			{% set mobile = TimberImage(post.header_image_mobile).src %}
 
-				{# TODO: Adjust dimensions once we decide on them #}
-				<picture>
-					<source srcset="{{TimberImage(post.header_image_desktop).src|resize(1200, 800)}}" media="(min-width: 1100px)">
-					<source srcset="{{tablet ? tablet|resize(900, 600) : desktop|resize(800, 600)}}" media="(min-width: 736px)">
-					{# TODO: change to self-served image #}
-					<img srcset="{{mobile ? mobile|resize(700, 600) : desktop|resize(500, 400)}}" src="{{site.theme.link}}/assets/img/util/placeholder-single-desktop.png" alt="{{post.post_title}}">
-				</picture>
+			{# TODO: Adjust dimensions once we decide on them #}
+			<picture>
+				<source srcset="{{TimberImage(post.header_image_desktop).src|resize(1200, 800)}}" media="(min-width: 1100px)">
+				<source srcset="{{tablet ? tablet|resize(900, 600) : desktop|resize(800, 600)}}" media="(min-width: 736px)">
+				{# TODO: change to self-served image #}
+				<img srcset="{{mobile ? mobile|resize(700, 600) : desktop|resize(500, 400)}}" src="{{site.theme.link}}/assets/img/util/placeholder-single-desktop.png" alt="{{post.post_title}}">
+			</picture>
+		</div>
+	{% elseif post.header_display == 'text'%}
+		{# TODO: there will probably be some unique stuff here, maybe a different display of the header info #}
+	{% endif %}
 
-			{% elseif post.header_display == 'text'%}
-				{# TODO: there will probably be some unique stuff here, maybe a different display of the header info #}
-			{% endif %}
-
-			<h1>{{post.post_title}}</h1>
-			<p>{{post.header_tagline}}</p>
-			<p>{{post.header_summary}}</p>
-
-		{% endblock %}
-	</div>
+	{% endblock %}
 </header>
