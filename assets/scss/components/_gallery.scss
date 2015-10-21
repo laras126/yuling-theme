@@ -2,6 +2,6 @@
 	@include grid;
 
 	&__thumb {
-		@include cell($size: half);
+		@include cell($size: third);
 	}
 }
