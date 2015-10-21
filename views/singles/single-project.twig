@@ -1,0 +1,12 @@
+{% extends "singles/single.twig" %}
+
+{% block content %}
+	
+	<div class="contain--md">
+		{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
+	</div>
+	
+	{% for block in post.get_field('blocks') %} 
+		{% include 'blocks/block-logic.twig' %}
+	{% endfor %}
+{% endblock %}
