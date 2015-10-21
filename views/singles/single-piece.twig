@@ -21,6 +21,9 @@
 
 	<div class="contain--md">
 		{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
+		<div class="long-description">
+			{{post.long_description|wpautop}}
+		</div>
 	</div>
 	
 	{% for block in post.get_field('blocks') %} 
