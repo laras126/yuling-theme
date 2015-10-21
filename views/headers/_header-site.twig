@@ -2,19 +2,19 @@
 
 {% block header_content %}
 
-<h1 class="title-site"><a href="{{site.link}}" title="{{site.name}}" rel="home">{{site.name}}</a>
+<h1 class="title--site text-center"><a href="{{site.link}}" title="{{site.name}}" rel="home">{{site.name}}</a>
 </h1>
 
-<nav class="nav--site" role="navigation">
-    <ul class="nav__items--site">
+<nav class="nav--site contain--lg" role="navigation">
+    <ul class="nav__items items--inline">
     {% for item in menu.items %}
-        <li class="nav__item--site">
-            <a href="{{item.link}}">{{item.title}}</a>
+        <li class="nav__item">
+            <a class="nav__item__link"href="{{item.link}}">{{item.title}}</a>
             {% if item.get_children %}
-            	<ul class="subnav--site">
+            	<ul class="nav__items">
 				{% for child in item.get_children %}
 					<li class="subnav__item">
-						<a href="{{child.get_link}}">{{child.title}}</a>
+						<a class="subnav__item__link" href="{{child.get_link}}">{{child.title}}</a>
 					</li>
 				{% endfor %}
 				</ul>
