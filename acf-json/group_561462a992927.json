@@ -40,6 +40,27 @@
             "default_value": 0
         },
         {
+            "key": "field_562963bd9299a",
+            "label": "Pricing",
+            "name": "pricing",
+            "type": "text",
+            "instructions": "A sentence about how this piece is priced.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_56146396d95de",
             "label": "Styles of Printing",
             "name": "styles_of_printing",
@@ -199,5 +220,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1444939821
+    "modified": 1445553177
 }
