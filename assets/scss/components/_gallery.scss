@@ -1,7 +1,21 @@
 .gallery {
 	@include grid;
+}
 
-	&__thumb {
-		@include cell($size: third);
+.gallery-thumb {
+	
+	&.-piece,
+	&.-collection {
+		@include cell(half);
+	}
+
+	&.-collection {
+		@include bp(sm) { @include cell(half); }
+		@include bp(md) { @include cell(third, $is_first: false); }
+		@include bp(lg) { @include cell(fourth, $is_first: false); }
+		
+		img {
+			width: 100%;
+		}
 	}
 }
