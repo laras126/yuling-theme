@@ -5,7 +5,12 @@
 		<div class="grid">
 			<div class="cell--half">
 				<ul>
-					<li>{{post.size}}</li>
+					{% if post.size %}
+						<li>{{post.size}}</li>
+					{% endif %}
+					{% if post.pricing %}
+						<li>{{post.pricing}}</li>
+					{% endif %}
 					{% if post.double_sided %}<li>Double Sided</li>{% endif %}
 						{% if post.styles_of_printing %}
 						<li>
@@ -26,6 +31,7 @@
 				{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
 			</div>
 		</div> <!-- /.grid -->
+		
 		<div class="long-description">
 			{{post.long_description|wpautop}}
 		</div>
