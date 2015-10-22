@@ -1,24 +1,23 @@
 {% extends 'archives/taxonomy.twig' %}
 
 {% block before_content %}
-	<div class="contain--md">
-	{% include 'headers/_header-collection.twig' with { h_class: 'header--collection' } %}
-	</div>
+	{% include 'headers/_header-collection.twig' with { h_class: '-collection' } %}
 {% endblock %}
 
 
 {% block content %}
-	<div class="contain--md">
 
 		{# TODO: remove grid classes in production #}
+	<div class="contain--lg">
 		<div class="grid">
 			{% for post in posts %}
 				{% include 'teases/_tease-' ~ post.post_type ~ '.twig' with { class: 'cell--half' } %}
 			{% endfor %}
 		</div>
-		
-	{% for block in term.blocks %}
-		{% include 'blocks/block-logic.twig' %}
-	{% endfor %}
+	</div>
+	<div class="contain--md">
+		{% for block in term.blocks %}
+			{% include 'blocks/block-logic.twig' %}
+		{% endfor %}
 	</div>
 {% endblock %}
