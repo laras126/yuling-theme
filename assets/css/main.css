@@ -527,6 +527,13 @@ http://flickity.metafizzy.co
   top: -9999999px;
   left: -999999px; }
 
+.teaser.lazyload {
+  opacity: 0; }
+
+.teaser.lazyloaded {
+  opacity: 1;
+  transition: all 700ms; }
+
 .contain, .contain--lg, .contain--md, .contain--sm, .contain--xl {
   margin: 0 auto;
   width: 90%;
@@ -809,51 +816,50 @@ fieldset {
   padding: 0.66rem;
   margin-top: 0.825rem;
   margin-bottom: 0.825rem; }
-  .btn--danger {
-    background-color: white;
+  .btn.-readmore {
+    background: #1C7FA6;
+    font-weight: 700;
+    border-radius: 2px;
     color: #F2F2F2; }
-    .btn--danger:hover {
-      background-color: #9999ff;
+    .btn.-readmore:hover,
+    .btn.-readmore:focus {
+      background: #155e7a;
       color: #F2F2F2; }
-    .btn--danger:active {
-      background-color: blue;
-      color: #bfbfbf; }
-  .btn--warning {
-    background-color: #c1eee1;
+    .btn.-readmore:active {
+      background: black; }
+  .btn.-danger {
+    background: white;
+    font-weight: 700;
+    border-radius: 2px;
     color: #F2F2F2; }
-    .btn--warning:hover {
-      background-color: #71d8bb;
+    .btn.-danger:hover,
+    .btn.-danger:focus {
+      background: #ccccff;
       color: #F2F2F2; }
-    .btn--warning:active {
-      background-color: #268a6e;
-      color: #bfbfbf; }
-  .btn--success {
-    background-color: #1BBF54;
+    .btn.-danger:active {
+      background: #3333ff; }
+  .btn.-success {
+    background: #1BBF54;
+    font-weight: 700;
+    border-radius: 2px;
     color: #F2F2F2; }
-    .btn--success:hover {
-      background-color: #0e662d;
+    .btn.-success:hover,
+    .btn.-success:focus {
+      background: #159240;
       color: #F2F2F2; }
-    .btn--success:active {
-      background-color: black;
-      color: #bfbfbf; }
-  .btn--cta {
-    background-color: #0d3c4f;
+    .btn.-success:active {
+      background: #020c05; }
+  .btn.-warning {
+    background: #c1eee1;
+    font-weight: 700;
+    border-radius: 2px;
     color: #F2F2F2; }
-    .btn--cta:hover {
-      background-color: black;
+    .btn.-warning:hover,
+    .btn.-warning:focus {
+      background: #99e3ce;
       color: #F2F2F2; }
-    .btn--cta:active {
-      background-color: black;
-      color: #bfbfbf; }
-  .btn--readmore {
-    background-color: #1C7FA6;
-    color: #F2F2F2; }
-    .btn--readmore:hover {
-      background-color: #0d3c4f;
-      color: #F2F2F2; }
-    .btn--readmore:active {
-      background-color: black;
-      color: #bfbfbf; }
+    .btn.-warning:active {
+      background: #31b28e; }
 
 .alert {
   padding: 1.1rem;
@@ -933,17 +939,80 @@ th {
   position: relative;
   margin-left: -0.55rem;
   margin-right: -0.55rem; }
-  .gallery__thumb {
+
+.gallery-thumb.-piece,
+.gallery-thumb.-collection {
+  position: relative;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+@media (min-width: 30em) {
+  .gallery-thumb.-collection {
     position: relative;
     padding-left: 0.55rem;
     padding-right: 0.55rem;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%; }
+    flex: 0 0 50%;
+    max-width: 50%; } }
 
-.tease__meta {
-  color: #9E9E9E;
-  font-size: 0.825rem;
-  margin: 0; }
+@media (min-width: 40em) {
+  .gallery-thumb.-collection {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%; } }
+
+@media (min-width: 50em) {
+  .gallery-thumb.-collection {
+    flex: 0 0 25%;
+    max-width: 25%; } }
+
+.gallery-thumb.-collection img {
+  width: 100%; }
+
+.tease-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300; }
+  .tease-title a {
+    color: #9E9E9E; }
+
+.tease-title,
+.tease .icon {
+  display: inline-block; }
+
+@media (min-width: 30em) {
+  .archive.-project,
+  .archive.-piece {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    margin-left: -0.55rem;
+    margin-right: -0.55rem; } }
+
+@media (min-width: 30em) {
+  .tease.-project {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    flex: 0 0 50%;
+    max-width: 50%; } }
+
+.tease.-piece {
+  background-color: #f9f9f9;
+  margin-top: 1.1rem;
+  padding: 0.825rem; }
+  @media (min-width: 30em) {
+    .tease.-piece {
+      position: relative;
+      padding-left: 0.55rem;
+      padding-right: 0.55rem;
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media (min-width: 40em) {
+    .tease.-piece {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%; } }
 
 .block {
   margin-bottom: 1.1rem; }
