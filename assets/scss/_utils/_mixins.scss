@@ -3,30 +3,6 @@
 // Visual Design
 // ----
 
-// Button
-@mixin button( $button-color, $text-color: $white ) {
-	background: $button-color;
-	font-weight: 700;
-	border-radius: 2px;
-	
-	// TODO: BAD BAD
-	// Remove important
-	// Or is this better than a new style to override the <a> color?
-	color: $text-color !important;
-	
-	@extend %btn;
-
-	&:hover,
-	&:focus {
-		background: darken( $button-color, 10% );
-		color: $text-color;
-	}
-
-	&:active {
-		background: darken( $button-color, 40% );
-	}
-}
-
 
 
 
