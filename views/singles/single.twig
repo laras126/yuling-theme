@@ -1,11 +1,15 @@
 {% extends "base.twig" %}
 
 {% block before_content %}
-	{% include 'headers/_header-single.twig' with { class : 'header-single' } %}
+	{% include 'headers/_header-single.twig' with { class : '-single -' ~ post.post_type } %}
 {% endblock %}
 
 {% block content %}
 	{% for block in post.get_field('blocks') %} 
 		{% include 'blocks/block-logic.twig' %}
 	{% endfor %}
+{% endblock %}
+
+{% block after_content %}
+	{% include ['footers/_footer-'~post.post_type~'.twig', 'footers/footer.twig'] with { class: post.post_type ? '-' ~ post.post_type } %}
 {% endblock %}
