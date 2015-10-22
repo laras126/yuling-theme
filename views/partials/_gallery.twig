@@ -1,8 +1,8 @@
-<div class="gallery{{class ? ' gallery--' ~ class}}">
+<div class="gallery -{{post.post_type}}">
 
 	{% for image in gallery %}
-		<div class="gallery__thumb">
-			<img src="{{image.url|resize(500, 500)}}" alt="{{image.title}}">
+		<div class="gallery-thumb -{{class ? class : post.post_type}}">
+			<img data-src="{{image.url|resize(500, 500)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
 		</div>
 	{% endfor %}
 
