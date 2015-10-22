@@ -1,0 +1,22 @@
+
+.archive {
+	&.-project,
+	&.-piece {
+		@include bp(sm) { @include grid; }
+	}
+}
+
+.tease {
+	&.-project {
+		@include bp(sm) { @include cell(half); }
+	}
+
+	&.-piece {
+		background-color: #f9f9f9;
+		margin-top: $size-base;
+		padding: $size-sml;
+		
+		@include bp(sm) { @include cell(half); }
+		@include bp(md) { @include cell(third, $is_first: false); }
+	}
+}
