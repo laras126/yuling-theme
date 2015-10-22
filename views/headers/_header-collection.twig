@@ -3,12 +3,16 @@
 {% block before_header_content %}{% endblock %}
 
 {% block header_content %}
-	<img src="{{TimberImage(term.featured_image).src|resize(800)}}" alt="{{term.name}} Thumbnail">
-	<h1>{{term.name}}</h1>
-	<p>{{term.description}}</p>	
-	<pre>Collection gallery</pre>
-	{% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %}
-	<hr>
+	<div class="contain--md">
+		<img src="{{TimberImage(term.featured_image).src|resize(800)}}" alt="{{term.name}} Thumbnail">
+	</div>
+	<div class="contain--sm text-center">
+		<h1>{{term.name}}</h1>
+		<p>{{term.description}}</p>
+	</div>
+	<div class="contain--xl">
+		{% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %}
+	</div>
 {% endblock %}
 
 {% block after_header_content %}{% endblock %}
