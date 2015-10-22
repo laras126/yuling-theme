@@ -3,7 +3,7 @@
 
 {% set t_class = class %}
 
-<article class="tease--{{post.post_type}}{{ t_class ? ' ' ~ class }}">
+<article class="tease -{{post.post_type}} lazyload teaser" data-expand="-110">
 
 	{% block content %}
 		{# The default markup for a tease. #}
