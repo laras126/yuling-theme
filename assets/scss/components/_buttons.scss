@@ -1,38 +1,62 @@
+// Button
+@mixin button( $button-color, $text-color: $white ) {
+    background: $button-color;
+    font-weight: 700;
+    border-radius: 2px;
+    color: $text-color;
+    
+    &:hover,
+    &:focus {
+        background: darken( $button-color, 10% );
+        color: $text-color;
+    }
 
-/// @group buttons
-/// @content [Buttons for stuff]
+    &:active {
+        background: darken( $button-color, 40% );
+    }
+}
 
-$buttons: (
-    danger:     ($color-alert-danger, $color-text-light),
-    warning:    ($color-alert-warning, $color-text-light),
-    success:    ($color-alert-success, $color-text-light),
-    cta:        ($color-cta-bkgd, $color-cta-text),
-    readmore:   ($color-accent-med, $color-text-light)
-);
- 
 .btn {
     display: inline-block;
     padding: $size-xsml;
     margin-top: $size-sml;
     margin-bottom: $size-sml;
 
-    @each $name, $colors in $buttons {
-        $bgcolor: nth($colors, 1);
-        $fontcolor: nth($colors, 2);
-
-        &--#{$name} {
-            // TODO: Need to deal with hover styles.
-            background-color: $bgcolor;
-            color: $fontcolor;
-
-            &:hover {
-                background-color: darken($bgcolor, 20%);
-                color: $fontcolor;
-            }
-            &:active {
-                background-color: darken($bgcolor, 50%);
-                color: darken($fontcolor, 20%);
-            }
-        }
+    &.-readmore {
+        @include button($color-accent-med);
     }
+
+    &.-danger {
+        @include button($color-alert-danger);
+    }
+
+    &.-success {
+        @include button($color-alert-success);
+    }
+
+    &.-warning {
+        @include button($color-alert-warning);
+    }
+
 }
+
+
+// @each $name, $colors in $buttons {
+//     $bgcolor: nth($colors, 1);
+//     $fontcolor: nth($colors, 2);
+
+//     .-#{$name} {
+//         // TODO: Need to deal with hover styles.
+//         background-color: $bgcolor;
+//         color: $fontcolor;
+
+//         &:hover {
+//             background-color: darken($bgcolor, 20%);
+//             color: $fontcolor;
+//         }
+//         &:active {
+//             background-color: darken($bgcolor, 50%);
+//             color: darken($fontcolor, 20%);
+//         }
+//     }
+// }
