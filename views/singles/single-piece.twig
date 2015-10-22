@@ -2,25 +2,30 @@
 
 {% block content %}
 	<div class="contain--md">
-		<ul>
-			<li>{{post.size}}</li>
-			{% if post.double_sided %}<li>Double Sided</li>{% endif %}
-			<li>
-				<p>Available in:</p>
+		<div class="grid">
+			<div class="cell--half">
 				<ul>
-				{% for style in post.styles_of_printing %}
-					<li>{{style}}</li>
-				{% endfor %}
+					<li>{{post.size}}</li>
+					{% if post.double_sided %}<li>Double Sided</li>{% endif %}
+						{% if post.styles_of_printing %}
+						<li>
+							<p>Available in:</p>
+							<ul>
+							{% for style in post.styles_of_printing %}
+								<li>{{style}}</li>
+							{% endfor %}
+							</ul>
+						</li>
+					{% endif %}
+					{% for info in post.get_field('freeform_info') %}
+						<li>{{info.title}}: {{info.value}}</li>
+					{% endfor %}
 				</ul>
-			</li>
-			{% for info in post.get_field('freeform_info') %}
-				<li>{{info.title}}: {{info.value}}</li>
-			{% endfor %}
-		</ul>
-	</div>
-
-	<div class="contain--md">
-		{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
+			</div>
+			<div class="cell--half">
+				{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
+			</div>
+		</div> <!-- /.grid -->
 		<div class="long-description">
 			{{post.long_description|wpautop}}
 		</div>
