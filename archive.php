@@ -37,6 +37,7 @@
 			array_unshift($templates, 'archives/taxonomy-'.$term->taxonomy.'.twig', 'archives/taxonomy.twig');
 		} else if (is_post_type_archive()){
 			$data['title'] = post_type_archive_title('', false);
+			$data['type'] = get_post_type();
 			array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
 		}
 
