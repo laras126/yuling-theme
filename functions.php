@@ -45,6 +45,7 @@
 		function add_to_context($context){
 			$context['menu'] = new TimberMenu();
 			$context['site'] = $this;
+			$context['placeholder'] = get_stylesheet_directory_uri() . '/assets/img/util/loader.gif';
 
 			// Site-wide Settings
 			$context['site_callout_bool'] = get_field('site_callout_bool', 'options');
