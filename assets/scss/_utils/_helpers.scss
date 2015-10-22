@@ -51,8 +51,6 @@
 
 
 
-
-
 // ----
 // Utility
 // ----
@@ -61,6 +59,15 @@
     position: absolute;
     top: -9999999px;
     left: -999999px;
+}
+
+.teaser.lazyload {
+	opacity: 0;
+}
+
+.teaser.lazyloaded {
+	opacity: 1;
+	transition: all 700ms;
 }
 
 
