@@ -2,19 +2,21 @@
 
 {% block header_content %}
 
-<h1 class="title--site text-center"><a href="{{site.link}}" title="{{site.name}}" rel="home">{{site.name}}</a>
-</h1>
+{# Need to fix and use this instead of img: #}
+{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
 
-<nav class="nav--site contain--lg" role="navigation">
-    <ul class="nav__items items--inline">
+<nav class="nav -site" role="navigation">
+    <a href="#" class="nav-item-link" id="navOpenLink">Menu</a>
+    <ul class="nav-list -site" id="toggleNav">
     {% for item in menu.items %}
-        <li class="nav__item">
-            <a class="nav__item__link"href="{{item.link}}">{{item.title}}</a>
+        <li class="nav-item -site {{ item.get_children ? 'has-subnav' }}">
+            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}</a>
             {% if item.get_children %}
-            	<ul class="nav__items">
+                {% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}
+            	<ul class="subnav-list -site">
 				{% for child in item.get_children %}
-					<li class="subnav__item">
-						<a class="subnav__item__link" href="{{child.get_link}}">{{child.title}}</a>
+					<li class="subnav-item -site">
+						<a class="subnav-item-link -site" href="{{child.get_link}}">{{child.title}}</a>
 					</li>
 				{% endfor %}
 				</ul>
