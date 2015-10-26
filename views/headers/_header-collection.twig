@@ -3,15 +3,18 @@
 {% block before_header_content %}{% endblock %}
 
 {% block header_content %}
-	<div class="contain--lg teaser lazyload">
-		<img data-src="{{TimberImage(term.featured_image).src|resize(1024)}}" src="{{placeholder}}" class="lazyload" alt="{{term.name}} Thumbnail">
+	
+	<div class="teaser lazyload banner">
+		<img data-src="{{TimberImage(term.featured_image).src|resize(1800)}}" src="{{placeholder}}" class="lazyload" alt="{{term.name}} Thumbnail">
 	</div>
+	
+	<div class="contain--xl">
+		{% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %}
+	</div>
+	
 	<div class="contain--sm text-center">
 		<h1>{{term.name}}</h1>
 		<p>{{term.description}}</p>
-	</div>
-	<div class="contain--xl">
-		{% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %}
 	</div>
 {% endblock %}
 
