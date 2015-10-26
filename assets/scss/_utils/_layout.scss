@@ -58,6 +58,20 @@ $sizes: (
 }
 
 
+@mixin contain($size: md) {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+
+    @if $size == sm  {
+        max-width: $screen-sm;    
+    } @else if $size == md  {
+        max-width: $screen-md;    
+    } @else if $size == lg  {
+        max-width: $screen-lg;    
+    } 
+}
+
 
 /// @group containers
 // TODO: this could be a map
