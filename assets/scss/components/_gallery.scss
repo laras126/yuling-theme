@@ -5,7 +5,8 @@
 .gallery-thumb {
 	
 	&.-piece,
-	&.-collection {
+	&.-collection,
+	&.-project {
 		@include cell(half);
 	}
 
@@ -14,8 +15,9 @@
 		@include bp(md) { @include cell(third, $is_first: false); }
 		@include bp(lg) { @include cell(fourth, $is_first: false); }
 		
-		img {
-			width: 100%;
-		}
+	}
+
+	img {
+		width: 100%;
 	}
 }
