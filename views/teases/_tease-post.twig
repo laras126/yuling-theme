@@ -1,4 +1,11 @@
 {% extends "teases/tease.twig" %}
 
 {# TODO: Customize markup in here #}
-{# {% block content %}{% endblock %} #}
+{% block content %}
+	{% if post.thumbnail.src %}
+		<img src="{{post.thumbnail.src|resize(400, 400)}}" alt="{{post.title}} Thumbnail">
+	{% endif %}
+	<h4><a href="{{post.link}}">{{post.title}}</a></h4>
+	<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}</p>
+	{% include 'utility/edit-link.twig' %}
+{% endblock %}
