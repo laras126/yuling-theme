@@ -13,22 +13,25 @@ $screen-xl:     60em;
 // ---- Colors
 // ----
 
-$white: 			#F2F2F2;
+$white: 			#FFFFFF;
+$black: 			#000000;
+$grey: 				#E6E6E3;
+$gold: 				#916300;
+$pink: 				#B83074;
+
 $blue: 				#1C7FA6;
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $green: 			#1BBF54;
 $l-green: 			#D9F2A2;
 
-$grey: 				#9E9E9E;
-
 
 // Semantic variable names
 
 // Color Scheme
-$color-accent-vlight:	$l-green;
-$color-accent-light:	$l-teal;
-$color-accent-med:		$blue;
-$color-accent-dark:		darken($blue, 20%);
+$color-accent-dark:		$pink;
+$color-accent-med:		$gold;
+$color-accent-light:	$grey;
+$color-accent-vlight:	lighten($color-accent-light, 10%);
 
 // Alerts
 $color-alert-danger: 	lighten($l-green, 40%);
@@ -37,13 +40,12 @@ $color-alert-info: 		$blue;
 $color-alert-success: 	$green;
 
 // Text colors
-$color-text-dark: 		#333;
+$color-text-dark: 		$black;
 $color-text-med: 		$grey;
-$color-text-medlight: 	lighten($color-text-med, 20%);
 $color-text-light: 		$white;
 
 // Links
-$color-link:			$blue;
+$color-link:			$pink;
 $color-link-hover: 		darken($color-link, 20%);
 $color-link-active: 	darken($color-link, 40%);
 
@@ -52,12 +54,15 @@ $color-body-bkgd: 		$white;
 $color-body-text: 		$color-text-dark;
 
 // Calls to action - TODO: too much?
-$color-cta-bkgd: 	$color-accent-dark;
-$color-cta-text: 	$color-text-light;
-$color-cta-link: 	$color-text-light;
+$color-cta-bkgd: 		$gold;
+$color-cta-text: 		$white;
+$color-cta-link: 		$grey;
 
-$color-table-rotate: 	lighten($color-alert-info, 50%);
+$color-table-rotate: 	lighten($color-accent-light, 50%);
 
+// Rotate
+$color-rotate-bkgd: 	$color-body-text;
+$color-rotate-text: 	$color-body-bkgd;
 
 
 // ----
@@ -89,19 +94,19 @@ $size-h6:  			$size-sml;
 // ---- Typography 
 // ----
 
-$serif:				'Georgia', serif;
-$sans-serif:		'Helvetica', serif;
+$serif:				'ltc-bodoni-175', serif;
+$sans-serif:		'source-sans-pro', serif;
 
 $line-height-base: 	1.5;
 $line-height-sm: 	1.3;
 
-$font-heading: 		$sans-serif;
-$font-body: 		$serif;
-$font-nav: 			$sans-serif;
+$font-heading: 		$serif;
+$font-body: 		$sans-serif;
+$font-nav: 			$serif;
 $font-form: 		$sans-serif;
 $font-lead: 		$sans-serif;
 
-$font-weight-heading: 	700;
+$font-weight-heading: 	300;
 $font-weight-base: 		300;
 $font-weight-strong: 	500;
 
