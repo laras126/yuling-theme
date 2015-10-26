@@ -16,7 +16,8 @@
                 "id": ""
             },
             "message": "These options will show on every page. Leave blank to not show them.",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
             "key": "field_558ada98ec42a",
@@ -31,7 +32,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_552c0bf45d58b",
@@ -80,7 +82,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_558ad11713279",
@@ -107,7 +110,7 @@
             "key": "field_558ad12b1327a",
             "label": "Credits",
             "name": "site_footer_credits",
-            "type": "wysiwyg",
+            "type": "textarea",
             "instructions": "Add credits to any tools or people that helped with the site. Leave blank if you like.",
             "required": 0,
             "conditional_logic": 0,
@@ -117,9 +120,12 @@
                 "id": ""
             },
             "default_value": "Proudly powered by <a href=\"http:\/\/wordpress.org\">WordPress.<\/a>",
-            "tabs": "visual",
-            "toolbar": "links_only",
-            "media_upload": 0
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -137,6 +143,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1436822042,
-    "local": "json"
+    "active": 1,
+    "description": "",
+    "modified": 1445879594
 }
