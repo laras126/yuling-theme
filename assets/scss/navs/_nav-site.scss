@@ -16,10 +16,10 @@
 			width: 100%;
 			z-index: $z-top;
 			top: 0;
-			background-color: rgba($color-rotate-bkgd, 0.7);
 		}
 	}
 }
+
 
 .logo-text-logo {
 	// fill: $color-accent-med;
@@ -31,7 +31,8 @@
 }
 
 .banner {
-	// height: 90vh;
+	// max-height: 80vh;
+	// overflow: hidden;
 	// position: absolute;
 	// top: 0;
 }
@@ -158,6 +159,26 @@
 	@include bp(md) {
 		padding: $size-sml;
 		text-align: left;
+	}
+}
+
+
+// Singles
+
+.single-title {
+	&.-piece {
+		@include upperspace;
+		font-size: $size-h4;
+		margin-top: 0;
+	}
+}
+
+.single-title-compliment {
+	&.-piece {
+		font-family: $font-heading;
+		font-style: italic;
+		margin: 0;
+		font-size: $size-sml;
 	}
 }
 
