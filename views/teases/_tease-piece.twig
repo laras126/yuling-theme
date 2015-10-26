@@ -8,9 +8,11 @@
 			{# TODO: replace this with something we serve. #}
 			<img src="http://placehold.it/500x500" alt="Default Thumbnail">
 		{% endif %}
-		<h4 class="tease-title">{{post.post_title}}</h4>
-		<p>{{post.header_tagline}}</p>
-		{% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %}
+		<div class="tease-info -{{post.post_type}}">
+			<h4 class="tease-title -{{post.post_type}}">{{post.post_title}}</h4>
+			{% if post.header_tagline %}<p>{{post.header_tagline}}</p>{% endif %}
+		</div>
+		{# {% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %} #}
 	</a>
 	{% include 'utility/edit-link.twig' %}
 {% endblock %}

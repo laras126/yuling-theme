@@ -17,8 +17,8 @@
 		
 		<div class="tease-info -project">
 			<h4 class="tease-title -project">{{post.post_title}}</h4>
-			<p>{{post.header_summary}}</p>
-			{% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %}
+			{% if post.header_tagline %}<p>{{post.header_summary}}</p>{% endif %}
+			{# {% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %} #}
 		</div>
 	</a>
 	{% include 'utility/edit-link.twig' %}
