@@ -5,7 +5,5 @@
 {% set f_role = ' role="' ~ role ~ '"' %}
 
 <footer{{ class ? f_class }}{{role ? f_role }}>
-	<div class="contain contain--md">
-		{% block footer_content %}{% endblock %}
-	</div>
+	{% block footer_content %}{% endblock %}
 </footer>
