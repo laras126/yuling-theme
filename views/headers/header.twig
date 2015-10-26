@@ -21,9 +21,9 @@
 
 			{# TODO: Adjust dimensions once we decide on them #}
 			<picture>
-				<source srcset="{{TimberImage(post.header_image_desktop).src|resize(1200, 800)}}" media="(min-width: 1100px)">
+				<source srcset="{{desktop|resize(1200, 800)}}" media="(min-width: 1100px)">
 				<source srcset="{{tablet ? tablet|resize(900, 600) : desktop|resize(800, 600)}}" media="(min-width: 736px)">
-				{# TODO: change to self-served image #}
+				{# TODO: Better placeholder #}
 				<img srcset="{{mobile ? mobile|resize(700, 600) : desktop|resize(500, 400)}}" src="{{site.theme.link}}/assets/img/util/placeholder-single-desktop.png" alt="{{post.post_title}}">
 			</picture>
 		</div>
