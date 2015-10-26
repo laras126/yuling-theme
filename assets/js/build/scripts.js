@@ -93,15 +93,14 @@ $(document).ready(function() {
 	// TODO: better fallback for non-JS - adding a .js class but it causes the nav to blink
 	// Look into Modernizr for that
 
-	var $menu = $('#menu'),
-	    $menulink = $('.menu-link'),
+	var $menu = $('#toggleNav'),
+	    $menulink = $('#navOpenLink'),
 	    $menuTrigger = $('.has-subnav > a');
 
 	$menulink.on('click', function(e) {
-		e.preventDefault();
 		$menulink.toggleClass('open');
 		$menu.toggleClass('open');
-		return false;
+		e.preventDefault();
 	});
 
 	$menuTrigger.click(function(e) {
@@ -111,10 +110,12 @@ $(document).ready(function() {
 	});
 		
 
-	// $.get("/taxonomies", function(data){
-	// 	console.log(data);
-	// });
-
+	// Subnav
+	$('.has-subnav').each( function() {
+		$(this).on('click', function() {
+			$(this).toggleClass('open');
+		});
+	});
 
 
 	// ----
