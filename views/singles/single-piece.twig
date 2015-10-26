@@ -1,9 +1,25 @@
 {% extends "singles/single.twig" %}
-
+{% block before_content %}{% endblock %}
 {% block content %}
+
 	<div class="contain--md">
+		
 		<div class="grid">
 			<div class="cell--half">
+				{# {% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %} #}
+				{% set img = TimberImage(post.thumbnail.src) %}
+				<img 
+					data-srcset="{{img|resize(500)}} 500w,
+						{{img|resize(700)}} 640w,
+						{{img|resize(1024)}} 1024w"
+					src="{{placeholder}}"
+					class="lazyload" />
+			</div>
+			<div class="cell--half">
+				{% for t in post.get_terms('collection')|slice(0,1) %}
+					<p class="single-title-compliment -piece">{{t.name}}</p>
+				{% endfor %}
+				<h1 class="single-title -piece">{{post.title}}</h1>
 				<ul>
 					{% if post.size %}
 						<li>{{post.size}}</li>
@@ -27,9 +43,6 @@
 					{% endfor %}
 				</ul>
 			</div>
-			<div class="cell--half">
-				{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
-			</div>
 		</div> <!-- /.grid -->
 		
 		<div class="long-description">
@@ -40,4 +53,5 @@
 	{% for block in post.get_field('blocks') %} 
 		{% include 'blocks/block-logic.twig' %}
 	{% endfor %}
+
 {% endblock %}
