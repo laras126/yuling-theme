@@ -3,7 +3,7 @@
 {% block header_content %}
 
 {# Need to fix and use this instead of img: #}
-{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+<a href="{{site.link}}">{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}</a>
 
 <nav class="nav -site" role="navigation">
     <a href="#" class="nav-item-link" id="navOpenLink">Menu</a>
