@@ -671,8 +671,9 @@ body {
 img {
   max-width: 100%; }
 
-.main {
-  padding-top: 8.25rem; }
+@media (min-width: 40em) {
+  .main {
+    padding-top: 8.25rem; } }
 
 .header--page__tagline {
   margin-bottom: 20px; }
