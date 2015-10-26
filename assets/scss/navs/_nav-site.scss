@@ -9,11 +9,15 @@
 
 .header {
 	&.-site {
-		background-color: $color-rotate-bkgd;
-		position: fixed;
-		width: 100%;
-		z-index: $z-top;
-		top: 0;
+		background-color: rgba($color-rotate-bkgd, 1);
+
+		@include bp(md) {
+			position: fixed;
+			width: 100%;
+			z-index: $z-top;
+			top: 0;
+			background-color: rgba($color-rotate-bkgd, 0.7);
+		}
 	}
 }
 
@@ -28,11 +32,13 @@
 
 .banner {
 	// height: 90vh;
+	// position: absolute;
+	// top: 0;
 }
 
-.banner-img {
-	position: fixed;
-}
+// .banner-img {
+// 	position: fixed;
+// }
 
 
 // Titles
@@ -63,20 +69,26 @@
 
 .nav-list {
 	@include unstyle-list;
+	text-align: center;
+	transition: all 0.25s ease;
 
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
 	
 	@include bp(md) {
+		padding-top: 0;
 		max-height: none;
 	}
 
 	&.open {
+		padding-top: $size-base;
 		max-height: $screen-sm;
+		transition: all 0.5s ease;
 	}
 	
 	&.-site {
+		margin-top: 0;
 		@include bp(md) { 
 			display: flex;
 			justify-content: center;
@@ -87,6 +99,8 @@
 
 #navOpenLink {
 	text-align: center;
+	display: block;
+
 	@include bp(md) {
 		display: none;
 	}
@@ -109,26 +123,26 @@
 	color: $color-rotate-text;	
 	&:hover,
 	&:focus {
-		color: $color-accent-med;
+		color: $color-accent-light;
 	}
 }
 	
-
 .has-subnav 
 .icon-arrow-down {
 	display: inline-block;
 	position: relative;
-	top: $size-xsml/2;
+	top: $size-xsml/2; // Meh.
 	fill: $color-accent-med;
 }
 
 .subnav-list {
 	@include unstyle-list;
 	overflow: hidden;
-	
+
 	@include bp(md) {
 		position: absolute;
 		background-color: $color-accent-med;
+		margin-top: $size-sml;
 	}
 	
 	&.-site {
@@ -140,6 +154,12 @@
 	}
 }
 
+.subnav-item {
+	@include bp(md) {
+		padding: $size-sml;
+		text-align: left;
+	}
+}
 
 
 // Teases
@@ -155,7 +175,9 @@
 }
 
 .tease-info {
-	
+	&.-piece {
+		text-align: center;
+	}
 }
 
 
