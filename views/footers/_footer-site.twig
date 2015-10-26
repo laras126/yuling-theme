@@ -1,5 +1,35 @@
 {% extends 'footers/footer.twig' %}
 
 {% block footer_content %}
-	{% include 'site-options/site-colophon.twig' %}
+	<div class="contain--lg">
+		<div class="footer-wrap">
+			<div class="footer-section -colophon">
+				{% include 'site-options/site-colophon.twig' %}
+			</div>
+			<div class="footer-section -social">
+				<ul class="social-list">
+					<li class="social-item">
+						<a href="#">
+							{% include 'utility/svg.twig' with { file: 'twitter', prefix: 'icon' } %}
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="#">
+							{% include 'utility/svg.twig' with { file: 'facebook', prefix: 'icon' } %}
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="#">
+							{% include 'utility/svg.twig' with { file: 'instagram', prefix: 'icon' } %}
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="#">
+							{% include 'utility/svg.twig' with { file: 'pinterest', prefix: 'icon' } %}
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 {% endblock %}
