@@ -1,3 +1,4 @@
+
 %icon-base {
 	width: $size-base;
 	height: $size-base;
@@ -11,11 +12,6 @@
 	a &:hover {
 		fill: $hover;
 	}
-}
-
-.shape {
-	width: 100%;
-	fill: $color-accent-dark;
 }
 
 .icon {
