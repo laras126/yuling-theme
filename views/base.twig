@@ -10,25 +10,25 @@
         <div class="visually-hidden">{% include 'views/utility/svg-defs.svg' %}</div>
 
         {% block header %}
-            {% include 'headers/_header-site.twig' with { class: 'header--site', role: 'banner', contain: 'contain' } %}
+            {% include 'headers/_header-site.twig' with { class: '-site', role: 'banner' } %}
         {% endblock %}  
         
-        <main class="site--main" role="main">
+        <main class="main -site" role="main">
 
-            <div class="site--content">
+            <div class="content -site">
 
                 {% block before_content %}{% endblock %}
 
                 {% block content %}
                     Sorry, no content
-                {% endblock %}
+                {% endblock %}%}
 
                 {% block after_content %}{% endblock %}
 
             </div>
 
             {% if sidebar %}
-                <aside class="site--sidebar">
+                <aside class="sidebar -site">
                     {{sidebar}}
                 </aside>
             {% endif %}
@@ -36,7 +36,7 @@
         </main>
 
         {% block footer %}
-            {% include 'footers/_footer-site.twig' with { class : 'footer-site' } %}   
+            {% include 'footers/_footer-site.twig' with { class : '-site' } %}   
             {{ function('wp_footer') }}
         {% endblock %}
 
