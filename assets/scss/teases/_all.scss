@@ -5,6 +5,10 @@
 	font-size: $size-base;
 	@include upperspace;
 	font-weight: $font-weight-base;
+	
+	&.-piece {
+		text-align: center;
+	}
 
 	a {
 		color: $color-text-med;
