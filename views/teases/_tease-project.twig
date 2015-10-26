@@ -1,12 +1,26 @@
 {% extends "teases/tease.twig" %}
 
 {% block content %}
-	<a href="{{post.post_link}}">
+	<a href="{{post.link}}">
 		{% if post.thumbnail.src %}
-			<img data-src="{{post.thumbnail.src|resize(500, 400)}}" src="{{placeholder}}" class="lazyload" />
+
+			{% set img = TimberImage(post.thumbnail.src) %}
+			
+			<img 
+				data-srcset="{{img|resize(500, 500)}} 500w,
+					{{img|resize(700, 700)}} 640w,
+					{{img|resize(900, 900)}} 1024w"
+				src="{{placeholder}}"
+				class="lazyload" />
+
 		{% endif %}
-		<h4 class="tease-title"><a href="{{post.link}}">{{post.post_title}}</a></h4>
-		<p>{{post.header_summary}}</p>
-		{% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %}
+		
+		<div class="tease-info -project">
+			<h4 class="tease-title -project">{{post.post_title}}</h4>
+			<p>{{post.header_summary}}</p>
+			{% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %}
+		</div>
 	</a>
+	{% include 'utility/edit-link.twig' %}
+
 {% endblock %}
