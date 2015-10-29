@@ -1,0 +1,24 @@
+.gallery {
+	@include grid;
+}
+
+.gallery-thumb {
+	
+	&.-piece,
+	&.-collection,
+	&.-project,
+	&.-block {
+		@include cell(half);
+	}
+
+	&.-collection {
+		@include bp(sm) { @include cell(half); }
+		@include bp(md) { @include cell(third, $is_first: false); }
+		@include bp(lg) { @include cell(fourth, $is_first: false); }
+		
+	}
+
+	img {
+		width: 100%;
+	}
+}

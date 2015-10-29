@@ -1,0 +1,74 @@
+
+
+// ----
+// Typography
+// ----
+
+.special {
+	color: $color-accent-med;
+}
+
+.meta {
+	@include meta();
+	line-height: $line-height-sm;
+}
+
+	.meta-light {
+		line-height: $line-height-sm;
+		@include meta($color-text-light);
+	}
+
+	.meta-dark {
+		line-height: $line-height-sm;
+		@include meta($color-body-text);
+	}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+
+
+// ----
+// Elements
+// ----
+
+.edit-link {
+	font-size: $size-sml;
+	@include upperspace();
+	font-weight: $font-weight-strong;
+	color: $color-alert-danger;
+}
+
+
+
+
+// ----
+// Utility
+// ----
+
+.visually-hidden {
+    position: absolute;
+    top: -9999999px;
+    left: -999999px;
+}
+
+.teaser.lazyload {
+	opacity: 0;
+}
+
+.teaser.lazyloaded {
+	opacity: 1;
+	transition: all 700ms;
+}
+
+
+

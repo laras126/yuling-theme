@@ -1,0 +1,26 @@
+
+// ----
+// Base styles
+// ----
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	word-wrap: break-word;
+	
+	@include bp(small) {
+		word-wrap: normal;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.main {
+	@include bp(md) {
+		padding-top: $size-h1*3;
+	}
+}

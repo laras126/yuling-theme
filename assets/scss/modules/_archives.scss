@@ -1,0 +1,9 @@
+
+// Teases
+
+.archive {
+	&.-piece,
+	&.-project {
+		@include grid;
+	}
+}

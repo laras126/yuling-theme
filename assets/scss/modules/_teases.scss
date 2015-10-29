@@ -1,0 +1,33 @@
+
+// Teases
+
+.tease {
+	&.-piece {
+		@include cell(half);
+		@include bp(md) { @include cell(third, $is_first: false); }
+	}
+
+	&.-project {
+		@include cell(half);
+	}
+}
+
+.tease-title {
+	&.-piece {
+		font-size: $size-xsml;
+		color: $color-text-dark;
+
+		@include bp(sm) {
+			font-size: $size-sml;
+		}
+		
+		@include upperspace;
+		padding-bottom: $size-h2;
+	}
+}
+
+.tease-info {
+	&.-piece {
+		text-align: center;
+	}
+}

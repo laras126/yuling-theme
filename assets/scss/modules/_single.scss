@@ -1,0 +1,19 @@
+
+// Singles
+
+.single-title {
+	&.-piece {
+		@include upperspace;
+		font-size: $size-h4;
+		margin-top: 0;
+	}
+}
+
+.single-title-compliment {
+	&.-piece {
+		font-family: $font-heading;
+		font-style: italic;
+		margin: 0;
+		font-size: $size-sml;
+	}
+}

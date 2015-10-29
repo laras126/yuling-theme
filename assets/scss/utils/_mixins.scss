@@ -1,0 +1,79 @@
+
+// ----
+// Visual Design
+// ----
+
+
+
+
+// ----
+// Layout
+// ----
+
+// @mixin clearfix() {
+//     &:before,
+//     &:after {
+//         content: " "; // 1
+//         display: table; // 2
+//     }
+//     &:after {
+//         clear: both;
+//     }
+// }
+
+@mixin unstyle-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+
+// ----
+// Typography
+// ----
+
+@mixin upperspace() {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@mixin meta($color: $color-text-med, $margin: false) {
+    color: $color;
+    font-size: $size-sml;
+
+    @if $margin == false {
+        margin: 0;
+    }
+}
+
+
+
+// ----
+// Media Queries
+// ----
+
+
+// http://css-tricks.com/conditional-media-query-mixins/
+$MQs: true;
+
+@mixin bp($point) {
+    @if ($MQs) {
+        $bp-sm: "(min-width: #{$screen-sm})";
+        $bp-md: "(min-width: #{$screen-md})";
+        $bp-lg: "(min-width: #{$screen-lg})";
+        $bp-xl: "(min-width: #{$screen-xl})";
+
+        @if $point == sm {
+            @media #{$bp-sm} { @content; }
+        }
+        @else if $point == md {
+            @media #{$bp-md} { @content; }
+        }
+        @else if $point == lg {
+            @media #{$bp-lg} { @content; }
+        }
+        @else if $point == xl {
+            @media #{$bp-xl} { @content; }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+
+// Footer
+
+.footer {
+	&.-site {
+		background-color: $color-accent-med;
+	}
+}
+
+.footer-wrap {
+	@include bp(md) { 
+		@include grid; 
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.footer-section {
+	&.-colophon {
+		flex: 3 0 50%;
+	}
+}
+
+.social-list {
+	@include unstyle-list;
+	@include grid;
+}
+
+.social-item {
+	@include cell;
+	.icon {
+		fill: $color-accent-light;
+	}
+}
+
+.colophon {
+	@include meta($color-text-light);
+	a {
+		color: $color-accent-light;
+		text-decoration: underline;
+
+		&:hover {
+			color: darken($color-accent-light, 20%);
+		}
+	}
+}

@@ -1,0 +1,55 @@
+
+
+// Slider
+
+.slider {
+
+	&.-full {
+		height: auto;	
+		
+		@include bp(sm) {
+			height: 60vh;
+		}
+
+		@include bp(md) {
+			height: 90vh;
+		}
+	}
+}
+
+.slider-cell {
+	height: auto;
+	// margin-right: 10px;
+	// padding: 5px;
+	// width: 85%;
+	overflow: hidden;
+	height: 100%;
+
+	&.-full {
+		width: 100%;
+		
+		@include bp(md) {
+		}
+	  	// counter-increment: gallery-cell;
+	  	// margin-left: 10px;
+	  	// padding-top: $size-h2;
+
+	  	// background-size: cover; 
+	  	// background-repeat: no-repeat; 
+	  	// background-position: center center;
+	}
+
+	@include bp(md) {
+		// width: 70%;
+	}
+
+	img {
+		position: relative;
+		z-index: $z-mid;
+		display: block;
+		// max-height: 100%;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+

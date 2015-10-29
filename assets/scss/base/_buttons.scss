@@ -1,0 +1,42 @@
+// Button
+@mixin button( $button-color, $text-color: $white ) {
+    background: $button-color;
+    font-weight: 700;
+    border-radius: 2px;
+    color: $text-color;
+    
+    &:hover,
+    &:focus {
+        background: darken( $button-color, 10% );
+        color: $text-color;
+    }
+
+    &:active {
+        background: darken( $button-color, 40% );
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: $size-xsml;
+    margin-top: $size-sml;
+    margin-bottom: $size-sml;
+
+    &.-readmore {
+        @include button($color-accent-med);
+    }
+
+    &.-danger {
+        @include button($color-alert-danger);
+    }
+
+    &.-success {
+        @include button($color-alert-success);
+    }
+
+    &.-warning {
+        @include button($color-alert-warning);
+    }
+
+}
+

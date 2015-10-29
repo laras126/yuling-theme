@@ -1,0 +1,160 @@
+
+$gutter: $size-base;
+
+$directions: (
+    top: flex-start,
+    bottom: flex-end,
+    center: center
+);
+
+$sizes: (
+  full:   100%,
+  half:   50%,
+  third:  33.333333%,
+  fourth: 25%,
+  sixth:  16.66666667%
+);
+
+
+
+@mixin cell($size: false, $direction: false, $guttered: true, $is_first: true) {
+
+    @if $is_first == true {
+        position: relative;
+
+        @if $guttered {
+          padding-left: $gutter/2;
+          padding-right: $gutter/2;
+        }
+
+        @if $direction != false {
+          align-self: map-get($directions, $direction);
+        }   
+    }
+
+    @if $size != false {
+        flex: 0 0 map-get($sizes, $size);
+        max-width: map-get($sizes, $size); // Fix for Firefox
+    } @else {
+        flex: 1;    
+    }
+
+}
+
+@mixin grid($guttered: true, $align: false, $bp: md, $wrap: row wrap) {
+
+    display: flex;
+    flex-flow: $wrap;
+    position: relative;
+        
+    @if $align != false {
+      align-items: map-get($directions, $align);
+    }
+        
+    @if $guttered {
+      margin-left: -$gutter/2;
+      margin-right: -$gutter/2;
+    }
+}
+
+
+@mixin contain($size: md) {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+
+    @if $size == sm  {
+        max-width: $screen-sm;    
+    } @else if $size == md  {
+        max-width: $screen-md;    
+    } @else if $size == lg  {
+        max-width: $screen-lg;    
+    } 
+}
+
+
+/// @group containers
+// TODO: this could be a map
+
+.contain {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+}
+
+.contain--lg {
+    @extend .contain;
+    max-width: $screen-lg;
+}
+
+.contain--md {
+    @extend .contain;
+    max-width: $screen-md;
+}
+
+.contain--sm {
+    @extend .contain;
+    max-width: $screen-sm;
+}
+
+.contain--xl {
+    @extend .contain;
+    max-width: $screen-xl;
+}
+
+
+
+// Bleeds
+@mixin bleed($size: -3%) {
+	@include bp(md) {
+		margin-right: $size;
+    margin-left: $size;
+	}
+}
+
+.bleed--baby {
+	@include bleed;
+}
+
+.bleed--big {
+  @include bleed(-10%);
+}
+
+
+
+// Prototyping classes
+
+.grid {
+    @include bp(sm) {
+        @include grid;
+    }
+}
+
+.grid--center {
+    @include bp(sm) {
+        align-items: center;
+    }
+}
+
+.grid--right {
+    @include bp(sm) {
+        align-items: right;
+    }   
+}
+
+.cell {
+    @include cell;
+}
+
+.cell--right {
+    @include bp(sm) {
+        align-self: right;
+    }   
+}
+
+.cell--half {
+    @include bp(sm) {
+        @include cell($size: half);
+    }
+}
+
