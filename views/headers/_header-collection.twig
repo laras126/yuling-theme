@@ -16,7 +16,7 @@
 	<div class="teaser lazyload slider">
 	{% for image in term.collection_gallery %}
 		<div class="slider-cell">
-			<img data-src="{{image.url|resize(800, 800)}}" class="lazyload" alt="{{image.title}}">
+			<img data-src="{{image.url|resize(800)}}" class="lazyload" alt="{{image.title}}">
 		</div>
 	{% endfor %}
 	</div>
