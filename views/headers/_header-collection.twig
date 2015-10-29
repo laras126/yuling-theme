@@ -5,7 +5,7 @@
 {% block header_content %}
 	
 	<div class="teaser lazyload banner">
-		<img data-src="{{TimberImage(term.featured_image).src|resize(1800)}}" src="{{placeholder}}" class="lazyload" alt="{{term.name}} Thumbnail">
+		<img data-src="{{TimberImage(term.featured_image).src|resize(1800)}}" src="{{placeholder}}" class="lazyload banner-img" alt="{{term.name}} Thumbnail">
 	</div>
 	
 	<div class="contain--sm text-center">
@@ -13,8 +13,16 @@
 		<p>{{term.description}}</p>
 	</div>
 	
+	<div class="teaser lazyload slider">
+	{% for image in term.collection_gallery %}
+		<div class="slider-cell">
+			<img data-src="{{image.url|resize(800, 800)}}" class="lazyload" alt="{{image.title}}">
+		</div>
+	{% endfor %}
+	</div>
+	
 	<div class="contain--xl">
-		{% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %}
+		{# {% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %} #}
 	</div>
 {% endblock %}
 

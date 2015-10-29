@@ -682,7 +682,8 @@ img {
   margin-bottom: 1.1rem; }
 
 .header.-site {
-  background-color: black; }
+  background-color: black;
+  padding-bottom: 0.825rem; }
   @media (min-width: 40em) {
     .header.-site {
       position: fixed;
@@ -696,6 +697,10 @@ img {
   margin: 0 auto;
   width: 90%;
   max-width: 16.5rem; }
+
+.banner {
+  overflow: hidden;
+  max-height: 80vh; }
 
 .title.-site {
   margin-top: 0;
@@ -881,6 +886,18 @@ img {
     text-decoration: underline; }
     .colophon a:hover {
       color: #b6b6ad; }
+
+.slider {
+  height: 90vh;
+  max-height: auto; }
+
+.slider-cell {
+  height: 100%;
+  width: 45%;
+  background-color: #000000;
+  margin-right: 0.33rem; }
+  .slider-cell img {
+    width: 100%; }
 
 .nav-prev,
 .nav-next {
