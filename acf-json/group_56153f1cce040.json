@@ -50,6 +50,24 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5632a185c345e",
+            "label": "Long Description",
+            "name": "long_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "text_based",
+            "media_upload": 1
         }
     ],
     "location": [
@@ -69,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1444244665
+    "modified": 1446158745
 }
