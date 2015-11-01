@@ -1,17 +1,11 @@
 
 //----
-//---- Elements
+//---- Base element styles
 //----
 
-
-// Root elements styles
-
-@import 'site';
-// @import 'typography';
-// @import 'forms';
-// @import 'lists';
-// // @import 'buttons';
-// @import 'tables';
-// // @import 'icons';
-// // @import 'spinner';
+@import 'typography';
+@import 'buttons';
+@import 'forms';
+@import 'tables';
+@import 'icons';
 
