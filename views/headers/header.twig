@@ -26,9 +26,13 @@
 	{% endif %}
 
 	<div class="contain--md">
-		<h1>{{post.post_title}}</h1>
-		<p>{{post.header_tagline}}</p>
-		<p>{{post.header_summary}}</p>
+		<h1 class="title -page">{{post.post_title}}</h1>
+		{% if post.header_tagline %}
+			<p>{{post.header_tagline}}</p>
+		{% endif %}
+		{% if post.header_tagline %}
+			<p>{{post.header_summary}}</p>
+		{% endif %}
 	</div>	
 
 	{% endblock %}
