@@ -550,7 +550,7 @@ http://flickity.metafizzy.co
   max-width: 40em; }
 
 .contain--sm {
-  max-width: 30em; }
+  max-width: 35em; }
 
 .contain--xl {
   max-width: 60em; }
@@ -565,7 +565,7 @@ http://flickity.metafizzy.co
     margin-right: -10%;
     margin-left: -10%; } }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .grid {
     display: -webkit-box;
     display: -webkit-flex;
@@ -578,14 +578,14 @@ http://flickity.metafizzy.co
     margin-left: -0.55rem;
     margin-right: -0.55rem; } }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .grid--center {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; } }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .grid--right {
     -webkit-box-align: right;
     -webkit-align-items: right;
@@ -601,13 +601,13 @@ http://flickity.metafizzy.co
       -ms-flex: 1;
           flex: 1; }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .cell--right {
     -webkit-align-self: right;
         -ms-flex-item-align: right;
             align-self: right; } }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .cell--half {
     position: relative;
     padding-left: 0.55rem;
@@ -929,7 +929,7 @@ img {
       max-height: none; } }
   .nav-list.open {
     padding-top: 1.1rem;
-    max-height: 30em;
+    max-height: 35em;
     -webkit-transition: all 0.5s ease;
          -o-transition: all 0.5s ease;
             transition: all 0.5s ease; }
@@ -1014,12 +1014,15 @@ img {
       z-index: 4;
       top: 0; } }
 
+.title.-page {
+  text-align: center; }
+
 .logo-text-logo {
   padding-top: 1.43rem;
   display: block;
   margin: 0 auto;
   max-width: 60%; }
-  @media (min-width: 30em) {
+  @media (min-width: 35em) {
     .logo-text-logo {
       max-width: 16.5rem; } }
 
@@ -1034,7 +1037,7 @@ img {
 
 .slider.-full {
   height: auto; }
-  @media (min-width: 30em) {
+  @media (min-width: 35em) {
     .slider.-full {
       height: 60vh; } }
   @media (min-width: 40em) {
@@ -1196,7 +1199,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-bottom: 2.53rem; }
-  @media (min-width: 30em) {
+  @media (min-width: 35em) {
     .tease-title.-piece {
       font-size: 0.825rem; } }
 
@@ -1215,6 +1218,10 @@ img {
   position: relative;
   margin-left: -0.55rem;
   margin-right: -0.55rem; }
+
+.block_list-list {
+  list-style-type: none;
+  padding-left: 0; }
 
 .gallery {
   display: -webkit-box;
@@ -1241,7 +1248,7 @@ img {
           flex: 0 0 50%;
   max-width: 50%; }
 
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .gallery-thumb.-collection {
     position: relative;
     padding-left: 0.55rem;
