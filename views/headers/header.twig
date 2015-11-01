@@ -7,12 +7,6 @@
 <header{{ class ? h_class }}{{role ? h_role }}>
 	{% block header_content %}
 
-	<div class="contain--md">
-		<h1>{{post.post_title}}</h1>
-		<p>{{post.header_tagline}}</p>
-		<p>{{post.header_summary}}</p>
-	</div>	
-
 	{% if post.header_display == 'image' %}
 		<div class="contain--lg">
 			{% set desktop = TimberImage(post.header_image_desktop).src %}
@@ -21,15 +15,21 @@
 
 			{# TODO: Adjust dimensions once we decide on them #}
 			<picture>
-				<source srcset="{{desktop|resize(1200, 800)}}" media="(min-width: 1100px)">
-				<source srcset="{{tablet ? tablet|resize(900, 600) : desktop|resize(800, 600)}}" media="(min-width: 736px)">
+				<source srcset="{{desktop|resize(1200, 500)}}" media="(min-width: 1100px)">
+				<source srcset="{{tablet ? tablet|resize(900, 300) : desktop|resize(900, 300)}}" media="(min-width: 736px)">
 				{# TODO: Better placeholder #}
-				<img srcset="{{mobile ? mobile|resize(700, 600) : desktop|resize(500, 400)}}" src="{{site.theme.link}}/assets/img/util/placeholder-single-desktop.png" alt="{{post.post_title}}">
+				<img srcset="{{mobile ? mobile|resize(600, 400) : desktop|resize(600, 400)}}" src="{{site.theme.link}}/assets/img/util/placeholder-single-desktop.png" alt="{{post.post_title}}">
 			</picture>
 		</div>
 	{% elseif post.header_display == 'text'%}
 		{# TODO: there will probably be some unique stuff here, maybe a different display of the header info #}
 	{% endif %}
+
+	<div class="contain--md">
+		<h1>{{post.post_title}}</h1>
+		<p>{{post.header_tagline}}</p>
+		<p>{{post.header_summary}}</p>
+	</div>	
 
 	{% endblock %}
 </header>
