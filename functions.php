@@ -238,3 +238,74 @@
 	  add_action('wp_footer', 'mtn_google_analytics', 20);
 	}
 
+
+
+
+
+
+	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
+	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
+	if ( is_admin() ) { // check to make sure we aren't on the front end
+		add_filter('wpseo_pre_analysis_post_content', 'yld_add_custom_to_yoast');
+
+		function yld_add_custom_to_yoast( $content ) {
+			global $post;
+			$pid = $post->ID;
+			
+			$custom_content = '';
+
+			$custom = get_post_custom($pid);
+			unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
+
+			foreach( $custom as $key => $value ) {
+				if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
+				  $custom_content .= $value[0] . ' ';
+				}
+			}
+
+			$content = $content . ' ' . $custom_content;
+			return $content;
+
+			remove_filter('wpseo_pre_analysis_post_content', 'mtn_add_custom_to_yoast'); // don't let WP execute this twice
+		}
+	}
+
+
+	// Extend WordPress search to include custom fields
+	// http://adambalee.com
+
+	function cf_search_join( $join ) {
+	    global $wpdb;
+
+	    if ( is_search() ) {    
+	        $join .=' LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
+	    }
+	    
+	    return $join;
+	}
+	add_filter('posts_join', 'cf_search_join' );
+
+	function cf_search_where( $where ) {
+	    global $pagenow, $wpdb;
+	   
+	    if ( is_search() ) {
+	        $where = preg_replace(
+	            "/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+	            "(".$wpdb->posts.".post_title LIKE $1) OR (".$wpdb->postmeta.".meta_value LIKE $1)", $where );
+	    }
+
+	    return $where;
+	}
+	add_filter( 'posts_where', 'cf_search_where' );
+
+	function cf_search_distinct( $where ) {
+	    global $wpdb;
+
+	    if ( is_search() ) {
+	        return "DISTINCT";
+	    }
+
+	    return $where;
+	}
+	add_filter( 'posts_distinct', 'cf_search_distinct' );
+
