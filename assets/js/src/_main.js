@@ -38,7 +38,8 @@ $(document).ready(function() {
 	// Plugins
 	$('.slider').flickity({
 		cellAlign: 'left',
-		contain: true
+		contain: true,
+		imagesLoaded: true
 	});
 
 
