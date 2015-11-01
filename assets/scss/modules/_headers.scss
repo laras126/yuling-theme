@@ -13,6 +13,12 @@
 	}
 }
 
+.title {
+	&.-page {
+		text-align: center;
+	}
+}
+
 .logo-text-logo {
 	// fill: $color-accent-med;
 	padding-top: $size-h4;
