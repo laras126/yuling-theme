@@ -26,10 +26,10 @@
         },
         {
             "key": "field_545a8498b0f4c",
-            "label": "Image - Desktop (1200x800)",
+            "label": "Image - Desktop (1200 x 500)",
             "name": "header_image_desktop",
             "type": "image",
-            "instructions": "The header image for large devices.",
+            "instructions": "The header image for large devices. Image will automatically resize.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -58,10 +58,10 @@
         },
         {
             "key": "field_558ade731439e",
-            "label": "Image - Tablet (800x600)",
+            "label": "Image - Tablet (900x300)",
             "name": "header_image_tablet",
             "type": "image",
-            "instructions": "The image to appear on tablet devices. Leave blank to use desktop image.",
+            "instructions": "The image to appear on tablet devices. Leave blank to use desktop image. Image will automatically crop and resize.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -90,7 +90,7 @@
         },
         {
             "key": "field_558ade2a1439d",
-            "label": "Image - Mobile (500x400)",
+            "label": "Image - Mobile (600x400)",
             "name": "header_image_mobile",
             "type": "image",
             "instructions": "Header image to appear on small screens. Leave blank if the desktop image suffices.",
@@ -208,5 +208,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1444232984
+    "modified": 1446148048
 }
