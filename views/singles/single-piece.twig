@@ -20,6 +20,11 @@
 					<p class="single-title-compliment -piece">{{t.name}}</p>
 				{% endfor %}
 				<h1 class="single-title -piece">{{post.title}}</h1>
+				
+				{{post.long_description|wpautop}}
+
+				<h4>{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
+
 				<ul>
 					{% if post.size %}
 						<li>{{post.size}}</li>
@@ -42,12 +47,13 @@
 						<li>{{info.title}}: {{info.value}}</li>
 					{% endfor %}
 				</ul>
+
+				<h4>{{concierge_text_title ? concierge_text_title : 'Concierge'}}</h4>
+				{{concierge_text}}
+				
 			</div>
 		</div> <!-- /.grid -->
 		
-		<div class="long-description">
-			{{post.long_description|wpautop}}
-		</div>
 	</div>
 	
 	{% for block in post.get_field('blocks') %} 
