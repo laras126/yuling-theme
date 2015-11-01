@@ -13,11 +13,11 @@
 		<p class="list-description">{{block.list_description}}</p>
 	{% endif %}
 
-	<ul class="block_list-list list--{{display}} list--{{type}}">
+	<ul class="block_list-list -{{display}} -{{type}}">
 		
 		{% for item in block.list_type_freeform %}
 			<li class="list-item--{{type}}">
-				<h5 class="list-item-title">{{item.item_title}}</h5>
+				<h4 class="list-item-title">{{item.item_title}}</h4>
 				<div class="list-item-desc">
 					{{item.item_description}}
 				</div>
