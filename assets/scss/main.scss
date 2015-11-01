@@ -1,16 +1,5 @@
 
-
-@import '_utils/all'; // Mixins, variables, and tools that do not output code
-// @import '_global/all'; // Global selectors
-
+@import 'utils/all'; // Mixins, variables, and tools that do not output code
 @import 'base/all';
-@import 'headers/all';
-@import 'navs/all';
-@import 'components/all';
-@import 'teases/all';
-@import 'blocks/all';
-@import 'footers/all';
-@import 'site/all';
-
-// @import 'utility'; // For prototyping and should not be used in production
+@import 'modules/all';
 @import 'holding'; // Styles that need to be removed and handled differently
