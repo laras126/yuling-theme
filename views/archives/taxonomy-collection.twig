@@ -7,17 +7,30 @@
 
 {% block content %}
 
-		{# TODO: remove grid classes in production #}
+	{# TODO: remove grid classes in production #}
 	<div class="contain--lg">
 		<div class="grid">
+			<div class="cell--half teaser lazyload">
+				<img data-src="{{TimberImage(term.featured_image).src|resize(800)}}" src="{{placeholder}}" class="lazyload banner-img" alt="{{term.name}} Thumbnail">
+			</div>
+			<div class="cell--half">
+				{{term.long_description}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="contain--lg">
+		<div class="archive -piece">
 			{% for post in posts %}
 				{% include 'teases/_tease-' ~ post.post_type ~ '.twig' with { class: 'cell--half' } %}
 			{% endfor %}
 		</div>
 	</div>
+
 	<div class="contain--md">
 		{% for block in term.blocks %}
 			{% include 'blocks/block-logic.twig' %}
 		{% endfor %}
 	</div>
+
 {% endblock %}
