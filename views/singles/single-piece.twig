@@ -23,33 +23,40 @@
 				
 				{{post.long_description|wpautop}}
 
-				<h4>{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
+				<aside class="single-sidebar -piece">
 
-				<ul>
-					{% if post.size %}
-						<li>{{post.size}}</li>
-					{% endif %}
-					{% if post.pricing %}
-						<li>{{post.pricing}}</li>
-					{% endif %}
-					{% if post.double_sided %}<li>Double Sided</li>{% endif %}
-						{% if post.styles_of_printing %}
-						<li>
-							<p>Available in:</p>
-							<ul>
-							{% for style in post.styles_of_printing %}
-								<li>{{style}}</li>
-							{% endfor %}
-							</ul>
-						</li>
-					{% endif %}
-					{% for info in post.get_field('freeform_info') %}
-						<li>{{info.title}}: {{info.value}}</li>
-					{% endfor %}
-				</ul>
+					<h4 class="single-sidebar -title accordion-trigger">{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
 
-				<h4>{{concierge_text_title ? concierge_text_title : 'Concierge'}}</h4>
-				{{concierge_text}}
+					<ul class="single-sidebar -text accordion-target">
+						{% if post.size %}
+							<li>{{post.size}}</li>
+						{% endif %}
+						{% if post.pricing %}
+							<li>{{post.pricing}}</li>
+						{% endif %}
+						{% if post.double_sided %}<li>Double Sided</li>{% endif %}
+							{% if post.styles_of_printing %}
+							<li>
+								<p>Available in:</p>
+								<ul>
+								{% for style in post.styles_of_printing %}
+									<li>{{style}}</li>
+								{% endfor %}
+								</ul>
+							</li>
+						{% endif %}
+						{% for info in post.get_field('freeform_info') %}
+							<li>{{info.title}}: {{info.value}}</li>
+						{% endfor %}
+					</ul>
+
+					<h4 class="single-sidebar -title accordion-trigger">{{concierge_text_title ? concierge_text_title : 'Concierge'}}</h4>
+					<p class="accordion-target">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis veritatis error, minima. Id ducimus quasi fugit voluptates illo autem, tenetur eaque enim nesciunt omnis eum, labore, officiis, est facere eligendi!
+						{{concierge_text}}
+					</p>
+					
+				</aside>
 				
 			</div>
 		</div> <!-- /.grid -->
