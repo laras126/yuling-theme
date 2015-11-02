@@ -16,6 +16,16 @@ $context['post'] = $post;
 $context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 
+
+// Adding some logic here - may be better in single-piece.php, but okay for now unless it gets more extensive.
+if ( get_post_type() == 'piece') {
+	$piece_args = array(
+		'post_type' => 'piece'
+	);
+	$context['pieces'] = Timber::get_posts($piece_args);
+	$context['concierge_text'] = get_field('concierge_text', 'options');
+}
+
 if (post_password_required($post->ID)){
 	Timber::render('single-password.twig', $context);
 } else {
