@@ -17,3 +17,11 @@
 		font-size: $size-sml;
 	}
 }
+
+.single-sidebar {
+	&.-title {
+		@include upperspace;
+		border-top: 1px solid;
+		padding-top: $size-sml;
+	}
+}
