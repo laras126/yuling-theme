@@ -6,6 +6,8 @@
 		{% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %}
 	</div>
 	
+	<p>Client: {{post.client_link ? '<a href="' ~ post.client_link ~ '">'}}{{client}}{{post.client_link ? '</a>'}}</p> 
+
 	{% for block in post.get_field('blocks') %} 
 		{% include 'blocks/block-logic.twig' %}
 	{% endfor %}
