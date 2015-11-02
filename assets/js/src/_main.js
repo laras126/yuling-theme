@@ -35,13 +35,6 @@ $(document).ready(function() {
 		});
 	});
 
-	// Plugins
-	$('.slider').flickity({
-		cellAlign: 'left',
-		contain: true,
-		imagesLoaded: true
-	});
-
 
 	// ----
 	// Submenu
@@ -82,7 +75,6 @@ $(document).ready(function() {
  //        return false;
 
 	// });
-
 
 
 
@@ -165,7 +157,13 @@ $(document).ready(function() {
 	// Plugins
 	// ----
 
-	$('.site-main').fitVids();
+	$('.main').fitVids();
+
+	$('.slider').flickity({
+		cellAlign: 'left',
+		contain: true,
+		imagesLoaded: true
+	});
 
 
 	// ----
