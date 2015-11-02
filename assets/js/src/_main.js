@@ -44,6 +44,29 @@ $(document).ready(function() {
 
 
 	// ----
+	// Toggle Panels (detailed asides on single-piece)
+	// ----
+
+      var allTargets = $('.accordion-target').hide();
+              
+      $('.accordion-trigger').click(function() {
+          $this = $(this);
+          $target =  $this.next('.accordion-target');
+
+          $this.toggleClass('active');
+          $('.accordion-trigger').not($this).removeClass('active');
+
+          if($target.hasClass('active')){
+            $target.removeClass('active').slideUp(); 
+          }else{
+            allTargets.removeClass('active').slideUp();
+            $target.addClass('active').slideDown();
+          }
+          
+        return false;
+      });
+
+	// ----
 	// Submenu
 	// ----
 

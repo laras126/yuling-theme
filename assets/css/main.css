@@ -621,6 +621,20 @@ http://flickity.metafizzy.co
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown; }
 
+.accordion-trigger {
+  position: relative; }
+  .accordion-trigger:after {
+    content: '';
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: rotate(180deg);
+    height: 0.66rem;
+    width: 0.66rem;
+    background: url(../img/svg-min/arrow-up.min.svg) center no-repeat; }
+  .accordion-trigger.active:after {
+    transform: rotate(0); }
+
 html {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -1170,6 +1184,12 @@ img {
   font-style: italic;
   margin: 0;
   font-size: 0.825rem; }
+
+.single-sidebar.-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid;
+  padding-top: 0.825rem; }
 
 .tax-collection .main {
   padding-top: 0; }
