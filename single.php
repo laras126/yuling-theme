@@ -20,7 +20,8 @@ $context['comment_form'] = TimberHelper::get_comment_form();
 // Adding some logic here - may be better in single-piece.php, but okay for now unless it gets more extensive.
 if ( get_post_type() == 'piece') {
 	$piece_args = array(
-		'post_type' => 'piece'
+		'post_type' => 'piece',
+		'post__not_in' => array( $post->ID ) 
 	);
 	$context['pieces'] = Timber::get_posts($piece_args);
 	$context['concierge_text'] = get_field('concierge_text', 'options');
