@@ -1,9 +1,25 @@
 {% extends 'footers/footer.twig' %}
 
 {% block footer_content %}
-	<div class="slider">
-		{% for post in pieces %}
-			{% include 'teases/_tease-' ~ post.post_type ~ '.twig' with { class: 'cell--half' } %}
-		{% endfor %}
+	<div class="contain--lg">
+		<h4 class="single-footer-title">In This Collection</h4>
+		<div class="thumb-slider teaser lazyload" data-expand="-20">
+			{% for post in pieces %}
+				<div class="thumb">
+					<a href="{{post.link}}">
+					{% if post.thumbnail %}
+						<img data-src="{{post.thumbnail.src|resize(500, 500)}}" alt="{{post.post_title}} Thumbnail" src="{{placeholder}}" class="lazyload">
+					{% else %}
+						{# TODO: replace this with something we serve. #}
+						<img src="http://placehold.it/500x500" alt="Default Thumbnail">
+					{% endif %}
+					<div class="tease-info -{{post.post_type}}">
+						<h4 class="tease-title -{{post.post_type}}">{{post.post_title}}</h4>
+						{% if post.header_tagline %}<p>{{post.header_tagline}}</p>{% endif %}
+					</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}

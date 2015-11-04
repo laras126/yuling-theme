@@ -47,9 +47,27 @@
 		position: relative;
 		z-index: $z-mid;
 		display: block;
-		// max-height: 100%;
 		margin: 0 auto;
 		width: 100%;
 	}
 }
 
+.thumb {
+	width: 50%;
+	
+	@include bp(sm) {
+		width: 25%;
+	}
+
+	@include bp(lg) {
+		width: 20%;
+	}
+
+	@include bp(xl) {
+		width: 12.5%;
+	}
+
+	img {
+		width: 100%;
+	}
+}
