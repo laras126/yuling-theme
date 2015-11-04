@@ -8,6 +8,7 @@
 		right: 1%;
 		top: 50%;
 		transform: rotate(180deg);
+		transition: 0.25s ease all;
 		height: $size-xsml;
 		width: $size-xsml;
 		background: url(../img/svg-min/arrow-up.min.svg) center no-repeat;
