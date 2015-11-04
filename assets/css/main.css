@@ -918,21 +918,18 @@ img {
   list-style-type: none;
   padding-left: 0;
   text-align: center;
-  -webkit-transition: all 0.25s ease;
-       -o-transition: all 0.25s ease;
-          transition: all 0.25s ease;
   max-height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
   @media (min-width: 40em) {
     .nav-list {
       padding-top: 0;
       max-height: none; } }
   .nav-list.open {
     padding-top: 1.1rem;
-    max-height: 35em;
-    -webkit-transition: all 0.5s ease;
-         -o-transition: all 0.5s ease;
-            transition: all 0.5s ease; }
+    max-height: 35em; }
   .nav-list.-site {
     margin-top: 0; }
     @media (min-width: 40em) {
