@@ -544,7 +544,7 @@ http://flickity.metafizzy.co
   position: relative; }
 
 .contain--lg {
-  max-width: 50em; }
+  max-width: 57em; }
 
 .contain--md {
   max-width: 40em; }
@@ -553,7 +553,7 @@ http://flickity.metafizzy.co
   max-width: 35em; }
 
 .contain--xl {
-  max-width: 60em; }
+  max-width: 70em; }
 
 @media (min-width: 40em) {
   .bleed--baby {
@@ -937,7 +937,7 @@ img {
   margin: 0 auto;
   width: 90%;
   position: relative;
-  max-width: 50em; }
+  max-width: 57em; }
 
 .nav-list {
   list-style-type: none;
@@ -1078,6 +1078,25 @@ img {
     display: block;
     margin: 0 auto;
     width: 100%; }
+
+.thumb {
+  width: 50%; }
+  @media (min-width: 35em) {
+    .thumb {
+      width: 40%; } }
+  @media (min-width: 57em) {
+    .thumb {
+      width: 20%; } }
+  .thumb img {
+    width: 100%; }
+
+@media (min-width: 40em) {
+  .flickity-prev-next-button.previous {
+    left: -44px; } }
+
+@media (min-width: 40em) {
+  .flickity-prev-next-button.next {
+    right: -44px; } }
 
 .banner-img {
   width: 100%; }
@@ -1289,7 +1308,7 @@ img {
             flex: 0 0 33.333333%;
     max-width: 33.333333%; } }
 
-@media (min-width: 50em) {
+@media (min-width: 57em) {
   .gallery-thumb.-collection {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 25%;
@@ -1326,7 +1345,8 @@ img {
   list-style-type: none;
   padding-left: 0; }
 
-.single-sidebar-title {
+.single-sidebar-title,
+.single-footer-title {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.825rem;
