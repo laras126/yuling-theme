@@ -35,10 +35,9 @@
 	@include unstyle-list;
 }
 
-.single-sidebar-title,
+.single-sidebar-title {
+	@include detail-title(top);
+}
 .single-footer-title {
-	@include upperspace;
-	font-size: $size-sml;
-	border-top: 1px solid;
-	padding-top: $size-sml;
+	@include detail-title(bottom);
 }
