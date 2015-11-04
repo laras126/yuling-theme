@@ -673,6 +673,9 @@ http://flickity.metafizzy.co
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
+    -webkit-transition: 0.25s ease all;
+         -o-transition: 0.25s ease all;
+            transition: 0.25s ease all;
     height: 0.66rem;
     width: 0.66rem;
     background: url(../img/svg-min/arrow-up.min.svg) center no-repeat; }
@@ -1080,7 +1083,8 @@ img {
     width: 100%; }
 
 .thumb {
-  width: 50%; }
+  padding-top: 1.98rem;
+  width: 75%; }
   @media (min-width: 35em) {
     .thumb {
       width: 40%; } }
@@ -1090,11 +1094,11 @@ img {
   .thumb img {
     width: 100%; }
 
-@media (min-width: 40em) {
+@media (min-width: 57em) {
   .flickity-prev-next-button.previous {
     left: -44px; } }
 
-@media (min-width: 40em) {
+@media (min-width: 57em) {
   .flickity-prev-next-button.next {
     right: -44px; } }
 
@@ -1345,13 +1349,19 @@ img {
   list-style-type: none;
   padding-left: 0; }
 
-.single-sidebar-title,
-.single-footer-title {
+.single-sidebar-title {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.825rem;
   border-top: 1px solid;
   padding-top: 0.825rem; }
+
+.single-footer-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+  border-bottom: 1px solid;
+  padding-bottom: 0.825rem; }
 
 .tax-collection .main {
   padding-top: 0; }
