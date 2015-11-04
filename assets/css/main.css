@@ -661,6 +661,31 @@ http://flickity.metafizzy.co
   -o-animation-name: fadeInDown;
      animation-name: fadeInDown; }
 
+.accordion-trigger {
+  position: relative;
+  cursor: pointer; }
+  .accordion-trigger:after {
+    content: '';
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+    height: 0.66rem;
+    width: 0.66rem;
+    background: url(../img/svg-min/arrow-up.min.svg) center no-repeat; }
+  .accordion-trigger.active:after {
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+         -o-transform: rotate(0);
+            transform: rotate(0); }
+
+.accordion-target {
+  max-height: 0;
+  overflow: hidden; }
+
 html {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -1274,6 +1299,39 @@ img {
 
 .gallery-thumb img {
   width: 100%; }
+
+.single-title.-piece {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.43rem;
+  margin-top: 0; }
+
+.single-title-compliment.-piece {
+  font-family: "ltc-bodoni-175", serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 0.825rem; }
+
+.single-sidebar-text {
+  font-size: 0.825rem; }
+
+.single-sidebar-list {
+  font-size: 0.825rem;
+  list-style-type: none;
+  padding-left: 0; }
+  .single-sidebar-list p {
+    margin: 0; }
+
+.single-sidebar-sublist {
+  list-style-type: none;
+  padding-left: 0; }
+
+.single-sidebar-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+  border-top: 1px solid;
+  padding-top: 0.825rem; }
 
 .tax-collection .main {
   padding-top: 0; }

@@ -1,6 +1,9 @@
 {% extends 'footers/footer.twig' %}
 
 {% block footer_content %}
-	<h2>Loop of all pieces in this collection</h2>
-	{% for piece in seq %}{% endfor %}
+	<div class="slider">
+		{% for post in pieces %}
+			{% include 'teases/_tease-' ~ post.post_type ~ '.twig' with { class: 'cell--half' } %}
+		{% endfor %}
+	</div>
 {% endblock %}

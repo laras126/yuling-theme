@@ -17,3 +17,27 @@
 		font-size: $size-sml;
 	}
 }
+
+.single-sidebar-text {
+	@include detail-text;
+}
+
+.single-sidebar-list {
+	@include detail-text;
+	@include unstyle-list;
+
+	p {
+		margin: 0;
+	}
+}
+
+.single-sidebar-sublist {
+	@include unstyle-list;
+}
+
+.single-sidebar-title {
+	@include upperspace;
+	font-size: $size-sml;
+	border-top: 1px solid;
+	padding-top: $size-sml;
+}

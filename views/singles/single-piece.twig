@@ -15,41 +15,52 @@
 					src="{{placeholder}}"
 					class="lazyload" />
 			</div>
+
 			<div class="cell--half">
+				
 				{% for t in post.get_terms('collection')|slice(0,1) %}
 					<p class="single-title-compliment -piece">{{t.name}}</p>
 				{% endfor %}
+
 				<h1 class="single-title -piece">{{post.title}}</h1>
+				<div class="single-sidebar-text">
+					{{post.long_description|wpautop}}
+				</div>
 				
-				{{post.long_description|wpautop}}
+				<aside class="single-sidebar -piece">
 
-				<h4>{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
+					<h4 class="single-sidebar-title accordion-trigger">{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
 
-				<ul>
-					{% if post.size %}
-						<li>{{post.size}}</li>
-					{% endif %}
-					{% if post.pricing %}
-						<li>{{post.pricing}}</li>
-					{% endif %}
-					{% if post.double_sided %}<li>Double Sided</li>{% endif %}
-						{% if post.styles_of_printing %}
-						<li>
-							<p>Available in:</p>
-							<ul>
-							{% for style in post.styles_of_printing %}
-								<li>{{style}}</li>
-							{% endfor %}
-							</ul>
-						</li>
-					{% endif %}
-					{% for info in post.get_field('freeform_info') %}
-						<li>{{info.title}}: {{info.value}}</li>
-					{% endfor %}
-				</ul>
+					<ul class="single-sidebar-list accordion-target">
+						{% if post.size %}
+							<li>{{post.size}}</li>
+						{% endif %}
+						{% if post.pricing %}
+							<li>{{post.pricing}}</li>
+						{% endif %}
+						{% if post.double_sided %}<li>Double Sided</li>{% endif %}
+							{% if post.styles_of_printing %}
+							<li>
+								<p class="single-sidebar-sublist-title">Available in:</p>
+								<ul class="single-sidebar-sublist">
+								{% for style in post.styles_of_printing %}
+									<li>{{style}}</li>
+								{% endfor %}
+								</ul>
+							</li>
+						{% endif %}
+						{% for info in post.get_field('freeform_info') %}
+							<li>{{info.title}}: {{info.value}}</li>
+						{% endfor %}
+					</ul>
 
-				<h4>{{concierge_text_title ? concierge_text_title : 'Concierge'}}</h4>
-				{{concierge_text}}
+					<h4 class="single-sidebar-title accordion-trigger">{{concierge_text_title ? concierge_text_title : 'Concierge'}}</h4>
+					
+					<div class="accordion-target">
+						{{concierge_text}}
+					</div>
+					
+				</aside>
 				
 			</div>
 		</div> <!-- /.grid -->
