@@ -55,7 +55,7 @@
 // Related pieces slider thumb cells
 .thumb {
 	padding-top: $size-h3;
-	width: 50%;
+	width: 75%;
 	
 	@include bp(sm) {
 		width: 40%;
@@ -71,13 +71,13 @@
 }
 
 .flickity-prev-next-button.previous {
-	@include bp(md) {
+	@include bp(lg) {
 		left: -44px;
 	}
 }
 
 .flickity-prev-next-button.next {
-	@include bp(md) {
+	@include bp(lg) {
 		right: -44px;
 	}
 }
