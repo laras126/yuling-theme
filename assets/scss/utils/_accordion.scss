@@ -1,5 +1,6 @@
 .accordion-trigger {
 	position: relative;
+	cursor: pointer;
 
 	&:after {
 		content: '';
@@ -17,4 +18,9 @@
 			transform: rotate(0);
 		}
 	}
+}
+
+.accordion-target {
+	max-height: 0;
+	overflow: hidden;
 }
