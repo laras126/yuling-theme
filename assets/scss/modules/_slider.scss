@@ -54,6 +54,7 @@
 
 // Related pieces slider thumb cells
 .thumb {
+	padding-top: $size-h3;
 	width: 50%;
 	
 	@include bp(sm) {
