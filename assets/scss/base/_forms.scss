@@ -14,7 +14,7 @@ label, select {
 }
 
 label {
-	margin-top: $size-h4;
+	// margin-top: $size-h4;
 	margin-bottom: $size-xsml;
 	font-family: $font-form;
 }
@@ -48,15 +48,14 @@ input[type="week"],
 input[type="number"],
 input[type="email"],
 input[type="url"],
-input[type="search"],
 input[type="tel"] {
 	
 	width: 100%;
 	border: $border-accent;
 
 	&:focus {
-		border-color: $color-alert-info;
-		background-color: $color-accent-vlight;
+		// border-color: $color-alert-info;
+		// background-color: $color-accent-vlight;
 	}
 }
 
@@ -102,3 +101,38 @@ fieldset {
 	border: 0;
 }
 
+// Search
+.search-form {
+	@include grid;
+	justify-content: center;
+}
+
+input[type="search"] {
+	@include cell;
+	@include meta($color-rotate-text);
+	background-color: transparent;
+	border: none;
+	transition: 0.3s ease all;
+	padding-top: $size-xsml;
+
+	&:focus,
+	.search & {
+		width: auto;
+	}
+}
+
+.search-label {
+	margin-top: $size-xsml;
+	margin-bottom: 0;
+	border-right: $border-accent-light;
+	@include cell(sixth, $guttered: false);
+}
+
+.search-icon {
+	fill: $color-accent-light;
+	max-width: $size-sml;
+}
+
+.search-submit {
+	display: none;
+}
