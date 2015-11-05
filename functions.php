@@ -19,6 +19,7 @@
 			add_action('init', array($this, 'register_post_types'));
 			add_action('init', array($this, 'register_taxonomies'));
 			add_action('init', array($this, 'tsk_acf_utils'));
+			add_action('widgets_init', array($this, 'register_sidebars'));
 			parent::__construct();
 		}
 
@@ -38,6 +39,10 @@
 			require('lib/menus.php');
 		}
 
+		function register_sidebars() {
+			require('lib/widgets.php');
+		}
+
 		function tsk_acf_utils() {
 			require('lib/acf-utils.php');
 		}
@@ -46,7 +51,9 @@
 			$context['menu'] = new TimberMenu();
 			$context['site'] = $this;
 			$context['placeholder'] = get_stylesheet_directory_uri() . '/assets/img/util/loader.gif';
-
+			$context['footer_left'] = Timber::get_sidebar('sidebar-footer_left.php');
+			$context['footer_right'] = Timber::get_sidebar('sidebar-footer_right.php');
+			
 			// Site-wide Settings
 			$context['site_callout_bool'] = get_field('site_callout_bool', 'options');
 			$context['site_callout_text'] = get_field('site_callout_text', 'options');
