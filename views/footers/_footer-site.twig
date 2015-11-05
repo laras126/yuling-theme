@@ -3,33 +3,13 @@
 {% block footer_content %}
 	<div class="contain--lg">
 		<div class="footer-wrap">
-			<div class="footer-section -colophon">
-				{% include 'site-options/site-colophon.twig' %}
+			<div class="footer-section -left">
+				{{footer_left}}
 			</div>
-			<div class="footer-section -social">
-				<ul class="social-list">
-					<li class="social-item">
-						<a href="#">
-							{% include 'utility/svg.twig' with { file: 'twitter', prefix: 'icon' } %}
-						</a>
-					</li>
-					<li class="social-item">
-						<a href="#">
-							{% include 'utility/svg.twig' with { file: 'facebook', prefix: 'icon' } %}
-						</a>
-					</li>
-					<li class="social-item">
-						<a href="#">
-							{% include 'utility/svg.twig' with { file: 'instagram', prefix: 'icon' } %}
-						</a>
-					</li>
-					<li class="social-item">
-						<a href="#">
-							{% include 'utility/svg.twig' with { file: 'pinterest', prefix: 'icon' } %}
-						</a>
-					</li>
-				</ul>
+			<div class="footer-section -right">
+				{{footer_right}}
 			</div>
 		</div>
+		{% include 'site-options/site-colophon.twig' %}
 	</div>
 {% endblock %}
