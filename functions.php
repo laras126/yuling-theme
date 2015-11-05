@@ -48,7 +48,7 @@
 		}
 
 		function add_to_context($context){
-			$context['menu'] = new TimberMenu();
+			$context['menu'] = new TimberMenu('Main Menu');
 			$context['site'] = $this;
 			$context['placeholder'] = get_stylesheet_directory_uri() . '/assets/img/util/loader.gif';
 			$context['footer_left'] = Timber::get_sidebar('sidebar-footer_left.php');
