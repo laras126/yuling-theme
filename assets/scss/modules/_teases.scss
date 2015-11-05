@@ -13,7 +13,8 @@
 }
 
 .tease-title {
-	&.-piece {
+	&.-piece,
+	&.-collection {
 		font-size: $size-xsml;
 		color: $color-text-dark;
 
