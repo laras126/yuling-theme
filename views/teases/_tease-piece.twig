@@ -3,7 +3,7 @@
 {% block content %}
 	<a href="{{post.link}}">
 		{% if post.thumbnail %}
-			<img data-src="{{post.thumbnail.src|resize(500, 500)}}" alt="{{post.post_title}} Thumbnail" src="{{placeholder}}" class="lazyload">
+			<img data-src="{{post.thumbnail.src|resize(800, 800)}}" alt="{{post.post_title}} Thumbnail" src="{{placeholder}}" class="lazyload tease-img -piece">
 		{% else %}
 			{# TODO: replace this with something we serve. #}
 			<img src="http://placehold.it/500x500" alt="Default Thumbnail">
