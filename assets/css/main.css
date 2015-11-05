@@ -1143,20 +1143,24 @@ img {
     margin-right: -0.55rem; } }
 
 .footer-section {
-  position: relative;
-  padding-left: 0.55rem;
-  padding-right: 0.55rem;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 50%;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-  max-width: 50%;
   margin-top: 1.1rem; }
+  @media (min-width: 40em) {
+    .footer-section {
+      position: relative;
+      padding-left: 0.55rem;
+      padding-right: 0.55rem;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 50%;
+          -ms-flex: 0 0 50%;
+              flex: 0 0 50%;
+      max-width: 50%; } }
   .footer-section.-right {
     border-left: 1px solid #E6E6E3;
     padding-left: 1.1rem; }
 
 .widget-list {
+  list-style-type: none;
+  padding-left: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1166,24 +1170,48 @@ img {
           flex-flow: row wrap;
   position: relative;
   margin-left: -0.55rem;
-  margin-right: -0.55rem;
-  list-style-type: none;
-  padding-left: 0; }
+  margin-right: -0.55rem; }
   .widget-list ul {
     list-style-type: none;
     padding-left: 0; }
 
 .widget {
-  position: relative;
-  padding-left: 0.55rem;
-  padding-right: 0.55rem;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   color: #FFFFFF;
   font-size: 0.825rem;
-  margin: 0; }
+  margin: 0;
+  padding-top: 0.825rem;
+  padding-bottom: 1.1rem; }
+  .widget.-right {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%; }
+    @media (min-width: 35em) {
+      .widget.-right {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+        max-width: 50%; } }
+  .widget.-left {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%; }
+    @media (min-width: 40em) {
+      .widget.-left {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1; } }
 
 .widget-title {
   text-transform: uppercase;
