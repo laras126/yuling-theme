@@ -30,11 +30,7 @@
 	
 	&.-site {
 		margin-top: 0;
-		@include bp(md) { 
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
+		margin-bottom: 0;
 	}
 }
 
@@ -48,26 +44,31 @@
 }
 
 .nav-item {
-	font-family: $font-nav;
-	&.-site {
-		@include bp(md) { 
-			flex: 1; 
-			text-align: center;
-		}
+	@include bp(md) {
+		display: inline-block;
+		text-align: center;
 	}
 }
 
+.nav-item,
+.subnav-item {
+	font-family: $font-nav;
+	padding: $size-sml $size-base;
+}
+
+
 .nav-item-link,
 .subnav-item-link {	
-	font-size: $size-sml;
 	@include upperspace;
+	font-size: $size-sml;
 	color: $color-rotate-text;	
+	
 	&:hover,
 	&:focus {
 		color: $color-accent-light;
 	}
 }
-	
+
 .has-subnav 
 .icon-arrow-down {
 	display: inline-block;
@@ -79,25 +80,30 @@
 .subnav-list {
 	@include unstyle-list;
 	overflow: hidden;
-
+	text-align: left;
+	
 	@include bp(md) {
 		position: absolute;
-		background-color: $color-accent-med;
+		background-color: $color-rotate-bkgd;
 		margin-top: $size-sml;
 	}
 	
 	&.-site {
 		max-height: 0;
-
-		.has-subnav.open & {
-			max-height: none;
-		}
+	}
+	
+	// Show subnav when hovered over
+	.has-subnav:hover & {	
+		max-height: $screen-sm;
+		overflow: visible;
 	}
 }
 
-.subnav-item {
-	@include bp(md) {
-		padding: $size-sml;
-		text-align: left;
-	}
-}
+ 
+
+// .subnav-item {
+// 	@include bp(md) {
+// 		padding: $size-sml;
+// 		text-align: left;
+// 	}
+// }
