@@ -7,3 +7,18 @@
 		@include grid;
 	}
 }
+
+.archive-title {
+
+}
+
+.archive-desc {
+	font-size: $size-h3;
+	font-family: $font-heading;
+	font-style: italic;
+}
+
+.archive-footer-title {
+	@include detail-title();
+	margin-bottom: $size-base;
+}
