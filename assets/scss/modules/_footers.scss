@@ -3,38 +3,77 @@
 
 .footer {
 	&.-site {
-		background-color: $color-accent-med;
+		background-color: $color-rotate-bkgd;
 	}
 }
 
 .footer-wrap {
 	@include bp(md) { 
-		@include grid; 
-		justify-content: center;
-		align-items: center;
+		@include grid;
 	}
 }
 
 .footer-section {
-	&.-colophon {
-		flex: 3 0 50%;
+	@include cell(half);
+	margin-top: $size-base;
+
+	&.-left {
+	}
+
+	&.-right {
+		border-left: $border-accent-light;
+		padding-left: $size-base;
+	}
+}
+
+.widget-list {
+	@include grid;
+	@include unstyle-list;
+
+	ul {
+		@include unstyle-list;
+	}
+}
+
+.widget {
+	@include cell;
+	@include meta($color-rotate-text);
+}
+
+.widget-title {
+	@include detail-title(none);
+	margin-top: 0;
+	margin-bottom: $size-xsml;
+}
+
+.widget a {
+	color: $color-rotate-text;
+	&:hover {
+		color: $color-accent-med;	
 	}
 }
 
 .social-list {
 	@include unstyle-list;
 	@include grid;
+	align-items: flex-start;
 }
 
 .social-item {
 	@include cell;
+	flex: 0;
+	padding-right: $size-h3;
+
 	.icon {
 		fill: $color-accent-light;
 	}
 }
 
-.colophon {
-	@include meta($color-text-light);
+.colophon, 
+.credits {
+	display: inline-block;
+	@include meta($color-rotate-text);
+
 	a {
 		color: $color-accent-light;
 		text-decoration: underline;
@@ -44,3 +83,4 @@
 		}
 	}
 }
+
