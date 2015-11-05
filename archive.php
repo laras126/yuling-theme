@@ -41,6 +41,7 @@
 			array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
 		}
 
+		$data['collections'] = Timber::get_terms('collection');
 		$data['posts'] = Timber::get_posts();
 
 		Timber::render($templates, $data);
