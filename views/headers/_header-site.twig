@@ -3,6 +3,13 @@
 {% block header_content %}
 
 {# Need to fix and use this instead of img: #}
+<div class="contain--lg">
+    <div class="grid">
+        <div class="cell--fourth">
+            {% include 'partials/search-form.twig' %}
+        </div>
+    </div>
+</div>
 <a href="{{site.link}}">{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}</a>
 
 <nav class="nav -site" role="navigation">
@@ -10,9 +17,8 @@
     <ul class="nav-list -site" id="toggleNav">
     {% for item in menu.items %}
         <li class="nav-item -site {{ item.get_children ? 'has-subnav' }}">
-            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}</a>
+            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}{% if item.get_children %}{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}{% endif %}</a>
             {% if item.get_children %}
-                {% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}
             	<ul class="subnav-list -site">
 				{% for child in item.get_children %}
 					<li class="subnav-item -site">
