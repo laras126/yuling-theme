@@ -14,7 +14,9 @@
 }
 
 .footer-section {
-	@include cell(half);
+	@include bp(md) {
+		@include cell(half);
+	}
 	margin-top: $size-base;
 
 	&.-left {
@@ -27,8 +29,8 @@
 }
 
 .widget-list {
-	@include grid;
 	@include unstyle-list;
+	@include grid;
 
 	ul {
 		@include unstyle-list;
@@ -36,8 +38,21 @@
 }
 
 .widget {
-	@include cell;
 	@include meta($color-rotate-text);
+	
+	&.-right {
+		@include cell(full);
+		@include bp(sm) { @include cell(half, $is_first: false); }
+	}
+	
+	&.-left {
+		@include cell(half);
+		@include bp(md) { flex: 1; }
+	}
+	
+	padding-top: $size-sml;
+	padding-bottom: $size-base;
+
 }
 
 .widget-title {
