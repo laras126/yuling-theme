@@ -1,5 +1,15 @@
 {% extends "singles/single.twig" %}
-{% block before_content %}{% endblock %}
+
+{% block before_content %}
+	<div class="contain--lg">
+		<nav class="crumbs">
+			{% for t in post.get_terms('collection')|slice(0,1) %}
+				<a class="crumb -collection" href="{{t.link}}">&larr; Back to collection</a>
+			{% endfor %}
+		</nav>
+	</div>
+{% endblock %}
+
 {% block content %}
 
 	<div class="contain--md">
