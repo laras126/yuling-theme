@@ -34,3 +34,21 @@
 	</div>
 
 {% endblock %}
+
+{% block after_content %}
+	<div class="contain--lg teaser lazyload">
+		<h4 class="single-footer-title">Other Collections</h4>
+		<br>
+		<div class="grid">
+		{% for c in collections %}
+			{# Exclude the current term #}
+			{% if c.title != term.title %}
+				<div class="cell">
+					<img data-src="{{TimberImage(c.featured_image).src|resize(400)}}" src="{{placeholder}}" class="lazyload" alt="{{c.name}} Thumbnail">
+					<h4 class="tease-title -collection">{{c.title}}</h4>
+				</div>
+			{% endif %}
+		{% endfor %}
+		</div>
+	</div>
+{% endblock %}
