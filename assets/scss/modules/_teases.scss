@@ -5,6 +5,7 @@
 	&.-piece {
 		@include cell(half);
 		@include bp(md) { @include cell(third, $is_first: false); }
+		padding-top: $size-base;
 	}
 
 	&.-project {
@@ -24,6 +25,25 @@
 		
 		@include upperspace;
 		padding-bottom: $size-h2;
+	}
+}
+
+.tease-img {
+
+	&.-piece {
+		border: $border-accent-light;
+	}
+
+	@include bp(md) {
+		&:hover {
+			opacity: 0.5;
+			transition: 0.3s ease all;
+		}
+
+		&:active {
+			opacity: 1;
+			transition: 0.3s ease all;
+		}
 	}
 }
 
