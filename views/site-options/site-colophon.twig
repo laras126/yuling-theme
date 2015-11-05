@@ -1,1 +1,4 @@
-<p class="colophon">{{ site_footer_copyright ? '&copy;' ~ site_footer_copyright ~ '.' }} {{ site_footer_credits ? site_footer_credits }}</p>
+
+{# Note: weird to have a <div> for credits, but necessary because of dumb WYSIWG and needing links, so can't striptags #}
+
+{{ site_footer_copyright ? '<p class="colophon">&copy; ' ~ site_footer_copyright ~ '.</p>' }} {{ site_footer_credits ? '<div class="credits">' ~ site_footer_credits ~ '</div>' }}
