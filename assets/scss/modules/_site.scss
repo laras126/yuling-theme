@@ -21,6 +21,6 @@ img {
 
 .main {
 	@include bp(md) {
-		padding-top: $size-h1*3;
+		padding-top: $size-h1*4;
 	}
 }
