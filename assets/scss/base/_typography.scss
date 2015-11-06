@@ -1,18 +1,18 @@
 
 html {
-	font-size: $size-base;
+	font-size: $size-contain;
 	line-height: $line-height-base;
 	font-weight: $font-weight-base;
 
-	@include bp(small) {
+	@include bp(sm) {
 		font-size: $size-contain-sm;
 	}
 
-	@include bp(small) {
+	@include bp(md) {
 		font-size: $size-contain-md;
 	}
 
-	@include bp(small) {
+	@include bp(lg) {
 		font-size: $size-contain-lg;
 	}
 }
@@ -112,8 +112,8 @@ blockquote {
 }
 
 p {
-	margin-top: $size-xsml;
-	margin-bottom: $size-xsml;
+	margin-top: $size-base;
+	margin-bottom: $size-base;
 }
 
 
