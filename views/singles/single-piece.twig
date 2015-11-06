@@ -16,7 +16,6 @@
 		
 		<div class="grid">
 			<div class="cell--half">
-				{# {% include 'partials/_gallery.twig' with { gallery: post.get_field('gallery') } %} #}
 				{% set img = TimberImage(post.thumbnail.src) %}
 				<img 
 					data-magnify-src={{img|resize(1800)}} data-srcset="{{img|resize(500)}} 500w,
@@ -24,7 +23,7 @@
 						{{img|resize(1024)}} 1024w"
 					src="{{placeholder}}"
 					class="lazyload magnify" />
-					<p class="meta-dark text-center">Hover to zoom.</p>
+					<p class="helper-text -piece">Hover to zoom.</p>
 			</div>
 
 			<div class="cell--half">
