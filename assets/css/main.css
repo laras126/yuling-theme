@@ -487,6 +487,39 @@ http://flickity.metafizzy.co
   /* IE8 */
   opacity: 1; }
 
+@media (min-width: 40em) {
+  .magnify {
+    position: relative;
+    display: inline-block; }
+  .magnify .magnify-lens {
+    /* Create the magnifying lens */
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* Multiple box shadows to achieve the glass lens effect */
+    border: 5px solid rgba(0, 0, 0, 0.6);
+    /* Hide the mouse pointer */
+    cursor: none;
+    /* Hide the lens by default */
+    display: none;
+    /* Place the lens on top of other elements */
+    z-index: 100; }
+  .magnify .magnify-lens.loading {
+    background: #333 !important;
+    opacity: .75; }
+  .magnify .magnify-lens.loading:after {
+    /* Loading text */
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    content: 'Loading...';
+    font: italic normal 16px/1 Calibri, sans-serif;
+    text-align: center;
+    text-shadow: 0 0 2px rgba(51, 51, 51, 0.8);
+    text-transform: none; } }
+
 .special {
   color: #916300; }
 
@@ -523,6 +556,17 @@ http://flickity.metafizzy.co
   letter-spacing: 1px;
   font-weight: 500;
   color: white; }
+
+.helper-text {
+  color: #000000;
+  font-size: 0.825rem;
+  margin: 0; }
+  .helper-text.-piece {
+    display: none;
+    text-align: center; }
+    @media (min-width: 40em) {
+      .helper-text.-piece {
+        display: block; } }
 
 .visually-hidden {
   position: absolute;
@@ -690,9 +734,18 @@ http://flickity.metafizzy.co
   overflow: hidden; }
 
 html {
-  font-size: 1.1rem;
+  font-size: 90%;
   line-height: 1.5;
   font-weight: 300; }
+  @media (min-width: 35em) {
+    html {
+      font-size: 95%; } }
+  @media (min-width: 40em) {
+    html {
+      font-size: 105%; } }
+  @media (min-width: 57em) {
+    html {
+      font-size: 110%; } }
 
 body {
   font-family: "source-sans-pro", sans-serif;
@@ -749,8 +802,8 @@ blockquote {
   font-style: italic; }
 
 p {
-  margin-top: 0.66rem;
-  margin-bottom: 0.66rem; }
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem; }
 
 .lead {
   font-size: 1.43rem; }
@@ -882,7 +935,10 @@ fieldset {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 input[type="search"] {
   position: relative;
@@ -1001,7 +1057,9 @@ img {
 
 #navOpenLink {
   text-align: center;
-  display: block; }
+  display: block;
+  padding-top: 0.66rem;
+  padding-bottom: 0.66rem; }
   @media (min-width: 40em) {
     #navOpenLink {
       display: none; } }
@@ -1010,6 +1068,9 @@ img {
   .nav-item {
     display: inline-block;
     text-align: center; } }
+
+.shrunk .nav-item {
+  padding-top: 0; }
 
 .nav-item,
 .subnav-item {
@@ -1039,9 +1100,10 @@ img {
   list-style-type: none;
   padding-left: 0;
   overflow: hidden;
-  text-align: left; }
+  text-align: center; }
   @media (min-width: 40em) {
     .subnav-list {
+      text-align: left;
       position: absolute;
       background-color: #000000;
       margin-top: 0.825rem; } }
@@ -1053,24 +1115,27 @@ img {
 
 .header.-site {
   background-color: black;
-  padding-bottom: 0.825rem; }
-  @media (min-width: 40em) {
-    .header.-site {
-      position: fixed;
-      width: 100%;
-      z-index: 4;
-      top: 0; } }
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  top: 0; }
 
 .title.-page {
   text-align: center; }
 
 .logo-text-logo {
+  padding-top: 1.1rem;
   display: block;
   margin: 0 auto;
-  max-width: 60%; }
+  max-width: 60%;
+  max-height: none; }
   @media (min-width: 35em) {
     .logo-text-logo {
       max-width: 16.5rem; } }
+  .shrunk .logo-text-logo {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0.66rem; }
 
 .title.-site {
   margin-top: 0;
@@ -1082,26 +1147,22 @@ img {
     color: #FFFFFF; }
 
 .slider.-full {
-  height: auto; }
-  @media (min-width: 35em) {
-    .slider.-full {
-      height: 60vh; } }
-  @media (min-width: 40em) {
-    .slider.-full {
-      height: 90vh; } }
+  background-color: #E6E6E3; }
 
 .slider-cell {
-  height: auto;
-  overflow: hidden;
-  height: 100%; }
-  .slider-cell.-full {
-    width: 100%; }
-  .slider-cell img {
-    position: relative;
-    z-index: 3;
-    display: block;
-    margin: 0 auto;
-    width: 100%; }
+  width: 85%;
+  margin-right: 10px;
+  background: #333; }
+
+.slider-img {
+  height: 300px;
+  margin-right: 0.33rem; }
+  @media (min-width: 35em) {
+    .slider-img {
+      height: 500px; } }
+  @media (min-width: 57em) {
+    .slider-img {
+      height: 80vh; } }
 
 .thumb {
   padding-top: 1.98rem;
@@ -1114,14 +1175,6 @@ img {
       width: 20%; } }
   .thumb img {
     width: 100%; }
-
-@media (min-width: 57em) {
-  .flickity-prev-next-button.previous {
-    left: -44px; } }
-
-@media (min-width: 57em) {
-  .flickity-prev-next-button.next {
-    right: -44px; } }
 
 .banner-img {
   width: 100%; }
