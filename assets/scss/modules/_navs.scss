@@ -11,7 +11,7 @@
 .nav-list {
 	@include unstyle-list;
 	text-align: center;
-
+	
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
@@ -37,6 +37,8 @@
 #navOpenLink {
 	text-align: center;
 	display: block;
+	padding-top: $size-xsml;
+	padding-bottom: $size-xsml;
 
 	@include bp(md) {
 		display: none;
@@ -47,6 +49,10 @@
 	@include bp(md) {
 		display: inline-block;
 		text-align: center;
+	}
+
+	.shrunk & {
+		padding-top: 0;
 	}
 }
 
@@ -80,9 +86,10 @@
 .subnav-list {
 	@include unstyle-list;
 	overflow: hidden;
-	text-align: left;
+	text-align: center;
 	
 	@include bp(md) {
+		text-align: left;
 		position: absolute;
 		background-color: $color-rotate-bkgd;
 		margin-top: $size-sml;
