@@ -4,53 +4,39 @@
 
 .slider {
 
-	&.-full {
-		height: auto;	
-		
-		@include bp(sm) {
-			height: 60vh;
-		}
-
-		@include bp(md) {
-			height: 90vh;
-		}
+	&.-full {	
+		background-color: $color-accent-light;
 	}
 }
 
 .slider-cell {
-	height: auto;
-	// margin-right: 10px;
-	// padding: 5px;
-	// width: 85%;
-	overflow: hidden;
-	height: 100%;
-
-	&.-full {
-		width: 100%;
-		
-		@include bp(md) {
-		}
-	  	// counter-increment: gallery-cell;
-	  	// margin-left: 10px;
-	  	// padding-top: $size-h2;
-
-	  	// background-size: cover; 
-	  	// background-repeat: no-repeat; 
-	  	// background-position: center center;
-	}
-
-	@include bp(md) {
-		// width: 70%;
-	}
-
-	img {
-		position: relative;
-		z-index: $z-mid;
-		display: block;
-		margin: 0 auto;
-		width: 100%;
-	}
+  width: 85%;
+  // height: 200px;
+  margin-right: 10px;
+  background: #333;
 }
+
+.slider-img {
+	height: 300px;
+	margin-right: $size-xsml/2;
+	
+	@include bp(sm) {
+		height: 500px;
+	}
+
+	@include bp(lg) {
+		height: 80vh;
+	}
+
+	// display: block;
+  	// transition: opacity 0.4s;
+  	// opacity: 0;
+}
+
+// .slider-img.flickity-lazyloaded,
+// .slider-img.flickity-lazyerror {
+//   opacity: 1;
+// }
 
 // Related pieces slider thumb cells
 .thumb {
@@ -70,14 +56,14 @@
 	}
 }
 
-.flickity-prev-next-button.previous {
-	@include bp(lg) {
-		left: -44px;
-	}
-}
+// .flickity-prev-next-button.previous {
+// 	@include bp(lg) {
+// 		left: -44px;
+// 	}
+// }
 
-.flickity-prev-next-button.next {
-	@include bp(lg) {
-		right: -44px;
-	}
-}
+// .flickity-prev-next-button.next {
+// 	@include bp(lg) {
+// 		right: -44px;
+// 	}
+// }
