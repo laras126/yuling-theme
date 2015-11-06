@@ -102,9 +102,13 @@ fieldset {
 }
 
 // Search
+
 .search-form {
 	@include grid;
 	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 input[type="search"] {
