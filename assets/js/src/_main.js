@@ -3,6 +3,8 @@ $(document).ready(function() {
 	
 	console.log('Check it: https://github.com/laras126/yuling-theme');
 
+
+
 	// ----
 	// Toggle Menu
 	// ----
@@ -35,6 +37,8 @@ $(document).ready(function() {
 	});
 
 
+
+
 	// ----
 	// Toggle Panels (detailed asides on single-piece)
 	// ----
@@ -64,16 +68,43 @@ $(document).ready(function() {
 
 
 
+    // ----
+	// Shrink nav on scroll
+	// ----
+
+	var $header = $('.header.-site');
+	var headerHeight = $header.outerHeight();
+	
+	// Do these things when scrolling
+	$(window).scroll( function() {
+
+		if ( $(this).scrollTop() > headerHeight ) {
+			$header.addClass('shrunk');
+		} else {
+			$header.removeClass('shrunk');
+		}
+		
+	});
+	
+
+
 	// ----
 	// Plugins
 	// ----
 
 	$('.main').fitVids();
+	
+	// Maybe not ideal
+	if ($(window).width() > 768) {
+		$('.magnify').magnify();
+	}
 
 	$('.slider').flickity({
-		cellAlign: 'left',
-		contain: true,
-		imagesLoaded: true
+		imagesLoaded: true,
+		pageDots: false,
+		wrapAround: true,
+		// lazyload: true,
+		percentPosition: false
 	});
 
 	$('.thumb-slider').flickity({
