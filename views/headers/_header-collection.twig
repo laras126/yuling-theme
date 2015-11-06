@@ -4,30 +4,25 @@
 
 {% block header_content %}
 	
-	<div class="teaser lazyload slider -full">
-	{% for image in term.collection_gallery %}
-		<div class="slider-cell -full">
-			<img data-src="{{image.url|resize(1200)}}" class="lazyload" alt="{{image.title}}">
-		</div>
-	{% endfor %}
+	<div class="slider">
+		{% for image in term.collection_gallery %}
+			<img data-src="{{image.url|resize(1200)}}" class="slider-img -full lazyload" src="{{image.url|resize(500)}}" alt="{{image.title}}">
+		{% endfor %}
 	</div>
-	
-	{# <div class="teaser lazyload banner">
-		<img data-src="{{TimberImage(term.featured_image).src|resize(1240, 600)}}" src="{{placeholder}}" class="lazyload banner-img" alt="{{term.name}} Thumbnail">
-	</div>
-	 #}
 	
 	<div class="contain--md">
-		<h1 class="archive-title text-center">{{term.name}}</h1>
-		<p class="archive-desc text-center">{{term.description}}</p>
+		{# <div class="grid">
+			<div class="cell--half"> #}
+				<h1 class="archive-title text-center">{{term.name}}</h1>
+				<p class="archive-desc text-center">{{term.description}}</p>
+				<p>{{term.long_description}}</p>
+			{# </div>
+			<div class="cell--half"> #}
+				{# <img data-src="{{term.featured_image.url}}" src="{{placeholder}}" #}
+			{# </div> #}
+		{# </div> #}
 	</div>
-	<div class="contain--sm">
-		<p>{{term.long_description}}</p>
-	</div>
-	
-	<div class="contain--xl">
-		{# {% include 'partials/_gallery.twig' with { gallery: term.collection_gallery, class: 'collection' } %} #}
-	</div>
+
 {% endblock %}
 
 {% block after_header_content %}{% endblock %}
