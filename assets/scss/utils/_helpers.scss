@@ -48,6 +48,15 @@
 	color: $color-alert-danger;
 }
 
+.helper-text {
+	@include meta($color-body-text);
+	&.-piece {
+		display: none;
+		text-align: center;
+		@include bp(md) { display: block; }
+	}
+
+}
 
 
 
