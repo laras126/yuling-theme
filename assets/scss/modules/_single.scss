@@ -38,6 +38,7 @@
 .single-sidebar-title {
 	@include detail-title(top);
 }
+
 .single-footer-title {
 	@include detail-title(bottom);
 }
