@@ -2,14 +2,12 @@
 .header {
 	&.-site {
 		background-color: rgba($color-rotate-bkgd, 1);
-		padding-bottom: $size-sml;
-
-		@include bp(md) {
-			position: fixed;
-			width: 100%;
-			z-index: $z-top;
-			top: 0;
-		}
+		// background: linear-gradient($color-rotate-bkgd, rgba($color-rotate-bkgd, 0));
+		// padding-bottom: $size-sml;
+		position: fixed;
+		width: 100%;
+		z-index: $z-top;
+		top: 0;
 	}
 }
 
@@ -20,11 +18,19 @@
 }
 
 .logo-text-logo {
-	// fill: $color-accent-med;
+	padding-top: $size-base;
 	display: block;
 	margin: 0 auto;
 	max-width: 60%;
+	max-height: none;
+	
 	@include bp(sm) {
 		max-width: $size-h1*6; 
+	}
+
+	.shrunk & {
+		max-height: 0;
+		opacity: 0;
+		padding-top: $size-xsml;
 	} 
 }
