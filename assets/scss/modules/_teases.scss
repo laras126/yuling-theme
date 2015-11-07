@@ -2,7 +2,8 @@
 // Teases
 
 .tease {
-	&.-piece {
+	&.-piece, 
+	&.-page {
 		@include cell(half);
 		@include bp(md) { @include cell(third, $is_first: false); }
 		padding-top: $size-base;
@@ -15,6 +16,7 @@
 
 .tease-title {
 	&.-piece,
+	&.-page,
 	&.-collection {
 		font-size: $size-xsml;
 		color: $color-text-dark;
