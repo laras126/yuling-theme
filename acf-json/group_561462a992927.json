@@ -40,27 +40,6 @@
             "default_value": 0
         },
         {
-            "key": "field_562963bd9299a",
-            "label": "Pricing",
-            "name": "pricing",
-            "type": "text",
-            "instructions": "A sentence about how this piece is priced.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_56146396d95de",
             "label": "Styles of Printing",
             "name": "styles_of_printing",
@@ -160,7 +139,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -175,6 +154,71 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_563e6c6dbeb61",
+            "label": "Color Swatches",
+            "name": "color_swatches",
+            "type": "repeater",
+            "instructions": "Upload color swatches for the piece and add a description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_563e6ce526203",
+                    "label": "Swatch",
+                    "name": "swatch",
+                    "type": "image",
+                    "instructions": "Upload a color swatch image, square format",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_563e6d1d26204",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "instructions": "Describe the color swatch.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
         },
         {
             "key": "field_561466d8d8087",
@@ -220,5 +264,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1445881063
+    "modified": 1446931958
 }
