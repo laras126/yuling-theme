@@ -19,13 +19,18 @@
         <li class="nav-item -site {{ item.get_children ? 'has-subnav' }}">
             <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}{% if item.get_children %}{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}{% endif %}</a>
             {% if item.get_children %}
-            	<ul class="subnav-list -site">
-				{% for child in item.get_children %}
-					<li class="subnav-item -site">
-						<a class="subnav-item-link -site" href="{{child.get_link}}">{{child.title}}</a>
-					</li>
-				{% endfor %}
-				</ul>
+                <div class="subnav-wrapper -site">
+                    <ul class="subnav-list -site">
+                    {% for child in item.get_children %}
+                        <li class="subnav-item -site">
+                            <a class="subnav-item-link -site" href="{{child.get_link}}">
+                                <img data-src="{{TimberImage(child.featured_image).src|resize(400)}}" src="{{child.featured_image}}" class="lazyload" alt="{{child.name}} Thumbnail">
+                                {{child.title}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
             {% endif %}
         </li>
     {% endfor %}

@@ -4,7 +4,7 @@
 
 .nav {
 	&.-site {
-		@include contain(lg);
+		//@include contain(lg);
 	}
 }
 
@@ -83,26 +83,56 @@
 	fill: $color-accent-med;
 }
 
-.subnav-list {
-	@include unstyle-list;
-	overflow: hidden;
-	text-align: center;
-	
+.subnav-wrapper {	
 	@include bp(md) {
 		text-align: left;
 		position: absolute;
+		width: 100%;
+		left: 0;
+		background-color: $color-rotate-bkgd;
+	}
+}
+
+.subnav-list {
+	@include unstyle-list;
+	overflow: hidden;
+	
+	@include bp(md) {
 		background-color: $color-rotate-bkgd;
 		margin-top: $size-sml;
 	}
 	
 	&.-site {
 		max-height: 0;
+	    @include grid;
+	    max-width: $screen-xl;
+	    margin: 0 auto;
 	}
 	
 	// Show subnav when hovered over
 	.has-subnav:hover & {	
 		max-height: $screen-sm;
 		overflow: visible;
+	}
+}
+
+.subnav-item {
+	@include cell(full);
+	padding-top: $size-base;
+
+	img {
+		@include cell(third);
+	}
+
+	@include bp(md) { 
+		@include cell(half, $is_first: false); 
+	}
+
+	@include bp(lg) { 
+		@include cell(third, $is_first: false); 
+		img {
+			@include cell(half);
+		}
 	}
 }
 
