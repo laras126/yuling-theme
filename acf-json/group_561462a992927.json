@@ -175,8 +175,8 @@
             "sub_fields": [
                 {
                     "key": "field_563e6ce526203",
-                    "label": "Swatch",
-                    "name": "swatch",
+                    "label": "Image",
+                    "name": "image",
                     "type": "image",
                     "instructions": "Upload a color swatch image, square format",
                     "required": 0,
@@ -264,5 +264,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1446931958
+    "modified": 1446944435
 }
