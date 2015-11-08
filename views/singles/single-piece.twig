@@ -39,6 +39,22 @@
 				
 				<aside class="single-sidebar -piece">
 
+					<h4 class="single-sidebar-title accordion-trigger">{{color_swatches_section_title ? color_swatches_section_title : 'Colors'}}</h4>
+
+					<ul class="single-sidebar-list accordion-target">
+						{% for swatch in post.get_field('color_swatches') %}
+							<li class="single-sidebar-swatch">{% set img = TimberImage(swatch.image) %}
+								<img 
+									data-srcset="{{img|resize(500)}} 500w,
+										{{img|resize(700)}} 640w,
+										{{img|resize(1024)}} 1024w"
+									src="{{swatch.image}}"
+									class="lazyload" />
+								{{swatch.description|wpautop}}
+							</li>
+						{% endfor %}
+					</ul>
+
 					<h4 class="single-sidebar-title accordion-trigger">{{piece_details_section_title ? piece_details_section_title : 'Piece Details'}}</h4>
 
 					<ul class="single-sidebar-list accordion-target">

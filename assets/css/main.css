@@ -1399,6 +1399,14 @@ img {
   border-top: 1px solid;
   padding-top: 0.825rem; }
 
+.single-sidebar-swatch img {
+  width: 1.5rem;
+  margin-right: .5rem;
+  float: left; }
+
+.single-sidebar-swatch p {
+  padding-left: 2rem; }
+
 .single-footer-title {
   text-transform: uppercase;
   letter-spacing: 1px;

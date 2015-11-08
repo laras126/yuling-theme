@@ -39,6 +39,19 @@
 	@include detail-title(top);
 }
 
+.single-sidebar-swatch {
+	
+	img {
+		width: 1.5rem;
+		margin-right: .5rem;
+		float: left;
+	}
+
+	p {
+		padding-left: 2rem;
+	}
+}
+
 .single-footer-title {
 	@include detail-title(bottom);
 }
