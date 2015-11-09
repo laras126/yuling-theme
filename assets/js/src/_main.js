@@ -68,6 +68,24 @@ $(document).ready(function() {
 
 
 
+
+	// ----
+	// Share Social Links
+	// ----
+              
+      $('.share-trigger').click(function(e) {
+		e.preventDefault();
+        $this = $(this);
+        $target =  $this.next('.social-list');
+
+        $this.toggleClass('active');
+        $target.toggleClass('visually-hidden');
+          
+        return false;
+      });
+
+
+
     // ----
 	// Shrink nav on scroll
 	// ----

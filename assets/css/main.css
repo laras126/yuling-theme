@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -1221,26 +1222,6 @@ img {
   .widget a:hover {
     color: #916300; }
 
-.social-list {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  flex-flow: row wrap;
-  position: relative;
-  margin-left: -0.55rem;
-  margin-right: -0.55rem;
-  align-items: flex-start; }
-
-.social-item {
-  position: relative;
-  padding-left: 0.55rem;
-  padding-right: 0.55rem;
-  flex: 1;
-  flex: 0;
-  padding-right: 1.98rem; }
-  .social-item .icon {
-    fill: #E6E6E3; }
-
 .colophon,
 .credits {
   display: inline-block;
@@ -1447,6 +1428,50 @@ img {
   font-size: 0.825rem;
   border-bottom: 1px solid;
   padding-bottom: 0.825rem; }
+
+.social-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem;
+  align-items: flex-start; }
+
+.social-item {
+  position: relative;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  flex: 1;
+  flex: 0;
+  padding-right: 1.98rem; }
+
+.footer .icon {
+  fill: #E6E6E3; }
+
+.share .social-list {
+  float: left; }
+
+.share-trigger {
+  float: left;
+  padding-right: 1.1rem;
+  font-size: 0.825rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic; }
+  .share-trigger:before {
+    content: "+";
+    display: inline-block;
+    cursor: pointer;
+    width: 1.1rem;
+    height: 1.1rem;
+    text-align: center;
+    line-height: 1.1rem;
+    background-color: #B83074;
+    color: #FFFFFF;
+    margin-right: 0.55rem; }
+  .share-trigger.active:before {
+    content: "–"; }
 
 .tax-collection .main, .single-project .main {
   padding-top: 0; }

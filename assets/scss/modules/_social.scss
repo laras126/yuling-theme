@@ -1,0 +1,56 @@
+
+// Social media lists
+
+.social-list {
+	@include unstyle-list;
+	@include grid;
+	align-items: flex-start;
+}
+
+.social-item {
+	@include cell;
+	flex: 0;
+	padding-right: $size-h3;
+}
+
+.footer {
+	.icon {
+		fill: $color-accent-light;
+	}
+}
+
+
+// Share on social media
+
+.share {
+	.social-list {
+		float: left;
+	}
+}
+
+.share-trigger {
+	float: left;
+	padding-right: $gutter;
+	@include detail-text;
+	font-family: $serif;
+	font-style: italic;
+
+	&:before {
+		content: "+";
+	    display: inline-block;
+	    cursor: pointer;
+		width: $size-base;
+	    height: $size-base;
+	    text-align: center;
+	    line-height: $size-base;
+		background-color: $color-link;
+		color: $color-text-light;
+		margin-right: $gutter/2;
+	}
+
+	&.active {
+		&:before {
+			content: "–";
+		}
+	}
+}

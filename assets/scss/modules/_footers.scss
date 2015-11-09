@@ -68,22 +68,6 @@
 	}
 }
 
-.social-list {
-	@include unstyle-list;
-	@include grid;
-	align-items: flex-start;
-}
-
-.social-item {
-	@include cell;
-	flex: 0;
-	padding-right: $size-h3;
-
-	.icon {
-		fill: $color-accent-light;
-	}
-}
-
 .colophon, 
 .credits {
 	display: inline-block;
