@@ -1448,8 +1448,8 @@ img {
   border-bottom: 1px solid;
   padding-bottom: 0.825rem; }
 
-.tax-collection .main {
+.tax-collection .main, .single-project .main {
   padding-top: 0; }
 
-.tax-collection .header.-site {
+.tax-collection .header.-site, .single-project .header.-site {
   background-color: rgba(0, 0, 0, 0.7); }

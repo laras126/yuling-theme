@@ -1,0 +1,5 @@
+<div class="slider -{{post.post_type}}">
+	{% for image in gallery %}
+		<img data-src="{{image.url|resize(1200)}}" class="slider-img -full lazyload" src="{{image.url|resize(500)}}" alt="{{image.title}}">
+	{% endfor %}
+</div>
