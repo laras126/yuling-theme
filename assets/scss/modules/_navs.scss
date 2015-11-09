@@ -131,7 +131,7 @@
 	@include bp(lg) { 
 		@include cell(third, $is_first: false); 
 		img {
-			@include cell(half);
+			@include cell(third);
 		}
 	}
 }
