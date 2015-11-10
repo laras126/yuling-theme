@@ -15,7 +15,13 @@
 		</div>
 	</div>
 
-	<div class="contain--md">
+	<div class="archive-details">
+		{% for c in collections %}
+			{# Only show featured image from the current collection #}
+			{% if c.title == term.title %}
+				<img data-src="{{TimberImage(c.featured_image).src}}" src="{{placeholder}}" class="lazyload" alt="{{c.name}} Thumbnail">
+			{% endif %}
+		{% endfor %}
 		{% for block in term.blocks %}
 			{% include 'blocks/block-logic.twig' %}
 		{% endfor %}
