@@ -47,7 +47,7 @@
 
 .nav-item {
 	@include header-animate;
-	
+
 	@include bp(md) {
 		display: inline-block;
 		text-align: center;
@@ -106,14 +106,17 @@
 	
 	&.-site {
 		max-height: 0;
+		opacity: 0;
 	    @include grid;
 	    max-width: $screen-xl;
 	    margin: 0 auto;
+	    @include header-animate;
 	}
 	
 	// Show subnav when hovered over
 	.has-subnav:hover & {	
 		max-height: $screen-sm;
+		opacity: 1;
 		overflow: visible;
 	}
 }

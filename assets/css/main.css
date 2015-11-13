@@ -1044,15 +1044,20 @@ img {
       margin-top: 0.825rem; } }
   .subnav-list.-site {
     max-height: 0;
+    opacity: 0;
     display: flex;
     flex-flow: row wrap;
     position: relative;
     margin-left: -0.55rem;
     margin-right: -0.55rem;
     max-width: 70em;
-    margin: 0 auto; }
+    margin: 0 auto;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out; }
   .has-subnav:hover .subnav-list {
     max-height: 35em;
+    opacity: 1;
     overflow: visible; }
 
 .subnav-item {
