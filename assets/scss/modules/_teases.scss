@@ -32,10 +32,6 @@
 
 .tease-img {
 
-	&.-piece {
-		border: $border-accent-light;
-	}
-
 	@include bp(md) {
 		&:hover {
 			opacity: 0.5;

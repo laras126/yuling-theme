@@ -1315,9 +1315,6 @@ img {
     .tease-title.-collection {
       font-size: 0.825rem; } }
 
-.tease-img.-piece {
-  border: 1px solid #E6E6E3; }
-
 @media (min-width: 40em) {
   .tease-img:hover {
     opacity: 0.5;
