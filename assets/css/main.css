@@ -1308,12 +1308,27 @@ img {
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding-bottom: 2.53rem; }
+  padding: 1.1rem 2.53rem;
+  margin: 0 0.825rem;
+  position: relative;
+  border-top: 1px solid #E6E6E3; }
   @media (min-width: 35em) {
     .tease-title.-piece,
     .tease-title.-page,
     .tease-title.-collection {
-      font-size: 0.825rem; } }
+      font-size: 0.825rem;
+      margin: 0 1.1rem; } }
+  .tease-title.-piece:after,
+  .tease-title.-page:after,
+  .tease-title.-collection:after {
+    content: "";
+    position: absolute;
+    width: 0.495rem;
+    height: 0.495rem;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    background-color: #E6E6E3; }
 
 @media (min-width: 40em) {
   .tease-img:hover {
