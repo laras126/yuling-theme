@@ -8,6 +8,10 @@
 	}
 
 	.header.-site {
-		background-color: rgba($color-rotate-bkgd, 0.7);
+		background-color: rgba($color-rotate-bkgd, 0.85);
+	}
+
+	.subnav-wrapper {
+		background-color: rgba(lighten($color-rotate-bkgd, 8%), 0.85);
 	}
 }

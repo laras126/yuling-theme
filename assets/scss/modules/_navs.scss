@@ -89,7 +89,8 @@
 		position: absolute;
 		width: 100%;
 		left: 0;
-		background-color: $color-rotate-bkgd;
+		top: 100%;
+		background-color: lighten($color-rotate-bkgd, 8%);
 	}
 }
 
@@ -98,7 +99,6 @@
 	overflow: hidden;
 	
 	@include bp(md) {
-		background-color: $color-rotate-bkgd;
 		margin-top: $size-sml;
 	}
 	

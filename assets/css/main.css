@@ -1029,7 +1029,8 @@ img {
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: #000000; } }
+    top: 100%;
+    background-color: #141414; } }
 
 .subnav-list {
   list-style-type: none;
@@ -1037,7 +1038,6 @@ img {
   overflow: hidden; }
   @media (min-width: 40em) {
     .subnav-list {
-      background-color: #000000;
       margin-top: 0.825rem; } }
   .subnav-list.-site {
     max-height: 0;
@@ -1531,4 +1531,7 @@ img {
   padding-top: 0; }
 
 .tax-collection .header.-site, .single-project .header.-site {
-  background-color: rgba(0, 0, 0, 0.7); }
+  background-color: rgba(0, 0, 0, 0.85); }
+
+.tax-collection .subnav-wrapper, .single-project .subnav-wrapper {
+  background-color: rgba(20, 20, 20, 0.85); }
