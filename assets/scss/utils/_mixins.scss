@@ -60,7 +60,7 @@
 @mixin border-fancy {
     position: relative;
     border-top: $border-accent-light;
-    padding: $size-base $size-h2;
+    padding: $size-base;
     margin: 0 $size-sml;
 
     &:after {

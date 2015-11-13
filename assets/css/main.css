@@ -1310,7 +1310,7 @@ img {
   letter-spacing: 1px;
   position: relative;
   border-top: 1px solid #E6E6E3;
-  padding: 1.1rem 2.53rem;
+  padding: 1.1rem;
   margin: 0 0.825rem; }
   .tease-title.-piece:after,
   .tease-title.-page:after,
@@ -1360,7 +1360,7 @@ img {
   color: #916300;
   position: relative;
   border-top: 1px solid #E6E6E3;
-  padding: 1.1rem 2.53rem;
+  padding: 1.1rem;
   margin: 0 0.825rem; }
   .archive-desc:after {
     content: "";
