@@ -1310,15 +1310,13 @@ img {
   letter-spacing: 1px;
   position: relative;
   border-top: 1px solid #E6E6E3;
-  padding: 1.1rem;
-  margin: 0 0.825rem; }
+  padding: 1.1rem 0; }
   .tease-title.-piece:after,
   .tease-title.-page:after,
   .tease-title.-collection:after {
-    content: "";
     position: absolute;
-    width: 0.495rem;
-    height: 0.495rem;
+    width: 0.4356rem;
+    height: 0.4356rem;
     left: 50%;
     top: 0;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -1360,13 +1358,11 @@ img {
   color: #916300;
   position: relative;
   border-top: 1px solid #E6E6E3;
-  padding: 1.1rem;
-  margin: 0 0.825rem; }
+  padding: 1.1rem 0; }
   .archive-desc:after {
-    content: "";
     position: absolute;
-    width: 0.495rem;
-    height: 0.495rem;
+    width: 0.4356rem;
+    height: 0.4356rem;
     left: 50%;
     top: 0;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
