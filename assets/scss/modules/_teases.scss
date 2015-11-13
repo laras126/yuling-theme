@@ -21,25 +21,11 @@
 		font-size: $size-xsml;
 		color: $color-text-dark;
 		@include upperspace;
-		padding: $size-base $size-h2;
-		margin: 0 $size-sml;
-		position: relative;
-		border-top: $border-accent-light;
+		@include border-fancy;
 
 		@include bp(sm) {
 			font-size: $size-sml;
 			margin: 0 $size-base;
-		}
-
-		&:after {
-			content: "";
-			position: absolute;
-			width: $size-xsml*.75;
-			height: $size-xsml*.75;
-			left: 50%;
-			top: 0;
-			transform: translateX(-50%) translateY(-50%) rotate(45deg);
-			background-color: $color-accent-light;
 		}
 	}
 }
