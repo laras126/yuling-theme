@@ -46,6 +46,8 @@
 }
 
 .nav-item {
+	@include header-animate;
+	
 	@include bp(md) {
 		display: inline-block;
 		text-align: center;

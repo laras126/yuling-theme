@@ -991,13 +991,16 @@ img {
     #navOpenLink {
       display: none; } }
 
-@media (min-width: 40em) {
-  .nav-item {
-    display: inline-block;
-    text-align: center; } }
-
-.shrunk .nav-item {
-  padding-top: 0; }
+.nav-item {
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out; }
+  @media (min-width: 40em) {
+    .nav-item {
+      display: inline-block;
+      text-align: center; } }
+  .shrunk .nav-item {
+    padding-top: 0; }
 
 .nav-item,
 .subnav-item {
@@ -1095,7 +1098,11 @@ img {
   display: block;
   margin: 0 auto;
   max-width: 60%;
-  max-height: none; }
+  opacity: 1;
+  max-height: 6em;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out; }
   @media (min-width: 35em) {
     .logo-text-logo {
       max-width: 16.5rem; } }
