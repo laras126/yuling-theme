@@ -22,6 +22,16 @@
 	@include border-fancy-top;
 }
 
+.single-meta {
+	text-align: center;
+
+	p {
+		@extend h4;
+		font-style: italic;
+		color: $color-accent-med;
+	}
+}
+
 .single-sidebar-text {
 	@include detail-text;
 }

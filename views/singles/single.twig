@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block content %}
+	<div class="single-meta -{{post.post_type}}">
+		<p>{{post.date}}</p>
+	</div>
+
 	{% for block in post.get_field('blocks') %} 
 		{% include 'blocks/block-logic.twig' %}
 	{% endfor %}

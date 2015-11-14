@@ -143,7 +143,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-small, .archive-details h4 {
+small, .archive-details h4, .archive-details .single-meta p, .single-meta .archive-details p {
   font-size: 80%; }
 
 /**
@@ -735,7 +735,7 @@ a {
   a:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, .single-meta p, h5, h6 {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-weight: 300;
   margin-bottom: 0;
@@ -751,7 +751,7 @@ h2 {
 h3 {
   font-size: 1.98rem; }
 
-h4 {
+h4, .single-meta p {
   font-size: 1.43rem; }
 
 h5 {
@@ -764,7 +764,7 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 1px; }
 
-small, .archive-details h4 {
+small, .archive-details h4, .archive-details .single-meta p, .single-meta .archive-details p {
   font-size: 0.825rem; }
 
 strong {
@@ -1424,7 +1424,7 @@ img {
       right: 5px;
       bottom: 5px;
       border: 1px solid #916300; }
-  .archive-details h4 {
+  .archive-details h4, .archive-details .single-meta p, .single-meta .archive-details p {
     text-transform: uppercase;
     letter-spacing: 1px; }
   .archive-details p {
@@ -1493,6 +1493,12 @@ img {
 
 .client {
   border-top: 1px solid #E6E6E3; }
+
+.single-meta {
+  text-align: center; }
+  .single-meta p {
+    font-style: italic;
+    color: #916300; }
 
 .single-sidebar-text {
   font-size: 0.825rem; }
