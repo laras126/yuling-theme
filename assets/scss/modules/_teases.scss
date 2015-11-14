@@ -4,6 +4,7 @@
 .tease {
 	&.-piece, 
 	&.-project,
+	&.-post,
 	&.-page {
 		@include cell(half);
 		padding: $size-base;
@@ -18,6 +19,7 @@
 	&.-piece,
 	&.-page,
 	&.-project,
+	&.-post,
 	&.-collection {
 		font-size: $size-xsml;
 		color: $color-text-dark;
@@ -49,7 +51,8 @@
 
 .tease-info {
 	&.-piece, 
-	&.-project {
+	&.-project, 
+	&.-post {
 		text-align: center;
 	}
 }

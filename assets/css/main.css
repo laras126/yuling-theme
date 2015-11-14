@@ -1282,6 +1282,7 @@ img {
 
 .tease.-piece,
 .tease.-project,
+.tease.-post,
 .tease.-page {
   position: relative;
   padding-left: 0.55rem;
@@ -1292,6 +1293,7 @@ img {
   @media (min-width: 40em) {
     .tease.-piece,
     .tease.-project,
+    .tease.-post,
     .tease.-page {
       flex: 0 0 33.333333%;
       max-width: 33.333333%;
@@ -1300,6 +1302,7 @@ img {
 .tease-title.-piece,
 .tease-title.-page,
 .tease-title.-project,
+.tease-title.-post,
 .tease-title.-collection {
   font-size: 0.66rem;
   color: #000000;
@@ -1311,6 +1314,7 @@ img {
   .tease-title.-piece:after,
   .tease-title.-page:after,
   .tease-title.-project:after,
+  .tease-title.-post:after,
   .tease-title.-collection:after {
     position: absolute;
     width: 0.4356rem;
@@ -1323,6 +1327,7 @@ img {
     .tease-title.-piece,
     .tease-title.-page,
     .tease-title.-project,
+    .tease-title.-post,
     .tease-title.-collection {
       font-size: 0.825rem; } }
 
@@ -1337,11 +1342,13 @@ img {
       transition: 0.3s ease all; } }
 
 .tease-info.-piece,
-.tease-info.-project {
+.tease-info.-project,
+.tease-info.-post {
   text-align: center; }
 
 .archive.-piece,
 .archive.-project,
+.archive.-post,
 .archive.-search {
   display: flex;
   flex-flow: row wrap;

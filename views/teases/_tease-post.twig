@@ -2,10 +2,14 @@
 
 {# TODO: Customize markup in here #}
 {% block content %}
-	{% if post.thumbnail.src %}
-		<img src="{{post.thumbnail.src|resize(400, 400)}}" alt="{{post.title}} Thumbnail">
-	{% endif %}
-	<h4><a href="{{post.link}}">{{post.title}}</a></h4>
-	<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}</p>
+	<a href="{{post.link}}">
+		{% if post.thumbnail.src %}
+			<img src="{{post.thumbnail.src|resize(400, 400)}}" alt="{{post.title}} Thumbnail">
+		{% endif %}
+		<div class="tease-info -{{post.post_type}}">
+			<h4 class="tease-title -{{post.post_type}}">{{post.title}}</h4>
+			<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}</p>
+		</div>
+	</a>
 	{% include 'utility/edit-link.twig' %}
 {% endblock %}

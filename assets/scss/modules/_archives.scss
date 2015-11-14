@@ -3,7 +3,8 @@
 
 .archive {
 	&.-piece,
-	&.-project, 
+	&.-project,
+	&.-post, 
 	&.-search {
 		@include grid;
 	}

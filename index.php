@@ -21,6 +21,7 @@
 	$context['posts'] = Timber::get_posts();
 	$context['foo'] = 'bar';
 	$templates = array('index.twig');
+	$templates = array('blog.twig', 'index.twig');
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
 	}
