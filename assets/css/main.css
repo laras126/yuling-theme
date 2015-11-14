@@ -3,21 +3,21 @@
 .tease-title.-page,
 .tease-title.-project,
 .tease-title.-post,
-.tease-title.-collection, .archive-desc, .client {
+.tease-title.-collection, .archive-desc {
   position: relative;
   padding: 1.1rem 0; }
   .title.-page:after, .tease-title.-piece:after,
   .tease-title.-page:after,
   .tease-title.-project:after,
   .tease-title.-post:after,
-  .tease-title.-collection:after, .archive-desc:after, .client:after {
+  .tease-title.-collection:after, .archive-desc:after {
     position: absolute;
-    width: 0.4356rem;
-    height: 0.4356rem;
+    width: 0.33rem;
+    height: 0.33rem;
     left: 50%;
-    top: 0;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    background-color: #E6E6E3; }
+    background-color: #E6E6E3;
+    border-radius: 50%; }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
@@ -1148,6 +1148,8 @@ img {
 
 .title.-page {
   border-bottom: 1px solid #E6E6E3; }
+  .title.-page:after {
+    top: 100%; }
 
 .slider.-full {
   background-color: #E6E6E3; }
@@ -1334,6 +1336,12 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   border-top: 1px solid #E6E6E3; }
+  .tease-title.-piece:after,
+  .tease-title.-page:after,
+  .tease-title.-project:after,
+  .tease-title.-post:after,
+  .tease-title.-collection:after {
+    top: 0; }
   @media (min-width: 35em) {
     .tease-title.-piece,
     .tease-title.-page,
@@ -1376,6 +1384,8 @@ img {
   font-style: italic;
   color: #916300;
   border-top: 1px solid #E6E6E3; }
+  .archive-desc:after {
+    top: 0; }
 
 .archive-footer-title {
   text-transform: uppercase;
@@ -1493,9 +1503,6 @@ img {
   font-style: italic;
   margin: 0;
   font-size: 0.825rem; }
-
-.client {
-  border-top: 1px solid #E6E6E3; }
 
 .single-meta {
   text-align: center; }
