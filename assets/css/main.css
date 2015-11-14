@@ -1281,28 +1281,25 @@ img {
   margin-top: 1.1rem; }
 
 .tease.-piece,
+.tease.-project,
 .tease.-page {
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
   flex: 0 0 50%;
   max-width: 50%;
-  padding-top: 1.1rem; }
+  padding: 1.1rem; }
   @media (min-width: 40em) {
     .tease.-piece,
+    .tease.-project,
     .tease.-page {
       flex: 0 0 33.333333%;
-      max-width: 33.333333%; } }
-
-.tease.-project {
-  position: relative;
-  padding-left: 0.55rem;
-  padding-right: 0.55rem;
-  flex: 0 0 50%;
-  max-width: 50%; }
+      max-width: 33.333333%;
+      padding: 1.1rem; } }
 
 .tease-title.-piece,
 .tease-title.-page,
+.tease-title.-project,
 .tease-title.-collection {
   font-size: 0.66rem;
   color: #000000;
@@ -1313,6 +1310,7 @@ img {
   padding: 1.1rem 0; }
   .tease-title.-piece:after,
   .tease-title.-page:after,
+  .tease-title.-project:after,
   .tease-title.-collection:after {
     position: absolute;
     width: 0.4356rem;
@@ -1324,9 +1322,9 @@ img {
   @media (min-width: 35em) {
     .tease-title.-piece,
     .tease-title.-page,
+    .tease-title.-project,
     .tease-title.-collection {
-      font-size: 0.825rem;
-      margin: 0 1.1rem; } }
+      font-size: 0.825rem; } }
 
 @media (min-width: 40em) {
   .tease-img:hover {
@@ -1336,7 +1334,8 @@ img {
     opacity: 1;
     transition: 0.3s ease all; } }
 
-.tease-info.-piece {
+.tease-info.-piece,
+.tease-info.-project {
   text-align: center; }
 
 .archive.-piece,

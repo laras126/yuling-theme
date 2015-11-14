@@ -3,20 +3,21 @@
 
 .tease {
 	&.-piece, 
+	&.-project,
 	&.-page {
 		@include cell(half);
-		@include bp(md) { @include cell(third, $is_first: false); }
-		padding-top: $size-base;
-	}
-
-	&.-project {
-		@include cell(half);
+		padding: $size-base;
+		@include bp(md) { 
+			@include cell(third, $is_first: false); 
+			padding: $gutter;
+		}
 	}
 }
 
 .tease-title {
 	&.-piece,
 	&.-page,
+	&.-project,
 	&.-collection {
 		font-size: $size-xsml;
 		color: $color-text-dark;
@@ -25,7 +26,7 @@
 
 		@include bp(sm) {
 			font-size: $size-sml;
-			margin: 0 $size-base;
+			//margin: 0 $size-base;
 		}
 	}
 }
@@ -46,7 +47,8 @@
 }
 
 .tease-info {
-	&.-piece {
+	&.-piece, 
+	&.-project {
 		text-align: center;
 	}
 }
