@@ -19,7 +19,7 @@
 	font-family: $font-heading;
 	font-style: italic;
 	color: $color-accent-med;
-	@include border-fancy;
+	@include border-fancy-top;
 }
 
 .archive-footer-title {

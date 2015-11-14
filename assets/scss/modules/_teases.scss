@@ -24,7 +24,7 @@
 		font-size: $size-xsml;
 		color: $color-text-dark;
 		@include upperspace;
-		@include border-fancy;
+		@include border-fancy-top;
 
 		@include bp(sm) {
 			font-size: $size-sml;

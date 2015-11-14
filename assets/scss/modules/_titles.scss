@@ -14,4 +14,8 @@
 			color: $color-rotate-text;
 		}
 	}
+
+	&.-page {
+		@include border-fancy-bottom;
+	}
 }

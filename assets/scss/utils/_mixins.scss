@@ -57,9 +57,14 @@
     padding-#{$border-pos}: $size-sml;
 }
 
-@mixin border-fancy {
+
+
+// ----
+// Fancypants borders
+// ----
+
+%border-fancy {
     position: relative;
-    border-top: $border-accent-light;
     padding: $size-base 0;
 
     &:after {
@@ -74,6 +79,16 @@
         //border-radius: 50%; makes the accent shape into a circle
     }
 
+}
+
+@mixin border-fancy-top {
+    @extend %border-fancy;
+    border-top: $border-accent-light;
+}
+
+@mixin border-fancy-bottom {
+    @extend %border-fancy;
+    border-bottom: $border-accent-light;
 }
 
 
