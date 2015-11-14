@@ -982,7 +982,7 @@ img {
 
 @media (min-width: 40em) {
   .main {
-    padding-top: 11rem; } }
+    padding: 11rem 0 2.75rem; } }
 
 .nav-list {
   list-style-type: none;
