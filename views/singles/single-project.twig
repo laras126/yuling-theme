@@ -18,7 +18,7 @@
 {% block content %}
 	{% if post.client %}
 		<div class="contain--sm text-center">
-			<p>Client: {{post.client_link ? '<a href="' ~ post.client_link ~ ' target="blank">'}}{{post.client}}{{post.client_link ? '</a>'}}</p> 
+			<p class="client">Client: {{post.client_link ? '<a href="' ~ post.client_link ~ ' " target="blank">'}}{{post.client}}{{post.client_link ? '</a>'}}</p> 
 		</div>
 	{% endif %}
 

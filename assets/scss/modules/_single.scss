@@ -18,6 +18,10 @@
 	}
 }
 
+.client {
+	@include border-fancy;
+}
+
 .single-sidebar-text {
 	@include detail-text;
 }
