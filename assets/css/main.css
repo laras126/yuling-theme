@@ -1381,7 +1381,8 @@ img {
   font-size: 0.825rem;
   border-top: 1px solid;
   padding-top: 0.825rem;
-  margin-bottom: 1.1rem; }
+  font-size: 1.1rem;
+  margin: 4.4rem 0 1.1rem; }
 
 .archive-details {
   background-color: #000000;

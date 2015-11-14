@@ -24,7 +24,8 @@
 
 .archive-footer-title {
 	@include detail-title();
-	margin-bottom: $size-base;
+	font-size: $size-base;
+	margin: $size-base*4 0 $size-base;
 }
 
 .archive-details {
