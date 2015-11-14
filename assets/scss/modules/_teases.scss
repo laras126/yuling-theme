@@ -34,6 +34,7 @@
 .tease-img {
 
 	@include bp(md) {
+		transform: translateZ(0);
 		&:hover {
 			opacity: 0.5;
 			transition: 0.3s ease all;

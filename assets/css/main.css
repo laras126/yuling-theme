@@ -1327,12 +1327,14 @@ img {
       font-size: 0.825rem; } }
 
 @media (min-width: 40em) {
-  .tease-img:hover {
-    opacity: 0.5;
-    transition: 0.3s ease all; }
-  .tease-img:active {
-    opacity: 1;
-    transition: 0.3s ease all; } }
+  .tease-img {
+    transform: translateZ(0); }
+    .tease-img:hover {
+      opacity: 0.5;
+      transition: 0.3s ease all; }
+    .tease-img:active {
+      opacity: 1;
+      transition: 0.3s ease all; } }
 
 .tease-info.-piece,
 .tease-info.-project {
