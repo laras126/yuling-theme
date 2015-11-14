@@ -1111,6 +1111,7 @@ img {
 .header.-site {
   background-color: black;
   position: fixed;
+  backface-visibility: hidden;
   width: 100%;
   z-index: 4;
   top: 0; }
