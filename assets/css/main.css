@@ -1203,7 +1203,7 @@ img {
       flex: 0 0 50%;
       max-width: 50%; } }
   .footer-section.-right {
-    border-left: 1px solid #E6E6E3;
+    border-left: 1px solid #666666;
     padding-left: 1.1rem; }
 
 .widget-list {
@@ -1219,7 +1219,7 @@ img {
     padding-left: 0; }
 
 .widget {
-  color: #FFFFFF;
+  color: #999999;
   font-size: 0.825rem;
   margin: 0;
   padding-top: 0.825rem;
@@ -1250,11 +1250,12 @@ img {
   font-size: 0.825rem;
   border-none: 1px solid;
   padding-none: 0.825rem;
+  color: #FFFFFF;
   margin-top: 0;
   margin-bottom: 0.66rem; }
 
 .widget a {
-  color: #FFFFFF; }
+  color: #999999; }
   .widget a:hover {
     color: #916300; }
 

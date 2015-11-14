@@ -23,7 +23,7 @@
 	}
 
 	&.-right {
-		border-left: $border-accent-light;
+		border-left: 1px solid lighten($color-text-dark, 40%);
 		padding-left: $size-base;
 	}
 }
@@ -38,7 +38,7 @@
 }
 
 .widget {
-	@include meta($color-rotate-text);
+	@include meta(lighten($color-text-dark, 60%));
 	
 	&.-right {
 		@include cell(full);
@@ -57,12 +57,13 @@
 
 .widget-title {
 	@include detail-title(none);
+	color: $color-rotate-text;	
 	margin-top: 0;
 	margin-bottom: $size-xsml;
 }
 
 .widget a {
-	color: $color-rotate-text;
+	color: lighten($color-text-dark, 60%);
 	&:hover {
 		color: $color-accent-med;	
 	}
