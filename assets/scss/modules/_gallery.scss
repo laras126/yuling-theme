@@ -1,9 +1,14 @@
 .gallery {
 	@include grid;
+
+	// Eh, would be better not to override this, but oh well.
+	&.-inspiration {
+		margin: 0;
+	}
 }
 
-.gallery-thumb {
-	
+.gallery-thumb {	
+
 	&.-piece,
 	&.-collection,
 	&.-project,
@@ -11,14 +16,18 @@
 		@include cell(half);
 	}
 
+	&.-inspiration {
+		@include cell($size: half, $guttered: false);
+	}
+
 	&.-collection {
 		@include bp(sm) { @include cell(half); }
 		@include bp(md) { @include cell(third, $is_first: false); }
 		@include bp(lg) { @include cell(fourth, $is_first: false); }
-		
 	}
 
 	img {
 		width: 100%;
+		display: block;
 	}
 }
