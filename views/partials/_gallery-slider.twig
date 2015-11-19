@@ -1,5 +1,12 @@
-<div class="slider -{{post.post_type}}">
+<div class="slider -{{post.post_type}} teaser">
 	{% for image in gallery %}
-		<img data-src="{{image.url|resize(1200)}}" class="slider-img -full lazyload" src="{{image.url|resize(500)}}" alt="{{image.title}}">
+		<img 
+			data-sizes="auto"
+			data-srcset="{{image.url|resize(500)}} 500w,
+				{{image.url|resize(800)}} 640w,
+				{{image.url|resize(1200)}} 1024w"
+				class="slider-img -full lazyload" 
+				src="{{image.url|resize(500)}}" alt="{{image.title}}">
+
 	{% endfor %}
 </div>
