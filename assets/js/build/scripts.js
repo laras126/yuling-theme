@@ -295,7 +295,7 @@ $(document).ready(function() {
           } else {
             allTargets.removeClass('active');
             $target.addClass('active').animate({
-            	'max-height' : 'none'
+            	'max-height' : '100em'
             }, 500); 
           }
           
