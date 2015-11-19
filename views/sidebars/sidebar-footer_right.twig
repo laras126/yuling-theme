@@ -1,24 +1,26 @@
 <ul class="widget-list">
 	{{widgets}}
+	{# TODO: definitely wrote a blog post about making an array for these. Oh well. #}
+	
 	<li class="widget">	
 		<ul class="social-list">
 			<li class="social-item">
-				<a href="#">
+				<a href="http://twitter.com/{{twitter}}">
 					{% include 'utility/svg.twig' with { file: 'twitter', prefix: 'icon' } %}
 				</a>
 			</li>
 			<li class="social-item">
-				<a href="#">
+				<a href="http://facebook.com/{{facebook}}">
 					{% include 'utility/svg.twig' with { file: 'facebook', prefix: 'icon' } %}
 				</a>
 			</li>
 			<li class="social-item">
-				<a href="#">
+				<a href="http://instagram.com/{{instagram}}">
 					{% include 'utility/svg.twig' with { file: 'instagram', prefix: 'icon' } %}
 				</a>
 			</li>
 			<li class="social-item">
-				<a href="#">
+				<a href="http://pinterest.com/{{pinterest}}">
 					{% include 'utility/svg.twig' with { file: 'pinterest', prefix: 'icon' } %}
 				</a>
 			</li>
