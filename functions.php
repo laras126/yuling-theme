@@ -194,28 +194,28 @@
 	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
 	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
 
-	if ( is_admin() ) { // check to make sure we aren't on the front end
-		add_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast');
+	// if ( is_admin() ) { // check to make sure we aren't on the front end
+	// 	add_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast');
 
-		function nl_add_custom_to_yoast( $content ) {
-			global $post;
-			$pid = $post->ID;
+	// 	function nl_add_custom_to_yoast( $content ) {
+	// 		global $post;
+	// 		$pid = $post->ID;
 			
-			$custom = get_post_custom($pid);
-			unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
+	// 		$custom = get_post_custom($pid);
+	// 		unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
 
-			foreach( $custom as $key => $value ) {
-				if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
-				  $custom_content .= $value[0] . ' ';
-				}
-			}
+	// 		foreach( $custom as $key => $value ) {
+	// 			if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
+	// 			  $custom_content .= $value[0] . ' ';
+	// 			}
+	// 		}
 
-			$content = $content . ' ' . $custom_content;
-			return $content;
+	// 		$content = $content . ' ' . $custom_content;
+	// 		return $content;
 
-			remove_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast'); // don't let WP execute this twice
-		}
-	}
+	// 		remove_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast'); // don't let WP execute this twice
+	// 	}
+	// }
 
 
 
@@ -252,30 +252,30 @@
 
 	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
 	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
-	if ( is_admin() ) { // check to make sure we aren't on the front end
-		add_filter('wpseo_pre_analysis_post_content', 'yld_add_custom_to_yoast');
+	// if ( is_admin() ) { // check to make sure we aren't on the front end
+	// 	add_filter('wpseo_pre_analysis_post_content', 'yld_add_custom_to_yoast');
 
-		function yld_add_custom_to_yoast( $content ) {
-			global $post;
-			$pid = $post->ID;
+	// 	function yld_add_custom_to_yoast( $content ) {
+	// 		global $post;
+	// 		$pid = $post->ID;
 			
-			$custom_content = '';
+	// 		$custom_content = '';
 
-			$custom = get_post_custom($pid);
-			unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
+	// 		$custom = get_post_custom($pid);
+	// 		unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
 
-			foreach( $custom as $key => $value ) {
-				if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
-				  $custom_content .= $value[0] . ' ';
-				}
-			}
+	// 		foreach( $custom as $key => $value ) {
+	// 			if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
+	// 			  $custom_content .= $value[0] . ' ';
+	// 			}
+	// 		}
 
-			$content = $content . ' ' . $custom_content;
-			return $content;
+	// 		$content = $content . ' ' . $custom_content;
+	// 		return $content;
 
-			remove_filter('wpseo_pre_analysis_post_content', 'mtn_add_custom_to_yoast'); // don't let WP execute this twice
-		}
-	}
+	// 		remove_filter('wpseo_pre_analysis_post_content', 'mtn_add_custom_to_yoast'); // don't let WP execute this twice
+	// 	}
+	// }
 
 
 	// Extend WordPress search to include custom fields
