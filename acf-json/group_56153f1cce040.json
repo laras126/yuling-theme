@@ -92,6 +92,31 @@
             "new_lines": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_564e2c500251d",
+            "label": "Inspiration Gallery",
+            "name": "inspiration_gallery",
+            "type": "gallery",
+            "instructions": "Add inspirational images from Pinterest.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -111,5 +136,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1447954279
+    "modified": 1447963754
 }
