@@ -18,9 +18,13 @@
 
 .btn {
     display: inline-block;
-    padding: $size-xsml;
+    padding: $size-xsml $size-base;
     margin-top: $size-sml;
     margin-bottom: $size-sml;
+    font-size: $size-sml;
+    font-family: $font-btn;
+    @include upperspace;
+
 
     &.-readmore {
         @include button($color-accent-med);
