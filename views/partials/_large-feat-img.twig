@@ -1,0 +1,7 @@
+<img
+	data-srcset="{{img.src|resize(500)}} 500w,
+				{{img.src|resize(800)}} 640w,
+				{{img.src|resize(1200)}} 1024w"
+	src="{{img.src|resize(200)}}" 
+	alt="Featured Image"
+	class="lazyload{{class ? ' ' ~ class}}">
