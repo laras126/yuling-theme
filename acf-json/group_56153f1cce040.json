@@ -52,10 +52,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_5632a185c345e",
-            "label": "Long Description",
-            "name": "long_description",
-            "type": "wysiwyg",
+            "key": "field_564e036509a01",
+            "label": "Description Title",
+            "name": "description_title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -65,9 +65,33 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "text_based",
-            "media_upload": 1
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5632a185c345e",
+            "label": "Long Description",
+            "name": "long_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -87,5 +111,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1446158745
+    "modified": 1447954279
 }
