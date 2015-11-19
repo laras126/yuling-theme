@@ -10,7 +10,7 @@
 body {
 	word-wrap: break-word;
 	
-	@include bp(small) {
+	@include bp(sm) {
 		word-wrap: normal;
 	}
 }
