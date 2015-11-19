@@ -28,6 +28,11 @@
 	margin: $size-base*4 0 $size-base;
 }
 
+
+// ---
+// All Collections archive
+// ---
+
 // Archive Details/Quote Module
 
 .archive-details {
@@ -39,12 +44,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    padding: 5%;
-	
-	@include bp(lg) {
-		height: 80vh;
-	    padding: 2.5%;
-	}
+    padding: $size-h3;
 }
 
 
@@ -61,10 +61,8 @@
 
 .archive-details-block {
 	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid $gold;
+	@include grid($guttered: false);
+	border: 1px solid $color-accent-med;
     padding: 2.5%;
 
 	@include bp(lg) {
@@ -103,3 +101,27 @@
 		content: "”";
 	}
 }
+
+
+// Archive Inspiration (Collections Page)
+
+.archive-featured {
+	// @include cell(half, $guttered: false);
+
+}
+
+.archive-inspiration,
+.archive-featured {
+	
+	img {
+		width: 100%;
+	}
+	
+	@include cell($size: half, $guttered: false);
+}
+
+.archive-images-wrap {
+	@include grid($guttered: false);
+	margin: 0;
+}
+
