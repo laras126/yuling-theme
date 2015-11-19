@@ -834,9 +834,13 @@ p {
 
 .btn {
   display: inline-block;
-  padding: 0.66rem;
+  padding: 0.66rem 1.1rem;
   margin-top: 0.825rem;
-  margin-bottom: 0.825rem; }
+  margin-bottom: 0.825rem;
+  font-size: 0.825rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
   .btn.-readmore {
     background: #916300;
     font-weight: 700;
@@ -1575,11 +1579,7 @@ img {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 5%; }
-  @media (min-width: 57em) {
-    .archive-details {
-      height: 80vh;
-      padding: 2.5%; } }
+  padding: 1.98rem; }
 
 .archive-details-img {
   position: absolute;
@@ -1599,14 +1599,10 @@ img {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
   border: 1px solid #916300;
   padding: 2.5%; }
   @media (min-width: 57em) {
@@ -1639,6 +1635,29 @@ img {
   .archive-details-quote:after {
     content: "”"; }
 
+.archive-inspiration,
+.archive-featured {
+  position: relative;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%; }
+  .archive-inspiration img,
+  .archive-featured img {
+    width: 100%; }
+
+.archive-images-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  margin: 0; }
+
 .block_list-list {
   list-style-type: none;
   padding-left: 0; }
@@ -1654,6 +1673,8 @@ img {
   position: relative;
   margin-left: -0.55rem;
   margin-right: -0.55rem; }
+  .gallery.-inspiration {
+    margin: 0; }
 
 .gallery-thumb.-piece,
 .gallery-thumb.-collection,
@@ -1662,6 +1683,14 @@ img {
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%; }
+
+.gallery-thumb.-inspiration {
+  position: relative;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 50%;
       -ms-flex: 0 0 50%;
@@ -1696,7 +1725,8 @@ img {
     max-width: 25%; } }
 
 .gallery-thumb img {
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 .single-title.-piece {
   text-transform: uppercase;
