@@ -1,4 +1,4 @@
-<div class="gallery -{{post.post_type}}">
+<div class="gallery -{{gall_class ? gall_class : post.post_type}} teaser">
 
 	{% for image in gallery %}
 		<div class="gallery-thumb -{{class ? class : post.post_type}}">
