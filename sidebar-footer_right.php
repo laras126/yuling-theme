@@ -8,6 +8,7 @@
  */
 
 $data['widgets'] = Timber::get_widgets('footer_right');
+
 // Social
 $data['pinterest'] = get_field('pinterest', 'options');
 $data['twitter'] = get_field('twitter', 'options');

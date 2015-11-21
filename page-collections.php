@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Template Name: Collections
  * Description: The template to show an archive of all collections.
