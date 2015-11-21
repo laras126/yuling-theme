@@ -266,11 +266,11 @@ $(document).ready(function() {
 
 
 	// Subnav
-	$('.has-subnav').each( function() {
-		$(this).on('click', function() {
-			$(this).toggleClass('open');
-		});
-	});
+	// $('.has-subnav').each( function() {
+	// 	$(this).on('click', function() {
+	// 		$(this).toggleClass('open');
+	// 	});
+	// });
 
 
 
@@ -319,6 +319,7 @@ $(document).ready(function() {
           
         return false;
       });
+
 
 
 
