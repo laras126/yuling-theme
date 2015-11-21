@@ -4,9 +4,7 @@
 	{% include 'headers/_header-collection.twig' with { h_class: '-collection' } %}
 {% endblock %}
 
-
 {% block content %}
-
 	<div class="contain--xl">
 		<div class="archive -piece">
 			{% for post in posts %}
@@ -14,24 +12,6 @@
 			{% endfor %}
 		</div>
 	</div>
-
-	<section class="archive-details">
-		{% for c in collections %}
-			{# Only show featured image from the current collection #}
-			{% if c.title == term.title %}
-				<img data-src="{{TimberImage(c.featured_image).src}}" src="{{placeholder}}" class="archive-details-img lazyload" alt="{{c.name}} Thumbnail">
-			{% endif %}
-		{% endfor %}
-		<div class="archive-details-block">
-			<div class="contain--md">
-				<h4 class="archive-details-title">{{term.description_title}}</h4>
-				<blockquote class="archive-details-quote">
-					{{term.long_description}}
-				</blockquote>
-			</div>
-		</div>
-	</section>
-
 {% endblock %}
 
 {% block after_content %}
