@@ -17,6 +17,7 @@
 	@include bp(md) {
 		@include cell(half);
 	}
+
 	margin-top: $size-base;
 
 	&.-left {
@@ -42,12 +43,16 @@
 	
 	&.-right {
 		@include cell(full);
-		@include bp(sm) { @include cell(half, $is_first: false); }
+		@include bp(lg) { 
+			@include cell(half, $is_first: false); 
+		}
 	}
 	
 	&.-left {
 		@include cell(half);
-		@include bp(md) { flex: 1; }
+		@include bp(lg) {
+			flex: 1; 
+		}
 	}
 	
 	padding-top: $size-sml;
