@@ -13,6 +13,14 @@
 			padding: $gutter;
 		}
 	}
+
+	&.-post {
+
+	}
+
+	&.-piece {
+		padding-bottom: $size-h3;
+	}
 }
 
 .tease-title {
@@ -47,12 +55,31 @@
 			transition: 0.3s ease all;
 		}
 	}
+
+	// &.-post {
+	// 	@include cell(third);
+	// }
 }
 
 .tease-info {
 	&.-piece, 
-	&.-project, 
-	&.-post {
+	&.-project {
 		text-align: center;
 	}
 }
+
+.tease-meta {
+	@include meta($color-text-med);
+}
+
+.tease-meta-link {
+	background-color: $color-accent-vlight;
+	color: $color-text-dark;
+	padding: $size-xsml/2 $size-xsml;
+	// font-style: italic;
+
+	&:hover {
+		// background-color: $color-accent-med;
+	}
+}
+
