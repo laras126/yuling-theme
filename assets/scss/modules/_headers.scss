@@ -2,8 +2,6 @@
 .header {
 	&.-site {
 		background-color: rgba($color-rotate-bkgd, 1);
-		// background: linear-gradient($color-rotate-bkgd, rgba($color-rotate-bkgd, 0));
-		// padding-bottom: $size-sml;
 		position: fixed;
 		width: 100%;
 		z-index: $z-top;
@@ -18,7 +16,7 @@
 }
 
 .logo-text-logo {
-	padding-top: $size-base;
+	padding-top: $size-h3;
 	display: block;
 	margin: 0 auto;
 	max-width: 60%;
@@ -35,4 +33,17 @@
 		opacity: 0;
 		padding-top: $size-xsml;
 	} 
+}
+
+.wishlist-link {
+	font-weight: $font-weight-strong;
+	@include meta;
+	display: block;
+	float: right;
+	padding-top: $size-sml;
+	color: $color-text-med;
+	
+	&:hover {
+		color: $color-accent-med;
+	}
 }

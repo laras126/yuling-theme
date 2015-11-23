@@ -2,16 +2,17 @@
 
 {% block header_content %}
 
-{# Need to fix and use this instead of img: #}
-<div class="contain--lg">
-    <div class="grid">
-        <div class="cell--fourth">
-            {% include 'partials/search-form.twig' %}
-        </div>
-    </div>
-</div>
-<a href="{{site.link}}">{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}</a>
+{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
 
+<nav class="nav -util">
+    <div class="contain--lg clearfix">
+    <div class="search-wrap">
+        {% include 'partials/search-form.twig' %}
+    </div>
+    <a href="#" class="wishlist-link">My wish list (X)</a>
+    </div>
+</nav>
+  
 <nav class="nav -site" role="navigation">
     <a href="#" class="nav-item-link" id="navOpenLink">Menu</a>
     <ul class="nav-list -site" id="toggleNav">

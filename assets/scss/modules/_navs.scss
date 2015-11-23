@@ -4,7 +4,13 @@
 
 .nav {
 	&.-site {
-		//@include contain(lg);
+	}
+
+	&.-util {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
 	}
 }
 
@@ -141,11 +147,4 @@
 	}
 }
 
- 
 
-// .subnav-item {
-// 	@include bp(md) {
-// 		padding: $size-sml;
-// 		text-align: left;
-// 	}
-// }

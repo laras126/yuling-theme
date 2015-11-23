@@ -106,18 +106,14 @@ fieldset {
 .search-form {
 	@include grid;
 	justify-content: center;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 input[type="search"] {
-	@include cell;
 	@include meta($color-rotate-text);
 	background-color: transparent;
 	border: none;
-	transition: 0.3s ease all;
 	padding-top: $size-xsml;
+	padding-left: $size-xsml;
 
 	&:focus,
 	.search & {
@@ -129,7 +125,8 @@ input[type="search"] {
 	margin-top: $size-xsml;
 	margin-bottom: 0;
 	border-right: $border-accent-light;
-	@include cell(sixth, $guttered: false);
+	@include cell($guttered: false);
+	width: $size-h4;
 }
 
 .search-icon {
@@ -138,5 +135,11 @@ input[type="search"] {
 }
 
 .search-submit {
-	display: none;
+	height: 0;
+	width: 0;
+	opacity: 0;
+}
+
+.search-wrap {
+	float: left;
 }
