@@ -15,3 +15,12 @@
 		background-color: rgba(lighten($color-rotate-bkgd, 8%), 0.85);
 	}
 }
+
+
+// Hack to prevent util nav overlapping main nav items
+.nav {
+	&.-site {
+		//@include contain(lg);
+		padding: 0 $size-h1*3;
+	}
+}
