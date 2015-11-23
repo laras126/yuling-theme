@@ -10,16 +10,16 @@
 // Layout
 // ----
 
-// @mixin clearfix() {
-//     &:before,
-//     &:after {
-//         content: " "; // 1
-//         display: table; // 2
-//     }
-//     &:after {
-//         clear: both;
-//     }
-// }
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 @mixin unstyle-list {
     list-style-type: none;
@@ -68,7 +68,8 @@
     padding: $size-base 0;
 
     &:after {
-        //content: ""; //uncomment this if you want the border to have a diamond, circle, etc in the center
+        // TODO: if we aren't using this should delete this lines and all :after styles that aren't necessary.
+        // content: ""; //uncomment this if you want the border to have a diamond, circle, etc in the center
         position: absolute;
         width: $size-xsml*.5;
         height: $size-xsml*.5;
