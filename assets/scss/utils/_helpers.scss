@@ -1,5 +1,6 @@
 
 
+
 // ----
 // Typography
 // ----
@@ -21,6 +22,11 @@
 	.meta-dark {
 		line-height: $line-height-sm;
 		@include meta($color-body-text);
+	}
+
+	.meta-upper {
+		@include meta;
+		@include upperspace;
 	}
 
 .text-center {
