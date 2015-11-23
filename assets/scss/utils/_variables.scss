@@ -4,7 +4,7 @@
 // ----
 
 $screen-sm:     35em;
-$screen-md:     40em;
+$screen-md:     53em;
 $screen-lg:   	64em;
 $screen-xl:     72em;
 
@@ -15,7 +15,7 @@ $screen-xl:     72em;
 
 $white: 			#FFFFFF;
 $black: 			#000000;
-$grey: 				#E6E6E3;
+$grey: 				darken(#E6E6E3, 8%);
 $gold: 				#916300;
 $pink: 				#B83074;
 
@@ -31,7 +31,7 @@ $l-green: 			#D9F2A2;
 $color-accent-dark:		$pink;
 $color-accent-med:		$gold;
 $color-accent-light:	$grey;
-$color-accent-vlight:	lighten($color-accent-light, 10%);
+$color-accent-vlight:	lighten($color-accent-light, 20%);
 
 // Alerts
 $color-alert-danger: 	lighten($l-green, 40%);
@@ -109,7 +109,7 @@ $font-btn:	 		$serif;
 
 $font-weight-heading: 	300;
 $font-weight-base: 		300;
-$font-weight-strong: 	500;
+$font-weight-strong: 	700;
 
 
 
