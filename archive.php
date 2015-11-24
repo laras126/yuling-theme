@@ -36,7 +36,14 @@
 			$data['term'] = $term;
 			array_unshift($templates, 'archives/taxonomy-'.$term->taxonomy.'.twig', 'archives/taxonomy.twig');
 		} else if (is_post_type_archive()){
-			$data['title'] = post_type_archive_title('', false);
+
+			if (is_post_type_archive('project')) {
+				// Possibly move this to theme options
+				$data['title'] = 'Projects';
+			} else {
+				$data['title'] = post_type_archive_title('', false);
+			}
+
 			$data['type'] = get_post_type();
 			array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
 		}
