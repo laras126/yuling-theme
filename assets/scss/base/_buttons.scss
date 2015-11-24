@@ -27,7 +27,8 @@
 
 
     &.-readmore {
-        @include button($color-accent-med);
+        @include button($color-body-bkgd, $text-color: $color-body-text);
+        border: 1px solid $color-body-text;
     }
 
     &.-danger {

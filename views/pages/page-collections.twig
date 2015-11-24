@@ -2,31 +2,29 @@
 
 {% block content %}
 
-	{% include 'headers/_header-page.twig' with { h_class: 'header--page' } %}
+	{# {% include 'headers/_header-page.twig' with { h_class: 'header--page' } %} #}
 
-	<header class="page-header">
-		<h2>{{post.title}}</h2>
-		<p class="page-tagline">{{post.summary}}</p>
+	<header class="page-header -collections-archive text-center contain--sm">
+		<h1>{{post.title}}</h1>
+		<p class="page-tagline">{{post.header_tagline}}</p>
 	</header>
-
+	<div class="archive-container">
 	{% for c in terms %}
 		{% set feat = TimberImage(c.featured_image) %}
-		<section class="archive-details">
-			{% include 'partials/_large-feat-img.twig' with { img : feat, class : 'archive-details-img' } %}
+		<section class="archive-quote" data-title="{{c.title}}">
+			<div class="contain--lg archive-quote-inner">
 
-			<div class="archive-details-block">
-				<div class="contain--md">
-					<h4 class="archive-details-title">{{c.description_title}}</h4>
-					<blockquote class="archive-details-quote">
-						{{c.long_description}}
-					</blockquote>
-					<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
-				</div>
+				<h4 class="archive-quote-title">{{c.description_title}}</h4>
+				<blockquote class="archive-details-quote">
+					{{c.long_description}}
+				</blockquote>
+				<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
+
 			</div>
 		</section>
 
-		<section class="archive-images">
-			<div class="archive-images-wrap">
+		<section class="archive-images" data-title="{{c.title}}">
+			<div class="archive-images-inner">
 
 				<div class="archive-featured">
 					{% include 'partials/_large-feat-img.twig' with { img : feat } %}
@@ -39,6 +37,7 @@
 
 			</div>
 		</section>
+		</div>
 	{% endfor %}
 	
 {% endblock %}
