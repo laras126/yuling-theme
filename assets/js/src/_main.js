@@ -29,14 +29,6 @@ $(document).ready(function() {
 	});
 
 
-	// Subnav
-	// $('.has-subnav').each( function() {
-	// 	$(this).on('click', function() {
-	// 		$(this).toggleClass('open');
-	// 	});
-	// });
-
-
 
 
 	// ----
@@ -95,6 +87,7 @@ $(document).ready(function() {
 	var headerHeight = $header.outerHeight();
 	
 	// Do these things when scrolling
+	// TODO: I think this is messing and adding the black lines. Es posible.
 	$(window).scroll( function() {
 
 		if ( $(this).scrollTop() > headerHeight ) {
@@ -122,8 +115,8 @@ $(document).ready(function() {
 		imagesLoaded: true,
 		pageDots: false,
 		wrapAround: true,
-		// lazyload: true,
-		percentPosition: false
+		lazyload: true
+		// percentPosition: false
 	});
 
 	$('.thumb-slider').flickity({
