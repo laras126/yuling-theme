@@ -52,7 +52,7 @@ http://flickity.metafizzy.co
   border: none;
   border-radius: 50%;
   background: white;
-  background: hsla(0, 0%, 100%, 0.75);
+  background: hsla(0, 0%, 100%, 0.25);
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
@@ -60,7 +60,9 @@ http://flickity.metafizzy.co
           transform: translateY(-50%);
 }
 
-.flickity-prev-next-button:hover { background: white; }
+.flickity-prev-next-button:hover { 
+  background: hsla(0, 0%, 100%, 0.75);
+}
 
 .flickity-prev-next-button:focus {
   outline: none;
