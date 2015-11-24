@@ -95,6 +95,7 @@
 	@include bp(md) {
 		text-align: left;
 		position: absolute;
+		transform: translateZ(0);
 		width: 100%;
 		left: 0;
 		top: 100%;
