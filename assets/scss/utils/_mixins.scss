@@ -58,46 +58,6 @@
 }
 
 
-
-// ----
-// Fancypants borders
-// ----
-
-%border-fancy {
-    position: relative;
-    padding: $size-base 0;
-
-    &:after {
-        // TODO: if we aren't using this should delete this lines and all :after styles that aren't necessary.
-        // content: ""; //uncomment this if you want the border to have a diamond, circle, etc in the center
-        position: absolute;
-        width: $size-xsml*.5;
-        height: $size-xsml*.5;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        background-color: $color-accent-light;
-        border-radius: 50%; //makes the accent shape into a circle
-    }
-
-}
-
-@mixin border-fancy-top {
-    @extend %border-fancy;
-    border-top: $border-accent-light;
-    &:after {
-        top: 0;
-    }
-}
-
-@mixin border-fancy-bottom {
-    @extend %border-fancy;
-    border-bottom: $border-accent-light;
-    &:after {
-        top: 100%;
-    }
-}
-
-
 // ----
 // Media Queries
 // ----
