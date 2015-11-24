@@ -622,7 +622,7 @@ http://flickity.metafizzy.co
   max-width: 64em; }
 
 .contain--md {
-  max-width: 40em; }
+  max-width: 53em; }
 
 .contain--sm {
   max-width: 35em; }
@@ -692,39 +692,6 @@ http://flickity.metafizzy.co
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%; } }
-
-@media (min-width: 35em) {
-  .cell--third {
-    position: relative;
-    padding-left: 0.55rem;
-    padding-right: 0.55rem;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.333333%;
-        -ms-flex: 0 0 33.333333%;
-            flex: 0 0 33.333333%;
-    max-width: 33.333333%; } }
-
-@media (min-width: 35em) {
-  .cell--fourth {
-    position: relative;
-    padding-left: 0.55rem;
-    padding-right: 0.55rem;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 25%;
-        -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-    max-width: 25%; } }
-
-@media (min-width: 35em) {
-  .cell--sixth {
-    position: relative;
-    padding-left: 0.55rem;
-    padding-right: 0.55rem;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66666667%;
-        -ms-flex: 0 0 16.66666667%;
-            flex: 0 0 16.66666667%;
-    max-width: 16.66666667%; } }
 
 .clearfix:before,
 .clearfix:after {
@@ -1331,17 +1298,17 @@ img {
 .slider-cell {
   width: 85%;
   margin-right: 10px;
-  background: #333;
-  height: auto; }
+  background: #333; }
 
 .slider-img {
-  height: 100%;
-  width: auto;
+  height: 300px;
   margin-right: 0.33rem; }
-
-.slider-img.flickity-lazyloaded,
-.slider-img.flickity-lazyerror {
-  opacity: 1; }
+  @media (min-width: 35em) {
+    .slider-img {
+      height: 500px; } }
+  @media (min-width: 64em) {
+    .slider-img {
+      height: 80vh; } }
 
 .thumb {
   padding-top: 1.98rem;
@@ -1911,3 +1878,15 @@ img {
     margin-right: 0.55rem; }
   .share-trigger.active:before {
     content: "–"; }
+
+.tax-collection .main, .single-project .main {
+  padding-top: 0; }
+
+.tax-collection .header.-site, .single-project .header.-site {
+  background-color: rgba(0, 0, 0, 0.85); }
+
+.tax-collection .subnav-wrapper, .single-project .subnav-wrapper {
+  background-color: rgba(20, 20, 20, 0.85); }
+
+.nav.-site {
+  padding: 0 8.25rem; }
