@@ -18,7 +18,7 @@
     <ul class="nav-list -site" id="toggleNav">
     {% for item in menu.items %}
         <li class="nav-item -site {{ item.get_children ? 'has-subnav' }}">
-            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}{% if item.get_children %}{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}{% endif %}</a>
+            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}</a>
             {% if item.get_children %}
                 <div class="subnav-wrapper -site">
                     <ul class="subnav-list -site">
