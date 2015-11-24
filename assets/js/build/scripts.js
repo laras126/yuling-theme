@@ -314,6 +314,41 @@ $(document).ready(function() {
 
 
 
+    // ----
+	// Reveal Quotes on Scroll (Collections page)
+	// ----
+
+	$('.archive-quote').removeClass('active');
+
+	$(window).scroll( function() {
+
+		// When next section image hits scroll top move active class to sibling
+		// $('.archive-quote').first().addClass('active');
+
+		$('.archive-images').each( function() {
+			
+			var image_dist = $(this).offset().top - $(window).scrollTop(),
+				win_height = $(window).height();
+
+			if ( image_dist < win_height ) {
+
+				var curr_att = $(this).attr('data-title');
+				var $current = $('.archive-images[data-title="'+curr_att+'"]');
+				
+				$('.archive-quote').removeClass('active');
+				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
+
+				// if ($(this).is(':last-child')) {
+				// 	$('.archive-quote[data-title="'+curr_att+'"]').removeClass('active').addClass('active-last');
+				// }
+			}
+
+		});
+
+	});
+
+
+
 
     // ----
 	// Shrink nav on scroll
