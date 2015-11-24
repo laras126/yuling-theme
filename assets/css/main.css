@@ -1,24 +1,4 @@
 @charset "UTF-8";
-.title.-page, .tease-title.-piece,
-.tease-title.-page,
-.tease-title.-project,
-.tease-title.-post,
-.tease-title.-collection, .archive-desc {
-  position: relative;
-  padding: 1.1rem 0; }
-  .title.-page:after, .tease-title.-piece:after,
-  .tease-title.-page:after,
-  .tease-title.-project:after,
-  .tease-title.-post:after,
-  .tease-title.-collection:after, .archive-desc:after {
-    position: absolute;
-    width: 0.33rem;
-    height: 0.33rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    background-color: #d3d3cd;
-    border-radius: 50%; }
-
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -1183,11 +1163,6 @@ img {
     text-transform: uppercase;
     color: #FFFFFF; }
 
-.title.-page {
-  border-bottom: 1px solid #d3d3cd; }
-  .title.-page:after {
-    top: 100%; }
-
 .slider.-full {
   background-color: #d3d3cd; }
 
@@ -1375,14 +1350,7 @@ img {
   font-size: 0.66rem;
   color: #000000;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-top: 1px solid #d3d3cd; }
-  .tease-title.-piece:after,
-  .tease-title.-page:after,
-  .tease-title.-project:after,
-  .tease-title.-post:after,
-  .tease-title.-collection:after {
-    top: 0; }
+  letter-spacing: 1px; }
   @media (min-width: 35em) {
     .tease-title.-piece,
     .tease-title.-page,
@@ -1432,10 +1400,7 @@ img {
   font-size: 1.98rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
-  color: #916300;
-  border-top: 1px solid #d3d3cd; }
-  .archive-desc:after {
-    top: 0; }
+  color: #916300; }
 
 .archive-footer-title {
   text-transform: uppercase;
