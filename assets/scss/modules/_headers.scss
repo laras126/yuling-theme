@@ -21,7 +21,7 @@
 	margin: 0 auto;
 	max-width: 60%;
 	opacity: 1;
-	max-height: 6em;
+	max-height: 6rem;
 	@include header-animate;
 
 	@include bp(sm) {
