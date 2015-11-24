@@ -420,7 +420,7 @@ http://flickity.metafizzy.co
   border: none;
   border-radius: 50%;
   background: white;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
@@ -428,7 +428,7 @@ http://flickity.metafizzy.co
   transform: translateY(-50%); }
 
 .flickity-prev-next-button:hover {
-  background: white; }
+  background: rgba(255, 255, 255, 0.75); }
 
 .flickity-prev-next-button:focus {
   outline: none;
