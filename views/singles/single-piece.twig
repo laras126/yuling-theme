@@ -15,19 +15,43 @@
 	<div class="contain--md">
 		
 		<div class="grid">
-			<div class="cell--half">
-				{% set img = TimberImage(post.thumbnail.src) %}
-				<img 
+				{# {% set img = TimberImage(post.thumbnail.src) %} #}
+				{# <img 
 					data-magnify-src={{img|resize(1800)}} data-srcset="{{img|resize(500)}} 500w,
 						{{img|resize(700)}} 640w,
 						{{img|resize(1024)}} 1024w"
 					src="{{placeholder}}"
-					class="lazyload magnify" />
+					class="lazyload magnify" /> #}
+
+			<div class="cell grid">
+				<div class="cell--sixth">
+				{% for img in post.gallery|slice(1) %}
+					{% set img = TimberImage(img) %}
+					<img 
+						data-srcset="{{img|resize(500)}} 500w,
+							{{img|resize(700)}} 640w,
+							{{img|resize(1024)}} 1024w"
+						src="{{placeholder}}"
+						class="lazyload" />
+				{% endfor %}
+				</div>
+
+				<div class="cell">
+					{% for img in post.gallery|slice(0,1) %}
+						{% set img = TimberImage(img) %}
+						<img 
+							data-magnify-src={{img|resize(1800)}} data-srcset="{{img|resize(500)}} 500w,
+								{{img|resize(700)}} 640w,
+								{{img|resize(1024)}} 1024w"
+							src="{{placeholder}}"
+							class="lazyload magnify" />
+					{% endfor %}
 					<p class="helper-text -piece">Hover to zoom.</p>
+				</div>
 			</div>
 
-			<div class="cell--half">
-				
+			<div class="cell--third">
+
 				{% for t in post.get_terms('collection')|slice(0,1) %}
 					<p class="single-title-compliment -piece">{{t.name}}</p>
 				{% endfor %}
