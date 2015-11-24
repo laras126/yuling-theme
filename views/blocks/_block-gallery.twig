@@ -1,5 +1,15 @@
 {% extends "blocks/block.twig" %}
 
 {% block content %}
-	{% include 'partials/_gallery.twig' with { gallery: block.gallery, class: 'block' } %}
+	{# {% include 'partials/_gallery.twig' with { gallery: block.gallery, class: 'block' } %} #}
+	<div class="gallery -block teaser">
+
+		{% for image in block.gallery %}
+			<div class="gallery-thumb -block">
+				{# Click to expand #}
+				<img data-src="{{image.url|resize(500)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
+			</div>
+		{% endfor %}
+
+	</div>
 {% endblock %}
