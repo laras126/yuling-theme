@@ -1810,9 +1810,82 @@ img {
   border-bottom: 1px solid;
   padding-bottom: 0.825rem; }
 
+.magnify {
+  max-width: 100%; }
+
+.piece-images {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem;
+  position: relative;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+.piece-thumbs {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1; }
+  @media (min-width: 53em) {
+    .piece-thumbs {
+      -webkit-box-ordinal-group: 1;
+      -webkit-order: 0;
+          -ms-flex-order: 0;
+              order: 0;
+      position: relative;
+      padding-left: 0.55rem;
+      padding-right: 0.55rem;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 16.66666667%;
+          -ms-flex: 0 0 16.66666667%;
+              flex: 0 0 16.66666667%;
+      max-width: 16.66666667%; } }
+
+.piece-image {
+  width: 100%; }
+  @media (min-width: 53em) {
+    .piece-image {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; } }
+  @media (min-width: 53em) {
+    .piece-image {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 calc(100% / 6 * 5);
+          -ms-flex: 0 0 calc(100% / 6 * 5);
+              flex: 0 0 calc(100% / 6 * 5);
+      max-width: calc(100% / 6 * 5); } }
+
+.piece-thumb-wrap {
+  padding-right: 1.1rem;
+  float: left;
+  width: 33%; }
+  @media (min-width: 53em) {
+    .piece-thumb-wrap {
+      padding: 0;
+      width: 100%; } }
+
 .piece-thumb {
-  opacity: 0.5; }
-  .piece-thumb.active {
+  opacity: 0.5;
+  cursor: pointer; }
+  .piece-thumb.active,
+  .piece-thumb:hover {
     opacity: 1; }
 
 .social-list {
