@@ -8,36 +8,41 @@
 		<h1>{{post.title}}</h1>
 		<p class="page-tagline">{{post.header_tagline}}</p>
 	</header>
-	<div class="archive-container">
+
+	{# <div class="archive-container"> #}
+	
 	{% for c in terms %}
+	
 		{% set feat = TimberImage(c.featured_image) %}
+	
 		<section class="archive-quote" data-title="{{c.title}}">
-			<div class="contain--lg archive-quote-inner">
-
-				<h4 class="archive-quote-title">{{c.description_title}}</h4>
-				<blockquote class="archive-details-quote">
-					{{c.long_description}}
-				</blockquote>
-				<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
-
+			<div class="cell">
+				<div class="contain--lg archive-quote-inner">
+					<h4 class="archive-quote-title">{{c.description_title ? c.description_title : "Title Here"}}</h4>
+					<blockquote class="archive-quote-content">
+						{{c.long_description}}
+					</blockquote>
+					<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
+				</div>
 			</div>
+
 		</section>
 
 		<section class="archive-images" data-title="{{c.title}}">
 			<div class="archive-images-inner">
 
-				<div class="archive-featured">
+				<div class="archive-images-featured">
 					{% include 'partials/_large-feat-img.twig' with { img : feat } %}
 				</div>
 				
-				<div class="archive-inspiration">
+				<div class="archive-images-inspiration">
 					<h4 class="detail-title">Inspiration on Pinterest</h4>
 					{% include 'partials/_gallery.twig' with { gallery: c.inspiration_gallery, gall_class : 'inspiration', class : 'inspiration' } %}
 				</div>
 
 			</div>
 		</section>
-		</div>
+		{# </div> #}
 	{% endfor %}
 	
 {% endblock %}
