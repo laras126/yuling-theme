@@ -15,24 +15,17 @@
 	<div class="contain--md">
 		
 		<div class="grid">
-				{# {% set img = TimberImage(post.thumbnail.src) %} #}
-				{# <img 
-					data-magnify-src={{img|resize(1800)}} data-srcset="{{img|resize(500)}} 500w,
-						{{img|resize(700)}} 640w,
-						{{img|resize(1024)}} 1024w"
-					src="{{placeholder}}"
-					class="lazyload magnify" /> #}
 
 			<div class="cell grid">
 				<div class="cell--sixth">
-				{% for img in post.gallery|slice(1) %}
+				{% for img in post.gallery %}
 					{% set img = TimberImage(img) %}
-					<img 
-						data-srcset="{{img|resize(500)}} 500w,
-							{{img|resize(700)}} 640w,
-							{{img|resize(1024)}} 1024w"
-						src="{{placeholder}}"
-						class="lazyload" />
+					<img
+						src="{{img|resize(300)}}" 
+						data-swap="{{img|resize(500)}}"
+						data-zoom="{{img|resize(1024)}}"
+						class="piece-thumb"
+						alt="{{post.title}} Thumbnail" />
 				{% endfor %}
 				</div>
 
@@ -40,11 +33,15 @@
 					{% for img in post.gallery|slice(0,1) %}
 						{% set img = TimberImage(img) %}
 						<img 
-							data-magnify-src={{img|resize(1800)}} data-srcset="{{img|resize(500)}} 500w,
+							{# data-magnify-src="{{img|resize(1800)}}" #}
+							data-srcset="{{img|resize(500)}} 500w,
 								{{img|resize(700)}} 640w,
 								{{img|resize(1024)}} 1024w"
 							src="{{placeholder}}"
-							class="lazyload magnify" />
+							data-magnify-src="{{img|resize(1024)}}"
+							id="swapTarget"
+							class="lazyload magnify"
+							alt="{{post.title}} Image" />
 					{% endfor %}
 				</div>
 			</div>
