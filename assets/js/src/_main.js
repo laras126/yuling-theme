@@ -79,15 +79,13 @@ $(document).ready(function() {
 
 
     // ----
-	// Reveal Quotes on Scroll (Collections page)
+	// Reveal and Rotate Quotes on Scroll (Collections page)
 	// ----
 
+	// Clear all quotes
 	$('.archive-quote').removeClass('active');
 
 	$(window).scroll( function() {
-
-		// When next section image hits scroll top move active class to sibling
-		// $('.archive-quote').first().addClass('active');
 
 		$('.archive-images').each( function() {
 			
@@ -96,23 +94,53 @@ $(document).ready(function() {
 
 			if ( image_dist < win_height ) {
 
+				// Get the data-title attribute of the images in the above height range
 				var curr_att = $(this).attr('data-title');
 				var $current = $('.archive-images[data-title="'+curr_att+'"]');
 				
+				// Clear all active classes
 				$('.archive-quote').removeClass('active');
-				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
 
-				// if ($(this).is(':last-child')) {
-				// 	$('.archive-quote[data-title="'+curr_att+'"]').removeClass('active').addClass('active-last');
-				// }
-			} else {
-				// $('.archive-quote').removeClass('active');
-			}
+				// Reveal the corresponding quote
+				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
+			} 
 
 		});
 
 	});
 
+
+
+    // ----
+	// Single Piece Detail Image Swap
+	// ----
+
+	// Call magnify only for larger devices
+	if ($(window).width() > 768) {
+		$('.magnify').magnify();
+	}
+	
+	// Add active class to first thumb
+	$('.piece-thumb').first().addClass('active');
+
+	// When a thumbnail is clicked:
+	$('.piece-thumb').on('click', function() {
+
+		// Mark it as active
+		$('.piece-thumb').removeClass('active');
+		$(this).addClass('active');
+
+		// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
+		$('#swapTarget')
+			.attr('srcset', $(this).attr('data-swap'))
+			.attr('data-magnify-src', $(this).attr('data-zoom'));
+		
+		// Remagnify
+		if ($(window).width() > 768) {
+			$('.magnify').magnify();
+		}
+
+	});
 
 
 
@@ -142,11 +170,7 @@ $(document).ready(function() {
 	// ----
 
 	$('.main').fitVids();
-	
-	// Maybe not ideal
-	if ($(window).width() > 768) {
-		$('.magnify').magnify();
-	}
+
 
 	$('.slider').flickity({
 		imagesLoaded: true,
