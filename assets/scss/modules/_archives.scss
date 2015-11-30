@@ -106,15 +106,12 @@
 // Inspiration Images
 
 .archive-images-inner {
+	
 	@include bp(sm) {
 		@include grid($guttered: false);
 	}
+
 	margin: 0;
-}
-
-.archive-featured {
-	// @include cell(half, $guttered: false);
-
 }
 
 .archive-images-inspiration,
