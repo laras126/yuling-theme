@@ -660,6 +660,39 @@ http://flickity.metafizzy.co
             align-self: right; } }
 
 @media (min-width: 35em) {
+  .cell--sixth {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 16.66666667%;
+        -ms-flex: 0 0 16.66666667%;
+            flex: 0 0 16.66666667%;
+    max-width: 16.66666667%; } }
+
+@media (min-width: 35em) {
+  .cell--fourth {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%; } }
+
+@media (min-width: 35em) {
+  .cell--third {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 33.333333%;
+        -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%; } }
+
+@media (min-width: 35em) {
   .cell--half {
     position: relative;
     padding-left: 0.55rem;
@@ -1565,72 +1598,14 @@ img {
   font-size: 1.1rem;
   margin: 4.4rem 0 1.1rem; }
 
+.page-header.-collections-archive {
+  position: relative;
+  height: 100vh; }
+
 .archive-quote {
   text-align: center;
-  position: relative;
+  min-height: 100vh;
   width: 100%;
-  opacity: 0; }
-  .archive-quote.active {
-    top: 0;
-    left: 0;
-    opacity: 1;
-    position: fixed; }
-  .archive-quote.active-last {
-    opacity: 1;
-    position: relative; }
-
-.archive-quote-inner {
-  padding: 1.98rem;
-  border: 2px solid #000000; }
-
-.archive-details-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-       -o-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
-  opacity: 0.25;
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1); }
-
-.archive-details-block {
-  position: relative;
-  border: 1px solid #916300;
-  padding: 1.98rem; }
-
-.archive-details-title {
-  font-size: 0.825rem;
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-
-.archive-details-quote {
-  font-style: normal;
-  font-family: "ltc-bodoni-175", "Georgia", serif;
-  font-size: 1.98rem;
-  margin: 1.1rem 0;
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-  .archive-details-quote:before {
-    content: "“"; }
-  .archive-details-quote:after {
-    content: "”"; }
-
-.archive-inspiration,
-.archive-featured {
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 50%;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-  max-width: 50%; }
-  .archive-inspiration img,
-  .archive-featured img {
-    width: 100%;
-    display: block; }
-
-.archive-images-inner {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1639,7 +1614,77 @@ img {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem;
+  z-index: 2;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; }
+  .archive-quote.active {
+    opacity: 1;
+    pointer-events: all; }
+
+.archive-quote-inner {
+  border: 2px solid #000000; }
+
+.archive-quote-content {
+  font-style: normal;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  padding: 1.1rem;
+  font-size: 1.1rem;
+  margin: 1.1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  @media (min-width: 53em) {
+    .archive-quote-content {
+      padding: 1.98rem;
+      font-size: 1.98rem; } }
+  .archive-quote-content:before {
+    content: "\201C"; }
+  .archive-quote-content:after {
+    content: "\201D"; }
+
+.archive-images {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 80vh;
+  pointer-events: none; }
+  .archive-images * {
+    pointer-events: none; }
+
+.archive-images-inner {
   margin: 0; }
+  @media (min-width: 35em) {
+    .archive-images-inner {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      position: relative; } }
+
+.archive-images-inspiration img,
+.archive-images-featured img {
+  width: 100%;
+  display: block; }
+
+@media (min-width: 35em) {
+  .archive-images-inspiration,
+  .archive-images-featured {
+    position: relative;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%; } }
 
 .block_list-list {
   list-style-type: none;
