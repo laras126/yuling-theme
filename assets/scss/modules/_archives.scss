@@ -27,119 +27,107 @@
 	margin: $size-base*4 0 $size-base;
 }
 
-
-// ---
-// All Collections archive
-// ---
-
-
-// 
-
-.archive-container {
-	
+.page-header {
+	&.-collections-archive {
+		position: relative;
+		height: 100vh;
+	}
 }
 
+// ----
+// All Collections Detail Module
+// ----
 
-
-// Archive Details/Quote Module
+// Quote section
 
 .archive-quote {
 	text-align: center;
-    position: relative;
+	min-height: 100vh;
 	width: 100%;
-	// padding-top: 100vh;
-	// height: 100vh;
-	opacity: 0;
+	
+	@include grid($align: center);
 
+	z-index: $z-back;
+	opacity: 0;
+    position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
 
 	&.active {
-		top: 0;
-		left: 0;
 		opacity: 1;
-	    position: fixed;
-		// padding-top: 0;
+		pointer-events: all;
 	}
 
-	&.active-last {
-		opacity: 1;
-		position: relative;
-	}
 }
 
 .archive-quote-inner {
-    padding: $size-h3;
 	border: 2px solid $color-body-text;
 }
 
-.archive-details-img {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	opacity: 0.25;
-	//what the heck, let's add a grayscale filter for webkit
-	-webkit-filter: grayscale(1);
-	filter: grayscale(1);
-}
-
-.archive-details-block {
-	position: relative;
-	border: 1px solid $color-accent-med;
-    padding: $size-h3;
-
-	// &:before {
-	// 	content: " ";
-	// 	position: absolute;
-	// 	top: 5px;
-	// 	left: 5px;
-	// 	right: 5px;
-	// 	bottom: 5px;
-	// 	border: 1px solid $gold;
-	// }
-}
-
-.archive-details-title {
-	font-size: $size-sml;
-	@include upperspace;
-}
-
-.archive-details-quote {
+.archive-quote-content {
 	font-style: normal;
 	font-family: $font-heading;
-	font-size: $size-h3;
+	padding: $size-base;
+	font-size: $size-base;
+	
+	@include bp(md) {
+	    padding: $size-h3;
+		font-size: $size-h3;
+	}
+
 	margin: $size-base 0; 
 	@include upperspace;
 
 	&:before {
-		content: "“";
+		content: "\201C";
 	}
 
 	&:after {
-		content: "”";
+		content: "\201D";
 	}
 }
 
 
-// Archive Inspiration (Collections Page)
+// Images section
+
+.archive-images {
+	position: relative;
+	z-index: $z-mid;
+	padding-bottom: 80vh;
+	pointer-events: none;
+
+	* {
+		pointer-events: none;
+	}
+}
+
+
+// Inspiration Images
+
+.archive-images-inner {
+	@include bp(sm) {
+		@include grid($guttered: false);
+	}
+	margin: 0;
+}
 
 .archive-featured {
 	// @include cell(half, $guttered: false);
 
 }
 
-.archive-inspiration,
-.archive-featured {
+.archive-images-inspiration,
+.archive-images-featured {
 	
 	img {
 		width: 100%;
 		display: block;
 	}
-	
-	@include cell($size: half, $guttered: false);
+
+	@include bp(sm) {
+		@include cell($size: half, $guttered: false);
+	}	
 }
 
-.archive-images-inner {
-	@include grid($guttered: false);
-	margin: 0;
-}
 
