@@ -65,3 +65,14 @@
 .single-footer-title {
 	@include detail-title(bottom);
 }
+
+
+// Single Piece
+
+.piece-thumb {
+	opacity: 0.5;
+	
+	&.active {
+		opacity: 1;
+	}
+}
