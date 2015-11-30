@@ -41,7 +41,7 @@ $sizes: (
 
 }
 
-@mixin grid($guttered: true, $align: false, $bp: md, $wrap: row wrap) {
+@mixin grid($guttered: true, $align: false, $wrap: row wrap) {
 
     display: flex;
     flex-flow: $wrap;
@@ -150,6 +150,24 @@ $sizes: (
     @include bp(sm) {
         align-self: right;
     }   
+}
+
+.cell--sixth {
+    @include bp(sm) {
+        @include cell($size: sixth);
+    }
+}
+
+.cell--fourth {
+    @include bp(sm) {
+        @include cell($size: fourth);
+    }
+}
+
+.cell--third {
+    @include bp(sm) {
+        @include cell($size: third);
+    }
 }
 
 .cell--half {
