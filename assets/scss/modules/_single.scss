@@ -69,10 +69,56 @@
 
 // Single Piece
 
+.magnify {
+	max-width: 100%;
+}
+
+.piece-images {
+	order: 0;
+	@include grid;
+	@include cell;
+}
+
+.piece-thumbs {
+	order: 1;
+	
+	@include bp(md) {
+		order: 0;
+		@include cell($size: sixth);
+	}
+}
+
+.piece-image {
+	width: 100%;
+
+	@include bp(md) {
+		order: 1;
+	}
+
+	@include bp(md) {
+		flex: 0 0 calc(100% / 6 * 5);
+	    max-width: calc(100% / 6 * 5);
+	}
+}
+
+.piece-thumb-wrap {
+	padding-right: $size-base;
+	float: left;
+	width: 33%;
+
+	@include bp(md) {
+		padding: 0;	
+		width: 100%;
+	}
+}
+
 .piece-thumb {
 	opacity: 0.5;
-	
-	&.active {
+	cursor: pointer;
+
+	&.active,
+	&:hover {
 		opacity: 1;
 	}
 }
+
