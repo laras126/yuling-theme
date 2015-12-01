@@ -73,15 +73,35 @@
 	max-width: 100%;
 }
 
+.piece-details {
+	
+	@include bp(sm) {
+		@include cell($size: half);
+	}
+
+	@include bp(lg) {
+		@include cell($size: third, $is_first: false);
+	}
+}
+
 .piece-images {
 	order: 0;
 	@include grid;
-	@include cell;
+
+	@include bp(sm) {
+		@include cell($size: half);
+	}
+
+	@include bp(lg) {
+		flex: 0 0 calc(100% / 3 * 2);
+	    max-width: calc(100% / 3 * 2);
+	}
+
 }
 
 .piece-thumbs {
 	order: 1;
-	
+
 	@include bp(md) {
 		order: 0;
 		@include cell($size: sixth);
@@ -104,11 +124,11 @@
 .piece-thumb-wrap {
 	padding-right: $size-base;
 	float: left;
-	width: 33%;
+	max-width: 33%;
 
 	@include bp(md) {
 		padding: 0;	
-		width: 100%;
+		max-width: 100%;
 	}
 }
 
