@@ -1077,7 +1077,7 @@ img {
 
 @media (min-width: 53em) {
   .main {
-    padding: 11rem 0 2.75rem; } }
+    padding: 10.12rem 0 2.75rem; } }
 
 .nav.-util {
   position: absolute;
@@ -1253,6 +1253,10 @@ img {
   top: 0; }
 
 .title.-page {
+  text-align: center; }
+
+.header-picture {
+  display: block;
   text-align: center; }
 
 .logo-text-logo {
