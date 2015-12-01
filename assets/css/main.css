@@ -1784,16 +1784,23 @@ img {
   .single-sidebar-list p {
     margin: 0; }
 
-.single-sidebar-sublist {
-  list-style-type: none;
-  padding-left: 0; }
-
 .single-sidebar-title {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.825rem;
   border-top: 1px solid;
   padding-top: 0.825rem; }
+
+.single-sidebar-sublist {
+  list-style-type: none;
+  padding-left: 0; }
+
+.single-sidebar-sublist-item {
+  display: inline; }
+  .single-sidebar-sublist-item:after {
+    content: ", "; }
+  .single-sidebar-sublist-item:last-child:after {
+    content: none; }
 
 .single-sidebar-swatch img {
   width: 1.5rem;

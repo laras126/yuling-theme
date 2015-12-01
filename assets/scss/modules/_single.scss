@@ -41,12 +41,26 @@
 	}
 }
 
+.single-sidebar-title {
+	@include detail-title(top);
+}
+
 .single-sidebar-sublist {
 	@include unstyle-list;
 }
 
-.single-sidebar-title {
-	@include detail-title(top);
+.single-sidebar-sublist-item {
+	display: inline;
+
+	&:after {
+		content: ", ";
+	}
+
+	&:last-child {
+		&:after {
+			content: none;
+		}
+	}
 }
 
 .single-sidebar-swatch {

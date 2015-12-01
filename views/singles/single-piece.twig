@@ -81,18 +81,18 @@
 
 					<ul class="single-sidebar-list accordion-target">
 						{% if post.size %}
-							<li>{{post.size}}</li>
+							<li><span class="single-sidebar-sublist-title">{{size_title ? size_title : 'Size'}}:</span> {{post.size}}</li>
 						{% endif %}
 						{% if post.pricing %}
-							<li>{{post.pricing}}</li>
+							<li><span class="single-sidebar-sublist-title">{{pricing_title ? pricing_title : 'Pricing'}}:</span> {{post.pricing}}</li>
 						{% endif %}
 						{% if post.double_sided %}<li>Double Sided</li>{% endif %}
 							{% if post.styles_of_printing %}
 							<li>
-								<p class="single-sidebar-sublist-title">Available in:</p>
 								<ul class="single-sidebar-sublist">
+								<span class="single-sidebar-sublist-title">Available in:</span>
 								{% for style in post.styles_of_printing %}
-									<li>{{style}}</li>
+									<li class="single-sidebar-sublist-item">{{style}}</li>
 								{% endfor %}
 								</ul>
 							</li>
