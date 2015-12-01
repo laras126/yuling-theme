@@ -45,7 +45,7 @@
 				</div>
 			</div>
 
-			<div class="cell--third">
+			<div class="piece-details">
 
 				{% for t in post.get_terms('collection')|slice(0,1) %}
 					<p class="single-title-compliment -piece">{{t.name}}</p>
@@ -109,7 +109,6 @@
 					</div>
 
 					{% include 'partials/_share.twig' %}
-
 				</aside>
 				
 			</div>
