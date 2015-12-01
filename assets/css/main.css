@@ -1960,5 +1960,6 @@ img {
 .tax-collection .main, .single-project .main {
   padding-top: 7.59rem; }
 
-.nav.-site {
-  padding: 0 8.25rem; }
+@media (min-width: 53em) {
+  .nav.-site {
+    padding: 0 8.25rem; } }

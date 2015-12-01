@@ -12,7 +12,8 @@
 // Hack to prevent util nav overlapping main nav items
 .nav {
 	&.-site {
-		//@include contain(lg);
-		padding: 0 $size-h1*3;
+		@include bp(md) {
+			padding: 0 $size-h1*3;
+		}
 	}
 }
