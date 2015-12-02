@@ -80,10 +80,29 @@
 	 **************************
 	 * Custom Theme Functions *
 	 **************************
-	 *
-	 * Namespaced "tsk" - find and replace with your own three-letter-thing.
-	 * 
 	 */ 
+
+	// Add filter to post_type_link to add taxonomy name in front of permalink
+	// NOTE: Possibly could use Timber routes for this
+	// http://wordpress.stackexchange.com/questions/96126/custom-post-type-taxonomy-slug-post-title-with-post-type-archive
+	add_filter('post_type_link', 'filter_post_type_link', 10, 2);    
+	
+	function filter_post_type_link( $post_link, $id = 0, $leavename = FALSE ) {
+	    if ( strpos('%collection%', $post_link) === 'FALSE' ) {
+	      return $post_link;
+	    }
+	    $post = get_post($id);
+	    if ( !is_object($post) || $post->post_type != 'piece' ) {
+	      return $post_link;
+	    }
+	    $terms = wp_get_object_terms($post->ID, 'collection');
+	    if ( !$terms ) {
+	      return str_replace('collection/%collection%/', '', $post_link);
+	    }
+	    return str_replace('%collection%', $terms[0]->slug, $post_link);
+	}
+
+
 
 	// Enqueue scripts
 	function tsk_scripts() {
