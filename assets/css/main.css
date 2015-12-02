@@ -1138,15 +1138,19 @@ img {
 
 .nav-item-link,
 .subnav-item-link {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.825rem;
   color: #FFFFFF; }
   .nav-item-link:hover,
   .nav-item-link:focus,
   .subnav-item-link:hover,
   .subnav-item-link:focus {
     color: #d3d3cd; }
+
+.nav-item-link,
+.subnav-item-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+  font-size: 0.825rem; }
 
 .has-subnav
 .icon-arrow-down {
@@ -1212,15 +1216,6 @@ img {
           flex: 0 0 100%;
   max-width: 100%;
   padding-top: 1.1rem; }
-  .subnav-item img {
-    position: relative;
-    padding-left: 0.55rem;
-    padding-right: 0.55rem;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.333333%;
-        -ms-flex: 0 0 33.333333%;
-            flex: 0 0 33.333333%;
-    max-width: 33.333333%; }
   @media (min-width: 53em) {
     .subnav-item {
       -webkit-box-flex: 0;
@@ -1234,16 +1229,13 @@ img {
       -webkit-flex: 0 0 33.333333%;
           -ms-flex: 0 0 33.333333%;
               flex: 0 0 33.333333%;
-      max-width: 33.333333%; }
-      .subnav-item img {
-        position: relative;
-        padding-left: 0.55rem;
-        padding-right: 0.55rem;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 33.333333%;
-            -ms-flex: 0 0 33.333333%;
-                flex: 0 0 33.333333%;
-        max-width: 33.333333%; } }
+      max-width: 33.333333%; } }
+
+.subnav-item-desc {
+  color: #d3d3cd;
+  font-size: 0.825rem;
+  margin: 0;
+  font-family: "source-sans-pro", sans-serif; }
 
 .header.-site {
   background-color: black;
@@ -1536,20 +1528,22 @@ img {
     .tease-title.-collection {
       font-size: 0.825rem; } }
 
-@media (min-width: 53em) {
-  .tease-img {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0); }
-    .tease-img:hover {
-      opacity: 0.5;
-      -webkit-transition: 0.3s ease all;
-           -o-transition: 0.3s ease all;
-              transition: 0.3s ease all; }
-    .tease-img:active {
-      opacity: 1;
-      -webkit-transition: 0.3s ease all;
-           -o-transition: 0.3s ease all;
-              transition: 0.3s ease all; } }
+.tease-img {
+  width: 100%; }
+  @media (min-width: 53em) {
+    .tease-img {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0); }
+      .tease-img:hover {
+        opacity: 0.5;
+        -webkit-transition: 0.3s ease all;
+             -o-transition: 0.3s ease all;
+                transition: 0.3s ease all; }
+      .tease-img:active {
+        opacity: 1;
+        -webkit-transition: 0.3s ease all;
+             -o-transition: 0.3s ease all;
+                transition: 0.3s ease all; } }
 
 .tease-info.-piece,
 .tease-info.-project {
