@@ -2,7 +2,7 @@
 
 {# TODO: Customize markup in here #}
 {% block content %}
-	<div class="grid">
+	<div>
 		{% if post.thumbnail.src %}
 		<div class="tease-img -post">
 			<a href="{{post.link}}">
@@ -10,9 +10,9 @@
 			</a>
 		</div>
 		{% endif %}
-		<div class="tease-info -{{post.post_type}} cell">
-			<h4 style="margin:0;padding-bottom:0" class="tease-title -{{post.post_type}}">{{post.title}}</h4>
-			<p style="margin:0" class="meta-upper">{{post.date}}</p>
+		<div class="tease-info -{{post.post_type}}">
+			<h4 class="tease-title -{{post.post_type}}">{{post.title}}</h4>
+			<p class="meta-upper">{{post.date}}</p>
 			<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}</p>
 			<p><a href="{{post.link}}">Read more...</a></p>
 			<p class="tease-meta -post">

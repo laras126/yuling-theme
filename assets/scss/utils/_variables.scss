@@ -31,7 +31,7 @@ $l-green: 			#D9F2A2;
 $color-accent-dark:		$pink;
 $color-accent-med:		$gold;
 $color-accent-light:	$grey;
-$color-accent-vlight:	lighten($color-accent-light, 20%);
+$color-accent-vlight:	lighten($color-accent-light, 10%);
 
 // Alerts
 $color-alert-danger: 	lighten($l-green, 40%);
