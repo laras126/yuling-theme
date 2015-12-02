@@ -53,8 +53,10 @@
 @mixin detail-title($border-pos: top) {
     @include upperspace;
     font-size: $size-sml;
-    border-#{$border-pos}: 1px solid;
-    padding-#{$border-pos}: $size-sml;
+    @if $border-pos != false {
+        border-#{$border-pos}: 1px solid;
+        padding-#{$border-pos}: $size-sml;
+    }
 }
 
 
