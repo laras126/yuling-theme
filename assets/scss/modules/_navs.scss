@@ -73,14 +73,18 @@
 
 .nav-item-link,
 .subnav-item-link {	
-	@include upperspace;
-	font-size: $size-sml;
 	color: $color-rotate-text;	
 	
 	&:hover,
 	&:focus {
 		color: $color-accent-light;
 	}
+}
+
+.nav-item-link,
+.subnav-item-title {
+	@include detail-title($border-pos: false);
+	font-size: $size-sml;
 }
 
 .has-subnav 
@@ -132,20 +136,16 @@
 	@include cell(full);
 	padding-top: $size-base;
 
-	img {
-		@include cell(third);
-	}
-
 	@include bp(md) { 
 		@include cell(half, $is_first: false); 
 	}
 
 	@include bp(lg) { 
 		@include cell(third, $is_first: false); 
-		img {
-			@include cell(third);
-		}
 	}
 }
 
-
+.subnav-item-desc {
+	@include meta();
+	font-family: $font-body;
+}
