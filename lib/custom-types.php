@@ -33,7 +33,7 @@
 		'description'         => __( 'The Piece post type.', 'yld' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'excerpt', 'thumbnail', 'revisions' ),
-		'taxonomies'          => array( 'category', 'post_tag', 'collection' ),
+		'taxonomies'          => array( 'collection' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
