@@ -18,24 +18,12 @@
     <ul class="nav-list -site" id="toggleNav">
     {% for item in menu.items %}
         <li class="nav-item -site {{ item.get_children ? 'has-subnav' }}">
-            <a class="nav-item-link -site" href="{{item.link}}">{{item.title}}</a>
+            <a href="{{item.link}}" class="nav-item-link">{{item.title}}</a>
             {% if item.get_children %}
                 <div class="subnav-wrapper -site">
                     <ul class="subnav-list -site">
                     {% for child in item.get_children %}
-                        <li class="subnav-item -site">
-                            <a class="subnav-item-link grid" href="{{child.get_link}}">
-                                {% set term = TimberTerm(child.menu_object.object_id) %}
-                                {% set img = TimberImage(term.featured_image) %}
-                                <div class="cell">
-                                    <img data-src="{{img.src|resize(200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
-                                </div>
-                                <div class="cell--half">
-                                    <h4 class="subnav-item-title">{{child.title}}</h4>
-                                    <p class="subnav-item-desc">{{term.description}}</p>
-                                </div>
-                            </a>
-                        </li>
+                       {% include 'partials/subnav-item.twig' %}
                     {% endfor %}
                     </ul>
                 </div>
