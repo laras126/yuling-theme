@@ -24,20 +24,19 @@
             "disabled": 0
         },
         {
-            "key": "field_56153f2545f6b",
-            "label": "Collection Gallery",
-            "name": "collection_gallery",
-            "type": "gallery",
-            "instructions": "Images to display in the header carousel. Dimensions TBD.",
+            "key": "field_56609866612f4",
+            "label": "Thumbnail Image",
+            "name": "thumbnail_image",
+            "type": "image",
+            "instructions": "A square image to display in the dropdown menu.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -53,7 +52,31 @@
             "label": "Featured Image",
             "name": "featured_image",
             "type": "image",
-            "instructions": "This image will display wherever a list of all collections is present e.g. on the \"Collections\" page or in search results.",
+            "instructions": "This image will display in the list of \"Other Collections\" in each Collection page's footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_56153f2545f6b",
+            "label": "Collection Gallery",
+            "name": "collection_gallery",
+            "type": "gallery",
+            "instructions": "Images to display in the header carousel. Dimensions TBD.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,7 +84,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "min": "",
+            "max": "",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -157,5 +181,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1449166639
+    "modified": 1449171146
 }
