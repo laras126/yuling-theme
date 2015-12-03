@@ -4,9 +4,9 @@
 // Form styles
 // -----
 
-// Remove the blue outline from Chrome
+// Replace blue chrome outline with something nicer
 *:focus {
-    outline: 0;
+    outline: thin dotted;
 }
 
 label, select {
