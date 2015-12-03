@@ -1,11 +1,11 @@
 
-
 // Navigation
 
 .nav {
 	&.-site {
 	}
 
+	// Search and Cart nav in header
 	&.-util {
 		position: absolute;
 		top: 0;
@@ -14,24 +14,24 @@
 	}
 }
 
+// Main nav component
 .nav-list {
 	@include unstyle-list;
 	text-align: center;
-	
+
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
+	transition: all 0.5s ease;
 	
 	@include bp(md) {
 		padding-top: 0;
 		max-height: none;
 	}
 	
-	transition: all 0.5s ease;
-
 	&.open {
 		padding-top: $size-base;
-		max-height: $screen-sm;
+		max-height: 100em;
 	}
 	
 	&.-site {
@@ -41,6 +41,7 @@
 }
 
 #navOpenLink {
+	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	text-align: center;
 	display: block;
 	padding-top: $size-xsml;
@@ -53,6 +54,7 @@
 
 .nav-item {
 	@include header-animate;
+	text-align: center;
 
 	@include bp(md) {
 		display: inline-block;
@@ -62,22 +64,21 @@
 	.shrunk & {
 		padding-top: 0;
 	}
+
+	&:hover {
+		background-color: $color-accent-light;
+		
+	}
 }
 
+
 .nav-item,
+.nav-item-link,
 .subnav-item {
 	font-family: $font-nav;
 	padding: $size-sml $size-base;
-}
-
-
-.nav-item-link,
-.subnav-item-link {	
-	color: $color-rotate-text;	
-	
-	&:hover,
-	&:focus {
-		color: $color-accent-light;
+	& > a {
+		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	}
 }
 
@@ -85,14 +86,6 @@
 .subnav-item-title {
 	@include detail-title($border-pos: false);
 	font-size: $size-sml;
-}
-
-.has-subnav 
-.icon-arrow-down {
-	display: inline-block;
-	position: relative;
-	top: $size-xsml/2; // Meh.
-	fill: $color-accent-med;
 }
 
 .subnav-wrapper {	
@@ -133,15 +126,29 @@
 }
 
 .subnav-item {
-	@include cell(full);
+	@include grid;
+	text-align: left;
 	padding-top: $size-base;
 
-	@include bp(md) { 
-		@include cell(half, $is_first: false); 
+	@include bp(sm) { 
+		@include cell(half); 
 	}
 
 	@include bp(lg) { 
 		@include cell(third, $is_first: false); 
+	}
+
+}
+
+.subnav-item-wrap {
+	@include grid;
+}
+	
+.subnav-item-part {	
+	@include cell();
+	
+	&.-first {
+		@include cell($size: half, $is_first: false);
 	}
 }
 

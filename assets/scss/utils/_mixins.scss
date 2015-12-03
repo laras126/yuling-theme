@@ -32,6 +32,15 @@
 // Typography
 // ----
 
+@mixin restyle-link($default, $hover) {
+    color: $default;  
+    
+    &:hover,
+    &:focus {
+        color: $hover;
+    }
+}
+
 @mixin upperspace() {
     text-transform: uppercase;
     letter-spacing: 1px;
