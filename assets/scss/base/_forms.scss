@@ -99,6 +99,7 @@ input[type="checkbox"]:focus {
 
 fieldset {
 	border: 0;
+	padding: 0;
 }
 
 // Search
@@ -142,4 +143,12 @@ input[type="search"] {
 
 .search-wrap {
 	float: left;
+}
+
+
+
+// Formidable
+
+.frm_ajax_loading {
+	display: none;
 }
