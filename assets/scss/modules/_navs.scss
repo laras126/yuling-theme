@@ -73,12 +73,13 @@
 
 .nav-item,
 .nav-item-link,
-.subnav-item {
+.subnav-item-link {
 	font-family: $font-nav;
 	padding: $size-sml $size-base;
-	& > a {
-		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
-	}
+	display: inline-block;
+	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
+	// & > a {
+	// }
 }
 
 .nav-item-link,
@@ -87,9 +88,9 @@
 	font-size: $size-sml;
 }
 
-.subnav-wrapper {	
+.subnav-wrapper {
+
 	@include bp(md) {
-		text-align: left;
 		position: absolute;
 		transform: translateZ(0);
 		width: 100%;
@@ -103,6 +104,14 @@
 	@include contain(lg);
 	@include unstyle-list;
 	overflow: hidden;
+
+	&.-mega {
+		text-align: left;
+		// .subnav-list {
+		    @include grid;
+		    max-width: $screen-xl;
+		// }
+	}
 	
 	@include bp(md) {
 		margin-top: $size-sml;
@@ -111,8 +120,6 @@
 	&.-site {
 		max-height: 0;
 		opacity: 0;
-	    @include grid;
-	    max-width: $screen-xl;
 	    margin: 0 auto;
 	    @include header-animate;
 	}
@@ -126,22 +133,31 @@
 }
 
 .subnav-item {
-	@include grid;
-	text-align: left;
-	padding-top: $size-base;
+	&.-mega {
+		@include grid;
+		text-align: left;
+		padding-top: $size-base;
 
-	@include bp(sm) { 
-		@include cell(half); 
+		@include bp(sm) { 
+			@include cell(half); 
+		}
+
+		@include bp(lg) { 
+			@include cell(third, $is_first: false); 
+		}
 	}
 
-	@include bp(lg) { 
-		@include cell(third, $is_first: false); 
+	&.-reg {
+		display: inline-block;
+		text-align: center;
 	}
 
 }
 
-.subnav-item-wrap {
-	@include grid;
+.subnav-item-inner {
+	&.-mega {
+		@include grid;
+	}
 }
 	
 .subnav-item-part {	
