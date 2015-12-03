@@ -65,6 +65,12 @@
 
 }
 
+.archive-quote-title {
+	// @include detail-title($border-pos: false);
+	@include upperspace;
+	font-size: $size-base;
+}
+
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
 }
