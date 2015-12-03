@@ -65,10 +65,9 @@
 		padding-top: 0;
 	}
 
-	&:hover {
-		background-color: $color-accent-light;
-		
-	}
+	// &:hover {
+	// 	background-color: $color-accent-light;	
+	// }
 }
 
 
@@ -101,6 +100,7 @@
 }
 
 .subnav-list {
+	@include contain(lg);
 	@include unstyle-list;
 	overflow: hidden;
 	
