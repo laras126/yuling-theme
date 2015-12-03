@@ -869,7 +869,6 @@ p {
   .btn.-readmore {
     background: #FFFFFF;
     font-weight: 700;
-    border-radius: 2px;
     color: #000000;
     border: 1px solid #000000; }
     .btn.-readmore:hover,
@@ -881,7 +880,6 @@ p {
   .btn.-danger {
     background: white;
     font-weight: 700;
-    border-radius: 2px;
     color: #FFFFFF; }
     .btn.-danger:hover,
     .btn.-danger:focus {
@@ -892,7 +890,6 @@ p {
   .btn.-success {
     background: #1BBF54;
     font-weight: 700;
-    border-radius: 2px;
     color: #FFFFFF; }
     .btn.-success:hover,
     .btn.-success:focus {
@@ -903,7 +900,6 @@ p {
   .btn.-warning {
     background: #d3d3cd;
     font-weight: 700;
-    border-radius: 2px;
     color: #FFFFFF; }
     .btn.-warning:hover,
     .btn.-warning:focus {
@@ -911,6 +907,17 @@ p {
       color: #FFFFFF; }
     .btn.-warning:active {
       background: #707064; }
+  .btn.-submit {
+    border: 0;
+    background: #916300;
+    font-weight: 700;
+    color: #FFFFFF; }
+    .btn.-submit:hover,
+    .btn.-submit:focus {
+      background: #5e4000;
+      color: #FFFFFF; }
+    .btn.-submit:active {
+      background: black; }
 
 *:focus {
   outline: thin dotted; }
@@ -973,7 +980,8 @@ input[type="checkbox"]:focus {
   outline-offset: -2px; }
 
 fieldset {
-  border: 0; }
+  border: 0;
+  padding: 0; }
 
 .search-form {
   display: -webkit-box;
@@ -1025,6 +1033,9 @@ input[type="search"] {
 
 .search-wrap {
   float: left; }
+
+.frm_ajax_loading {
+  display: none; }
 
 table {
   width: 100%;
@@ -1702,6 +1713,11 @@ img {
     opacity: 1;
     pointer-events: all; }
 
+.archive-quote-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem; }
+
 .archive-quote-inner {
   border: 2px solid #000000; }
 
@@ -1861,7 +1877,11 @@ img {
   letter-spacing: 1px;
   font-size: 0.825rem;
   border-top: 1px solid;
-  padding-top: 0.825rem; }
+  padding-top: 0.825rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif; }
+  .single-sidebar-title.-plain {
+    border-top: 0;
+    padding-top: 0; }
 
 .single-sidebar-sublist {
   list-style-type: none;
