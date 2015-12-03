@@ -43,6 +43,12 @@
 
 .single-sidebar-title {
 	@include detail-title(top);
+	font-family: $font-heading;
+	
+	&.-plain {
+		border-top: 0;
+		padding-top: 0;
+	}
 }
 
 .single-sidebar-sublist {
