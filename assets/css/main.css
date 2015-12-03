@@ -1138,20 +1138,18 @@ img {
 
 .nav-item,
 .nav-item-link,
-.subnav-item {
+.subnav-item-link {
   font-family: "ltc-bodoni-175", "Georgia", serif;
-  padding: 0.825rem 1.1rem; }
-  .nav-item > a,
-  .nav-item-link > a,
-  .subnav-item > a {
-    color: #FFFFFF; }
-    .nav-item > a:hover,
-    .nav-item > a:focus,
-    .nav-item-link > a:hover,
-    .nav-item-link > a:focus,
-    .subnav-item > a:hover,
-    .subnav-item > a:focus {
-      color: #d3d3cd; }
+  padding: 0.825rem 1.1rem;
+  display: inline-block;
+  color: #FFFFFF; }
+  .nav-item:hover,
+  .nav-item:focus,
+  .nav-item-link:hover,
+  .nav-item-link:focus,
+  .subnav-item-link:hover,
+  .subnav-item-link:focus {
+    color: #d3d3cd; }
 
 .nav-item-link,
 .subnav-item-title {
@@ -1162,7 +1160,6 @@ img {
 
 @media (min-width: 53em) {
   .subnav-wrapper {
-    text-align: left;
     position: absolute;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
@@ -1179,12 +1176,8 @@ img {
   list-style-type: none;
   padding-left: 0;
   overflow: hidden; }
-  @media (min-width: 53em) {
-    .subnav-list {
-      margin-top: 0.825rem; } }
-  .subnav-list.-site {
-    max-height: 0;
-    opacity: 0;
+  .subnav-list.-mega {
+    text-align: left;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1195,7 +1188,13 @@ img {
     position: relative;
     margin-left: -0.55rem;
     margin-right: -0.55rem;
-    max-width: 72em;
+    max-width: 72em; }
+  @media (min-width: 53em) {
+    .subnav-list {
+      margin-top: 0.825rem; } }
+  .subnav-list.-site {
+    max-height: 0;
+    opacity: 0;
     margin: 0 auto;
     -webkit-transition-property: all;
          -o-transition-property: all;
@@ -1211,7 +1210,7 @@ img {
     opacity: 1;
     overflow: visible; }
 
-.subnav-item {
+.subnav-item.-mega {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1225,7 +1224,7 @@ img {
   text-align: left;
   padding-top: 1.1rem; }
   @media (min-width: 35em) {
-    .subnav-item {
+    .subnav-item.-mega {
       position: relative;
       padding-left: 0.55rem;
       padding-right: 0.55rem;
@@ -1235,14 +1234,18 @@ img {
               flex: 0 0 50%;
       max-width: 50%; } }
   @media (min-width: 64em) {
-    .subnav-item {
+    .subnav-item.-mega {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 33.333333%;
           -ms-flex: 0 0 33.333333%;
               flex: 0 0 33.333333%;
       max-width: 33.333333%; } }
 
-.subnav-item-wrap {
+.subnav-item.-reg {
+  display: inline-block;
+  text-align: center; }
+
+.subnav-item-inner.-mega {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
