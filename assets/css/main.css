@@ -1135,8 +1135,6 @@ img {
       text-align: center; } }
   .shrunk .nav-item {
     padding-top: 0; }
-  .nav-item:hover {
-    background-color: #d3d3cd; }
 
 .nav-item,
 .nav-item-link,
@@ -1174,6 +1172,10 @@ img {
     background-color: #141414; } }
 
 .subnav-list {
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  max-width: 64em;
   list-style-type: none;
   padding-left: 0;
   overflow: hidden; }
@@ -1547,6 +1549,27 @@ img {
 .tease.-piece {
   padding-bottom: 1.98rem; }
 
+.tease.-collection {
+  position: relative;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  padding-bottom: 1.98rem; }
+  @media (min-width: 53em) {
+    .tease.-collection {
+      position: relative;
+      padding-left: 0.55rem;
+      padding-right: 0.55rem;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 25%;
+          -ms-flex: 0 0 25%;
+              flex: 0 0 25%;
+      max-width: 25%; } }
+
 .tease-title.-piece,
 .tease-title.-page,
 .tease-title.-project,
@@ -1627,6 +1650,18 @@ img {
   padding-top: 0.825rem;
   font-size: 1.1rem;
   margin: 4.4rem 0 1.1rem; }
+
+.archive-footer-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem; }
 
 .page-header.-collections-archive {
   position: relative;
