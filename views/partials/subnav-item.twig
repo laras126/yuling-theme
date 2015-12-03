@@ -3,9 +3,9 @@
         <a class="subnav-item-link" href="{{child.get_link}}">
             <div class="subnav-item-inner -mega">
                 {% set term = TimberTerm(child.menu_object.object_id) %}
-                {% set img = TimberImage(term.featured_image) %}
+                {% set img = TimberImage(term.thumbnail_image) %}
                 <div class="subnav-item-part -first">
-                    <img data-src="{{img.src|resize(200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
+                    <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
                 </div>
                 <div class="subnav-item-part">
                     <h4 class="subnav-item-title">{{child.title}}</h4>
