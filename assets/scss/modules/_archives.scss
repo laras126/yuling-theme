@@ -27,6 +27,10 @@
 	margin: $size-base*4 0 $size-base;
 }
 
+.archive-footer-content {
+	@include grid;
+}
+
 .page-header {
 	&.-collections-archive {
 		position: relative;

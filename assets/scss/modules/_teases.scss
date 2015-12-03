@@ -21,6 +21,15 @@
 	&.-piece {
 		padding-bottom: $size-h3;
 	}
+
+	// Located in Archive Footer (collection tax)
+	&.-collection {
+		@include cell(half);
+		padding-bottom: $size-h3;
+		@include bp(md) {
+			@include cell(fourth);
+		}
+	}
 }
 
 .tease-title {

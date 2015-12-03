@@ -17,11 +17,11 @@
 {% block after_content %}
 	<div class="contain--lg teaser lazyload">
 		<h4 class="archive-footer-title -collection">Other Collections</h4>
-		<div class="grid">
+		<div class="archive-footer-content">
 		{% for c in collections %}
 			{# Exclude the current term #}
 			{% if c.title != term.title %}
-				<div class="cell">
+				<div class="tease -collection">
 					<a href="{{c.link}}">
 						<img data-src="{{TimberImage(c.featured_image).src|resize(400)}}" src="{{placeholder}}" class="lazyload tease-img -collection" alt="{{c.name}} Thumbnail">
 						<h4 class="tease-title -collection">{{c.title}}</h4>
