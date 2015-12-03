@@ -1077,7 +1077,7 @@ img {
 
 @media (min-width: 53em) {
   .main {
-    padding: 11rem 0 2.75rem; } }
+    padding: 10.12rem 0 2.75rem; } }
 
 .nav.-util {
   position: absolute;
@@ -1283,6 +1283,10 @@ img {
   top: 0; }
 
 .title.-page {
+  text-align: center; }
+
+.header-picture {
+  display: block;
   text-align: center; }
 
 .logo-text-logo {
@@ -1614,7 +1618,7 @@ img {
   margin: 0; }
 
 .tease-meta-link {
-  background-color: white;
+  background-color: #ebebe8;
   color: #000000;
   padding: 0.33rem 0.66rem; }
 
@@ -1849,16 +1853,23 @@ img {
   .single-sidebar-list p {
     margin: 0; }
 
-.single-sidebar-sublist {
-  list-style-type: none;
-  padding-left: 0; }
-
 .single-sidebar-title {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.825rem;
   border-top: 1px solid;
   padding-top: 0.825rem; }
+
+.single-sidebar-sublist {
+  list-style-type: none;
+  padding-left: 0; }
+
+.single-sidebar-sublist-item {
+  display: inline; }
+  .single-sidebar-sublist-item:after {
+    content: ", "; }
+  .single-sidebar-sublist-item:last-child:after {
+    content: none; }
 
 .single-sidebar-swatch img {
   width: 1.5rem;
@@ -2042,3 +2053,7 @@ img {
 
 .tax-collection .main, .single-project .main {
   padding-top: 7.59rem; }
+
+@media (min-width: 53em) {
+  .nav.-site {
+    padding: 0 8.25rem; } }

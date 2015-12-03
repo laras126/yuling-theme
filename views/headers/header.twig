@@ -14,8 +14,8 @@
 			{% set mobile = TimberImage(post.header_image_mobile).src %}
 
 			{# TODO: Adjust dimensions once we decide on them #}
-			<picture>
-				<source srcset="{{desktop|resize(1200)}}" media="(min-width: 1100px)">
+			<picture class="header-picture">
+				<source srcset="{{desktop|resize(900)}}" media="(min-width: 1100px)">
 				<source srcset="{{tablet ? tablet|resize(900) : desktop|resize(900)}}" media="(min-width: 736px)">
 				{# TODO: Better placeholder #}
 				<img srcset="{{mobile ? mobile|resize(600) : desktop|resize(600)}}" src="{{placeholder}}" alt="{{post.post_title}}">
