@@ -1719,7 +1719,14 @@ img {
   font-size: 1.1rem; }
 
 .archive-quote-inner {
-  border: 2px solid #000000; }
+  border: 2px solid #000000;
+  padding: 1.1rem; }
+  @media (min-width: 53em) {
+    .archive-quote-inner {
+      padding: 1.98rem 1.1rem; } }
+  @media (min-width: 64em) {
+    .archive-quote-inner {
+      padding: 2.75rem 1.43rem; } }
 
 .archive-quote-content {
   font-style: normal;

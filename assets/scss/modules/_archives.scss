@@ -73,6 +73,15 @@
 
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
+	padding: $size-base;
+
+	@include bp(md) {
+		padding: $size-h3 $size-base;
+	}
+
+	@include bp(lg) {
+		padding: $size-h1 $size-h4;
+	}
 }
 
 .archive-quote-content {
