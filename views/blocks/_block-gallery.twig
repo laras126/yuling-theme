@@ -5,11 +5,14 @@
 	<div class="gallery -block teaser">
 
 		{% for image in block.gallery %}
-			<div class="gallery-thumb -block">
-				{# Click to expand #}
-				<img data-src="{{image.url|resize(500)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
-			</div>
+			{# TODO: Adjust dimensions once we decide on them #}
+			<picture class="gallery-thumb -block">
+				<source srcset="{{image.url|resize(1200)}}" media="(min-width: 1100px)">
+				<source srcset="{{image.url ? image.url|resize(900) : image.url|resize(900)}}" media="(min-width: 736px)">
+				{# TODO: Better placeholder #}
+				<img srcset="{{mobile ? image.url|resize(600) : image.url|resize(600)}}" src="{{image.url|resize(100)}}" alt="{{image.title}}">
+			</picture>
 		{% endfor %}
-
+		
 	</div>
 {% endblock %}

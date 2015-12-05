@@ -11,9 +11,12 @@
 
 	&.-piece,
 	&.-collection,
-	&.-project,
-	&.-block {
+	&.-project {
 		@include cell(half);
+	}
+
+	&.-block {
+		margin-bottom: $size-base;
 	}
 
 	&.-inspiration {

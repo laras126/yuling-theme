@@ -1247,10 +1247,10 @@ img {
   @media (min-width: 64em) {
     .subnav-item.-mega {
       -webkit-box-flex: 0;
-      -webkit-flex: 0 0 25%;
-          -ms-flex: 0 0 25%;
-              flex: 0 0 25%;
-      max-width: 25%; } }
+      -webkit-flex: 0 0 33.333333%;
+          -ms-flex: 0 0 33.333333%;
+              flex: 0 0 33.333333%;
+      max-width: 33.333333%; } }
 
 .subnav-item.-reg {
   display: inline-block;
@@ -1801,8 +1801,7 @@ img {
 
 .gallery-thumb.-piece,
 .gallery-thumb.-collection,
-.gallery-thumb.-project,
-.gallery-thumb.-block {
+.gallery-thumb.-project {
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
@@ -1811,6 +1810,9 @@ img {
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
   max-width: 50%; }
+
+.gallery-thumb.-block {
+  margin-bottom: 1.1rem; }
 
 .gallery-thumb.-inspiration {
   position: relative;
