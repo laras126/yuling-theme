@@ -24,6 +24,27 @@
             "disabled": 0
         },
         {
+            "key": "field_56634aace76b7",
+            "label": "Thumbnail Blurb",
+            "name": "thumbnail_blurb",
+            "type": "text",
+            "instructions": "A five to seven word blurb to display under the thumbnail in the menu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_56609866612f4",
             "label": "Thumbnail Image",
             "name": "thumbnail_image",
@@ -181,5 +202,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1449171146
+    "modified": 1449347780
 }
