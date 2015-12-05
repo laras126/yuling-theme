@@ -2,14 +2,25 @@
     <li class="subnav-item -mega">
         <a class="subnav-item-link" href="{{child.get_link}}">
             <div class="subnav-item-inner -mega">
-                {% set term = TimberTerm(child.menu_object.object_id) %}
-                {% set img = TimberImage(term.thumbnail_image) %}
+                {% if child.type == 'taxonomy' %}
+                    {% set obj = TimberTerm(child.menu_object.object_id) %}
+                    {% set img = TimberImage(obj.thumbnail_image) %}
+                {% else %}
+                    {% set obj = TimberPost(child.menu_object.object_id) %}
+                    {% set img = TimberImage(obj.thumbnail) %}
+                {% endif %}
+
+                
                 <div class="subnav-item-part -first">
-                    <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
+                    {% if img %}
+                        <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
+                    {% else %}
+                        <img src="http://placehold.it/200x200" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
+                    {% endif %}
                 </div>
                 <div class="subnav-item-part">
                     <h4 class="subnav-item-title">{{child.title}}</h4>
-                    <p class="subnav-item-desc">{{term.below_title}}</p>
+                    <p class="subnav-item-desc">{{obj.thumbnail_blurb}}</p>
                 </div>
             </div>
         </a>
