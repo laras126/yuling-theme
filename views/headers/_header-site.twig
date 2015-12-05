@@ -21,7 +21,7 @@
             <a href="{{item.link}}" class="nav-item-link">{{item.title}}</a>
             {% if item.get_children %}
                 <div class="subnav-wrapper -site">
-                    <ul class="subnav-list -site {% for class in item.classes %}{{class == '-mega' ? '-mega'}}{% endfor %}">
+                    <ul class="subnav-list -site {{'-mega' in item.classes ? '-mega' : '-reg'}}">
                     {% for child in item.get_children %}
                        {% include 'partials/subnav-item.twig' %}
                     {% endfor %}
