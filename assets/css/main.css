@@ -2034,6 +2034,8 @@ img {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  .social-list.-share {
+    float: left; }
 
 .social-item {
   position: relative;
@@ -2052,8 +2054,13 @@ img {
 .footer .icon {
   fill: #d3d3cd; }
 
-.share .social-list {
-  float: left; }
+.share:before,
+.share:after {
+  content: " ";
+  display: table; }
+
+.share:after {
+  clear: both; }
 
 .share-trigger {
   float: left;
