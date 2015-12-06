@@ -22,9 +22,9 @@ $(document).ready(function() {
 	});
 
 	// Subnav
-	$('.has-subnav').on('click', function(e) {
+	$('.has-subnav > a').on('click', function(e) {
 		$(this).toggleClass('active');
-		$(this).find('.subnav-wrapper').toggleClass('active');
+		$(this).next('.subnav-wrapper').toggleClass('active');
 		e.preventDefault();
 	});
 
