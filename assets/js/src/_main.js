@@ -13,8 +13,7 @@ $(document).ready(function() {
 	// Look into Modernizr for that
 
 	var $menu = $('#toggleNav'),
-	    $menulink = $('#navOpenLink'),
-	    $menuTrigger = $('.has-subnav > a');
+	    $menulink = $('#navOpenLink');
 
 	$menulink.on('click', function(e) {
 		$menulink.toggleClass('open');
@@ -22,12 +21,16 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	$menuTrigger.click(function(e) {
+	// Subnav
+	$('.has-subnav').on('click', function(e) {
+		$(this).find('.subnav-wrapper').toggleClass('active');
 		e.preventDefault();
-		var $this = $(this);
-		$this.toggleClass('open').next('ul').toggleClass('open');
 	});
 
+	$('.main').on('click', function(e) {
+		$('.subnav-wrapper').removeClass('active');
+		$menu.removeClass('open');
+	});
 
 
 
@@ -35,28 +38,30 @@ $(document).ready(function() {
 	// Toggle Panels (detailed asides on single-piece)
 	// ----
 
-      var allTargets = $('.accordion-target');
+	var allTargets = $('.accordion-target');
               
-      $('.accordion-trigger').click(function() {
-          $this = $(this);
-          $target =  $this.next('.accordion-target');
+	$('.accordion-trigger').click(function() {
+		$this = $(this);
+		$target =  $this.next('.accordion-target');
 
-          $this.toggleClass('active');
-          $('.accordion-trigger').not($this).removeClass('active');
+		$this.toggleClass('active');
+		$('.accordion-trigger').not($this).removeClass('active');
 
-          if ($target.hasClass('active')) {
-            $target.removeClass('active').animate({
-            	'max-height' : '0'
-            }, 300); 
-          } else {
-            allTargets.removeClass('active');
-            $target.addClass('active').animate({
-            	'max-height' : '100em'
-            }, 500); 
-          }
-          
-        return false;
-      });
+		if ($target.hasClass('active')) {
+	    	$target.removeClass('active').animate({
+	    		'max-height' : '0'
+	    	}, 300); 
+	  	} else {
+	    
+	    allTargets.removeClass('active');
+	    
+	    $target.addClass('active').animate({
+	    	'max-height' : '100em'
+	    }, 500); 
+	  }
+	  
+		return false;
+	});
 
 
 

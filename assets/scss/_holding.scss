@@ -13,7 +13,7 @@
 .nav {
 	&.-site {
 		@include bp(md) {
-			padding: 0 $size-h1*3;
+		//	padding: 0 $size-h1*3;
 		}
 	}
 }
