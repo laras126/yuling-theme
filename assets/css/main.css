@@ -1162,7 +1162,7 @@ img {
 .has-subnav > a:after {
   content: '+'; }
 
-.has-subnav.active > a:after {
+.has-subnav > .active:after {
   content: '-'; }
 
 @media (min-width: 53em) {

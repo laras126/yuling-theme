@@ -96,12 +96,9 @@
 		}
 	}
 	
-	&.active {
-		& > a {
-
-			&:after {
-				content: '-';
-			}
+	& > .active {
+		&:after {
+			content: '-';
 		}
 	}
 	
