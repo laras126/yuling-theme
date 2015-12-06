@@ -25,10 +25,9 @@
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
-	transition: all 0.5s ease;
 	
 	@include bp(md) {
-		padding-top: $size-h5;
+		padding-top: $size-base;
 		max-height: none;
 	}
 	
@@ -48,10 +47,15 @@
 	@include bp(md) {
 		display: none;
 	}
+
+	&.open:after {
+		padding-right: $size-xsml;
+		// TODO: Replace with icon
+		content: 'X';
+	}
 }
 
 .nav-item {
-	// @include header-animate;
 	text-align: center;
 
 	@include bp(md) {
@@ -80,6 +84,18 @@
 	font-size: $size-sml;
 }
 
+.has-subnav:hover {
+	.subnav-wrapper {
+
+	// &:hover {
+		// @include header-animate;
+		// max-height: none;
+		// opacity: 1;
+		// overflow: visible;	
+	// }
+	}
+}
+
 .subnav-wrapper {
 	display: block;
 	max-height: 0;
@@ -87,6 +103,7 @@
 	overflow: hidden;
 	z-index: $z-top;
 	background-color: lighten($color-rotate-bkgd, 8%);
+	@include header-animate;
 	
 	&.active {
 		max-height: none;
@@ -102,6 +119,7 @@
 		right: 0;
 		margin-top: -2px; // Hack to remove whitespace below main nav
 	}
+
 }
 
 .subnav-list {
