@@ -1103,13 +1103,10 @@ img {
   text-align: center;
   margin: 0;
   max-height: 0;
-  overflow: hidden;
-  -webkit-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-          transition: all 0.5s ease; }
+  overflow: hidden; }
   @media (min-width: 53em) {
     .nav-list {
-      padding-top: 1.21rem;
+      padding-top: 1.1rem;
       max-height: none; } }
   .nav-list.open {
     padding-top: 1.1rem;
@@ -1127,6 +1124,9 @@ img {
   @media (min-width: 53em) {
     #navOpenLink {
       display: none; } }
+  #navOpenLink.open:after {
+    padding-right: 0.66rem;
+    content: 'X'; }
 
 .nav-item {
   text-align: center; }
@@ -1160,7 +1160,16 @@ img {
   opacity: 0;
   overflow: hidden;
   z-index: 4;
-  background-color: #141414; }
+  background-color: #141414;
+  -webkit-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+       -o-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out; }
   .subnav-wrapper.active {
     max-height: none;
     opacity: 1;
@@ -1273,7 +1282,16 @@ img {
   margin: 0 auto;
   max-width: 60%;
   opacity: 1;
-  max-height: 6rem; }
+  max-height: 6rem;
+  -webkit-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+       -o-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out; }
   @media (min-width: 35em) {
     .logo-text-logo {
       max-width: 16.5rem; } }
