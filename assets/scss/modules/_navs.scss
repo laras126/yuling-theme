@@ -72,37 +72,59 @@
 .nav-item-link,
 .subnav-item-link {
 	font-family: $font-nav;
-	padding: $size-base;
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	display: block;
+	padding: $size-base;
+	border-bottom: 1px dotted lighten($color-rotate-bkgd, 30%);
+	@include bp(md) {
+		border-bottom: 0;
+	}
 }
-
 
 .nav-item-link,
 .subnav-item-title {
 	@include detail-title($border-pos: false);
-	font-size: $size-sml;
 }
 
-.has-subnav:hover {
-	.subnav-wrapper {
+.has-subnav {
+	
+	// Ewwwww too much nesting.
+	& > a {
+		&:after {
+			content: '+';
+		}
+	}
+	
+	&.active {
+		& > a {
 
-	// &:hover {
-		// @include header-animate;
-		// max-height: none;
-		// opacity: 1;
-		// overflow: visible;	
-	// }
+			&:after {
+				content: '-';
+			}
+		}
+	}
+	
+	@include bp(md) {
+		& > a:after {
+			content: '';
+		}
+		&:hover .subnav-wrapper {
+			@include header-animate;
+			max-height: none;
+			opacity: 1;
+			overflow: visible;
+		}
 	}
 }
 
 .subnav-wrapper {
+
 	display: block;
 	max-height: 0;
 	opacity: 0;
 	overflow: hidden;
 	z-index: $z-top;
-	background-color: lighten($color-rotate-bkgd, 8%);
+	background-color: lighten($color-rotate-bkgd, 15%);
 	@include header-animate;
 	
 	&.active {
@@ -129,7 +151,6 @@
 		text-align: left;
 	    display: flex;
 	    flex-flow: wrap;
-	    // @include grid;
 	    max-width: $screen-md;
 		margin: 0 auto;
 	}
@@ -138,22 +159,19 @@
 // Show subnav when hovered over
 
 .subnav-item {
-	&.-mega {
-		text-align: left;
-		
+	text-align: left;
+	// &.-mega {
+		@include cell(full); 
+
 		@include bp(sm) { 
-			@include cell(half); 
+			@include cell(half, $is_first: false); 
 		}
 
 		@include bp(lg) { 
 			padding-top: $size-base;
 			@include cell(third, $is_first: false); 
 		}
-	}
-
-	&.-reg {
-		text-align: center;
-	}
+	// }
 
 }
 
@@ -164,11 +182,17 @@
 }
 	
 .subnav-item-part {	
-	@include cell();
-	
+	// @include cell();
+	@include bp(md) {
+	}
+
 	&.-first {
-		@include cell($size: fourth, $is_first: false);
+		display: none;
+		// @include cell($size: fourth, $is_first: false);
 		@include bp(md) {
+			padding-left: $size-sml;
+			padding-right: $size-sml;
+			display: block;
 			@include cell($size: third, $is_first: false);
  		}
 	}
