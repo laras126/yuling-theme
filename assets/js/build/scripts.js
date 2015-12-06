@@ -258,24 +258,25 @@ $(document).ready(function() {
 	});
 
 	// Subnav
-	// $('.has-subnav').on('click', function(e) {
-	// 	$(this).find('.subnav-wrapper').toggleClass('active');
-	// 	e.preventDefault();
-	// });
-
-	$('.has-subnav').hover(function() {
-		$(this).find('.subnav-wrapper')
-				.animate({
-					'max-height': '32em', 
-					'opacity': 1
-				}, 50);
-	}, function(){
-		$(this).find('.subnav-wrapper')
-				.animate({
-					'max-height': '0', 
-					'opacity': 0
-				}, 50);
+	$('.has-subnav').on('click', function(e) {
+		$(this).toggleClass('active');
+		$(this).find('.subnav-wrapper').toggleClass('active');
+		e.preventDefault();
 	});
+
+	// $('.has-subnav').hover(function() {
+	// 	$(this).find('.subnav-wrapper')
+	// 			.animate({
+	// 				'max-height': '32em', 
+	// 				'opacity': 1
+	// 			}, 50);
+	// }, function(){
+	// 	$(this).find('.subnav-wrapper')
+	// 			.animate({
+	// 				'max-height': '0', 
+	// 				'opacity': 0
+	// 			}, 50);
+	// });
 
 	$('.main').on('click', function(e) {
 		$('.subnav-wrapper').removeClass('active');
