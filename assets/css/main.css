@@ -783,12 +783,12 @@ http://flickity.metafizzy.co
   overflow: hidden; }
 
 html {
-  font-size: 90%;
+  font-size: 105%;
   line-height: 1.5;
   font-weight: 300; }
   @media (min-width: 35em) {
     html {
-      font-size: 95%; } }
+      font-size: 100%; } }
   @media (min-width: 53em) {
     html {
       font-size: 105%; } }
@@ -1911,7 +1911,7 @@ img {
   padding-bottom: 0.825rem; }
 
 .magnify {
-  max-width: 100%; }
+  width: 100%; }
 
 @media (min-width: 35em) {
   .piece-details {
