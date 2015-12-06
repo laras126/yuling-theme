@@ -2,7 +2,7 @@
 .header {
 	&.-site {
 		background-color: rgba($color-rotate-bkgd, 1);
-		position: fixed;
+		// position: fixed;
 		width: 100%;
 		z-index: $z-top;
 		top: 0;
@@ -34,9 +34,9 @@
 	}
 
 	.shrunk & {
-		max-height: 0;
-		opacity: 0;
-		padding-top: $size-xsml;
+		// max-height: 0;
+		// opacity: 0;
+		// padding-top: $size-xsml;
 	} 
 }
 
