@@ -2,6 +2,7 @@
     <li class="subnav-item -mega">
         <a class="subnav-item-link" href="{{child.get_link}}">
             <div class="subnav-item-inner -mega">
+
                 {% if child.type == 'taxonomy' %}
                     {% set obj = TimberTerm(child.menu_object.object_id) %}
                     {% set img = TimberImage(obj.thumbnail_image) %}
@@ -10,7 +11,6 @@
                     {% set img = TimberImage(obj.thumbnail) %}
                 {% endif %}
 
-                
                 <div class="subnav-item-part -first">
                     {% if img %}
                         <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
@@ -18,17 +18,19 @@
                         <img src="http://placehold.it/200x200" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
                     {% endif %}
                 </div>
+
                 <div class="subnav-item-part">
                     <h4 class="subnav-item-title">{{child.title}}</h4>
                     <p class="subnav-item-desc">{{obj.thumbnail_blurb}}</p>
                 </div>
+                
             </div>
         </a>
-    </li>
+    </li> <!-- /.subnav-item.-mega -->
 {% else %}
     <li class="subnav-item -reg">
         <div class="subnav-item-wrap">
             <a href="{{child.link}}" class="subnav-item-title subnav-item-link cell">{{child.title}}</a>
         </div>
-    </li>
+    </li> <!-- /.subnav-item.-reg -->
 {% endif %}
