@@ -60,13 +60,16 @@
 			$context['site_footer_copyright'] = get_field('site_footer_copyright', 'options');
 			$context['site_footer_credits'] = get_field('site_footer_credits', 'options');
 
+			// 
+			$context['wishlist_page_link'] = get_field('wishlist_page_link', 'options');
+			$context['wishlist_page_text'] = get_field('wishlist_page_text', 'options');
+			
+
 			return $context;
 		}
 
 		function add_to_twig($twig){
-			/* this is where you can add your own fuctions to twig */
 			$twig->addExtension(new Twig_Extension_StringLoader());
-			// $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
 			return $twig;
 		}
 
@@ -81,6 +84,12 @@
 	 * Custom Theme Functions *
 	 **************************
 	 */ 
+
+
+	// Localize Piece data
+
+
+
 
 	// Add filter to post_type_link to add taxonomy name in front of permalink
 	// NOTE: Possibly could use Timber routes for this
@@ -111,28 +120,41 @@
 		if (!is_admin()) {
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-			wp_enqueue_script('jquery');
 
 			wp_register_script('picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), null);
 			wp_register_script('lazysizes', get_template_directory_uri() . '/assets/js/vendor/lazysizes.min.js', array(), null);
 			
 			wp_enqueue_script('picturefill');
 			wp_enqueue_script('lazysizes');
+			wp_enqueue_script('jquery');
 		}
 
-		// Enqueue stylesheet and scripts. Use minified for production.
-		// NOTE: will need to change this to get_stylesheet_directory_uri() to allow for child themes later.
+		// Enqueue minified for production
 		if( WP_ENV == 'production' ) {
 			wp_enqueue_style( 'tsk-styles', get_stylesheet_directory_uri() . '/assets/css/main.min.css', 1.0);
 			wp_enqueue_script( 'tsk-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.min.js', array('jquery'), '1.0.0', true );
 		} else {
 			wp_enqueue_style( 'tsk-styles', get_stylesheet_directory_uri() . '/assets/css/main.css', 1.0);
 			wp_enqueue_script( 'tsk-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', array('jquery'), '1.0.0', true );
+		}		
+
+		// Localize variables for single pieces
+		if (get_post_type() == 'piece' && is_single()) {
+			
+			global $post;
+			
+			$terms = wp_get_post_terms($post->ID, 'collection');
+			$dataToBePassed = array(
+			    	'title'  	 => (string) $post->post_title,
+			    	'id'		 => $post->id,
+			    	'collection' => $terms
+			);
+
+			wp_localize_script( 'tsk-js', 'php_vars', $dataToBePassed );
 		}
 
 	}
 	add_action( 'wp_enqueue_scripts', 'tsk_scripts' );
-
 	
 	 
 
@@ -252,7 +274,7 @@
 	    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 	  <?php else : ?>
 	    function ga() {
-	      console.log('GoogleAnalytics: ' + [].slice.call(arguments));
+	      // console.log('GoogleAnalytics: ' + [].slice.call(arguments));
 	    }
 	  <?php endif; ?>
 	  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('send','pageview');

@@ -1,13 +1,13 @@
 {% extends "singles/single.twig" %}
 
 {% block before_content %}
-	<div class="contain--lg">
-		<nav class="crumbs">
+	{# <div class="contain--sm">
+		<nav class="crumbs prevnext-title">
 			{% for t in post.get_terms('collection')|slice(0,1) %}
-				<a class="crumb -collection" href="{{t.link}}">&larr; Back to collection</a>
+				<a class="crumb -collection" href="{{t.link}}">{{t.name}}</a> &rarr; {{post.title}}
 			{% endfor %}
 		</nav>
-	</div>
+	</div> #}
 {% endblock %}
 
 {% block content %}
@@ -119,6 +119,21 @@
 			</section> <!-- ./piece-details -->
 
 		</div> <!-- /.grid -->
+		
+		<nav class="prevnext">
+			<div class="prev">
+				{# <p class="prevnext-compliment">Next</p> #}
+				<p class="prevnext-compliment">
+					{{function('next_post_link', '%link', '&larr; %title', TRUE, ' ', 'collection')}}
+				</p>
+			</div>
+			<div class="next">
+				{# <p class="prevnext-compliment">Previous</p> #}
+				<p class="prevnext-compliment">
+				{{function('previous_post_link', '%link', '%title &rarr;', TRUE, ' ', 'collection')}}
+				</p>
+			</div>
+		</nav>
 		
 	</div>
 	
