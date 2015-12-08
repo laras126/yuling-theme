@@ -1395,24 +1395,7 @@ img {
 .logo-text-logo {
   padding-top: 1.98rem;
   margin: 0 auto;
-  max-width: 100%;
-  -webkit-transition-property: all;
-       -o-transition-property: all;
-          transition-property: all;
-  -webkit-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in-out;
-       -o-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out; }
-  .shrunk .logo-text-logo {
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-         -o-transform: scale(0);
-            transform: scale(0); }
-
-.shrunk .logo-text-logo {
-  will-change: transform; }
+  max-width: 100%; }
 
 .title.-site {
   margin-top: 0;
