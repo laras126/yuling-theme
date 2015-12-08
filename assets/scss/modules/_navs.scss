@@ -7,12 +7,40 @@
 
 	// Search and Cart nav in header
 	&.-util {
+		// will-change: height;
+		// .shrunk & {
+		// 	height: 0;
+		// }
+
 		@include bp(md) {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			// width: 100%;
 		}
+	}
+}
+
+.util-grid {
+	@include grid;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.util-cell {
+	@include cell();
+	justify-content: center;
+	align-content: center;
+	
+	&.-start {
+		// justify-content: flex-start;
+		// flex-basis: 50px;
+	}
+
+	&.-end {
+		// flex-basis: 50px;
+		// justify-content: flex-end;
+		text-align: right;
 	}
 }
 
@@ -62,10 +90,6 @@
 		display: inline-block;
 		text-align: center;
 	}
-
-	// .shrunk & {
-	// 	padding-top: 0;
-	// }
 }
 
 
@@ -106,8 +130,9 @@
 		& > a:after {
 			content: '';
 		}
+
 		&:hover .subnav-wrapper {
-			@include header-animate;
+			// @include header-animate;
 			max-height: none;
 			opacity: 1;
 			overflow: visible;
@@ -123,7 +148,6 @@
 	overflow: hidden;
 	z-index: $z-top;
 	background-color: lighten($color-rotate-bkgd, 15%);
-	@include header-animate;
 	
 	&.active {
 		max-height: none;
