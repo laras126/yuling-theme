@@ -220,3 +220,40 @@
 	@include meta();
 	font-family: $font-body;
 }
+
+
+// Utility nav
+
+.wishlist-link {
+	@include cell;
+	@include meta;
+	font-weight: $font-weight-strong;
+	padding-top: $size-sml;
+	color: $color-text-med;
+	
+	&:hover {
+		color: $color-accent-med;
+	}
+}
+
+// Prev Next on Singles
+
+.prevnext {
+	@include grid;
+}
+
+.prevnext-compliment {
+	@include detail-compliment;
+}
+
+.prevnext-title {
+	@include detail-title($border-pos: false);
+}
+
+.prev, .next {
+	@include cell(half);
+}
+
+.next {
+	text-align: right;
+}
