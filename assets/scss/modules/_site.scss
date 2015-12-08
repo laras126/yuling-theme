@@ -20,7 +20,5 @@ img {
 }
 
 .main {
-	@include bp(md) {
-		padding: $size-h2*4 0 $size-h1;
-	}
+	padding: $size-h2 0 $size-h1;
 }
