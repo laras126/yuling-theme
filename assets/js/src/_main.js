@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 	
-	console.log('Check it: https://github.com/laras126/yuling-theme');
+	// console.log('Check it: https://github.com/laras126/yuling-theme');
 
 
 
@@ -28,24 +28,13 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	// $('.has-subnav').hover(function() {
-	// 	$(this).find('.subnav-wrapper')
-	// 			.animate({
-	// 				'max-height': '32em', 
-	// 				'opacity': 1
-	// 			}, 50);
-	// }, function(){
-	// 	$(this).find('.subnav-wrapper')
-	// 			.animate({
-	// 				'max-height': '0', 
-	// 				'opacity': 0
-	// 			}, 50);
-	// });
-
 	$('.main').on('click', function(e) {
 		$('.subnav-wrapper').removeClass('active');
 		$menu.removeClass('open');
 	});
+
+
+
 
 
 
@@ -55,7 +44,7 @@ $(document).ready(function() {
 
 	var allTargets = $('.accordion-target');
               
-	$('.accordion-trigger').click(function() {
+	$('.accordion-trigger').on('click', function() {
 		$this = $(this);
 		$target =  $this.next('.accordion-target');
 
@@ -81,11 +70,15 @@ $(document).ready(function() {
 
 
 
+
+
+
+
 	// ----
 	// Share Social Links
 	// ----
               
-	$('.share-trigger').click(function(e) {
+	$('.share-trigger').on('click', function(e) {
 		e.preventDefault();
         $this = $(this);
         $target =  $this.next('.social-list');
@@ -185,12 +178,14 @@ $(document).ready(function() {
 	
 
 
+
+
+
 	// ----
 	// Plugins
 	// ----
 
 	$('.main').fitVids();
-
 
 	$('.slider').flickity({
 		imagesLoaded: true,
@@ -208,5 +203,86 @@ $(document).ready(function() {
 	});
 
 
+
+
+	// ----
+	// Wishlist
+	// ----
+
+	var isPiece = false;
+	var supportsStorage = (('localStorage' in window) && window['localStorage'] !== 'null');
+	// If localStorage is supported AND php_vars exists, otherwise print a message
+	if (!supportsStorage) {
+	
+		alert('Sorry, your browser sucks.');
+	
+	} else {
+		updateWishlistCount();
+
+		if (typeof php_vars !== 'undefined') { 
+			isPiece = true;
+			
+			// TODO: consolidate this stuff and not have so many ifs.
+			if (isPiece === true) {
+
+				// If you aren't on a single piece page, define PHP vars.
+				// TODO: there's definitely a more elegant solution for this...
+
+				var currentItem = window.localStorage.getItem('wishListItem_' + php_vars.id);
+
+				// Store piece number and name on submit
+				// TODO: AJAX this
+				$('#wishlistForm').on('submit', function(e) {
+					
+					var piece = {
+						'id': php_vars.id, 
+						'title': php_vars.title, 
+						'collection': php_vars.collection[0].name
+					};
+
+					piece.quantity = $('#quantity option:selected').val();
+					window.localStorage.setItem('wishListItem_' + piece.id, JSON.stringify(piece));
+					var updatedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + piece.id));
+					console.log(updatedObj);
+					
+					$('#wishlistNotify').html('Updated').animate({opacity:1}, 300);
+
+					updateWishlistCount();
+					e.preventDefault();
+				});
+
+
+				// Populate the hidden fields with piece and collection names
+				$('#pieceName').val(php_vars.title);
+				$('#pieceCollection').val(php_vars.collection[0].name);
+				
+				
+				// console.log(retrievedObj.quantity);
+				// console.log(typeof retrievedObj);
+				if ( currentItem === null) {
+					console.log('poop');
+				} else {
+					// TODO: need to account for quantity undefined - not sure why this logic isn't working.
+					var retrievedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + php_vars.id));
+
+					markActiveWishlist(retrievedObj);
+					console.log(retrievedObj);
+
+				}
+			} // END isPiece logic
+		} // END php_vars logic
+	} // END localStorage check
 });
 
+function updateWishlistCount() {
+
+	if (window.localStorage.length != 0) {
+		$('#wishListCount').html(window.localStorage.length);
+	}
+}
+
+function markActiveWishlist(obj) {
+	$('#quantity option:selected').text(obj.quantity);
+	$('#wishlistSubmit').val('Update Wishlist');
+	$('#wishlistNotify').css('opacity', 1);
+}
