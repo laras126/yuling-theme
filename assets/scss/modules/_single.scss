@@ -11,10 +11,7 @@
 
 .single-title-compliment {
 	&.-piece {
-		font-family: $font-heading;
-		font-style: italic;
-		margin: 0;
-		font-size: $size-sml;
+		@include detail-compliment;
 	}
 }
 
