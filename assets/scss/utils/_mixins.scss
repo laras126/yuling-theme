@@ -73,6 +73,13 @@
     }
 }
 
+@mixin detail-compliment {
+    font-family: $font-heading;
+    font-style: italic;
+    margin: 0;
+    font-size: $size-sml;
+}
+
 
 // ----
 // Media Queries
