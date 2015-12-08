@@ -414,9 +414,6 @@ $(document).ready(function() {
 	
 
 
-
-
-
 	// ----
 	// Plugins
 	// ----
@@ -442,7 +439,7 @@ $(document).ready(function() {
 
 
 	// ----
-	// Wishlist
+	// wishList
 	// ----
 
 	var isPiece = false;
@@ -453,7 +450,8 @@ $(document).ready(function() {
 		alert('Sorry, your browser sucks.');
 	
 	} else {
-		updateWishlistCount();
+
+		updateWishListCount();
 
 		if (typeof php_vars !== 'undefined') { 
 			isPiece = true;
@@ -468,7 +466,7 @@ $(document).ready(function() {
 
 				// Store piece number and name on submit
 				// TODO: AJAX this
-				$('#wishlistForm').on('submit', function(e) {
+				$('#wishListForm').on('submit', function(e) {
 					
 					var piece = {
 						'id': php_vars.id, 
@@ -481,9 +479,9 @@ $(document).ready(function() {
 					var updatedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + piece.id));
 					console.log(updatedObj);
 					
-					$('#wishlistNotify').html('Updated').animate({opacity:1}, 300);
+					$('#wishListNotify').html('Updated').animate({opacity:1}, 300);
 
-					updateWishlistCount();
+					updatewishListCount();
 					e.preventDefault();
 				});
 
@@ -501,7 +499,7 @@ $(document).ready(function() {
 					// TODO: need to account for quantity undefined - not sure why this logic isn't working.
 					var retrievedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + php_vars.id));
 
-					markActiveWishlist(retrievedObj);
+					markActiveWishList(retrievedObj);
 					console.log(retrievedObj);
 
 				}
@@ -510,15 +508,20 @@ $(document).ready(function() {
 	} // END localStorage check
 });
 
-function updateWishlistCount() {
+function updateWishListCount() {
 
 	if (window.localStorage.length != 0) {
 		$('#wishListCount').html(window.localStorage.length);
+		for(var i in window.localStorage) {
+			var item = JSON.parse(window.localStorage[i]);
+			console.log(item.title);
+			$('#wishListItems').append(item.title + '<br>');
+		}
 	}
 }
 
-function markActiveWishlist(obj) {
+function markActiveWishList(obj) {
 	$('#quantity option:selected').text(obj.quantity);
-	$('#wishlistSubmit').val('Update Wishlist');
-	$('#wishlistNotify').css('opacity', 1);
+	$('#wishListSubmit').val('Update wishList');
+	$('#wishListNotify').css('opacity', 1);
 }
