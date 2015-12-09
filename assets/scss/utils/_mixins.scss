@@ -31,7 +31,10 @@
     padding-left: 0;
 }
 
-
+@mixin center {
+    display: block;
+    text-align: center;
+}
 
 // ----
 // Typography
