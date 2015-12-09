@@ -11,8 +11,7 @@
 
 	&.-piece,
 	&.-collection,
-	&.-project,
-	&.-block {
+	&.-project {
 		@include cell(half);
 	}
 
@@ -27,7 +26,6 @@
 	}
 
 	img {
-		width: 100%;
 		display: block;
 	}
 }
