@@ -55,7 +55,6 @@
 	overflow: hidden;
 	
 	@include bp(md) {
-		padding-top: $size-base;
 		max-height: none;
 	}
 	
