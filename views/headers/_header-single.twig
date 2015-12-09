@@ -1,1 +1,36 @@
 {% extends 'headers/header.twig' %}
+
+{% block header_content %}
+
+	<div class="contain--md text-center">
+		<h1 class="title -{{post.post_type}}">{{post.post_title}}</h1>
+	
+		{% if post.header_tagline %}
+			<p>{{post.header_tagline}}</p>
+		{% endif %}
+		{% if post.header_tagline %}
+			<p>{{post.header_summary}}</p>
+		{% endif %}
+
+		<p class="single-meta -{{post.post_type}}">{{post.date}}</p>
+	</div>	
+
+	{% if post.header_display == 'image' %}
+		<div class="contain--lg">
+			{% set desktop = TimberImage(post.header_image_desktop).src %}
+			{% set tablet = TimberImage(post.header_image_tablet).src %}
+			{% set mobile = TimberImage(post.header_image_mobile).src %}
+
+			{# TODO: Adjust dimensions once we decide on them #}
+			<picture class="header-picture">
+				<source srcset="{{desktop|resize(900)}}" media="(min-width: 1100px)">
+				<source srcset="{{tablet ? tablet|resize(900) : desktop|resize(900)}}" media="(min-width: 736px)">
+				{# TODO: Better placeholder #}
+				<img srcset="{{mobile ? mobile|resize(600) : desktop|resize(600)}}" src="{{placeholder}}" alt="{{post.post_title}}">
+			</picture>
+		</div>
+	{% elseif post.header_display == 'text'%}
+		{# TODO: there will probably be some unique stuff here, maybe a different display of the header info #}
+	{% endif %}
+
+	{% endblock %}
