@@ -811,7 +811,7 @@ a {
   a:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
-h1, h2, h3, h4, .single-meta p, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-weight: 300;
   margin-bottom: 0;
@@ -827,7 +827,7 @@ h2 {
 h3 {
   font-size: 1.98rem; }
 
-h4, .single-meta p {
+h4 {
   font-size: 1.43rem; }
 
 h5 {
@@ -1356,7 +1356,7 @@ img {
   letter-spacing: 1px;
   font-size: 0.825rem; }
 
-.prev, .next {
+.prev-cell, .next-cell {
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
@@ -1366,7 +1366,7 @@ img {
           flex: 0 0 50%;
   max-width: 50%; }
 
-.next {
+.next-cell {
   text-align: right; }
 
 .header.-site {
@@ -1852,8 +1852,7 @@ img {
 
 .gallery-thumb.-piece,
 .gallery-thumb.-collection,
-.gallery-thumb.-project,
-.gallery-thumb.-block {
+.gallery-thumb.-project {
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
@@ -1899,7 +1898,6 @@ img {
     max-width: 25%; } }
 
 .gallery-thumb img {
-  width: 100%;
   display: block; }
 
 .single-title.-piece {
@@ -1915,10 +1913,10 @@ img {
   font-size: 0.825rem; }
 
 .single-meta {
-  text-align: center; }
-  .single-meta p {
-    font-style: italic;
-    color: #916300; }
+  font-size: 1.98rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic;
+  color: #916300; }
 
 .single-sidebar-text {
   font-size: 0.825rem; }
