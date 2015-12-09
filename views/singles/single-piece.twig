@@ -1,14 +1,6 @@
 {% extends "singles/single.twig" %}
 
-{% block before_content %}
-	{# <div class="contain--sm">
-		<nav class="crumbs prevnext-title">
-			{% for t in post.get_terms('collection')|slice(0,1) %}
-				<a class="crumb -collection" href="{{t.link}}">{{t.name}}</a> &rarr; {{post.title}}
-			{% endfor %}
-		</nav>
-	</div> #}
-{% endblock %}
+{% block before_content %}{% endblock %}
 
 {% block content %}
 
@@ -36,7 +28,7 @@
 						{% set img = TimberImage(img) %}
 						<img 
 							{# data-magnify-src="{{img|resize(1800)}}" #}
-							src="{{img|resize(500)}}"
+							data-src="{{img|resize(700)}}"
 							data-magnify-src="{{img|resize(1024)}}"
 							id="swapTarget"
 							class="magnify"
