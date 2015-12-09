@@ -1,5 +1,7 @@
 {% extends "blocks/block.twig" %}
 
 {% block content %}
-	{{block.html}}
+	<div class="contain--{{block.container}}">
+		{{block.html}}
+	</div>
 {% endblock %}
