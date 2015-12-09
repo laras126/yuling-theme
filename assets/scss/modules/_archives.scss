@@ -15,10 +15,7 @@
 }
 
 .archive-desc {
-	font-size: $size-h3;
-	font-family: $font-heading;
-	font-style: italic;
-	color: $color-accent-med;
+	@include header-fancy-meta;
 }
 
 .archive-footer-title {

@@ -80,6 +80,12 @@
     font-size: $size-sml;
 }
 
+@mixin header-fancy-meta {
+    font-size: $size-h3;
+    font-family: $font-heading;
+    font-style: italic;
+    color: $color-accent-med;
+}
 
 // ----
 // Media Queries

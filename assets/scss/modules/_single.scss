@@ -16,13 +16,7 @@
 }
 
 .single-meta {
-	text-align: center;
-
-	p {
-		@extend h4;
-		font-style: italic;
-		color: $color-accent-med;
-	}
+	@include header-fancy-meta;
 }
 
 .single-sidebar-text {
