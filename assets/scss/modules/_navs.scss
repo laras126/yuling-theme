@@ -250,10 +250,10 @@
 	@include detail-title($border-pos: false);
 }
 
-.prev, .next {
+.prev-cell, .next-cell {
 	@include cell(half);
 }
 
-.next {
+.next-cell {
 	text-align: right;
 }
