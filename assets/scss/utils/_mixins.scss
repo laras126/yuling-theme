@@ -36,6 +36,7 @@
     text-align: center;
 }
 
+
 // ----
 // Typography
 // ----
@@ -83,12 +84,13 @@
     font-size: $size-sml;
 }
 
-@mixin header-fancy-meta {
-    font-size: $size-h3;
+@mixin header-fancy-meta($color: $color-accent-med, $size: $size-h3) {
+    font-size: $size;
     font-family: $font-heading;
     font-style: italic;
-    color: $color-accent-med;
+    color: $color;
 }
+
 
 // ----
 // Media Queries
