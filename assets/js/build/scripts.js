@@ -348,7 +348,7 @@ $(document).ready(function() {
 				var $current = $('.archive-images[data-title="'+curr_att+'"]');
 				
 				// Clear all active classes
-				$('.archive-quote').removeClass('active');
+				// $('.archive-quote').removeClass('active');
 
 				// Reveal the corresponding quote
 				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
