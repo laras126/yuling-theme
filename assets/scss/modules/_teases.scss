@@ -45,7 +45,8 @@
 	&.-post,
 	&.-collection {
 		@include detail-title($border-pos: false);
-
+		color: $color-text-dark;
+		
 		@include bp(sm) {
 			font-size: $size-sml;
 		}
