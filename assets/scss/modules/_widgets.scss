@@ -40,7 +40,7 @@
 	@include detail-title($size: $size-sml, $border-pos: false);
 
 	&.-footer {
-		color: $color-rotate-text;	
+		color: $color-text-med;	
 		margin-top: 0;
 		margin-bottom: $size-xsml;
 	}
