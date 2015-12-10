@@ -1,8 +1,15 @@
 .gallery {
 
-	// Eh, would be better not to override this, but oh well.
 	&.-inspiration {
 		@include grid($guttered: false);
+	}
+
+	&.-block {
+		@include bp(sm) {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
 	}
 }
 
@@ -14,17 +21,27 @@
 	// 	@include cell(half);
 	// }
 
+	&.-block {
+		padding: $size-xsml;
+		@include center;
+
+		// width: 100%;
+		// height: auto;
+
+		img {
+			@include bp(sm) {
+				// max-width: 100%;
+				// width: auto;
+				height: 70vh;
+			}
+		}
+	}
+
 	&.-inspiration {
 		@include cell($size: half, $guttered: false);
+		img {
+			width: 100%;
+		}
 	}
-
-	// &.-collection {
-	// 	@include bp(sm) { @include cell(half); }
-	// 	@include bp(md) { @include cell(third, $is_first: false); }
-	// 	@include bp(lg) { @include cell(fourth, $is_first: false); }
-	// }
-
-	img {
-		width: 100%;
-	}
+	
 }

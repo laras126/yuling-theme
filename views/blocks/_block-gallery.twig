@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="contain--md">
-	<div class="gallery -block teaser">
+	<div class="gallery -block teaser lazyload">
 
 		{% for image in block.gallery %}
 			<div class="gallery-thumb -block">
@@ -12,7 +12,7 @@
 					data-srcset="{{image.url|resize(500)}} 500w,
 						{{image.url|resize(800)}} 640w,
 						{{image.url|resize(1200)}} 1024w"
-						class="slider-img -full lazyload" 
+						class="lazyload" 
 						src="{{image.url|resize(500)}}" alt="{{image.title}}">
 			</div>
 		{% endfor %}
