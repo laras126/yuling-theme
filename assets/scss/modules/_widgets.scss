@@ -3,7 +3,7 @@
 
 	&.-footer {
 		@include grid;
-		color: lighten($color-text-dark, 60%);
+		@include meta(lighten($color-text-dark, 60%));
 	}
 
 	&.-sidebar {
