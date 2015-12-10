@@ -117,5 +117,8 @@ $MQs: true;
         @else if $point == xl {
             @media #{$bp-xl} { @content; }
         }
+        @else {
+            @media(min-width: $point) { @content; }   
+        }
     }
 }
