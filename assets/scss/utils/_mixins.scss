@@ -67,9 +67,9 @@
     font-size: $size-sml;
 }
 
-@mixin detail-title($border-pos: top) {
+@mixin detail-title($border-pos: top, $size: $size-base) {
     @include upperspace;
-    font-size: $size-sml;
+    font-size: $size;
     @if $border-pos != false {
         border-#{$border-pos}: 1px solid;
         padding-#{$border-pos}: $size-sml;

@@ -107,7 +107,7 @@
 
 .nav-item-link,
 .subnav-item-title {
-	@include detail-title($border-pos: false);
+	@include detail-title($border-pos: false, $size: $size-sml);
 }
 
 .has-subnav {
