@@ -20,7 +20,7 @@
 	// order: 2;
 
 	@include bp(md) {
-		@include cell(fourth, $is_first: false);
+		@include cell(sixth, $is_first: false);
 		// order: 1;
 	}
 }
@@ -69,8 +69,11 @@
 	top: 0;
 	left: 0;
 	pointer-events: none;
+	opacity: 0;
+	transition: 0.3s ease-in all;
 
 	&.active {
+		will-change: opacity;
 		opacity: 1;
 		pointer-events: all;
 	}
@@ -114,7 +117,7 @@
 .archive-images {
 	position: relative;
 	z-index: $z-mid;
-	padding-bottom: 80vh;
+	// padding-bottom: 80vh;
 	pointer-events: none;
 
 	* {
