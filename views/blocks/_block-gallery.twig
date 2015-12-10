@@ -1,7 +1,8 @@
 {% extends "blocks/block.twig" %}
 
 {% block content %}
-	{# {% include 'partials/_gallery.twig' with { gallery: block.gallery, class: 'block' } %} #}
+
+<div class="contain--md">
 	<div class="gallery -block teaser">
 
 		{% for image in block.gallery %}
@@ -13,9 +14,11 @@
 						{{image.url|resize(1200)}} 1024w"
 						class="slider-img -full lazyload" 
 						src="{{image.url|resize(500)}}" alt="{{image.title}}">
-
 			</div>
 		{% endfor %}
 
 	</div>
+</div>
 {% endblock %}
+
+
