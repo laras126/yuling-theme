@@ -108,6 +108,7 @@
 .nav-item-link,
 .subnav-item-title {
 	@include detail-title($border-pos: false, $size: $size-sml);
+	margin-top: 0;
 }
 
 .has-subnav {
@@ -205,13 +206,17 @@
 .subnav-item-part {	
 	@include cell();
 
-	&.-first {
+	&.-img {
 		@include cell($size: fourth, $is_first: false);
 		@include bp(md) {
 			padding-left: $size-sml;
 			padding-right: $size-sml;
 			@include cell($size: third, $is_first: false);
  		}
+	}
+
+	&.-text {
+		padding-top: $size-xsml;
 	}
 }
 
