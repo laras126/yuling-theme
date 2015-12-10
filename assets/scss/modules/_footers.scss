@@ -24,56 +24,12 @@
 	&.-left {
 	}
 
-	&.-right {
-		border-left: 1px solid lighten($color-text-dark, 40%);
-		padding-left: $size-base;
-	}
+	// &.-right {
+	// 	border-left: 1px solid lighten($color-text-dark, 40%);
+	// 	padding-left: $size-base;
+	// }
 }
 
-.widget-list {
-	@include unstyle-list;
-	@include grid;
-
-	ul {
-		@include unstyle-list;
-	}
-}
-
-.widget {
-	@include meta(lighten($color-text-dark, 60%));
-	
-	&.-right {
-		@include cell(full);
-		@include bp(lg) { 
-			@include cell(half, $is_first: false); 
-		}
-	}
-	
-	&.-left {
-		@include cell(half);
-		@include bp(lg) {
-			flex: 1; 
-		}
-	}
-	
-	padding-top: $size-sml;
-	padding-bottom: $size-base;
-
-}
-
-.widget-title {
-	@include detail-title(none);
-	color: $color-rotate-text;	
-	margin-top: 0;
-	margin-bottom: $size-xsml;
-}
-
-.widget a {
-	color: lighten($color-text-dark, 60%);
-	&:hover {
-		color: $color-accent-med;	
-	}
-}
 
 .colophon, 
 .credits {

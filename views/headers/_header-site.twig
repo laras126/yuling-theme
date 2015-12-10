@@ -2,16 +2,24 @@
 
 {% block header_content %}
 
-{% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
-
-<nav class="nav -util">
-    <div class="contain--lg clearfix">
-    <div class="search-wrap">
-        {% include 'partials/search-form.twig' %}
+<nav class="nav -util contain--lg">
+    <div class="util-grid">
+        <div class="util-cell -start">
+            <div class="search-wrap">
+                {% include 'partials/search-form.twig' %}
+            </div>
+        </div>
+        <div class="util-cell">
+            <a href="{{site.link}}" class="logo-link cell--half">
+                {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+                {# <img src="{{site.theme.link}}/assets/img/svg-min/text-logo.min.svg" class="logo-text-logo" alt=""> #}
+            </a>
+        </div>
+        <div class="util-cell -end">
+            <a href="{{wishlist_page_link}}" class="wishlist-link">{{wishlist_page_text}} (<span id="wishListCount">0</span>)</a>
+        </div>
     </div>
-    <a href="#" class="wishlist-link">My wish list (X)</a>
-    </div>
-</nav>
+</nav> <!-- /.nav.-util -->
   
 <nav class="nav -site" role="navigation">
     <a href="#" class="nav-item-link" id="navOpenLink">Menu</a>
@@ -21,7 +29,7 @@
             <a href="{{item.link}}" class="nav-item-link">{{item.title}}</a>
             {% if item.get_children %}
                 <div class="subnav-wrapper -site">
-                    <ul class="subnav-list -site {% for class in item.classes %}{{class == '-mega' ? '-mega'}}{% endfor %}">
+                    <ul class="subnav-list -site {{'-mega' in item.classes ? '-mega' : '-reg'}}">
                     {% for child in item.get_children %}
                        {% include 'partials/subnav-item.twig' %}
                     {% endfor %}
@@ -31,6 +39,6 @@
         </li>
     {% endfor %}
     </ul>
-</nav><!-- #access -->
+</nav><!-- /.nav.-site -->
 
 {% endblock %}

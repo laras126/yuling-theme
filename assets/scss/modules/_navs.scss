@@ -7,10 +7,36 @@
 
 	// Search and Cart nav in header
 	&.-util {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
+		// will-change: height;
+		// .shrunk & {
+		// 	height: 0;
+		// }
+
+		@include bp(md) {
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			// width: 100%;
+		}
+	}
+}
+
+.util-grid {
+	@include grid;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.util-cell {
+	@include cell();
+	justify-content: center;
+	align-content: center;
+	
+	&.-start {
+	}
+
+	&.-end {
+		text-align: right;
 	}
 }
 
@@ -18,25 +44,19 @@
 .nav-list {
 	@include unstyle-list;
 	text-align: center;
+	margin: 0;
 
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
-	transition: all 0.5s ease;
 	
 	@include bp(md) {
-		padding-top: 0;
 		max-height: none;
 	}
 	
 	&.open {
 		padding-top: $size-base;
-		max-height: 100em;
-	}
-	
-	&.-site {
-		margin-top: 0;
-		margin-bottom: 0;
+		max-height: none;
 	}
 }
 
@@ -50,107 +70,112 @@
 	@include bp(md) {
 		display: none;
 	}
+
+	&.open:after {
+		padding-right: $size-xsml;
+		// TODO: Replace with icon
+		content: 'X';
+	}
 }
 
 .nav-item {
-	@include header-animate;
 	text-align: center;
 
 	@include bp(md) {
 		display: inline-block;
 		text-align: center;
 	}
-
-	.shrunk & {
-		padding-top: 0;
-	}
-
-	// &:hover {
-	// 	background-color: $color-accent-light;	
-	// }
 }
 
 
-.nav-item,
 .nav-item-link,
 .subnav-item-link {
-	font-family: $font-nav;
-	padding: $size-sml $size-base;
-	display: inline-block;
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
-	// & > a {
-	// }
+	font-family: $font-nav;
+	display: block;
+	padding: $size-xsml;
+	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
+	
+	@include bp(sm) {
+		padding: $size-base;
+		border-bottom: 0;
+	}
 }
 
 .nav-item-link,
 .subnav-item-title {
-	@include detail-title($border-pos: false);
-	font-size: $size-sml;
+	@include detail-title($border-pos: false, $size: $size-sml);
+	margin-top: 0;
+}
+
+.has-subnav {
+	
+	@include bp(md) {
+
+		&:hover .subnav-wrapper {
+			// @include header-animate;
+			max-height: none;
+			opacity: 1;
+			overflow: visible;
+		}
+	}
 }
 
 .subnav-wrapper {
+	display: block;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	z-index: $z-top;
+	background-color: rgba($color-rotate-bkgd, 0.9);
+	
+	&.active {
+		@media(max-width: $screen-md) {
+			max-height: none;
+			opacity: 1;
+			overflow: visible;		
+		}
+	}
 
 	@include bp(md) {
 		position: absolute;
 		transform: translateZ(0);
 		width: 100%;
 		left: 0;
-		top: 100%;
-		background-color: lighten($color-rotate-bkgd, 8%);
+		right: 0;
+		margin-top: -2px; // Hack to remove whitespace below main nav
 	}
+
 }
 
 .subnav-list {
-	@include contain(lg);
 	@include unstyle-list;
-	overflow: hidden;
 
 	&.-mega {
 		text-align: left;
-		// .subnav-list {
-		    @include grid;
-		    max-width: $screen-xl;
-		// }
-	}
-	
-	@include bp(md) {
-		margin-top: $size-sml;
-	}
-	
-	&.-site {
-		max-height: 0;
-		opacity: 0;
-	    margin: 0 auto;
-	    @include header-animate;
-	}
-	
-	// Show subnav when hovered over
-	.has-subnav:hover & {	
-		max-height: $screen-sm;
-		opacity: 1;
-		overflow: visible;
+	    display: flex;
+	    flex-flow: wrap;
+	    max-width: $screen-md;
+		margin: 0 auto;
 	}
 }
 
+// Show subnav when hovered over
+
 .subnav-item {
-	&.-mega {
-		@include grid;
-		text-align: left;
-		padding-top: $size-base;
+	text-align: left;
+	// &.-mega {
+		@include cell(full); 
 
 		@include bp(sm) { 
-			@include cell(half); 
+			@include cell(half, $is_first: false); 
 		}
 
 		@include bp(lg) { 
+			padding-top: $size-base;
 			@include cell(third, $is_first: false); 
 		}
-	}
-
-	&.-reg {
-		display: inline-block;
-		text-align: center;
-	}
+	// }
 
 }
 
@@ -162,13 +187,58 @@
 	
 .subnav-item-part {	
 	@include cell();
-	
-	&.-first {
-		@include cell($size: half, $is_first: false);
+
+	&.-img {
+		@include cell($size: fourth, $is_first: false);
+		@include bp(md) {
+			padding-left: $size-sml;
+			padding-right: $size-sml;
+			@include cell($size: third, $is_first: false);
+ 		}
+	}
+
+	&.-text {
+		padding-top: $size-xsml;
 	}
 }
 
 .subnav-item-desc {
 	@include meta();
 	font-family: $font-body;
+}
+
+
+// Utility nav
+
+.wishlist-link {
+	@include cell;
+	@include meta;
+	padding-top: $size-sml;
+	color: $color-text-med;
+	
+	&:hover {
+		color: $color-accent-med;
+	}
+}
+
+// Prev Next on Singles
+
+.prevnext {
+	@include grid;
+}
+
+.prevnext-compliment {
+	@include detail-compliment;
+}
+
+.prevnext-title {
+	@include detail-title($border-pos: false);
+}
+
+.prev-cell, .next-cell {
+	@include cell(half);
+}
+
+.next-cell {
+	text-align: right;
 }

@@ -11,21 +11,12 @@
 
 .single-title-compliment {
 	&.-piece {
-		font-family: $font-heading;
-		font-style: italic;
-		margin: 0;
-		font-size: $size-sml;
+		@include detail-compliment;
 	}
 }
 
 .single-meta {
-	text-align: center;
-
-	p {
-		@extend h4;
-		font-style: italic;
-		color: $color-accent-med;
-	}
+	@include header-fancy-meta;
 }
 
 .single-sidebar-text {
@@ -42,7 +33,7 @@
 }
 
 .single-sidebar-title {
-	@include detail-title(top);
+	@include detail-title($border-pos: top, $size: $size-sml);
 	font-family: $font-heading;
 	
 	&.-plain {
@@ -83,14 +74,14 @@
 }
 
 .single-footer-title {
-	@include detail-title(bottom);
+	@include detail-title($border-pos: bottom, $size: $size-sml);
 }
 
 
 // Single Piece
 
 .magnify {
-	max-width: 100%;
+	width: 100%;
 }
 
 .piece-details {

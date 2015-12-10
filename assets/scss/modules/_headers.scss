@@ -2,7 +2,7 @@
 .header {
 	&.-site {
 		background-color: rgba($color-rotate-bkgd, 1);
-		position: fixed;
+		position: relative;
 		width: 100%;
 		z-index: $z-top;
 		top: 0;
@@ -16,39 +16,16 @@
 }
 
 .header-picture {
-	display: block;
-	text-align: center;
+	@include center;
+}
+
+.logo-wrap {
+	@include cell;
 }
 
 .logo-text-logo {
-	padding-top: $size-h3;
-	display: block;
 	margin: 0 auto;
-	max-width: 60%;
-	opacity: 1;
-	max-height: 6rem;
-	@include header-animate;
-
-	@include bp(sm) {
-		max-width: $size-h1*6; 
-	}
-
-	.shrunk & {
-		max-height: 0;
-		opacity: 0;
-		padding-top: $size-xsml;
-	} 
+	max-width: $size-h1*5; 
+	@include center;
 }
 
-.wishlist-link {
-	font-weight: $font-weight-strong;
-	@include meta;
-	display: block;
-	float: right;
-	padding-top: $size-sml;
-	color: $color-text-med;
-	
-	&:hover {
-		color: $color-accent-med;
-	}
-}

@@ -2,20 +2,26 @@
 // Teases
 
 .tease {
-	&.-piece, 
-	&.-project,
-	&.-post,
+	padding: $size-base;
+
+	&.-piece,
 	&.-page {
 		@include cell(half);
-		padding: $size-base;
 		@include bp(md) { 
 			@include cell(third, $is_first: false); 
 			padding: $gutter;
 		}
 	}
 
-	&.-post {
+	&.-post,
+	&.-project {
+		@include bp(sm) {
+			@include cell(half); 
+		}
 
+		@include bp(xl) { 
+			@include cell(third);
+		}	
 	}
 
 	&.-piece {
@@ -38,14 +44,8 @@
 	&.-project,
 	&.-post,
 	&.-collection {
-		font-size: $size-xsml;
+		@include detail-title($border-pos: false, $size: $size-sml);
 		color: $color-text-dark;
-		@include upperspace;
-
-		@include bp(sm) {
-			font-size: $size-sml;
-			//margin: 0 $size-base;
-		}
 	}
 }
 

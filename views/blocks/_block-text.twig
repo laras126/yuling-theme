@@ -1,8 +1,10 @@
 {% extends "blocks/block.twig" %}
 
 {% block content %}
-	{% if block.block_heading %}
-		<h4>{{block.block_heading}}</h4>
-	{% endif %}
-	{{block.block_text}}
+	<div class="contain--md">
+		{% if block.block_heading %}
+			<h4>{{block.block_heading}}</h4>
+		{% endif %}
+		{{block.block_text}}
+	</div>
 {% endblock %}

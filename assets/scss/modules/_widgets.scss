@@ -1,0 +1,54 @@
+.widget-list {
+	@include unstyle-list;
+
+	&.-footer {
+		@include grid;
+		@include meta(lighten($color-text-dark, 60%));
+	}
+
+	&.-sidebar {
+		@include meta($color-text-dark);
+	}
+
+	ul {
+		@include unstyle-list;
+	}
+}
+
+.widget {
+	
+	&.-right {
+		@include cell(full);
+		@include bp(lg) { 
+			@include cell(half, $is_first: false); 
+		}
+	}
+	
+	&.-left {
+		@include cell(half);
+		@include bp(lg) {
+			flex: 1; 
+		}
+	}
+	
+	padding-top: $size-sml;
+	padding-bottom: $size-base;
+
+}
+
+.widget-title {
+	@include detail-title($size: $size-sml, $border-pos: false);
+
+	&.-footer {
+		color: $color-text-med;	
+		margin-top: 0;
+		margin-bottom: $size-xsml;
+	}
+}
+
+.widget a {
+	color: lighten($color-text-dark, 60%);
+	&:hover {
+		color: $color-accent-med;	
+	}
+}

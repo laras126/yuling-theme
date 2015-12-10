@@ -1,19 +1,25 @@
-
-// Shameful styles here.
-
-
-.tax-collection, .single-project {
+.single-piece,
+.single-post,
+.page {
 	.main {
-		padding-top: $size-h2*3;
+		padding-top: $size-h2;
 	}
 }
 
-
-// Hack to prevent util nav overlapping main nav items
-.nav {
-	&.-site {
-		@include bp(md) {
-			padding: 0 $size-h1*3;
+.has-subnav {
+	
+	// Ewwwww too much nesting.
+	@media(max-width: $screen-md) {
+		& > a {
+			&:after {
+				content: '+';
+			}
+		}
+		
+		& > .active {
+			&:after {
+				content: '-';
+			}
 		}
 	}
 }

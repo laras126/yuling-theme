@@ -136,13 +136,19 @@ input[type="search"] {
 }
 
 .search-submit {
-	height: 0;
-	width: 0;
-	opacity: 0;
+	// @include button($color-accent-med);
+	
+	// @include bp(md) {
+		height: 0;
+		width: 0;
+		opacity: 0;
+	// }
 }
 
 .search-wrap {
-	float: left;
+	// @include bp(md) {
+		float: left;
+	// }
 }
 
 
@@ -151,4 +157,15 @@ input[type="search"] {
 
 .frm_ajax_loading {
 	display: none;
+}
+
+// Wishlist
+
+.form-status {
+	&.-wishlist {
+		@include detail-compliment;
+		margin-left: $size-xsml;
+		color: $color-accent-med;
+		opacity: 0;
+	}
 }

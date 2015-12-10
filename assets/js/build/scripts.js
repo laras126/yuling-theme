@@ -237,7 +237,7 @@
 
 $(document).ready(function() {
 	
-	console.log('Check it: https://github.com/laras126/yuling-theme');
+	// console.log('Check it: https://github.com/laras126/yuling-theme');
 
 
 
@@ -249,8 +249,7 @@ $(document).ready(function() {
 	// Look into Modernizr for that
 
 	var $menu = $('#toggleNav'),
-	    $menulink = $('#navOpenLink'),
-	    $menuTrigger = $('.has-subnav > a');
+	    $menulink = $('#navOpenLink');
 
 	$menulink.on('click', function(e) {
 		$menulink.toggleClass('open');
@@ -258,11 +257,19 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	$menuTrigger.click(function(e) {
+	// Subnav
+	$('.has-subnav > a').on('click', function(e) {
+		$(this).toggleClass('active');
+		$(this).next('.subnav-wrapper').toggleClass('active');
 		e.preventDefault();
-		var $this = $(this);
-		$this.toggleClass('open').next('ul').toggleClass('open');
 	});
+
+	$('.main').on('click', function(e) {
+		$('.subnav-wrapper').removeClass('active');
+		$menu.removeClass('open');
+	});
+
+
 
 
 
@@ -271,28 +278,34 @@ $(document).ready(function() {
 	// Toggle Panels (detailed asides on single-piece)
 	// ----
 
-      var allTargets = $('.accordion-target');
+	var allTargets = $('.accordion-target');
               
-      $('.accordion-trigger').click(function() {
-          $this = $(this);
-          $target =  $this.next('.accordion-target');
+	$('.accordion-trigger').on('click', function() {
+		$this = $(this);
+		$target =  $this.next('.accordion-target');
 
-          $this.toggleClass('active');
-          $('.accordion-trigger').not($this).removeClass('active');
+		$this.toggleClass('active');
+		$('.accordion-trigger').not($this).removeClass('active');
 
-          if ($target.hasClass('active')) {
-            $target.removeClass('active').animate({
-            	'max-height' : '0'
-            }, 300); 
-          } else {
-            allTargets.removeClass('active');
-            $target.addClass('active').animate({
-            	'max-height' : '100em'
-            }, 500); 
-          }
-          
-        return false;
-      });
+		if ($target.hasClass('active')) {
+	    	$target.removeClass('active').animate({
+	    		'max-height' : '0'
+	    	}, 300); 
+	  	} else {
+	    
+	    allTargets.removeClass('active');
+	    
+	    $target.addClass('active').animate({
+	    	'max-height' : '100em'
+	    }, 500); 
+	  }
+	  
+		return false;
+	});
+
+
+
+
 
 
 
@@ -301,7 +314,7 @@ $(document).ready(function() {
 	// Share Social Links
 	// ----
               
-	$('.share-trigger').click(function(e) {
+	$('.share-trigger').on('click', function(e) {
 		e.preventDefault();
         $this = $(this);
         $target =  $this.next('.social-list');
@@ -335,7 +348,7 @@ $(document).ready(function() {
 				var $current = $('.archive-images[data-title="'+curr_att+'"]');
 				
 				// Clear all active classes
-				$('.archive-quote').removeClass('active');
+				// $('.archive-quote').removeClass('active');
 
 				// Reveal the corresponding quote
 				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
@@ -407,12 +420,10 @@ $(document).ready(function() {
 
 	$('.main').fitVids();
 
-
 	$('.slider').flickity({
 		imagesLoaded: true,
 		pageDots: false,
-		wrapAround: true,
-		lazyload: true
+		wrapAround: true
 		// percentPosition: false
 	});
 
@@ -424,5 +435,92 @@ $(document).ready(function() {
 	});
 
 
+
+
+	// ----
+	// wishList
+	// ----
+
+	var isPiece = false;
+	var supportsStorage = (('localStorage' in window) && window['localStorage'] !== 'null');
+	// If localStorage is supported AND php_vars exists, otherwise print a message
+	if (!supportsStorage) {
+	
+		alert('Sorry, your browser sucks.');
+	
+	} else {
+
+		updateWishListCount();
+
+		if (typeof php_vars !== 'undefined') { 
+			isPiece = true;
+			
+			// TODO: consolidate this stuff and not have so many ifs.
+			if (isPiece === true) {
+
+				// If you aren't on a single piece page, define PHP vars.
+				// TODO: there's definitely a more elegant solution for this...
+
+				var currentItem = window.localStorage.getItem('wishListItem_' + php_vars.id);
+
+				// Store piece number and name on submit
+				// TODO: AJAX this
+				$('#wishListForm').on('submit', function(e) {
+					
+					var piece = {
+						'id': php_vars.id, 
+						'title': php_vars.title, 
+						'collection': php_vars.collection[0].name
+					};
+
+					piece.quantity = $('#quantity option:selected').val();
+					window.localStorage.setItem('wishListItem_' + piece.id, JSON.stringify(piece));
+					var updatedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + piece.id));
+					console.log(updatedObj);
+					
+					$('#wishListNotify').html('Updated').animate({opacity:1}, 300);
+
+					updatewishListCount();
+					e.preventDefault();
+				});
+
+
+				// Populate the hidden fields with piece and collection names
+				$('#pieceName').val(php_vars.title);
+				$('#pieceCollection').val(php_vars.collection[0].name);
+				
+				
+				// console.log(retrievedObj.quantity);
+				// console.log(typeof retrievedObj);
+				if ( currentItem === null) {
+					console.log('poop');
+				} else {
+					// TODO: need to account for quantity undefined - not sure why this logic isn't working.
+					var retrievedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + php_vars.id));
+
+					markActiveWishList(retrievedObj);
+					console.log(retrievedObj);
+
+				}
+			} // END isPiece logic
+		} // END php_vars logic
+	} // END localStorage check
 });
 
+function updateWishListCount() {
+
+	if (window.localStorage.length != 0) {
+		$('#wishListCount').html(window.localStorage.length);
+		for(var i in window.localStorage) {
+			var item = JSON.parse(window.localStorage[i]);
+			console.log(item.title);
+			$('#wishListItems').append(item.title + '<br>');
+		}
+	}
+}
+
+function markActiveWishList(obj) {
+	$('#quantity option:selected').text(obj.quantity);
+	$('#wishListSubmit').val('Update wishList');
+	$('#wishListNotify').css('opacity', 1);
+}

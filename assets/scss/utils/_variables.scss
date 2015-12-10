@@ -4,7 +4,7 @@
 // ----
 
 $screen-sm:     35em;
-$screen-md:     53em;
+$screen-md:     47em;
 $screen-lg:   	64em;
 $screen-xl:     72em;
 
@@ -15,9 +15,11 @@ $screen-xl:     72em;
 
 $white: 			#FFFFFF;
 $black: 			#000000;
-$grey: 				darken(#E6E6E3, 8%);
+$grey: 				#999999;
 $gold: 				#916300;
 $pink: 				#B83074;
+$red: 				#D64533;
+$yellow: 			#FFC700;
 
 $blue: 				#1C7FA6;
 $l-teal: 			desaturate(#BDF2E3, 10%);
@@ -34,8 +36,8 @@ $color-accent-light:	$grey;
 $color-accent-vlight:	lighten($color-accent-light, 10%);
 
 // Alerts
-$color-alert-danger: 	lighten($l-green, 40%);
-$color-alert-warning: 	$color-accent-light;
+$color-alert-danger: 	$red;
+$color-alert-warning: 	$yellow;
 $color-alert-info: 		$blue;
 $color-alert-success: 	$green;
 
@@ -73,8 +75,8 @@ $color-rotate-text: 	$color-body-bkgd;
 
 $size-contain-lg: 	110%;
 $size-contain-md: 	105%;
-$size-contain-sm: 	95%;
-$size-contain: 		90%;
+$size-contain-sm: 	100%;
+$size-contain: 		100%;
 
 $size-base:  		1.1rem;
 

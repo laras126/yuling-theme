@@ -19,9 +19,11 @@
 	}
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
-	$context['foo'] = 'bar';
-	$templates = array('index.twig');
+	$context['sidebar'] = Timber::get_sidebar('sidebar-blog.php');
+	$context['title'] = 'Stories';
+
 	$templates = array('blog.twig', 'index.twig');
+	
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
 	}

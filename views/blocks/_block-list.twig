@@ -1,38 +1,39 @@
+
 {% extends "blocks/block.twig" %}
 
 {% block content %}
+	<div class="contain--md">
+		{% set type = block.list_type %}
+		{% set display = block.list_display %}
 
-	{% set type = block.list_type %}
-	{% set display = block.list_display %}
+		{% if block.list_title %}
+			<h4 class="list-title">{{block.list_title}}</h4>
+		{% endif %}
 
-	{% if block.list_title %}
-		<h4 class="list-title">{{block.list_title}}</h4>
-	{% endif %}
+		{% if block.list_description %}
+			<p class="list-description">{{block.list_description}}</p>
+		{% endif %}
 
-	{% if block.list_description %}
-		<p class="list-description">{{block.list_description}}</p>
-	{% endif %}
-
-	<ul class="block_list-list -{{display}} -{{type}}">
-		
-		{% for item in block.list_type_freeform %}
-			<li class="list-item--{{type}}">
-				<h4 class="list-item-title">{{item.item_title}}</h4>
-				<div class="list-item-desc">
-					{{item.item_description}}
-				</div>
-				{% if display == 'major' %}
-					{{item.item_image}}
-				{% endif %}
-			</li>
-		{% endfor %}
-
-		{% for post in block.list_type_connected_content %}
-			<li class="list-item--{{type}}">
-				{% include 'teases/_tease-' ~ post.post_type ~ '.twig' %}
-			</li>
-		{% endfor %}
+		<ul class="block_list-list -{{display}} -{{type}}">
 			
-	</ul> <!-- /.list-{{display}} -->
+			{% for item in block.list_type_freeform %}
+				<li class="list-item--{{type}}">
+					<h4 class="list-item-title">{{item.item_title}}</h4>
+					<div class="list-item-desc">
+						{{item.item_description}}
+					</div>
+					{% if display == 'major' %}
+						{{item.item_image}}
+					{% endif %}
+				</li>
+			{% endfor %}
 
+			{% for post in block.list_type_connected_content %}
+				<li class="list-item--{{type}}">
+					{% include 'teases/_tease-' ~ post.post_type ~ '.twig' %}
+				</li>
+			{% endfor %}
+				
+		</ul> <!-- /.list-{{display}} -->
+	</div>
 {% endblock %}

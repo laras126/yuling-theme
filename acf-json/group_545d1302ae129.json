@@ -122,10 +122,10 @@
         },
         {
             "key": "field_558add6512d17",
-            "label": "Header Tagline",
-            "name": "header_tagline",
-            "type": "textarea",
-            "instructions": "A concise introduction to the page content. ",
+            "label": "Thumbnail Blurb",
+            "name": "thumbnail_blurb",
+            "type": "text",
+            "instructions": "A five to seven word blurb to display in the menu thumbnail.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

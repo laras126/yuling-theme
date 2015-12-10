@@ -15,23 +15,13 @@
         
         <main class="main -site" role="main">
 
-            <div class="content -site">
+            {% block before_content %}{% endblock %}
 
-                {% block before_content %}{% endblock %}
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
 
-                {% block content %}
-                    Sorry, no content
-                {% endblock %}
-
-                {% block after_content %}{% endblock %}
-
-            </div>
-
-            {% if sidebar %}
-                <aside class="sidebar -site">
-                    {{sidebar}}
-                </aside>
-            {% endif %}
+            {% block after_content %}{% endblock %}
 
         </main>
 

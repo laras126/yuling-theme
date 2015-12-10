@@ -1,14 +1,6 @@
 {% extends "singles/single.twig" %}
 
-{% block before_content %}
-	<div class="contain--lg">
-		<nav class="crumbs">
-			{% for t in post.get_terms('collection')|slice(0,1) %}
-				<a class="crumb -collection" href="{{t.link}}">&larr; Back to collection</a>
-			{% endfor %}
-		</nav>
-	</div>
-{% endblock %}
+{% block before_content %}{% endblock %}
 
 {% block content %}
 
@@ -36,7 +28,7 @@
 						{% set img = TimberImage(img) %}
 						<img 
 							{# data-magnify-src="{{img|resize(1800)}}" #}
-							src="{{img|resize(500)}}"
+							src="{{img|resize(700)}}"
 							data-magnify-src="{{img|resize(1024)}}"
 							id="swapTarget"
 							class="magnify"
@@ -55,15 +47,23 @@
 				
 				<div class="single-sidebar-text">
 					{{post.long_description|wpautop}}
-					{# <div class="grid"> #}
-						{# <div class="cell--third">
-							<h4 class="single-sidebar-title -plain">Quantity</h4>
-						</div> #}
-						{# <div class="cell"> #}
-							{{form}}
-						{# </div> #}
-					{# </div> #}
-					{# <input type="submit" value="Add to Wishlist" class="btn -submit"> #}
+					<form action="#" id="wishListForm">
+						<select name="quantity" id="quantity">
+							<option value="25">25</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400+">400+</option>
+						</select>
+						<br>
+						<input type="submit" class="btn -submit" id="wishListSubmit" value="Add to wishList">
+						<span id="wishListNotify" class="form-status -wishlist">In Wishlist</span>
+						<fieldset class="visually-hidden">
+							<input type="text" id="pieceName" class="visually-hidden">
+							<input type="text" id="pieceCollection" class="visually-hidden">
+						</fieldset>
+					</form>
 				</div>
 				
 				<aside class="single-sidebar -piece">
@@ -115,8 +115,8 @@
 
 					{% include 'partials/_share.twig' %}
 				</aside>
-
 			</section> <!-- ./piece-details -->
+
 
 		</div> <!-- /.grid -->
 		

@@ -17,6 +17,7 @@
 		$templates = array('archives/archive.twig', 'index.twig');
 
 		$data = Timber::get_context();
+		$data['sidebar'] = Timber::get_sidebar('sidebar-blog.php');
 
 		$data['title'] = 'Archive';
 		if (is_day()){
@@ -40,6 +41,7 @@
 			if (is_post_type_archive('project')) {
 				// Possibly move this to theme options
 				$data['title'] = 'Projects';
+				$data['sidebar'] = Timber::get_sidebar('sidebar-projects.php');
 			} else {
 				$data['title'] = post_type_archive_title('', false);
 			}
@@ -47,8 +49,9 @@
 			$data['type'] = get_post_type();
 			array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
 		}
-
+		
 		$data['collections'] = Timber::get_terms('collection');
 		$data['posts'] = Timber::get_posts();
 
 		Timber::render($templates, $data);
+

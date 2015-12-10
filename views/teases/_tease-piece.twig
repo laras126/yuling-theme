@@ -4,7 +4,7 @@
 	<a href="{{post.link}}">
 		{% if post.thumbnail %}
 			{# TODO: find a different idea for the placeholder sizing #}
-			<img data-src="{{post.thumbnail.src|resize(600, 600)}}" alt="{{post.post_title}} Thumbnail" src="{{placeholder|resize(100,100)}}" class="lazyload tease-img -piece">
+			<img data-src="{{post.thumbnail.src|resize(600, 600)}}" alt="{{post.post_title}} Thumbnail" src="{{post.thumbnail.src|resize(100,100)}}" class="lazyload tease-img -piece">
 		{% else %}
 			{# TODO: replace this with something we serve. #}
 			<img src="http://placehold.it/500x500" alt="Default Thumbnail">

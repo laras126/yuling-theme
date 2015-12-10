@@ -5,6 +5,10 @@
 	@include unstyle-list;
 	@include grid;
 	align-items: flex-start;
+
+	&.-share {
+		float: left;
+	}
 }
 
 .social-item {
@@ -15,17 +19,14 @@
 
 .footer {
 	.icon {
-		fill: $color-accent-light;
+		fill: $color-text-med;
 	}
 }
 
 
 // Share on social media
-
 .share {
-	.social-list {
-		float: left;
-	}
+	@include clearfix;
 }
 
 .share-trigger {

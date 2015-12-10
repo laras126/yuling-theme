@@ -4,23 +4,10 @@
 
 {% block header_content %}
 	
-	<div class="slider">
-		{% for image in term.collection_gallery %}
-			<img data-src="{{image.url|resize(1200)}}" class="slider-img -full lazyload" src="{{image.url|resize(500)}}" alt="{{image.title}}">
-		{% endfor %}
-	</div>
-	
+	{% include 'partials/_gallery-slider.twig' with { gallery: term.collection_gallery, desc: term.description } %}
 	<div class="contain--sm text-center">
-		{# <div class="grid">
-			<div class="cell--half"> #}
-				<h1 class="archive-title">{{term.name}}</h1>
-				<p class="archive-desc">{{term.below_title}}</p>
-				<p>{{term.long_description}}</p>
-			{# </div>
-			<div class="cell--half"> #}
-				{# <img data-src="{{term.featured_image.url}}" src="{{placeholder}}" #}
-			{# </div> #}
-		{# </div> #}
+		<h1 class="archive-title">{{term.name}}</h1>
+		<p class="archive-desc">{{term.below_title}}</p>
 	</div>
 
 {% endblock %}
