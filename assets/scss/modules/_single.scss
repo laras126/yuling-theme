@@ -33,7 +33,7 @@
 }
 
 .single-sidebar-title {
-	@include detail-title(top);
+	@include detail-title($border-pos: top, $size: $size-sml);
 	font-family: $font-heading;
 	
 	&.-plain {
@@ -74,7 +74,7 @@
 }
 
 .single-footer-title {
-	@include detail-title(bottom);
+	@include detail-title($border-pos: bottom, $size: $size-sml);
 }
 
 
