@@ -1,16 +1,23 @@
-{% extends 'index.twig' %}
+{% extends 'base.twig' %}
 
 {% block before_content %}
 	{% include 'headers/_header-archive.twig' with { class : '-archive' } %}
 {% endblock %}
 
 {% block content %}
+
 	<div class="contain--xl">
-		<div class="archive -{{type}}">
-			{% for post in posts %}
-				{% set post = TimberPost(post) %}
-				{% include ['teases/_tease-'~post.post_type~'.twig', 'teases/tease.twig'] with { class: 'teaser lazyload' } %}
-			{% endfor %}
-		</div>
-	</div> 
+		<div class="grid">
+			<div class="archive-sidebar">
+				{{sidebar}}
+			</div>
+			<div class="archive-main -has-sidebar">
+				{% for post in posts %}
+					{% set post = TimberPost(post) %}
+					{% include ['teases/_tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
+				{% endfor %}
+			</div>
+		</div>	
+	</div>
+	
 {% endblock %}
