@@ -11,6 +11,9 @@
 {% endblock %}
 
 {% block after_content %}
-	{% include 'navs/_nav-prevnext.twig' with { n_class: 'contain--md' } %}
+	{# Not a great way to do this #}
+	{% if post.post_type != 'piece' %}
+		{% include 'navs/_nav-prevnext.twig' with { n_class: 'contain--md' } %}
+	{% endif %}
 	{% include ['footers/_footer-' ~ post.post_type ~ '.twig', 'footers/footer.twig'] with { class: post.post_type ? '-' ~ post.post_type } %}
 {% endblock %}
