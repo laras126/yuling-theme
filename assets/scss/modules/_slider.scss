@@ -1,42 +1,87 @@
 
 
 // Slider
+// Very sad to hardcode these values, but works to maintain the dimensions if using lazysizes which we are.
 
 .slider {
+	overflow: hidden;
+	
+	@include bp(426px) {
+		height: 426px;
+	}
 
-	&.-full {	
-		background-color: $color-accent-light;
+	@include bp(600px) {
+		height: 426px;
+	}
+
+	@include bp(900px) {
+		height: 600px;
 	}
 }
 
 .slider-cell {
-  width: 85%;
-  // height: 200px;
-  margin-right: 10px;
-  background: #333;
+	height: 213px;
+	width: 320px;
+	margin-right: 10px;
+	overflow: hidden;
+	
+	@include bp(450px) {
+		height: 300px;
+		width: 450px;
+	}
+
+	@include bp(640px) {
+		height: 426px;
+		width: 640px;
+	}
+
+	@include bp(900px) {
+		height: 600px;
+		width: 900px;
+	}
+
+	&.-highlighted {
+		background: $color-rotate-bkgd;
+		display: flex;
+	}
 }
 
 .slider-img {
-	height: 300px;
+	width: 100%;
+	height: 100%;
 	margin-right: $size-xsml/2;
-	
+	display: block;
+}
+
+.highlight-img-wrap,
+.highlight-desc-wrap {
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+
+.slider-img-highlight {
+	height: 100%;
+}
+
+.highlight-desc {
+	@include header-fancy-meta($color: $color-rotate-text, $size: $size-sml);
+
 	@include bp(sm) {
-		height: 500px;
+		font-size: $size-h4;
 	}
 
 	@include bp(lg) {
-		height: 80vh;
+		font-size: $size-h3;
 	}
 
-	// display: block;
-  	// transition: opacity 0.4s;
-  	// opacity: 0;
+	text-align: right;
+	padding: $size-sml;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
-// .slider-img.flickity-lazyloaded,
-// .slider-img.flickity-lazyerror {
-//   opacity: 1;
-// }
 
 // Related pieces slider thumb cells
 .thumb {
@@ -55,15 +100,3 @@
 		width: 100%;
 	}
 }
-
-// .flickity-prev-next-button.previous {
-// 	@include bp(lg) {
-// 		left: -44px;
-// 	}
-// }
-
-// .flickity-prev-next-button.next {
-// 	@include bp(lg) {
-// 		right: -44px;
-// 	}
-// }
