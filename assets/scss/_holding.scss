@@ -1,8 +1,7 @@
-
-// Shameful styles here.
-
-.tax-collection {
+.single-piece,
+.single-post,
+.page {
 	.main {
-		padding-top: 0;
+		padding-top: $size-h2;
 	}
 }
