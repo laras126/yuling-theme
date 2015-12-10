@@ -1,12 +1,27 @@
 
-// Teases
+// Main Archive Styles
 
-.archive {
-	&.-piece,
-	&.-project,
-	&.-post, 
-	&.-search {
-		@include grid;
+.archive-main {
+	@include grid;
+	
+	&.-has-sidebar {
+		// @include cell(full);
+		order: 1;
+		@include bp(md) {
+			@include cell();
+			order: 2;
+		}
+	}
+
+}
+
+.archive-sidebar {
+	@include cell(full);
+	// order: 2;
+
+	@include bp(md) {
+		@include cell(fourth, $is_first: false);
+		// order: 1;
 	}
 }
 
@@ -50,7 +65,7 @@
 
 	z-index: $z-back;
 	opacity: 0;
-    position: fixed;
+    // position: fixed;
 	top: 0;
 	left: 0;
 	pointer-events: none;
@@ -63,9 +78,7 @@
 }
 
 .archive-quote-title {
-	// @include detail-title($border-pos: false);
-	@include upperspace;
-	font-size: $size-base;
+	@include detail-title($border-pos: false, $size: $size-base);
 }
 
 .archive-quote-inner {
@@ -135,3 +148,8 @@
 }
 
 
+// Archive Sidebar
+
+.archive-sidebar {
+	order: 1;
+}

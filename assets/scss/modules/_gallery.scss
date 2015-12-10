@@ -1,9 +1,8 @@
 .gallery {
-	@include grid;
 
 	// Eh, would be better not to override this, but oh well.
 	&.-inspiration {
-		margin: 0;
+		@include grid($guttered: false);
 	}
 }
 
@@ -25,7 +24,7 @@
 	// 	@include bp(lg) { @include cell(fourth, $is_first: false); }
 	// }
 
-	// img {
-	// 	width: 100%;
-	// }
+	img {
+		width: 100%;
+	}
 }

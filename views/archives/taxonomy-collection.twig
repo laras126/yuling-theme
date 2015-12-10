@@ -6,7 +6,7 @@
 
 {% block content %}
 	<div class="contain--xl">
-		<div class="archive -piece">
+		<div class="archive-main -piece">
 			{% for post in posts %}
 				{% include 'teases/_tease-' ~ post.post_type ~ '.twig' with { class: 'cell--half' } %}
 			{% endfor %}
