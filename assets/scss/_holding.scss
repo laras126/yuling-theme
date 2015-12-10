@@ -5,3 +5,21 @@
 		padding-top: $size-h2;
 	}
 }
+
+.has-subnav {
+	
+	// Ewwwww too much nesting.
+	@media(max-width: $screen-md) {
+		& > a {
+			&:after {
+				content: '+';
+			}
+		}
+		
+		& > .active {
+			&:after {
+				content: '-';
+			}
+		}
+	}
+}
