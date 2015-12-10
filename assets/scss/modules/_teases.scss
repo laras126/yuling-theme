@@ -44,12 +44,8 @@
 	&.-project,
 	&.-post,
 	&.-collection {
-		@include detail-title($border-pos: false);
+		@include detail-title($border-pos: false, $size: $size-sml);
 		color: $color-text-dark;
-		
-		@include bp(sm) {
-			font-size: $size-sml;
-		}
 	}
 }
 
