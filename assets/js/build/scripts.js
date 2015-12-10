@@ -423,8 +423,7 @@ $(document).ready(function() {
 	$('.slider').flickity({
 		imagesLoaded: true,
 		pageDots: false,
-		wrapAround: true,
-		lazyload: true
+		wrapAround: true
 		// percentPosition: false
 	});
 
