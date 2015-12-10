@@ -2,12 +2,12 @@
 // Teases
 
 .tease {
+	padding: $size-base;
+
 	&.-piece, 
-	&.-project,
-	&.-post,
+	&.-project
 	&.-page {
 		@include cell(half);
-		padding: $size-base;
 		@include bp(md) { 
 			@include cell(third, $is_first: false); 
 			padding: $gutter;
@@ -15,7 +15,13 @@
 	}
 
 	&.-post {
+		@include bp(sm) {
+			@include cell(half); 
+		}
 
+		@include bp(xl) { 
+			@include cell(third);
+		}	
 	}
 
 	&.-piece {
@@ -38,9 +44,6 @@
 	&.-project,
 	&.-post,
 	&.-collection {
-		font-size: $size-xsml;
-		color: $color-text-dark;
-		@include upperspace;
 		@include detail-title($border-pos: false);
 
 		@include bp(sm) {
