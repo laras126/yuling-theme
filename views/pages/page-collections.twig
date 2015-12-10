@@ -26,7 +26,7 @@
 				</div>
 			</div>
 
-		</section>
+		</section> <!-- /.archive-quote -->
 
 		<section class="archive-images" data-title="{{c.title}}">
 			<div class="archive-images-inner">
@@ -36,13 +36,21 @@
 				</div>
 				
 				<div class="archive-images-inspiration">
-					<h4 class="detail-title">Inspiration on Pinterest</h4>
+					{# <h4 class="detail-title">Inspiration on Pinterest</h4> #}
 					
-					{% include 'partials/_gallery.twig' with { gallery: c.inspiration_gallery, gall_class : 'inspiration', class : 'inspiration' } %}
+					<div class="gallery -inspiration teaser">
+						{% set gallery = c.inspiration_gallery %}
+						{% for image in gallery %}
+							<div class="gallery-thumb -inspiration">
+								<img data-src="{{image.url|resize(1000)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
+							</div>
+						{% endfor %}
+
+					</div>
 				</div>
+
 			</div>
-		</section>
-		{# </div> #}
+		</section> <!-- /.archive-images -->
 	{% endfor %}
 	
 {% endblock %}
