@@ -37,6 +37,8 @@
 }
 
 
+
+
 // ----
 // Typography
 // ----
@@ -92,6 +94,8 @@
 }
 
 
+
+
 // ----
 // Media Queries
 // ----
@@ -123,4 +127,17 @@ $MQs: true;
             @media(min-width: $point) { @content; }   
         }
     }
+}
+
+
+
+
+// ----
+// Utility
+// ----
+
+@mixin show-subnav {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
 }
