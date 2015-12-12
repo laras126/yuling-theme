@@ -73,6 +73,7 @@
 
 	&.open:after {
 		padding-right: $size-xsml;
+		
 		// TODO: Replace with icon
 		content: 'X';
 	}
@@ -114,11 +115,11 @@
 
 		&:hover .subnav-wrapper {
 			// @include header-animate;
-			max-height: none;
-			opacity: 1;
-			overflow: visible;
+			@include show-subnav();
 		}
 	}
+
+	// Nested link content styles in holding.scss
 }
 
 .subnav-wrapper {
@@ -130,10 +131,9 @@
 	background-color: rgba($color-rotate-bkgd, 0.9);
 	
 	&.active {
+		// Better than overriding in a min-width
 		@media(max-width: $screen-md) {
-			max-height: none;
-			opacity: 1;
-			overflow: visible;		
+			@include show-subnav;
 		}
 	}
 
@@ -150,39 +150,53 @@
 
 .subnav-list {
 	@include unstyle-list;
-
-	&.-mega {
-		text-align: left;
-	    display: flex;
-	    flex-flow: wrap;
-	    max-width: $screen-md;
-		margin: 0 auto;
-	}
+	text-align: left;
+    display: flex;
+    // flex-flow: row wrap;
+    max-width: $screen-lg;
+	margin: 0 auto;
+	// flex-direction: cowlumn;
 }
+
 
 // Show subnav when hovered over
 
 .subnav-item {
 	text-align: left;
-	// &.-mega {
-		@include cell(full); 
+	order: 1;
 
-		@include bp(sm) { 
-			@include cell(half, $is_first: false); 
-		}
+	@include cell(full); 
 
+	@include bp(sm) { 
+		@include cell(half, $is_first: false); 
+	}
+
+	@include bp(lg) { 
+		padding-top: $size-base;
+		@include cell(third, $is_first: false); 
+	}
+	.-special & {
 		@include bp(lg) { 
 			padding-top: $size-base;
-			@include cell(third, $is_first: false); 
+			@include cell(fourth, $is_first: false); 
 		}
-	// }
+
+		&:nth-child(4) {
+			// @include cell(third, $is_first: false); 
+			background-color: green;
+			// order: 4;
+			// align-self: flex-end;
+// 
+			.subnav-item-part.-img {
+				@include cell($size: full, $is_first: false);
+			}
+		}
+	}
 
 }
 
 .subnav-item-inner {
-	&.-mega {
-		@include grid;
-	}
+	@include grid;
 }
 	
 .subnav-item-part {	
@@ -191,14 +205,8 @@
 	&.-img {
 		@include cell($size: fourth, $is_first: false);
 		@include bp(md) {
-			padding-left: $size-sml;
-			padding-right: $size-sml;
-			@include cell($size: third, $is_first: false);
+			@include cell($size: half, $is_first: false);
  		}
-	}
-
-	&.-text {
-		padding-top: $size-xsml;
 	}
 }
 
@@ -221,6 +229,7 @@
 	}
 }
 
+
 // Prev Next on Singles
 
 .prevnext {
@@ -242,3 +251,4 @@
 .next-cell {
 	text-align: right;
 }
+

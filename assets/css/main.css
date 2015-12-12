@@ -596,7 +596,7 @@ http://flickity.metafizzy.co
   position: relative; }
 
 .contain--lg {
-  max-width: 64em; }
+  max-width: 60em; }
 
 .contain--md {
   max-width: 47em; }
@@ -792,7 +792,7 @@ html {
   @media (min-width: 47em) {
     html {
       font-size: 105%; } }
-  @media (min-width: 64em) {
+  @media (min-width: 60em) {
     html {
       font-size: 110%; } }
 
@@ -1225,21 +1225,21 @@ img {
 
 .subnav-list {
   list-style-type: none;
-  padding-left: 0; }
-  .subnav-list.-mega {
-    text-align: left;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: wrap;
-        -ms-flex-flow: wrap;
-            flex-flow: wrap;
-    max-width: 47em;
-    margin: 0 auto; }
+  padding-left: 0;
+  text-align: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 60em;
+  margin: 0 auto; }
 
 .subnav-item {
   text-align: left;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
   position: relative;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
@@ -1255,7 +1255,7 @@ img {
           -ms-flex: 0 0 50%;
               flex: 0 0 50%;
       max-width: 50%; } }
-  @media (min-width: 64em) {
+  @media (min-width: 60em) {
     .subnav-item {
       padding-top: 1.1rem;
       -webkit-box-flex: 0;
@@ -1263,8 +1263,24 @@ img {
           -ms-flex: 0 0 33.333333%;
               flex: 0 0 33.333333%;
       max-width: 33.333333%; } }
+  @media (min-width: 60em) {
+    .-special .subnav-item {
+      padding-top: 1.1rem;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 25%;
+          -ms-flex: 0 0 25%;
+              flex: 0 0 25%;
+      max-width: 25%; } }
+  .-special .subnav-item:nth-child(4) {
+    background-color: green; }
+    .-special .subnav-item:nth-child(4) .subnav-item-part.-img {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 100%;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      max-width: 100%; }
 
-.subnav-item-inner.-mega {
+.subnav-item-inner {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1292,15 +1308,11 @@ img {
     max-width: 25%; }
     @media (min-width: 47em) {
       .subnav-item-part.-img {
-        padding-left: 0.825rem;
-        padding-right: 0.825rem;
         -webkit-box-flex: 0;
-        -webkit-flex: 0 0 33.333333%;
-            -ms-flex: 0 0 33.333333%;
-                flex: 0 0 33.333333%;
-        max-width: 33.333333%; } }
-  .subnav-item-part.-text {
-    padding-top: 0.66rem; }
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+        max-width: 50%; } }
 
 .subnav-item-desc {
   color: #999999;
@@ -1462,7 +1474,7 @@ img {
   @media (min-width: 35em) {
     .highlight-desc {
       font-size: 1.43rem; } }
-  @media (min-width: 64em) {
+  @media (min-width: 60em) {
     .highlight-desc {
       font-size: 1.98rem; } }
 
@@ -1472,7 +1484,7 @@ img {
   @media (min-width: 35em) {
     .thumb {
       width: 40%; } }
-  @media (min-width: 64em) {
+  @media (min-width: 60em) {
     .thumb {
       width: 20%; } }
   .thumb img {
@@ -1562,7 +1574,7 @@ img {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 100%; }
-    @media (min-width: 64em) {
+    @media (min-width: 60em) {
       .widget.-right {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
@@ -1578,7 +1590,7 @@ img {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%; }
-    @media (min-width: 64em) {
+    @media (min-width: 60em) {
       .widget.-left {
         -webkit-box-flex: 1;
         -webkit-flex: 1;
@@ -2051,7 +2063,7 @@ img {
             flex: 0 0 50%;
     max-width: 50%; } }
 
-@media (min-width: 64em) {
+@media (min-width: 60em) {
   .piece-details {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 33.333333%;
@@ -2084,7 +2096,7 @@ img {
           -ms-flex: 0 0 50%;
               flex: 0 0 50%;
       max-width: 50%; } }
-  @media (min-width: 64em) {
+  @media (min-width: 60em) {
     .piece-images {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 calc(100% / 3 * 2);
