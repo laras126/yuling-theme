@@ -327,6 +327,7 @@ $(document).ready(function() {
 
 
 
+
     // ----
 	// Reveal and Rotate Quotes on Scroll (Collections page)
 	// ----
@@ -438,7 +439,7 @@ $(document).ready(function() {
 
 
 	// ----
-	// wishList
+	// Wish List
 	// ----
 
 	var isPiece = false;
@@ -511,11 +512,21 @@ function updateWishListCount() {
 
 	if (window.localStorage.length != 0) {
 		$('#wishListCount').html(window.localStorage.length);
+		
 		for(var i in window.localStorage) {
 			var item = JSON.parse(window.localStorage[i]);
-			console.log(item.title);
-			$('#wishListItems').append(item.title + '<br>');
+			var title = '<td class="item-title">' + item.title + '</td>',
+				collection = '<td class="item-collection">' + item.collection + '</td>',
+				quantity = '<td class="item-quantity">' + item.quantity + '</td>';
+
+			$('#wishListItems').append('<tr>' + collection + title + quantity + '</tr>');
+			// $('#collectionNames').append('<td class="item-collection">' + 'Collection' + '</td>');
+			// $('#quantities').append('<td class="item-quantity">' + 'Quanti' + '</td>');
 		}
+		$('#wishListTitle').html('In Your Wish List');
+		$('#wishListHeader').append('Complete the email form below to receive a price quote for these items.');
+	} else {
+		$('#wishListItems').remove();
 	}
 }
 

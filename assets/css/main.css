@@ -1049,25 +1049,32 @@ input[type="search"] {
 table {
   width: 100%;
   font-family: "source-sans-pro", sans-serif;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.98rem;
+  margin-top: 1.98rem; }
   table caption {
     margin: 0 0 7px;
     font-size: 0.66rem;
     color: #FFFFFF; }
 
-tr:nth-child(even) {
-  background-color: white; }
+tr {
+  border-bottom: 1px solid #b3b3b3; }
+  tr:nth-child(even) {
+    background-color: #ededed; }
 
 td {
   padding: 7px;
-  border-right: 1px solid #999999; }
+  border-right: 1px solid #b3b3b3; }
   td:last-child {
     border-right: 0; }
 
 th {
-  background-color: #999999;
   border-bottom: 1px solid #999999;
-  border-right: 1px solid #999999; }
+  border-right: 1px solid #999999;
+  color: #999999;
+  font-size: 0.825rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
   th:last-child {
     border-right: 0; }
 
