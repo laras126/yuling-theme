@@ -2,7 +2,8 @@
 table {
     width: 100%;
     font-family: $font-form;
-    margin-bottom: 1.5em;
+    margin-bottom: $size-h3;
+    margin-top: $size-h3;
 
     caption {
         margin: 0 0 7px;
@@ -12,6 +13,8 @@ table {
 }
 
 tr {
+    border-bottom: 1px solid $color-accent-vlight;
+
     &:nth-child(even) {
         background-color: $color-table-rotate;
     }
@@ -19,7 +22,7 @@ tr {
 
 td {
     padding: 7px;
-    border-right: 1px solid $color-accent-light;
+    border-right: 1px solid $color-accent-vlight;
 
     &:last-child {
         border-right: 0;
@@ -27,9 +30,10 @@ td {
 }
 
 th {
-    background-color: $color-accent-light;
     border-bottom: 1px solid $color-accent-light;
     border-right: 1px solid $color-accent-light;
+    @include meta;
+    @include upperspace;
 
     &:last-child {
         border-right: 0;
