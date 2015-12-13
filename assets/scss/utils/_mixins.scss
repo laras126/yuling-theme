@@ -141,3 +141,9 @@ $MQs: true;
     opacity: 1;
     overflow: visible;
 }
+
+@mixin visually-hidden {
+    position: absolute;
+    top: -9999999px;
+    left: -999999px;
+}
