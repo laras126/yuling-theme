@@ -519,13 +519,19 @@ function updateWishListCount() {
 				collection = '<td class="item-collection">' + item.collection + '</td>',
 				quantity = '<td class="item-quantity">' + item.quantity + '</td>';
 
+			// Update the Wish List header text to indicate there are items
+			$('#wishListTitle').html('In Your Wish List');
+			$('#wishListPrompt').html('Complete the email form below to receive a price quote for these items.');
+
+			// Add item to table
 			$('#wishListItems').append('<tr>' + collection + title + quantity + '</tr>');
-			// $('#collectionNames').append('<td class="item-collection">' + 'Collection' + '</td>');
-			// $('#quantities').append('<td class="item-quantity">' + 'Quanti' + '</td>');
+
+			// Fill hidden Wish List text area with content
+			$('.wishlist-fill textarea').append(item.collection + ': ' + item.title + ', ' + item.quantity + ' || ');
 		}
-		$('#wishListTitle').html('In Your Wish List');
-		$('#wishListPrompt').html('Complete the email form below to receive a price quote for these items.');
 	} else {
+		
+		// Remove the table if there are no items in the List
 		$('#wishListItems').remove();
 	}
 }
