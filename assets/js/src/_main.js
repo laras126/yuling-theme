@@ -288,7 +288,7 @@ function updateWishListCount() {
 			// $('#quantities').append('<td class="item-quantity">' + 'Quanti' + '</td>');
 		}
 		$('#wishListTitle').html('In Your Wish List');
-		$('#wishListHeader').append('Complete the email form below to receive a price quote for these items.');
+		$('#wishListPrompt').html('Complete the email form below to receive a price quote for these items.');
 	} else {
 		$('#wishListItems').remove();
 	}
