@@ -159,8 +159,11 @@ input[type="search"] {
 	display: none;
 }
 
+// ----
 // Wishlist
+// ----
 
+// On Single Piece
 .form-status {
 	&.-wishlist {
 		@include detail-compliment;
@@ -170,6 +173,75 @@ input[type="search"] {
 	}
 }
 
+// Concierge
+
 .wishlist-fill {
+	// display: none;
+}
+
+.edit-quantity-form {
+
+	@include bp(md) {
+		display: inline-block;
+		float: right;
+	}
+
+	& > input[type=radio] {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		margin: 0;
+	}
+
+	& > label {
+		display: inline-block;
+		margin-right: $size-xsml;
+		margin-bottom: 0;
+		padding-left: 3px;
+		padding-right: 3px;
+		cursor: pointer;
+		@include meta($color: $color-rotate-text, $margin: true);	
+	}
+}
+
+.edit-label {
+	background-color: $color-alert-info;
+}
+
+.expects-save {
+	background-color: $color-alert-warning;
+}
+
+.remove-label {
+	background-color: $color-alert-danger	
+}
+
+.edit-quantity-field {
+	display: inline-block;
+	text-align: center;
+	max-width: 70px; 
+}
+
+.row-removed {
+	font-style: italic;
+	text-decoration: line-through;
+	background-color: $color-table-rotate;
+	color: $color-accent-light;
+}
+
+.save-changes {
+	display: none;
+	@include clearfix;
+	
+	.btn {
+		float: right;
+	}
+}
+
+.editing-update {
+	color: red;
+}
+
+#isEditing {
 	display: none;
 }
