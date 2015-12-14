@@ -1,4 +1,5 @@
 scssDir: scss/
 jsSrcDir: js/src/
+jsVendorDir: js/vendor/
 jsConcatDir: js/build/
 cssDir: css/

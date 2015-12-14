@@ -119,14 +119,12 @@
 		// Use jQuery from CDN, enqueue in footer
 		if (!is_admin()) {
 			wp_deregister_script('jquery');
-			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-
+			
 			wp_register_script('picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), null);
 			wp_register_script('lazysizes', get_template_directory_uri() . '/assets/js/vendor/lazysizes.min.js', array(), null);
 			
 			wp_enqueue_script('picturefill');
 			wp_enqueue_script('lazysizes');
-			wp_enqueue_script('jquery');
 		}
 
 		// Enqueue minified for production
