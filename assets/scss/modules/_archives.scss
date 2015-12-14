@@ -5,7 +5,6 @@
 	@include grid;
 	
 	&.-has-sidebar {
-		// @include cell(full);
 		order: 1;
 		@include bp(md) {
 			@include cell();
@@ -17,11 +16,9 @@
 
 .archive-sidebar {
 	@include cell(full);
-	// order: 2;
 
 	@include bp(md) {
 		@include cell(sixth, $is_first: false);
-		// order: 1;
 	}
 }
 
@@ -51,31 +48,137 @@
 }
 
 // ----
+// All Collections Banner
+// ----
+
+.banner {
+	height: 80vh;
+	// position: relative;
+	// z-index: $z-mid;
+	background-size: cover;
+    background-image: url(../img/util/trees-sml.png);
+
+	@include bp(md) {
+		background-image: url(../img/util/trees-med.png);
+	}
+
+	@include bp(lg) {
+		background-image: url(../img/util/trees-large.png);
+	}
+
+	color: $color-rotate-text;
+	padding: $size-h3;
+	border: 1px solid $color-accent-med;
+	
+	@include grid($guttered: false);
+	text-align: center;
+	justify-content: center;
+
+
+	// overflow: hidden; // added for pseudo-element
+ //  	position: relative; // added for pseudo-element
+
+  	// Fixed-position background image
+	// &::before {
+	//     content: ' ';
+	//     position: fixed; // instead of background-attachment
+	//     width: 100%;
+	//     height: 100%;
+	//     top: 0;
+	//     left: 0;
+	    
+	//     // background: url('/img/front/strategy.jpg') no-repeat center center;
+	//     background-image: url(../img/util/trees-sml.png);
+
+	// 	@include bp(md) {
+	// 		background-image: url(../img/util/trees-med.png);
+	// 	}
+
+	// 	@include bp(lg) {
+	// 		background-image: url(../img/util/trees-large.png);
+	// 	}
+
+	//     background-size: cover;
+	//     will-change: transform; // creates a new paint layer
+	//     z-index: -1;
+ //  }
+
+	svg {
+		fill: white;
+	}
+
+}
+
+.banner-wrap {
+	align-self: center;
+	@include contain(sm);
+}
+
+.banner-title {
+	margin-top: 0;
+	@include detail-title($border_pos: false, $size: $size-sml);
+	font-family: $font-heading;
+}
+
+.banner-tagline {
+	@include detail-text;
+}
+
+.banner-logos {
+	margin-bottom: $size-h4;
+	
+	.wordmark {
+		max-width: 10vh;
+	}
+
+	.logo {
+		max-width: 30vh;
+	}
+}
+
+.banner-prompt {
+	// position: absolute;
+	// bottom: 0;
+	// width: 100%;
+	@include cell(full);
+	align-self: flex-end;
+	// text-align: center;
+
+	.icon {
+		width: $size-base;
+		height: $size-base;
+	}
+}
+
+.banner-prompt-text {
+	@include detail-compliment;
+	margin-bottom: 0;
+}
+
+// ----
 // All Collections Detail Module
 // ----
 
 // Quote section
 
 .archive-quote {
-	text-align: center;
-	min-height: 100vh;
-	width: 100%;
-	
-	@include grid($align: center);
-
-	z-index: $z-back;
-	opacity: 0;
-    // position: fixed;
-	top: 0;
-	left: 0;
 	pointer-events: none;
-	opacity: 0;
-	transition: 0.3s ease-in all;
-
+	text-align: center;
+	background-color: white;
+	
+	@include grid($align:center);
+	min-height: 100vh;
+	width: 100%;	
+	top: 100%;
+	left: 0;
+    position: fixed;
 	&.active {
-		will-change: opacity;
-		opacity: 1;
+		top: 0;
 		pointer-events: all;
+		
+		& .archive-quote-content {
+			opacity: 1;
+		}
 	}
 
 }
@@ -86,9 +189,15 @@
 
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
+	// position: relative;
+	// z-index: -1;
+	// -webkit-transform: translate3d(0,0,0);
+	// transform: translateZ(0deg);
+
 }
 
 .archive-quote-content {
+	opacity: 0;
 	font-style: normal;
 	font-family: $font-heading;
 	padding: $size-base;
@@ -117,7 +226,7 @@
 .archive-images {
 	position: relative;
 	z-index: $z-mid;
-	// padding-bottom: 80vh;
+	padding-top: 80vh;
 	pointer-events: none;
 
 	* {
