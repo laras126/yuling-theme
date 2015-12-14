@@ -168,10 +168,14 @@
 	
 	@include grid($align:center);
 	min-height: 100vh;
-	width: 100%;	
-	top: 100%;
-	left: 0;
-    position: fixed;
+
+	@include bp(md) {
+		width: 100%;	
+		top: 100%;
+		left: 0;
+	    position: fixed;
+	}
+
 	&.active {
 		top: 0;
 		pointer-events: all;
@@ -197,7 +201,11 @@
 }
 
 .archive-quote-content {
-	opacity: 0;
+	
+	@include bp(md) {
+		opacity: 0;
+	}
+
 	font-style: normal;
 	font-family: $font-heading;
 	padding: $size-base;
@@ -246,7 +254,7 @@
 	margin: 0;
 }
 
-.archive-images-inspiration,
+.archive-images-inspiration.-first,
 .archive-images-featured {
 	
 	img {
@@ -256,7 +264,19 @@
 
 	@include bp(sm) {
 		@include cell($size: half, $guttered: false);
+		align-self: flex-end;
 	}	
+}
+
+.archive-images-inspiration.-second {
+
+	.gallery {
+		@include bp(sm) {
+			@include cell(half, $guttered: false);
+			margin: 0 auto;
+		}
+		
+	}
 }
 
 
