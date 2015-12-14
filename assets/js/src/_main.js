@@ -100,6 +100,7 @@ $(document).ready(function() {
 	// $('.archive-quote').removeClass('active');
 
 	if ($(window).width() > 768) {
+		
 		$(window).scroll(function() {
 
 			$('.archive-images').each( function() {
@@ -120,7 +121,7 @@ $(document).ready(function() {
 					// Reveal the corresponding quote
 					$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
 
-				} else if ( $(window).scrollTop() <= banner_ht  ) {
+				} else if ( $(window).scrollTop() <= banner_ht ) {
 					$('.archive-quote').removeClass('active');
 				}
 
