@@ -52,7 +52,7 @@
 // ----
 
 .banner {
-	height: 80vh;
+	height: 85vh;
 	padding: $size-h3;
 	background-size: cover;
     background-image: url(../img/util/trees-sml.png);
@@ -129,6 +129,9 @@
 	margin-bottom: 0;
 }
 
+
+
+
 // ----
 // All Collections Detail Module
 // ----
@@ -139,13 +142,23 @@
 	pointer-events: none;
 	text-align: center;
 	background-color: white;
-	
-	@include grid($align:center);
-	min-height: 100vh;
+	padding-top: $size-h3;
+	padding-bottom: $size-h3;
 
 	@include bp(md) {
+		padding: 0;
+		@include grid();
+		justify-content: center;
+		height: 100vh;
+
+		& > .cell {
+			align-self: center;
+			padding-top: 10%;
+			height: 80%;
+		}
 		width: 100%;	
 		top: 100%;
+		// transition: 0.25s all ease;
 		left: 0;
 	    position: fixed;
 	}
@@ -167,13 +180,15 @@
 
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
-	// position: relative;
-	// z-index: -1;
-	// -webkit-transform: translate3d(0,0,0);
-	// transform: translateZ(0deg);
-
+	max-width: $screen-lg;
+	margin: 0 auto;
 }
 
+.archive-quote-content {
+
+	&.-first {
+		transition: 0.25s all ease;
+	}
 
 	@include bp(md) {
 		opacity: 0;
@@ -181,7 +196,7 @@
 
 	font-style: normal;
 	font-family: $font-heading;
-	padding: $size-base;
+	padding: $size-sml;
 	font-size: $size-base;
 	
 	@include bp(md) {
@@ -207,12 +222,16 @@
 .archive-images {
 	position: relative;
 	z-index: $z-mid;
-	padding-top: 80vh;
 	pointer-events: none;
 
 	* {
 		pointer-events: none;
 	}
+	
+	@include bp(md) {
+		padding-top: 80vh;
+	}
+	
 }
 
 
