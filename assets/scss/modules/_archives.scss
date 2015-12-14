@@ -53,10 +53,11 @@
 
 .banner {
 	height: 80vh;
-	// position: relative;
-	// z-index: $z-mid;
+	padding: $size-h3;
 	background-size: cover;
     background-image: url(../img/util/trees-sml.png);
+	color: $color-rotate-text;	
+	text-align: center;
 
 	@include bp(md) {
 		background-image: url(../img/util/trees-med.png);
@@ -66,43 +67,6 @@
 		background-image: url(../img/util/trees-large.png);
 	}
 
-	color: $color-rotate-text;
-	padding: $size-h3;
-	border: 1px solid $color-accent-med;
-	
-	@include grid($guttered: false);
-	text-align: center;
-	justify-content: center;
-
-
-	// overflow: hidden; // added for pseudo-element
- //  	position: relative; // added for pseudo-element
-
-  	// Fixed-position background image
-	// &::before {
-	//     content: ' ';
-	//     position: fixed; // instead of background-attachment
-	//     width: 100%;
-	//     height: 100%;
-	//     top: 0;
-	//     left: 0;
-	    
-	//     // background: url('/img/front/strategy.jpg') no-repeat center center;
-	//     background-image: url(../img/util/trees-sml.png);
-
-	// 	@include bp(md) {
-	// 		background-image: url(../img/util/trees-med.png);
-	// 	}
-
-	// 	@include bp(lg) {
-	// 		background-image: url(../img/util/trees-large.png);
-	// 	}
-
-	//     background-size: cover;
-	//     will-change: transform; // creates a new paint layer
-	//     z-index: -1;
- //  }
-
 	svg {
 		fill: white;
 	}
@@ -111,7 +75,17 @@
 
 .banner-wrap {
 	align-self: center;
-	@include contain(sm);
+	max-width: $screen-sm;
+	padding-top: 10vh;
+}
+
+.banner-border {
+	@include grid($guttered: false);
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	border: 1px solid $color-accent-med;
+	padding-bottom: $size-sml;
 }
 
 .banner-title {
@@ -200,8 +174,7 @@
 
 }
 
-.archive-quote-content {
-	
+
 	@include bp(md) {
 		opacity: 0;
 	}
@@ -275,10 +248,12 @@
 			@include cell(half, $guttered: false);
 			margin: 0 auto;
 		}
-		
 	}
 }
 
+.archive-images-inspiration.-last {
+	background-color: $color-body-bkgd;
+}
 
 // Archive Sidebar
 
