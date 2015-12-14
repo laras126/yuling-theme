@@ -106,7 +106,7 @@ $(document).ready(function() {
 			$('.archive-images').each( function() {
 				
 				var banner_ht = $('.banner').outerHeight();
-				var image_dist = ($(this).offset().top + banner_ht/2) - $(window).scrollTop(),
+				var image_dist = ($(this).offset().top + banner_ht) - $(window).scrollTop(),
 					win_height = $(window).height();
 
 				if ( image_dist < win_height ) {
