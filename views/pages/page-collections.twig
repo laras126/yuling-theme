@@ -5,17 +5,19 @@
 	{# {% include 'headers/_header-page.twig' with { h_class: 'header--page' } %} #}
 
 	<header class="banner">
-		<div class="banner-wrap">
-			<div class="banner-logos">
-				{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
-	            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
-            </div>
-			<h1 class="banner-title">{{post.title}}</h1>
-			<p class="banner-tagline">{{post.header_summary}}</p>
-		</div>
-		<div class="banner-prompt">
-			<p class="banner-prompt-text">Discover More</p>
-	    	{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}
+		<div class="banner-border">
+			<div class="banner-wrap">
+				<div class="banner-logos">
+					{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
+		            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+	            </div>
+				<h1 class="banner-title">{{post.title}}</h1>
+				<p class="banner-tagline">{{post.header_summary}}</p>
+			</div>
+			<div class="banner-prompt">
+				<p class="banner-prompt-text">Discover More</p>
+		    	{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}
+			</div>
 		</div>
 	</header>
 
@@ -27,7 +29,7 @@
 			<div class="cell">
 				<div class="contain--lg archive-quote-inner">
 					<h4 class="archive-quote-title">{{c.description_title ? c.description_title : "Title Here"}}</h4>
-					<blockquote class="archive-quote-content">
+					<blockquote class="archive-quote-content{{ loop.index == 1 ? ' -first'}}">
 						{{c.long_description}}
 					</blockquote>
 					<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
@@ -54,7 +56,7 @@
 					</div>
 				</div>
 
-				<div class="archive-images-inspiration -second">
+				<div class="archive-images-inspiration -second{{ loop.last ? ' -last' }}">
 					{# <h4 class="detail-title">Inspiration on Pinterest</h4> #}
 					
 					<div class="gallery -inspiration teaser">
