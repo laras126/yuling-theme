@@ -7,6 +7,16 @@
 	}
 }
 
+.page-template-page-collections {
+	.main {
+		padding-top: 0;
+	}
+
+	.footer {
+		margin-top: 0;
+	}
+}
+
 .has-subnav {
 	
 	// Ewwwww too much nesting.
@@ -23,5 +33,19 @@
 			}
 		}
 	}
+}
+
+.util-cell {
+	height: $size-h1*1.5;
+}
+
+.logo-wrap {
+	@include cell(sixth);
+}
+
+.logo-text-logo {
+	margin: 0 auto;
+	width: 60%;
+	@include center;
 }
 
