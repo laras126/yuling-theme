@@ -97,31 +97,37 @@ $(document).ready(function() {
 	// ----
 
 	// Clear all quotes
-	$('.archive-quote').removeClass('active');
+	// $('.archive-quote').removeClass('active');
 
-	$(window).scroll( function() {
+	if ($(window).width() > 768) {
+		$(window).scroll(function() {
 
-		$('.archive-images').each( function() {
-			
-			var image_dist = ($(this).offset().top - $(this).outerHeight()/2) - $(window).scrollTop(),
-				win_height = $(window).height();
-
-			if ( image_dist < win_height ) {
-
-				// Get the data-title attribute of the images in the above height range
-				var curr_att = $(this).attr('data-title');
-				var $current = $('.archive-images[data-title="'+curr_att+'"]');
+			$('.archive-images').each( function() {
 				
-				// Clear all active classes
-				// $('.archive-quote').removeClass('active');
+				var banner_ht = $('.banner').outerHeight();
+				var image_dist = ($(this).offset().top + banner_ht/2) - $(window).scrollTop(),
+					win_height = $(window).height();
 
-				// Reveal the corresponding quote
-				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
-			} 
+				if ( image_dist < win_height ) {
+
+					// Get the data-title attribute of the images in the above height range
+					var curr_att = $(this).attr('data-title');
+					var $current = $('.archive-images[data-title="'+curr_att+'"]');
+					
+					// Clear all active classes
+					$('.archive-quote').removeClass('active');
+
+					// Reveal the corresponding quote
+					$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
+
+				} else if ( $(window).scrollTop() <= banner_ht  ) {
+					$('.archive-quote').removeClass('active');
+				}
+
+			});
 
 		});
-
-	});
+	}
 
 
 
@@ -167,15 +173,15 @@ $(document).ready(function() {
 	
 	// Do these things when scrolling
 	// TODO: I think this is messing and adding the black lines. Es posible.
-	$(window).scroll( function() {
+	// $(window).scroll( function() {
 
-		if ( $(this).scrollTop() > headerHeight ) {
-			$header.addClass('shrunk');
-		} else {
-			$header.removeClass('shrunk');
-		}
+	// 	if ( $(this).scrollTop() > headerHeight ) {
+	// 		$header.addClass('shrunk');
+	// 	} else {
+	// 		$header.removeClass('shrunk');
+	// 	}
 		
-	});
+	// });
 	
 
 
