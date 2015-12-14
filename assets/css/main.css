@@ -1892,7 +1892,7 @@ img {
   height: 100vh; }
 
 .banner {
-  height: 80vh;
+  height: 85vh;
   padding: 1.98rem;
   -webkit-background-size: cover;
           background-size: cover;
@@ -1977,27 +1977,36 @@ img {
   pointer-events: none;
   text-align: center;
   background-color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  position: relative;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: -0.55rem;
-  margin-right: -0.55rem;
-  min-height: 100vh; }
+  padding-top: 1.98rem;
+  padding-bottom: 1.98rem; }
   @media (min-width: 768px) {
     .archive-quote {
+      padding: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      position: relative;
+      margin-left: -0.55rem;
+      margin-right: -0.55rem;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      height: 100vh;
       width: 100%;
       top: 100%;
       left: 0;
-      position: fixed; } }
+      position: fixed; }
+      .archive-quote > .cell {
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                align-self: center;
+        padding-top: 10%;
+        height: 80%; } }
   .archive-quote.active {
     top: 0;
     pointer-events: all; }
@@ -2010,20 +2019,22 @@ img {
   font-size: 1.1rem; }
 
 .archive-quote-inner {
-  border: 2px solid #000000; }
+  border: 2px solid #000000;
+  max-width: 960px;
+  margin: 0 auto; }
 
 .archive-quote-content {
   font-style: normal;
   font-family: "ltc-bodoni-175", "Georgia", serif;
-  padding: 1.1rem;
+  padding: 0.825rem;
   font-size: 1.1rem;
   margin: 1.1rem 0;
   text-transform: uppercase;
   letter-spacing: 1px; }
   .archive-quote-content.-first {
-    -webkit-transition: 0.25 all ease;
-         -o-transition: 0.25 all ease;
-            transition: 0.25 all ease; }
+    -webkit-transition: 0.25s all ease;
+         -o-transition: 0.25s all ease;
+            transition: 0.25s all ease; }
   @media (min-width: 768px) {
     .archive-quote-content {
       opacity: 0; } }
@@ -2039,10 +2050,12 @@ img {
 .archive-images {
   position: relative;
   z-index: 3;
-  padding-top: 80vh;
   pointer-events: none; }
   .archive-images * {
     pointer-events: none; }
+  @media (min-width: 768px) {
+    .archive-images {
+      padding-top: 80vh; } }
 
 .archive-images-inner {
   margin: 0; }
