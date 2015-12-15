@@ -9,7 +9,7 @@
                 {% include 'partials/search-form.twig' %}
             </div>
         </div>
-        <div class="util-cell">
+        <div class="util-cell -center">
             <a href="{{site.link}}" class="logo-link cell--half">
                 {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
                 {# <img src="{{site.theme.link}}/assets/img/svg-min/text-logo.min.svg" class="logo-text-logo" alt=""> #}
@@ -29,7 +29,7 @@
             <a href="{{item.link}}" class="nav-item-link">{{item.title}}</a>
             {% if item.get_children %}
                 <div class="subnav-wrapper -site">
-                    <ul class="subnav-list -site {{'-mega' in item.classes ? '-mega' : '-reg'}}">
+                    <ul class="subnav-list -site {{'-special' in item.classes ? '-special'}}">
                     {% for child in item.get_children %}
                        {% include 'partials/subnav-item.twig' %}
                     {% endfor %}
@@ -38,6 +38,11 @@
             {% endif %}
         </li>
     {% endfor %}
+        <li class="nav-item -site -search">
+            <div class="nav-item-link">
+                {% include 'partials/search-form.twig' %}
+            </div>
+        </li>
     </ul>
 </nav><!-- /.nav.-site -->
 
