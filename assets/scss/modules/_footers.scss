@@ -36,7 +36,7 @@
 .colophon, 
 .credits {
 	display: inline-block;
-	@include meta($color-rotate-text);
+	@include meta($color-accent-light);
 
 	a {
 		color: $color-accent-light;
