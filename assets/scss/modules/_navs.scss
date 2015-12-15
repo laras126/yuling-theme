@@ -78,7 +78,8 @@
 	padding: $size-xsml;
 	
 	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
-	@include bp(bp) {
+	
+	@include bp(md) {
 		border-bottom: 0;
 	}
 }
