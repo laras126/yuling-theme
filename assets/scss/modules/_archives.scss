@@ -101,8 +101,14 @@
 .banner-logos {
 	margin-bottom: $size-h4;
 	
+	svg {
+		display: block;
+		margin: 0 auto;
+	}
+
 	.wordmark {
 		max-width: 10vh;
+		display: block;
 	}
 
 	.logo {
