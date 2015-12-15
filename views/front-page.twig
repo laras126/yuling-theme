@@ -1,0 +1,47 @@
+{# NOTE: Index is not being used anywhere #}
+
+{% extends "base.twig" %}
+
+{% block before_content %}{% endblock %}
+
+{% block content %}
+	<aside class="spotlight-aside">
+		<h3>In the Spotlight</h3>
+		
+		<ul class="spotlight-tabs">
+			<li class="spotlight-tab" id="post-slug">
+			<p>Stories</p>
+			<p>Jennifer Winfrey Photography and Stuff</p>
+			</li>
+			
+			<li class="spotlight-tab" id="post-slug-1">
+			<p>Bespoke Project</p>
+			<p>Antheria Jewelry</p>
+			</li>
+			
+			{# <li class="spotlight-tab">
+			<p>Collection</p>
+			<p>Emma</p>
+			</divli
+
+			<li class="spotlight-tab">
+			<p>Stories</p>
+			<p>A classic newport beach wedding</p>
+			</li>
+			
+			<li class="spotlight-tab" id="">
+			<p>Bespoke Project</p>
+			<p>Reveal NYC</p>
+			</li> #}
+		</ul>
+	</aside>
+
+	<div class="spotlight-main">
+		<div class="spotlight-tab-content">
+			<img src="http://placehold.it/800x400" alt="">
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block after_content %}{% endblock %}
