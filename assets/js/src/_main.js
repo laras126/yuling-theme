@@ -161,26 +161,27 @@ $(document).ready(function() {
 	});
 
 
+	// When a thumbnail is clicked:
+	$('.spotlight-tab').on('click', function() {
 
-    // ----
-	// Shrink nav on scroll
-	// ----
+		// Mark it as active
+		$('.spotlight-tab-content').removeClass('active');
+		$(this).addClass('active');
 
-	var $header = $('.header.-site');
-	var headerHeight = $header.outerHeight();
-	
-	// Do these things when scrolling
-	// TODO: I think this is messing and adding the black lines. Es posible.
-	// $(window).scroll( function() {
+		// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
+		var src = $(this).find('.spotlight-tab-link').attr('data-src');
+		var href = $(this).find('.spotlight-tab-link').attr('href');
+		var $target_content = $(href);
 
-	// 	if ( $(this).scrollTop() > headerHeight ) {
-	// 		$header.addClass('shrunk');
-	// 	} else {
-	// 		$header.removeClass('shrunk');
-	// 	}
-		
-	// });
-	
+		// May want to integrate this with lazyload instead
+		$target_content.html('<img src="' + src + '">');
+
+		$target_content.addClass('active');
+
+		return false;
+
+	});
+
 
 
 	// ----
@@ -189,12 +190,13 @@ $(document).ready(function() {
 
 	$('.main').fitVids();
 
-	$('.slider').flickity({
-		imagesLoaded: true,
-		pageDots: false,
-		wrapAround: true
-		// percentPosition: false
-	});
+	// $('.slider').flickity({
+	// 	imagesLoaded: true,
+	// 	pageDots: false,
+	// 	wrapAround: true,
+	// 	lazyload: true
+	// 	// percentPosition: false
+	// });
 
 	$('.thumb-slider').flickity({
 		contain: true,
