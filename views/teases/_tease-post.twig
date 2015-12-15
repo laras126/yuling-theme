@@ -1,6 +1,5 @@
 {% extends "teases/tease.twig" %}
 
-{# TODO: Customize markup in here #}
 {% block content %}
 	<div>
 		{% if post.thumbnail.src %}
@@ -11,18 +10,9 @@
 		</div>
 		{% endif %}
 		<div class="tease-info -{{post.post_type}}">
-			<h4 class="tease-title -{{post.post_type}}">{{post.title}}</h4>
+			<h4 class="tease-title -{{post.post_type}}"><a href="{{post.link}}">{{post.title}}</a></h4>
 			<p class="meta-upper">{{post.date}}</p>
-			<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}</p>
-			<p><a href="{{post.link}}">Read more...</a></p>
-			<p class="tease-meta -post">
-				{% if post.get_terms('category') %}
-					{# <span class="meta-upper">Filed under: </span> #}
-					{% for c in post.get_terms('category') %}
-						<a class="tease-meta-link" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
-					{% endfor %}
-				{% endif %}
-			</p>
+			<p>{{post.post_excerpt ? post.post_excerpt : post.header_summary}}<a href="{{post.link}}"> (more...)</a></p>
 		</div>
 	</div>
 	{% include 'utility/edit-link.twig' %}
