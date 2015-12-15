@@ -338,37 +338,34 @@ $(document).ready(function() {
 
 	// Clear all quotes
 	// $('.archive-quote').removeClass('active');
+	
+	$(window).scroll(function() {
 
-	if ($(window).width() > 768) {
-		
-		$(window).scroll(function() {
+		$('.archive-images').each( function() {
+			
+			var banner_ht = $('.banner').outerHeight();
+			var image_dist = ($(this).offset().top + banner_ht) - $(window).scrollTop(),
+				win_height = $(window).height();
 
-			$('.archive-images').each( function() {
+			if ( image_dist < win_height ) {
+
+				// Get the data-title attribute of the images in the above height range
+				var curr_att = $(this).attr('data-title');
+				var $current = $('.archive-images[data-title="'+curr_att+'"]');
 				
-				var banner_ht = $('.banner').outerHeight();
-				var image_dist = ($(this).offset().top + banner_ht) - $(window).scrollTop(),
-					win_height = $(window).height();
+				// Clear all active classes
+				$('.archive-quote').removeClass('active');
 
-				if ( image_dist < win_height ) {
+				// Reveal the corresponding quote
+				$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
 
-					// Get the data-title attribute of the images in the above height range
-					var curr_att = $(this).attr('data-title');
-					var $current = $('.archive-images[data-title="'+curr_att+'"]');
-					
-					// Clear all active classes
-					$('.archive-quote').removeClass('active');
-
-					// Reveal the corresponding quote
-					$('.archive-quote[data-title="'+curr_att+'"]').addClass('active');
-
-				} else if ( $(window).scrollTop() <= banner_ht ) {
-					$('.archive-quote').removeClass('active');
-				}
-
-			});
+			} else if ( $(window).scrollTop() <= banner_ht ) {
+				$('.archive-quote').removeClass('active');
+			}
 
 		});
-	}
+
+	});
 
 
 

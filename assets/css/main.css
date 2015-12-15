@@ -854,9 +854,6 @@ p {
   margin-top: 1.1rem;
   margin-bottom: 1.1rem; }
 
-.lead {
-  font-size: 1.43rem; }
-
 .btn {
   display: inline-block;
   padding: 0.66rem 1.1rem;
@@ -1978,35 +1975,30 @@ img {
   text-align: center;
   background-color: white;
   padding-top: 1.98rem;
-  padding-bottom: 1.98rem; }
-  @media (min-width: 768px) {
-    .archive-quote {
-      padding: 0;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-flow: row wrap;
-          -ms-flex-flow: row wrap;
-              flex-flow: row wrap;
-      position: relative;
-      margin-left: -0.55rem;
-      margin-right: -0.55rem;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      height: 100vh;
-      width: 100%;
-      top: 100%;
-      left: 0;
-      position: fixed; }
-      .archive-quote > .cell {
-        -webkit-align-self: center;
-            -ms-flex-item-align: center;
-                align-self: center;
-        padding-top: 10%;
-        height: 80%; } }
+  padding-bottom: 1.98rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem;
+  height: 100vh;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  position: fixed; }
+  .archive-quote > .cell {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 10vh;
+    height: 80vh; }
   .archive-quote.active {
     top: 0;
     pointer-events: all; }
@@ -2020,14 +2012,34 @@ img {
 
 .archive-quote-inner {
   border: 2px solid #000000;
-  max-width: 960px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .archive-quote-content {
+  opacity: 0;
   font-style: normal;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   padding: 0.825rem;
-  font-size: 1.1rem;
+  font-size: 0.825rem;
   margin: 1.1rem 0;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -2035,9 +2047,9 @@ img {
     -webkit-transition: 0.25s all ease;
          -o-transition: 0.25s all ease;
             transition: 0.25s all ease; }
-  @media (min-width: 768px) {
+  @media (min-width: 560px) {
     .archive-quote-content {
-      opacity: 0; } }
+      font-size: 1.1rem; } }
   @media (min-width: 768px) {
     .archive-quote-content {
       padding: 1.98rem;
@@ -2050,12 +2062,13 @@ img {
 .archive-images {
   position: relative;
   z-index: 3;
-  pointer-events: none; }
+  pointer-events: none;
+  padding-top: 80vh; }
   .archive-images * {
     pointer-events: none; }
-  @media (min-width: 768px) {
-    .archive-images {
-      padding-top: 80vh; } }
+  .archive-images img {
+    display: block;
+    width: 100%; }
 
 .archive-images-inner {
   margin: 0; }
@@ -2069,11 +2082,6 @@ img {
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
       position: relative; } }
-
-.archive-images-inspiration.-first img,
-.archive-images-featured img {
-  width: 100%;
-  display: block; }
 
 @media (min-width: 560px) {
   .archive-images-inspiration.-first,
@@ -2099,7 +2107,8 @@ img {
     margin: 0 auto; } }
 
 .archive-images-inspiration.-last {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  margin-bottom: -1.98rem; }
 
 .archive-sidebar {
   -webkit-box-ordinal-group: 2;
