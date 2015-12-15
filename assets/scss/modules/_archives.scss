@@ -145,23 +145,22 @@
 	padding-top: $size-h3;
 	padding-bottom: $size-h3;
 
-	@include bp(md) {
+	// @include bp(md) {
 		padding: 0;
 		@include grid();
-		justify-content: center;
 		height: 100vh;
 
 		& > .cell {
-			align-self: center;
-			padding-top: 10%;
-			height: 80%;
+			justify-content: center;
+			padding-top: 10vh;
+			height: 80vh;
 		}
 		width: 100%;	
 		top: 100%;
 		// transition: 0.25s all ease;
 		left: 0;
 	    position: fixed;
-	}
+	// }
 
 	&.active {
 		top: 0;
@@ -171,7 +170,6 @@
 			opacity: 1;
 		}
 	}
-
 }
 
 .archive-quote-title {
@@ -180,8 +178,13 @@
 
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
-	max-width: $screen-lg;
-	margin: 0 auto;
+	@include contain(xl);
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .archive-quote-content {
@@ -190,20 +193,21 @@
 		transition: 0.25s all ease;
 	}
 
-	@include bp(md) {
-		opacity: 0;
-	}
-
+	opacity: 0;
 	font-style: normal;
 	font-family: $font-heading;
 	padding: $size-sml;
-	font-size: $size-base;
+	font-size: $size-sml;
+	
+	@include bp(sm) {
+		font-size: $size-base;
+	}
 	
 	@include bp(md) {
 	    padding: $size-h3;
 		font-size: $size-h3;
 	}
-
+	
 	margin: $size-base 0; 
 	@include upperspace;
 
@@ -228,8 +232,13 @@
 		pointer-events: none;
 	}
 	
-	@include bp(md) {
+	// @include bp(md) {
 		padding-top: 80vh;
+	// }
+
+	img {
+		display: block;
+		width: 100%;
 	}
 	
 }
@@ -248,11 +257,6 @@
 
 .archive-images-inspiration.-first,
 .archive-images-featured {
-	
-	img {
-		width: 100%;
-		display: block;
-	}
 
 	@include bp(sm) {
 		@include cell($size: half, $guttered: false);
@@ -272,6 +276,7 @@
 
 .archive-images-inspiration.-last {
 	background-color: $color-body-bkgd;
+	margin-bottom: -$size-h3;
 }
 
 // Archive Sidebar
