@@ -831,8 +831,7 @@ h4 {
   font-size: 1.43rem; }
 
 h5 {
-  font-size: 1.21rem;
-  font-family: "source-sans-pro", sans-serif; }
+  font-size: 1.21rem; }
 
 h6 {
   font-family: "source-sans-pro", sans-serif;
@@ -1152,7 +1151,7 @@ img {
   .subnav-item-link:hover,
   .subnav-item-link:focus {
     color: #999999; }
-  @media (min-width: bp) {
+  @media (min-width: 768px) {
     .nav-item-link,
     .subnav-item-link {
       border-bottom: 0; } }
@@ -1360,82 +1359,28 @@ img {
   display: block;
   margin: 0 auto; }
 
-.title.-site {
-  margin-top: 0;
-  text-align: center; }
-  .title.-site a {
-    font-weight: 100;
-    font-size: 1.98rem;
-    text-transform: uppercase;
-    color: #FFFFFF; }
+@media (min-width: 960px) {
+  .gallery-cell-image {
+    height: 500px; } }
 
-.slider {
-  overflow: hidden; }
-  @media (min-width: 426px) {
-    .slider {
-      height: 426px; } }
-  @media (min-width: 600px) {
-    .slider {
-      height: 426px; } }
-  @media (min-width: 900px) {
-    .slider {
-      height: 600px; } }
+.gallery {
+  background: #FAFAFA; }
 
-.slider-cell {
-  height: 213px;
-  width: 320px;
-  margin-right: 10px;
-  overflow: hidden; }
-  @media (min-width: 450px) {
-    .slider-cell {
-      height: 300px;
-      width: 450px; } }
-  @media (min-width: 640px) {
-    .slider-cell {
-      height: 426px;
-      width: 640px; } }
-  @media (min-width: 900px) {
-    .slider-cell {
-      height: 600px;
-      width: 900px; } }
-  .slider-cell.-highlighted {
-    background: #000000;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
+.gallery-cell-image {
+  display: block;
+  height: 60vh;
+  min-width: 200px;
+  max-width: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+       -o-transition: opacity 0.4s;
+          transition: opacity 0.4s;
+  margin-left: 0.33rem; }
 
-.slider-img {
-  width: 100%;
-  height: 100%;
-  margin-right: 0.33rem;
-  display: block; }
-
-.highlight-img-wrap,
-.highlight-desc-wrap {
-  width: 50%;
-  height: 100%;
-  position: relative; }
-
-.slider-img-highlight {
-  height: 100%; }
-
-.highlight-desc {
-  font-size: 0.825rem;
-  font-family: "ltc-bodoni-175", "Georgia", serif;
-  font-style: italic;
-  color: #FFFFFF;
-  text-align: right;
-  padding: 0.825rem;
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
-  @media (min-width: 560px) {
-    .highlight-desc {
-      font-size: 1.43rem; } }
-  @media (min-width: 960px) {
-    .highlight-desc {
-      font-size: 1.98rem; } }
+/* fade in lazy loaded image */
+.gallery-cell-image.flickity-lazyloaded,
+.gallery-cell-image.flickity-lazyerror {
+  opacity: 1; }
 
 .thumb {
   padding-top: 1.98rem;
@@ -2037,6 +1982,51 @@ img {
   list-style-type: none;
   padding-left: 0; }
 
+.spotlight {
+  background-color: #000000; }
+
+.spotlight-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF; }
+
+.spotlight-tabs {
+  list-style-type: none;
+  padding-left: 0; }
+
+.spotlight-tab {
+  border-bottom: 1px solid #FFFFFF; }
+  .spotlight-tab > a {
+    color: #FFFFFF; }
+    .spotlight-tab > a:hover,
+    .spotlight-tab > a:focus {
+      color: #999999; }
+
+.spotlight-main {
+  position: relative;
+  height: 60vh; }
+
+.spotlight-tab-content {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: 0.25s all ease;
+       -o-transition: 0.25s all ease;
+          transition: 0.25s all ease;
+  top: 0;
+  left: 0; }
+  .spotlight-tab-content.active {
+    opacity: 1; }
+
+.spotlight-sidebar-compliment {
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.spotlight-sidebar-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem; }
+
 .gallery.-inspiration {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2321,10 +2311,12 @@ img {
 .page .main {
   padding-top: 2.53rem; }
 
-.page-template-page-collections .main {
+.page-template-page-collections .main,
+.home .main {
   padding-top: 0; }
 
-.page-template-page-collections .footer {
+.page-template-page-collections .footer,
+.home .footer {
   margin-top: 0; }
 
 @media (max-width: 768px) {
