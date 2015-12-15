@@ -1,3 +1,47 @@
+.spotlight {
+	background-color: $color-rotate-bkgd;
+}
+
+.spotlight-title {
+	@include upperspace;
+	color: $color-rotate-text;
+}
+
 .spotlight-tabs {
 	@include unstyle-list;
+}
+
+.spotlight-tab {
+	border-bottom: 1px solid $color-rotate-text;
+
+	& > a {
+		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
+	}
+}
+
+.spotlight-main {
+	position: relative;
+	height: 60vh;
+}
+
+.spotlight-tab-content {
+	position: absolute;
+	opacity: 0;
+	transition: 0.25s all ease;
+	top: 0;
+	left: 0;
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+
+.spotlight-sidebar-compliment {
+	@include detail-text;
+	@include upperspace;
+}
+
+.spotlight-sidebar-title {
+	@include detail-title($border-pos: false, $size: $size-sml);
 }
