@@ -104,7 +104,6 @@
 	}
 }
 
-
 .nav-item-link,
 .subnav-item-link {
 	display: block;
@@ -136,7 +135,6 @@
 	@include bp(md) {
 
 		&:hover .subnav-wrapper {
-			// @include header-animate;
 			@include show-subnav();
 		}
 	}
