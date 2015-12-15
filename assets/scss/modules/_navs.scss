@@ -1,52 +1,10 @@
 
+// ----
 // Navigation
-
-.nav {
-	
-	&.-site {
-	}
-
-	// Search and Cart nav in header
-	&.-util {
-		// will-change: height;
-		// .shrunk & {
-		// 	height: 0;
-		// }
-
-		@include bp(md) {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
-			// width: 100%;
-		}
-	}
-}
-
-// .util-grid {
-// 	@include grid;
-// 	align-items: center;
-// 	justify-content: space-between;
-// }
-
-// .util-cell {
-// 	@include cell();
-// 	justify-content: space-around;
-// 	align-content: center;
-	
-// 	&.-start {
-		
-// 	}
-
-// 	&.-center {
-// 		width: 50%;
-// 	}
-
-// 	&.-end {
-// 		text-align: right;
-// 	}
-// }
+// ----
 
 // Main nav component
+
 .nav-list {
 	@include unstyle-list;
 	margin: 0;
@@ -77,6 +35,7 @@
 		display: none;
 	}
 
+	// Menu open/close indicator
 	// &:after {
 	// 	width: $size-sml;
 	// 	content: url(../img/svg-min/arrow-down.min.svg);
