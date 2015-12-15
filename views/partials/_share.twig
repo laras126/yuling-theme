@@ -1,18 +1,19 @@
+
 <div class="share">
 	<h4 class="share-trigger"><a href="#">Share</a></h4>
 	<ul class="social-list visually-hidden">
 		<li class="social-item">
-			<a href="https://twitter.com/intent/tweet?text=&amp;url={{post.link}}" target="blank">
-				{% include 'utility/svg.twig' with { file: 'twitter', prefix: 'icon' } %}
+			<a href="https://twitter.com/intent/tweet?text=Check out the {{post.title}}&url={{post.link|url_encode}}&via=yulingdesigns" target="blank">
+				{% include 'utility/svg.twig' with { file: 'twitter',  prefix: 'icon' } %}
 			</a>
 		</li>
 		<li class="social-item">
-			<a href="http://facebook.com/sharer/sharer.php?u={{post.link}}" target="blank">
+			<a href="http://www.facebook.com/sharer.php?s=100&p[title]={{post.title}}&p[url]={{post.link}}&p[summary]={{post.long_description}}&p[images][0]={{post.thumbnail.src}}" target="_blank">
 				{% include 'utility/svg.twig' with { file: 'facebook', prefix: 'icon' } %}
 			</a>
 		</li>
 		<li class="social-item">
-			<a href="http://pinterest.com/pin/create/link/?url={{post.link}}" target="blank">
+			<a href="http://pinterest.com/pin/create/button/?url={{post.link}}&description={{post.long_description}}&media={{post.thumbnail.src}}" target="_blank">
 				{% include 'utility/svg.twig' with { file: 'pinterest', prefix: 'icon' } %}
 			</a>
 		</li>
