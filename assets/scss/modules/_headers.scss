@@ -17,3 +17,11 @@
 .header-picture {
 	@include center;
 }
+
+.logo-text-logo {
+	max-width: $size-h1*5;
+	padding: $size-xsml;
+	display: block;
+	margin: 0 auto;
+}
+
