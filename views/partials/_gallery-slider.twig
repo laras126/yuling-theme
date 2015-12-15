@@ -1,30 +1,7 @@
-<div class="slider{{post.post_type ? ' -' ~ post.post_type}} teaser lazyload">
-	{% if desc %}
-	<div class="slider-cell -highlighted">
-		{% set feat = TimberImage(term.featured_image) %}
-		<div class="highlight-img-wrap">
-		<img 
-			data-sizes="auto"
-			data-srcset="{{feat.src|resize(500)}} 500w,
-				{{feat.src|resize(800)}} 640w,
-				{{feat.src|resize(1200)}} 1024w"
-				class="slider-img-highlight -full lazyload" 
-				src="{{feat.src|resize(500)}}" alt="{{feat.title}}">
-		</div>
-		<div class="highlight-desc-wrap">
-			<p class="highlight-desc">{{desc}}</p>
-		</div>
-	</div>
-	{% endif %}
+<div class="gallery js-flickity"
+   data-flickity-options='{ "lazyLoad": 3, "initialIndex": 1, "wrapAround": true, "pageDots": false, "freeScroll": true }'>
+
 	{% for image in gallery %}
-		<div class="slider-cell">
-			<img 
-				data-sizes="auto"
-				data-srcset="{{image.url|resize(500)}} 500w,
-					{{image.url|resize(800)}} 640w,
-					{{image.url|resize(1200)}} 1024w"
-					class="slider-img -full lazyload" 
-					src="{{image.url|resize(500)}}" alt="{{image.title}}">
-		</div>
+	  <img class="gallery-cell-image" data-flickity-lazyload="{{image.url|resize(1200)}}" alt="tulip" /> 	
 	{% endfor %}
-</div> <!-- /.slider -->
+</div>

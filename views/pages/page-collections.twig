@@ -4,28 +4,37 @@
 
 	{# {% include 'headers/_header-page.twig' with { h_class: 'header--page' } %} #}
 
-	<header class="page-header -collections-archive text-center contain--sm">
-		<h1>{{post.title}}</h1>
-		<p class="page-tagline">{{post.header_tagline}}</p>
+	<header class="banner">
+		<div class="banner-border">
+			<div class="banner-wrap">
+				<div class="banner-logos">
+					{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
+		            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+	            </div>
+				<h1 class="banner-title">{{post.title}}</h1>
+				<p class="banner-tagline">{{post.header_summary}}</p>
+			</div>
+			<div class="banner-prompt">
+				<p class="banner-prompt-text">Discover More</p>
+		    	{% include 'utility/svg.twig' with { file: 'arrow-down', prefix: 'icon' } %}
+			</div>
+		</div>
 	</header>
 
-	{# <div class="archive-container"> #}
-	
 	{% for c in terms %}
 	
 		{% set feat = TimberImage(c.featured_image) %}
 	
 		<section class="archive-quote" data-title="{{c.title}}">
 			<div class="cell">
-				<div class="contain--lg archive-quote-inner">
+				<div class="archive-quote-inner">
 					<h4 class="archive-quote-title">{{c.description_title ? c.description_title : "Title Here"}}</h4>
-					<blockquote class="archive-quote-content">
+					<blockquote class="archive-quote-content{{ loop.index == 1 ? ' -first'}}">
 						{{c.long_description}}
 					</blockquote>
 					<a class="btn -readmore" href="{{c.link}}" title="{{c.title}}">See {{c.title}}</a>
 				</div>
 			</div>
-
 		</section> <!-- /.archive-quote -->
 
 		<section class="archive-images teaser lazyload" data-title="{{c.title}}">
@@ -35,22 +44,34 @@
 					{% include 'partials/_large-feat-img.twig' with { img : feat } %}
 				</div>
 				
-				<div class="archive-images-inspiration">
-					{# <h4 class="detail-title">Inspiration on Pinterest</h4> #}
+				<div class="archive-images-inspiration -first">
 					
 					<div class="gallery -inspiration teaser">
 						{% set gallery = c.inspiration_gallery %}
-						{% for image in gallery %}
+						{% for image in gallery|slice(0,2) %}
 							<div class="gallery-thumb -inspiration">
 								<img data-src="{{image.url|resize(1000)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
 							</div>
 						{% endfor %}
-
 					</div>
+				</div>
+
+				<div class="archive-images-inspiration -second{{ loop.last ? ' -last' }}">
+					{# <h4 class="detail-title">Inspiration on Pinterest</h4> #}
+					
+					<div class="gallery -inspiration teaser">
+						{% for image in gallery|slice(2,4) %}
+							<div class="gallery-thumb -inspiration">
+								<img data-src="{{image.url|resize(1000)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
+							</div>
+						{% endfor %}
+					</div>
+
 				</div>
 
 			</div>
 		</section> <!-- /.archive-images -->
+
 	{% endfor %}
 	
 {% endblock %}

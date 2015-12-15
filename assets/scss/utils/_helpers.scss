@@ -71,9 +71,7 @@
 // ----
 
 .visually-hidden {
-    position: absolute;
-    top: -9999999px;
-    left: -999999px;
+ 	@include visually-hidden;
 }
 
 .teaser.lazyload {

@@ -3,10 +3,10 @@
 // ---- Screen sizes
 // ----
 
-$screen-sm:     35em;
-$screen-md:     47em;
-$screen-lg:   	60em;
-$screen-xl:     72em;
+$screen-sm:     560px;
+$screen-md:     768px;
+$screen-lg:   	960px;
+$screen-xl:     1152px;
 
 
 // ----
@@ -60,7 +60,7 @@ $color-cta-bkgd: 		$gold;
 $color-cta-text: 		$white;
 $color-cta-link: 		$grey;
 
-$color-table-rotate: 	lighten($color-accent-light, 50%);
+$color-table-rotate: 	lighten($color-accent-vlight, 23%);
 
 // Rotate
 $color-rotate-bkgd: 	$color-body-text;

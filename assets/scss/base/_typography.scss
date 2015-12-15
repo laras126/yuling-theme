@@ -67,7 +67,6 @@ h4 {
 
 h5 {
 	font-size: $size-h5;
-	font-family: $font-body;
 }
 
 h6 {	
@@ -92,8 +91,4 @@ blockquote {
 p {
 	margin-top: $size-base;
 	margin-bottom: $size-base;
-}
-
-.lead {
-	font-size: $size-h4;
 }

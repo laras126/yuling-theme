@@ -8,7 +8,7 @@
  */
 
 $data['sidebar'] = Timber::get_widgets('sidebar_projects');
-$data['sidebar_type'] = 'projects';
+$data['cats'] = Timber::get_terms('category');
 
-Timber::render(array('sidebars/sidebar.twig'), $data);
+Timber::render(array('sidebars/sidebar-projects.twig'), $data);
 

@@ -1,51 +1,15 @@
 
+// ----
 // Navigation
-
-.nav {
-	&.-site {
-	}
-
-	// Search and Cart nav in header
-	&.-util {
-		// will-change: height;
-		// .shrunk & {
-		// 	height: 0;
-		// }
-
-		@include bp(md) {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
-			// width: 100%;
-		}
-	}
-}
-
-.util-grid {
-	@include grid;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.util-cell {
-	@include cell();
-	justify-content: center;
-	align-content: center;
-	
-	&.-start {
-	}
-
-	&.-end {
-		text-align: right;
-	}
-}
+// ----
 
 // Main nav component
+
 .nav-list {
 	@include unstyle-list;
-	text-align: center;
 	margin: 0;
-
+	text-align: center;
+	
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
@@ -55,7 +19,6 @@
 	}
 	
 	&.open {
-		padding-top: $size-base;
 		max-height: none;
 	}
 }
@@ -66,39 +29,57 @@
 	display: block;
 	padding-top: $size-xsml;
 	padding-bottom: $size-xsml;
+	position: relative;
 
 	@include bp(md) {
 		display: none;
 	}
 
-	&.open:after {
-		padding-right: $size-xsml;
-		
-		// TODO: Replace with icon
-		content: 'X';
-	}
+	// Menu open/close indicator
+	// &:after {
+	// 	width: $size-sml;
+	// 	content: url(../img/svg-min/arrow-down.min.svg);
+	// 	position: absolute;
+	// 	background-color: white;
+	// 	right: 0;
+	// 	top: 0;
+	// }
+
+	// &.open:after {
+	// 	content: url(../img/svg-min/arrow-up.min.svg);
+	// }
 }
 
 .nav-item {
-	text-align: center;
 
+	&.-search {
+		@include bp(sm) {
+			display: none;
+		}
+	}
+	
 	@include bp(md) {
 		display: inline-block;
-		text-align: center;
 	}
 }
 
-
 .nav-item-link,
 .subnav-item-link {
+	display: block;
+	margin: 0 auto; 
+	max-width: 90%;
+	
+	@include bp(md) {
+		max-width: 100%;
+	}
+
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	font-family: $font-nav;
-	display: block;
 	padding: $size-xsml;
+	
 	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
 	
-	@include bp(sm) {
-		padding: $size-base;
+	@include bp(md) {
 		border-bottom: 0;
 	}
 }
@@ -114,7 +95,6 @@
 	@include bp(md) {
 
 		&:hover .subnav-wrapper {
-			// @include header-animate;
 			@include show-subnav();
 		}
 	}
@@ -251,4 +231,3 @@
 .next-cell {
 	text-align: right;
 }
-

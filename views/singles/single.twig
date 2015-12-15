@@ -12,8 +12,17 @@
 
 {% block after_content %}
 	{# Not a great way to do this #}
+	<p class="tease-meta -post text-center">
+		{% if post.get_terms('category') %}
+			<p class="meta-upper">Filed under: </p>
+			{% for c in post.get_terms('category') %}
+				<a class="tease-meta" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+			{% endfor %}
+		{% endif %}
+	</p>
 	{% if post.post_type != 'piece' %}
 		{% include 'navs/_nav-prevnext.twig' with { n_class: 'contain--md' } %}
 	{% endif %}
+
 	{% include ['footers/_footer-' ~ post.post_type ~ '.twig', 'footers/footer.twig'] with { class: post.post_type ? '-' ~ post.post_type } %}
 {% endblock %}

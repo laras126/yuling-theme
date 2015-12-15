@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block before_content %}
+	{% include 'headers/_header-page.twig' with { class: '-page' } %}
+{% endblock %}
+
+{% block content %}
+
+	{% for block in post.get_field('blocks') %} 
+		{% include 'blocks/block-logic.twig' %}
+	{% endfor %}
+
+	<section class="contain--md">
+		{# <table id="wishListItems">
+			<colgroup span="4"></colgroup>
+			<tr>
+				<th class="col-title">Item</th>				
+				<th class="col-title">Collection</th>				
+				<th class="col-title">Quantity</th>				
+			</tr>
+			<tr id="itemNames">
+				
+			</tr>
+			<tr id="collectionNames">
+				
+			</tr>
+			<tr id="quantities">
+				
+			</tr>
+		</table> #}
+		
+		<header id="wishListHeader">
+			<h3 id="wishListTitle">There are no items in your Wish List.</h3>
+			{# TODO: do not hard code link #}
+			<p id="wishListPrompt">Browse our <a href="/collections/">Signature Collections</a> to add some, or feel free to inquire using the form below.</p>
+		</header>
+		<table id="wishListItems">
+		  <tr>
+			<th>Collection</th>				
+		    <th>Item</th>				
+			<th>Quantity</th>				
+		  </tr>
+		  {# Items in Wish List printed here #}
+		</table>
+		<div id="saveChanges" class="save-changes">
+			<button id="saveChangesBtn" class="btn -submit">Save Changes</button>
+		</div>
+		{{form}}
+	</section>
+
+
+{% endblock %}
