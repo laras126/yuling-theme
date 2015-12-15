@@ -22,31 +22,36 @@
 	}
 }
 
-.util-grid {
-	@include grid;
-	align-items: center;
-	justify-content: space-between;
-}
+// .util-grid {
+// 	@include grid;
+// 	align-items: center;
+// 	justify-content: space-between;
+// }
 
-.util-cell {
-	@include cell();
-	justify-content: center;
-	align-content: center;
+// .util-cell {
+// 	@include cell();
+// 	justify-content: space-around;
+// 	align-content: center;
 	
-	&.-start {
-	}
+// 	&.-start {
+		
+// 	}
 
-	&.-end {
-		text-align: right;
-	}
-}
+// 	&.-center {
+// 		width: 50%;
+// 	}
+
+// 	&.-end {
+// 		text-align: right;
+// 	}
+// }
 
 // Main nav component
 .nav-list {
 	@include unstyle-list;
-	text-align: center;
 	margin: 0;
-
+	text-align: center;
+	
 	// Logic for opening/closing nav
 	max-height: 0;
 	overflow: hidden;
@@ -56,7 +61,6 @@
 	}
 	
 	&.open {
-		padding-top: $size-base;
 		max-height: none;
 	}
 }
@@ -67,39 +71,56 @@
 	display: block;
 	padding-top: $size-xsml;
 	padding-bottom: $size-xsml;
+	position: relative;
 
 	@include bp(md) {
 		display: none;
 	}
 
-	&.open:after {
-		padding-right: $size-xsml;
-		
-		// TODO: Replace with icon
-		content: 'X';
-	}
+	// &:after {
+	// 	width: $size-sml;
+	// 	content: url(../img/svg-min/arrow-down.min.svg);
+	// 	position: absolute;
+	// 	background-color: white;
+	// 	right: 0;
+	// 	top: 0;
+	// }
+
+	// &.open:after {
+	// 	content: url(../img/svg-min/arrow-up.min.svg);
+	// }
 }
 
 .nav-item {
-	text-align: center;
 
+	&.-search {
+		@include bp(sm) {
+			display: none;
+		}
+	}
+	
 	@include bp(md) {
 		display: inline-block;
-		text-align: center;
 	}
 }
 
 
 .nav-item-link,
 .subnav-item-link {
+	display: block;
+	margin: 0 auto; 
+	max-width: 90%;
+	
+	@include bp(md) {
+		max-width: 100%;
+	}
+
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	font-family: $font-nav;
-	display: block;
 	padding: $size-xsml;
-	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
 	
-	@include bp(sm) {
-		padding: $size-base;
+	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
+	@include bp(bp) {
 		border-bottom: 0;
 	}
 }
@@ -252,4 +273,3 @@
 .next-cell {
 	text-align: right;
 }
-
