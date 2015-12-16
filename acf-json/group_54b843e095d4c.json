@@ -170,6 +170,93 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_5670c75ab0c7b",
+            "label": "About Image",
+            "name": "about_image",
+            "type": "image",
+            "instructions": "Select an image for the About section on the home page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5670c7de37892",
+            "label": "About Tagline",
+            "name": "about_tagline",
+            "type": "text",
+            "instructions": "Enter the large tagline for the about section of the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5670ca3dce288",
+            "label": "About Description",
+            "name": "about_description",
+            "type": "textarea",
+            "instructions": "Enter descriptive paragraph text to go in the about section of the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5670cb89280aa",
+            "label": "Collections Description",
+            "name": "collections_description",
+            "type": "textarea",
+            "instructions": "Enter descriptive text for the Collections section of the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -202,6 +289,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1436822042,
-    "local": "json"
+    "active": 1,
+    "description": "",
+    "modified": 1450232750
 }
