@@ -79,11 +79,11 @@
     }
 }
 
-@mixin detail-compliment {
+@mixin detail-compliment($size: $size-sml) {
     font-family: $font-heading;
     font-style: italic;
     margin: 0;
-    font-size: $size-sml;
+    font-size: $size;
 }
 
 @mixin header-fancy-meta($color: $color-accent-med, $size: $size-h3) {
