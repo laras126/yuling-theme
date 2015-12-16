@@ -161,7 +161,8 @@ $(document).ready(function() {
 	});
 
 
-	// When a thumbnail is clicked:
+	// Spotlight tabbed thing on the home page
+	// This click stuff if pretty similar to above - maybe consolidate those somehow.
 	$('.spotlight-tab').on('click', function() {
 
 		// Mark it as active
@@ -174,9 +175,9 @@ $(document).ready(function() {
 		var $target_content = $(href);
 
 		// May want to integrate this with lazyload instead
-		$target_content.html('<img src="' + src + '">');
+		$('.spotlight-main').html('<img src="' + src + '">');
 
-		$target_content.addClass('active');
+		$(this).addClass('active');
 
 		return false;
 
