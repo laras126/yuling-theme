@@ -57,21 +57,40 @@
 			</nav>
 		</div>
 	</section>
+	
+	<section class="home-section -about text-center">
+		{# <div class="contain--lg"> #}
+				{% set about_img = TimberImage(post.about_image) %}
+				<div class="home-section-img">
+					<img class="about-image" src="{{about_img.src}}" alt="{{about_img.title}}">
+				</div>
+				<div class="home-section-text">
+					<p class="home-quote -about">{{post.about_tagline}}</p>
+					<p>{{post.about_description}}</p>
+					<a href="" class="home-link -about">Explore our work</a>
+					{% include 'partials/_social-list.twig' with { class : '-about' } %}
+				</div>	
 
-	<section class="about">
-		<img class="about-image" src="{{post.about_image}}" alt="{{post.about_image.title}}">
-		<div class="about-text">
-			<h3>{{post.about_tagline}}</h3>
-			<p>{{post.about_description}}</p>
-			<h4>Explore our work</h4>
-			{% include 'sidebars/sidebar-footer_right.twig' %}
-		</div>	
+		{# </div> #}
 	</section>
 
-	<section class="collections">
-		<h3>[logo] Signature Collections</h3>
-		<p>{{post.collections_description}}</p>
-		<h4>Experience the collections</h4>
+	<section class="home-section -collections text-center">
+		<div class="home-section-inner">
+
+				<div class="home-section-img -collections">
+					<div class="home-img -collections">
+						{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
+			            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+						<p class="home-title home-link -collections">Signature Collections</p>
+			        </div>
+				</div>
+				{# <h3>Signature Collections</h3> #}
+				<div class="home-section-text -collections">
+					<p class="home-quote -collections">{{post.collections_description}}</p>
+					<a href="" class="home-link -collections">Experience the collections</a>
+				</div>
+
+		</div>
 	</section>
 
 {% endblock %}
