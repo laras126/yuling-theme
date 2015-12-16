@@ -4,28 +4,16 @@
 // Very sad to hardcode these values, but works to maintain the dimensions if using lazysizes which we are.
 
 .gallery-cell-image {
-	
-	// @include bp(sm) {
-	// 	height: 320px;
-	// }
-
-	// @include bp(md) {
-	// 	height: 426px;
-	// }
-
-	@include bp(lg) {
-		height: 500px;
-	}
-}
-
-
-.gallery {
-  background: #FAFAFA;
 }
 
 .gallery-cell-image {
 	display: block;
-	height: 60vh;
+	height: 50vh;
+
+	@include bp(lg) {
+		height: 70vh;
+	}
+	
 	min-width: 200px;
 	max-width: none;
 	opacity: 0;
