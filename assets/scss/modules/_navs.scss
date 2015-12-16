@@ -153,7 +153,10 @@
 	@include bp(sm) {
 		display: flex;
 		flex-flow: row wrap;
-		flex-basis: calc( 100% / 3 * 2 );
+		&.-special {
+			flex-basis: calc( 100% / 3 * 2 );
+			justify-content: center;
+		}
 	}
 
 	@include bp(md) {
@@ -161,7 +164,9 @@
 	}
 
 	@include bp(lg) {
-		flex-basis: 75%;
+		&.-special {
+			flex-basis: 75%;
+		}
 	}
 }
 
@@ -203,7 +208,9 @@
 		}
 
 		@include bp(lg) {
-			flex-basis: 50%;
+			.-special & {
+				flex-basis: 50%;
+			}
 		}
 	}
 	
@@ -216,7 +223,9 @@
 			flex-basis: calc( 100% / 3 );
 		}
 		@include bp(lg) {
-			flex-basis: 50%;
+			.-special & {
+				flex-basis: 50%;
+			}
 		}
 	}
 }
