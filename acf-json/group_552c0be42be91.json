@@ -1,74 +1,7 @@
 {
     "key": "group_552c0be42be91",
-    "title": "Tabbed Options",
+    "title": "Site-wide Options",
     "fields": [
-        {
-            "key": "field_558ad16e741d5",
-            "label": "About",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "These options will show on every page. Leave blank to not show them.",
-            "esc_html": 0,
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_558ada98ec42a",
-            "label": "Callout Bar",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_552c0bf45d58b",
-            "label": "Show callout bar?",
-            "name": "site_callout_bool",
-            "type": "true_false",
-            "instructions": "This will display as a bar at the top of each page, and is good for news or time-sensitive calls to action.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 25,
-                "class": "",
-                "id": ""
-            },
-            "message": "Show Callout Bar",
-            "default_value": 0
-        },
-        {
-            "key": "field_552c0c1b5d58c",
-            "label": "Callout Bar Text",
-            "name": "site_callout_text",
-            "type": "wysiwyg",
-            "instructions": "Enter a message to appear in the callout bar. Keep to about 15-20 words.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 75,
-                "class": "single-line-wysiwg",
-                "id": ""
-            },
-            "default_value": "We just launched a blog. <a href=\"#\">Check it out<\/a> and let us know what you think in the comments!",
-            "tabs": "visual",
-            "toolbar": "links_only",
-            "media_upload": 1
-        },
         {
             "key": "field_558adabd23242",
             "label": "Footer Colophon",
@@ -277,6 +210,26 @@
             "multiple": 0
         },
         {
+            "key": "field_567199385fa5b",
+            "label": "All Collections Page",
+            "name": "all_collections_page",
+            "type": "post_object",
+            "instructions": "Select the page to display all collections. This will appear as the highlighted item at the right of the dropdown menu for Collections. It should not be included in the menu list in WordPress.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_5667275156510",
             "label": "Wishlist Page Text",
             "name": "wishlist_page_text",
@@ -315,5 +268,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1449600900
+    "modified": 1450285603
 }
