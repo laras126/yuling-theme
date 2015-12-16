@@ -1,0 +1,22 @@
+<ul class="social-list{{ class ? ' ' ~ class }}">
+	<li class="social-item">
+		<a href="http://twitter.com/{{twitter}}" target="blank">
+			{% include 'utility/svg.twig' with { file: 'twitter', prefix: 'icon' } %}
+		</a>
+	</li>
+	<li class="social-item">
+		<a href="http://facebook.com/{{facebook}}" target="blank">
+			{% include 'utility/svg.twig' with { file: 'facebook', prefix: 'icon' } %}
+		</a>
+	</li>
+	<li class="social-item">
+		<a href="http://instagram.com/{{instagram}}" target="blank">
+			{% include 'utility/svg.twig' with { file: 'instagram', prefix: 'icon' } %}
+		</a>
+	</li>
+	<li class="social-item">
+		<a href="http://pinterest.com/{{pinterest}}" target="blank">
+			{% include 'utility/svg.twig' with { file: 'pinterest', prefix: 'icon' } %}
+		</a>
+	</li>
+</ul>

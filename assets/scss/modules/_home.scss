@@ -1,0 +1,123 @@
+.home-section {
+
+	&.-about {
+		max-width: $screen-xl;
+		margin: 0 auto;
+	}
+
+	@include bp(md) {
+		display: flex;
+		flex-flow: row;
+		flex-basis: 90%;
+		align-items: center;
+	}
+
+	&.-collections {
+		background: $color-rotate-bkgd;
+		color: $color-rotate-text;
+	}
+}
+
+// Should combine with above
+.home-section-inner {
+	max-width: $screen-xl;
+	margin: 0 auto;
+	@include bp(md) {
+		display: flex;
+		flex-flow: row;
+		flex-basis: 90%;
+		align-items: center;
+	}
+}
+
+.home-section-text {
+	padding: 0 $size-h3 $size-h3 $size-h3;
+
+	@include bp(sm) {
+		padding: $size-h1;
+	}
+}
+.home-section-text,
+.home-section-img {
+	@include bp(md) {
+		@include cell(half, $is_first: false);
+	}
+}
+
+.home-img {
+	&.-collections {
+		height: 50vh;
+		background-image: url(../img/util/trees-sml.png);
+		color: $color-rotate-text;	
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		@include bp(md) {
+			background-image: url(../img/util/trees-med.png);
+		}
+
+		@include bp(lg) {
+			background-image: url(../img/util/trees-large.png);
+		}
+	}
+
+	.wordmark {
+		width: 15%;
+		fill: #fff;
+	}
+	.logo {
+		width: 50%;
+		fill: #fff;
+	}
+}
+
+.home-section-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&.-about {
+		padding: $size-h1;
+	}
+}
+
+.home-link {
+	@include detail-title($border_pos: false, $size: $size-sml);
+	font-family: $font-heading;
+
+	&.-collections {
+		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
+	}
+
+	&.-about {
+		@include restyle-link($default: $color-body-text, $hover: $color-text-med);
+	}
+}
+
+.home-quote {
+	&.-about {
+		@include header-fancy-meta($color: $color-body-text, $size: $size-h3);
+	}
+
+	&.-collections {
+		@include header-fancy-meta($color: $color-rotate-text, $size: $size-h4);
+	}
+}
+
+.social-list {
+	&.-about {
+		justify-content: center;
+
+		svg {
+			fill: $color-body-text;
+			&:hover {
+				fill: $color-accent-med;
+			}
+		}
+	}
+}
