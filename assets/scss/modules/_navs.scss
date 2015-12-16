@@ -76,7 +76,9 @@
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	font-family: $font-nav;
 	padding: $size-xsml;
-	
+}
+
+.nav-item-link {
 	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
 	
 	@include bp(md) {
@@ -93,8 +95,7 @@
 .has-subnav {
 	
 	@include bp(md) {
-
-		&:hover .subnav-wrapper {
+		&:hover .subnav-main {
 			@include show-subnav();
 		}
 	}
@@ -102,8 +103,7 @@
 	// Nested link content styles in holding.scss
 }
 
-.subnav-wrapper {
-	display: block;
+.subnav-main {
 	max-height: 0;
 	opacity: 0;
 	overflow: hidden;
@@ -128,67 +128,188 @@
 
 }
 
+.subnav-wrapper {
+	max-width: $screen-xl;
+	margin: 0 auto;
+	
+	display: flex;
+	flex-flow: column;
+	flex-basis: 90%;
+	align-items: flex-start;
+	
+	text-align: left;
+
+	@include bp(sm) {
+		flex-flow: row;
+		padding-right: $size-base;
+		padding-left: $size-base;
+	}
+}
+
 .subnav-list {
 	@include unstyle-list;
-	text-align: left;
-    display: flex;
-    // flex-flow: row wrap;
-    max-width: $screen-lg;
-	margin: 0 auto;
-	// flex-direction: cowlumn;
+	order: 1;
+
+	@include bp(sm) {
+		display: flex;
+		flex-flow: row wrap;
+		flex-basis: calc( 100% / 3 * 2 );
+	}
+
+	@include bp(md) {
+		order: 0;
+	}
+
+	@include bp(lg) {
+		flex-basis: 75%;
+	}
 }
+
+.subnav-item {
+	flex-basis: 100%;
+	
+	@include bp(sm) {
+		flex-basis: 50%;
+	}
+	
+	@include bp(md) {
+		flex-basis: calc( 100% / 3);
+	}
+}
+
+.subnav-item-inner {
+	display: flex;
+	align-self: center;
+	
+	&.-highlight {
+		
+		display: block;
+
+		@include bp(md) {
+			display: block;
+		}
+	}
+}
+
+.subnav-item-part {
+	margin-bottom: $size-xsml;
+
+	&.-text {
+		flex-basis: 75%;
+		padding-left: $size-sml;
+
+		@include bp(sm) {
+			flex-basis: calc( 100% / 3*2 );
+		}
+
+		@include bp(lg) {
+			flex-basis: 50%;
+		}
+	}
+	
+	&.-img {
+		// display: none;
+		flex-basis: 25%;
+
+		@include bp(sm) {
+			// display: block;
+			flex-basis: calc( 100% / 3 );
+		}
+		@include bp(lg) {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.subnav-item-title {
+	margin: 0;
+}
+
+.subnav-item-desc {
+	margin-top: 0;
+}
+
+.subnav-highlight {
+	display: flex;
+	flex-flow: column;
+	
+	@include bp(sm) {
+		flex-basis: calc( 100% / 3);
+	}
+
+	@include bp(lg) {
+		flex-basis: 25%;
+	}
+
+	.-text {
+		padding-left: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Show subnav when hovered over
 
-.subnav-item {
-	text-align: left;
-	order: 1;
+// .subnav-item {
+// 	text-align: left;
+// 	order: 1;
 
-	@include cell(full); 
+// 	@include cell(full); 
 
-	@include bp(sm) { 
-		@include cell(half, $is_first: false); 
-	}
+// 	@include bp(sm) { 
+// 		@include cell(half, $is_first: false); 
+// 	}
 
-	@include bp(lg) { 
-		padding-top: $size-base;
-		@include cell(third, $is_first: false); 
-	}
-	.-special & {
-		@include bp(lg) { 
-			padding-top: $size-base;
-			@include cell(fourth, $is_first: false); 
-		}
+// 	@include bp(lg) { 
+// 		padding-top: $size-base;
+// 		@include cell(third, $is_first: false); 
+// 	}
+// 	.-special & {
+// 		@include bp(lg) { 
+// 			padding-top: $size-base;
+// 			@include cell(fourth, $is_first: false); 
+// 		}
 
-		&:nth-child(4) {
-			// @include cell(third, $is_first: false); 
-			background-color: green;
-			// order: 4;
-			// align-self: flex-end;
-// 
-			.subnav-item-part.-img {
-				@include cell($size: full, $is_first: false);
-			}
-		}
-	}
+// 		&:nth-child(4) {
+// 			// @include cell(third, $is_first: false); 
+// 			background-color: green;
+// 			// order: 4;
+// 			// align-self: flex-end;
+// // 
+// 			.subnav-item-part.-img {
+// 				@include cell($size: full, $is_first: false);
+// 			}
+// 		}
+// 	}
 
-}
+// }
 
-.subnav-item-inner {
-	@include grid;
-}
+// .subnav-item-inner {
+// 	@include grid;
+// }
 	
-.subnav-item-part {	
-	@include cell();
+// .subnav-item-part {	
+// 	@include cell();
 
-	&.-img {
-		@include cell($size: fourth, $is_first: false);
-		@include bp(md) {
-			@include cell($size: half, $is_first: false);
- 		}
-	}
-}
+// 	&.-img {
+// 		@include cell($size: fourth, $is_first: false);
+// 		@include bp(md) {
+// 			@include cell($size: half, $is_first: false);
+//  		}
+// 	}
+// }
 
 .subnav-item-desc {
 	@include meta();
