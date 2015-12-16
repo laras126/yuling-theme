@@ -6,62 +6,56 @@
 
 {% block content %}
 	<section class="spotlight">
-		<nav>
-			<h3 class="spotlight-title">In the Spotlight</h3>
-
-			<ul class="spotlight-tabs">
-
-				<li class="spotlight-tab">
-					<a href="#post-slug" class="spotlight-tab-link" data-src="http://placehold.it/800x400/00ddff">
-						<p class="spotlight-sidebar-compliment">Stories</p>
-						<h5 class="spotlight-sidebar-title">Jennifer Winfrey Photography and Stuff</h5>
-					</a>
-				</li>
-				
-				<li class="spotlight-tab">
-					<a href="#post-slug-1" class="spotlight-tab-link" data-src="http://placehold.it/800x400/8899dd">
-						<p class="spotlight-sidebar-compliment">Bespoke Project</p>
-						<h5 class="spotlight-sidebar-title">Antheria Jewelry</h5>
-					</a>
-				</li>
-
-				<li class="spotlight-tab">
-					<a href="#post-slug-2" class="spotlight-tab-link" data-src="http://placehold.it/800x400/f78e12">
-						<p class="spotlight-sidebar-compliment">Other thing</p>
-						<h5 class="spotlight-sidebar-title">Antheria Jewelry</h5>
-					</a>
-				</li>
-				
-				{# <li class="spotlight-tab">
-				<p>Collection</p>
-				<p>Emma</p>
-				</divli
-
-				<li class="spotlight-tab">
-				<p>Stories</p>
-				<p>A classic newport beach wedding</p>
-				</li>
-				
-				<li class="spotlight-tab" id="">
-				<p>Bespoke Project</p>
-				<p>Reveal NYC</p>
-				</li> #}
-
-			</ul>
-		</nav>
-
-		<div class="spotlight-main">
-			<div class="spotlight-tab-content" id="post-slug">
-				
+		<div class="contain--xl">
+			<div class="spotlight-main">
+				<div class="spotlight-tab-content">
+					<img src="{{placeholder|resize(800,530)}}" alt="">
+				</div>
 			</div>
-			<div class="spotlight-tab-content" id="post-slug-1">
-				
-			</div>
-			<div class="spotlight-tab-content" id="post-slug-2">
-				
-			</div>
+			<nav>
+				<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
+
+				<ul class="spotlight-tabs">
+
+					<li class="spotlight-tab">
+						<a href="#post-slug" class="spotlight-tab-link" data-src="http://placehold.it/800x530/00ddff">
+							<p class="spotlight-sidebar-compliment">Stories</p>
+							<h5 class="spotlight-sidebar-title">Jennifer Winfrey Photography and Stuff</h5>
+						</a>
+					</li>
+					
+					<li class="spotlight-tab">
+						<a href="#post-slug-1" class="spotlight-tab-link" data-src="http://placehold.it/800x530/8899dd">
+							<p class="spotlight-sidebar-compliment">Bespoke Project</p>
+							<h5 class="spotlight-sidebar-title">Antheria Jewelry</h5>
+						</a>
+					</li>
+
+					<li class="spotlight-tab">
+						<a href="#post-slug-2" class="spotlight-tab-link" data-src="http://placehold.it/800x530/f78e12">
+							<p class="spotlight-sidebar-compliment">Other thing</p>
+							<h5 class="spotlight-sidebar-title">Antheria Jewelry</h5>
+						</a>
+					</li>
+					
+					{# <li class="spotlight-tab">
+					<p>Collection</p>
+					<p>Emma</p>
+					</divli
+
+					<li class="spotlight-tab">
+					<p>Stories</p>
+					<p>A classic newport beach wedding</p>
+					</li>
+					
+					<li class="spotlight-tab" id="">
+					<p>Bespoke Project</p>
+					<p>Reveal NYC</p>
+					</li> #}
+
+				</ul>
+			</nav>
 		</div>
-
 	</section>
 {% endblock %}
 

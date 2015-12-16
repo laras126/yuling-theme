@@ -1,10 +1,22 @@
 .spotlight {
 	background-color: $color-rotate-bkgd;
+	text-align: center;
 }
 
 .spotlight-title {
-	@include upperspace;
 	color: $color-rotate-text;
+	margin-top: 0;
+	font-size: $size-h3;
+	padding-top: $size-h4;
+}
+
+.spotlight-title-compliment {
+	@include detail-compliment($size: $size-h4);
+	display: block;
+}
+
+.spotlight-title-main {
+	@include upperspace;
 }
 
 .spotlight-tabs {
@@ -12,7 +24,8 @@
 }
 
 .spotlight-tab {
-	border-bottom: 1px solid $color-rotate-text;
+	padding-bottom: $size-sml;
+	border-bottom: 1px solid $color-accent-light;
 
 	& > a {
 		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
@@ -22,20 +35,30 @@
 .spotlight-main {
 	position: relative;
 	height: 60vh;
-}
 
-.spotlight-tab-content {
-	position: absolute;
-	opacity: 0;
+	// position: absolute;
+	width: 100%;
 	transition: 0.25s all ease;
-	top: 0;
-	left: 0;
+	// top: 0;
+	// left: 0;
+	overflow: hidden;
+
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: none;
+		height: 100%;
+	}
+
+}
+.spotlight-tab-content {
+	opacity: 0;
+	height: 100%;
 
 	&.active {
 		opacity: 1;
 	}
 }
-
 
 .spotlight-sidebar-compliment {
 	@include detail-text;
