@@ -264,12 +264,12 @@ $(document).ready(function() {
 	// Subnav
 	$('.has-subnav > a').on('click', function(e) {
 		$(this).toggleClass('active');
-		$(this).next('.subnav-wrapper').toggleClass('active');
+		$(this).next('.subnav-main').toggleClass('active');
 		e.preventDefault();
 	});
 
 	$('.main').on('click', function(e) {
-		$('.subnav-wrapper').removeClass('active');
+		$('.subnav-main').removeClass('active');
 		$menu.removeClass('open');
 	});
 
