@@ -1359,16 +1359,9 @@ img {
   display: block;
   margin: 0 auto; }
 
-@media (min-width: 960px) {
-  .gallery-cell-image {
-    height: 500px; } }
-
-.gallery {
-  background: #FAFAFA; }
-
 .gallery-cell-image {
   display: block;
-  height: 60vh;
+  height: 50vh;
   min-width: 200px;
   max-width: none;
   opacity: 0;
@@ -1376,6 +1369,9 @@ img {
        -o-transition: opacity 0.4s;
           transition: opacity 0.4s;
   margin-left: 0.33rem; }
+  @media (min-width: 960px) {
+    .gallery-cell-image {
+      height: 70vh; } }
 
 /* fade in lazy loaded image */
 .gallery-cell-image.flickity-lazyloaded,
@@ -1983,19 +1979,33 @@ img {
   padding-left: 0; }
 
 .spotlight {
-  background-color: #000000; }
+  background-color: #000000;
+  text-align: center; }
 
 .spotlight-title {
+  color: #FFFFFF;
+  margin-top: 0;
+  font-size: 1.98rem;
+  padding-top: 1.43rem; }
+
+.spotlight-title-compliment {
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 1.43rem;
+  display: block; }
+
+.spotlight-title-main {
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF; }
+  letter-spacing: 1px; }
 
 .spotlight-tabs {
   list-style-type: none;
   padding-left: 0; }
 
 .spotlight-tab {
-  border-bottom: 1px solid #FFFFFF; }
+  padding-bottom: 0.825rem;
+  border-bottom: 1px solid #999999; }
   .spotlight-tab > a {
     color: #FFFFFF; }
     .spotlight-tab > a:hover,
@@ -2004,16 +2014,21 @@ img {
 
 .spotlight-main {
   position: relative;
-  height: 60vh; }
-
-.spotlight-tab-content {
-  position: absolute;
-  opacity: 0;
+  height: 60vh;
+  width: 100%;
   -webkit-transition: 0.25s all ease;
        -o-transition: 0.25s all ease;
           transition: 0.25s all ease;
-  top: 0;
-  left: 0; }
+  overflow: hidden; }
+  .spotlight-main img {
+    display: block;
+    margin: 0 auto;
+    max-width: none;
+    height: 100%; }
+
+.spotlight-tab-content {
+  opacity: 0;
+  height: 100%; }
   .spotlight-tab-content.active {
     opacity: 1; }
 
