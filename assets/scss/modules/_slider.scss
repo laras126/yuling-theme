@@ -1,10 +1,6 @@
 
 
-// Slider
-// Very sad to hardcode these values, but works to maintain the dimensions if using lazysizes which we are.
-
-.gallery-cell-image {
-}
+// Flickity Slider
 
 .gallery-cell-image {
 	display: block;
@@ -21,112 +17,14 @@
 	margin-left: $size-xsml/2;
 }
 
-/* fade in lazy loaded image */
 .gallery-cell-image.flickity-lazyloaded,
 .gallery-cell-image.flickity-lazyerror {
   opacity: 1;
 }
 
 
-// .slider {
-//   	background: #FAFAFA;
-	
-// 	img {
-//   	}
-// }
+// Related pieces slider thumb cells. Loaded with Lazysizes.
 
-// .slider-img {
-// 	display: block;
-// 	height: 400px;
-// 	max-width: none;
-// 	min-width: 200px;
-// 	opacity: 0;
-// 	margin-left: $size-xsml/2;
-// 	transition: opacity 0.4s;
-// }
-
-// /* fade in lazy loaded image */
-// .slider-img.flickity-lazyloaded,
-// .slider-img.flickity-lazyerror {
-//   opacity: 1;
-// }
-
-// .slider-cell {
-// 	height: 213px;
-// 	width: 320px;
-// 	margin-right: 10px;
-// 	overflow: hidden;
-	
-// 	@include bp(450px) {
-// 		height: 300px;
-// 		width: 450px;
-// 	}
-
-// 	@include bp(640px) {
-// 		height: 426px;
-// 		width: 640px;
-// 	}
-
-// 	@include bp(900px) {
-// 		height: 600px;
-// 		width: 900px;
-// 	}
-
-// 	&.-highlighted {
-// 		background: $color-rotate-bkgd;
-// 		display: flex;
-// 	}
-// }
-
-// .slider-img {
-// 	// width: 100%;
-// 	// height: 100%;
-// 	margin-right: $size-xsml/2;
-// 	// display: block;
-// 	  display: block;
-//   height: 400px;
-//   min-width: 200px;
-//   opacity: 0;
-//   -webkit-transition: opacity 0.4s;
-//           transition: opacity 0.4s;
-// }
-
-// .slider-img.flickity-lazyloaded,
-// .slider-img.flickity-lazyerror {
-//   opacity: 1;
-// }
-
-// .highlight-img-wrap,
-// .highlight-desc-wrap {
-// 	width: 50%;
-// 	height: 100%;
-// 	position: relative;
-// }
-
-// .slider-img-highlight {
-// 	height: 100%;
-// }
-
-// .highlight-desc {
-// 	@include header-fancy-meta($color: $color-rotate-text, $size: $size-sml);
-
-// 	@include bp(sm) {
-// 		font-size: $size-h4;
-// 	}
-
-// 	@include bp(lg) {
-// 		font-size: $size-h3;
-// 	}
-
-// 	text-align: right;
-// 	padding: $size-sml;
-// 	position: absolute;
-// 	bottom: 0;
-// 	width: 100%;
-// }
-
-
-// Related pieces slider thumb cells
 .thumb {
 	padding-top: $size-h3;
 	width: 75%;
