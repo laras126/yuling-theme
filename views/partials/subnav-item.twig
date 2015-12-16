@@ -1,36 +1,28 @@
-{% if '-mega' in item.classes %}
-    <li class="subnav-item -mega">
-        <a class="subnav-item-link" href="{{child.get_link}}">
-            <div class="subnav-item-inner -mega">
+<li class="subnav-item{{' -special' in child.classes ? ' -special'}}">
+    <a class="subnav-item-link" href="{{child.get_link}}">
+        <div class="subnav-item-inner">
 
-                {% if child.type == 'taxonomy' %}
-                    {% set obj = TimberTerm(child.menu_object.object_id) %}
-                    {% set img = TimberImage(obj.thumbnail_image) %}
+            {% if child.type == 'taxonomy' %}
+                {% set obj = TimberTerm(child.menu_object.object_id) %}
+                {% set img = TimberImage(obj.thumbnail_image) %}
+            {% else %}
+                {% set obj = TimberPost(child.menu_object.object_id) %}
+                {% set img = TimberImage(obj.thumbnail) %}
+            {% endif %}
+
+            <div class="subnav-item-part -img">
+                {% if img %}
+                    <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
                 {% else %}
-                    {% set obj = TimberPost(child.menu_object.object_id) %}
-                    {% set img = TimberImage(obj.thumbnail) %}
+                    <img src="http://placehold.it/200x200" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
                 {% endif %}
-
-                <div class="subnav-item-part -img">
-                    {% if img %}
-                        <img data-src="{{img.src|resize(200, 200)}}" src="{{placeholder}}" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
-                    {% else %}
-                        <img src="http://placehold.it/200x200" class="tease-img lazyload" alt="{{child.name}} Thumbnail">
-                    {% endif %}
-                </div>
-
-                <div class="subnav-item-part -text">
-                    <h4 class="subnav-item-title">{{child.title}}</h4>
-                    <p class="subnav-item-desc">{{obj.thumbnail_blurb}}</p>
-                </div>
-                
             </div>
-        </a>
-    </li> <!-- /.subnav-item.-mega -->
-{% else %}
-    <li class="subnav-item -reg">
-        <div class="subnav-item-wrap">
-            <a href="{{child.link}}" class="subnav-item-title subnav-item-link cell">{{child.title}}</a>
+
+            <div class="subnav-item-part -text">
+                <h4 class="subnav-item-title">{{child.title}}</h4>
+                <p class="subnav-item-desc">{{obj.thumbnail_blurb}}</p>
+            </div>
+            
         </div>
-    </li> <!-- /.subnav-item.-reg -->
-{% endif %}
+    </a>
+</li> <!-- /.subnav-item -->
