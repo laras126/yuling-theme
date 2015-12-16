@@ -57,6 +57,23 @@
 			</nav>
 		</div>
 	</section>
+
+	<section class="about">
+		<img class="about-image" src="{{post.about_image}}" alt="{{post.about_image.title}}">
+		<div class="about-text">
+			<h3>{{post.about_tagline}}</h3>
+			<p>{{post.about_description}}</p>
+			<h4>Explore our work</h4>
+			{% include 'sidebars/sidebar-footer_right.twig' %}
+		</div>	
+	</section>
+
+	<section class="collections">
+		<h3>[logo] Signature Collections</h3>
+		<p>{{post.collections_description}}</p>
+		<h4>Experience the collections</h4>
+	</section>
+
 {% endblock %}
 
 {% block after_content %}{% endblock %}
