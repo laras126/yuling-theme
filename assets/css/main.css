@@ -1448,8 +1448,92 @@ img {
   .thumb img {
     width: 100%; }
 
-.banner-img {
-  width: 100%; }
+.banner {
+  height: 85vh;
+  width: 100%;
+  padding: 1.98rem;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-image: url(../img/util/trees-sml.png);
+  color: #FFFFFF;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .banner {
+      background-image: url(../img/util/trees-med.png); } }
+  @media (min-width: 960px) {
+    .banner {
+      background-image: url(../img/util/trees-large.png); } }
+  .banner svg {
+    fill: white; }
+
+.banner-wrap {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  max-width: 560px;
+  padding-top: 10vh; }
+
+.banner-border {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #916300;
+  padding-bottom: 0.825rem; }
+
+.banner-title {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif; }
+
+.banner-tagline {
+  font-size: 0.825rem; }
+
+.banner-logos {
+  margin-bottom: 1.43rem; }
+  .banner-logos svg {
+    display: block;
+    margin: 0 auto; }
+  .banner-logos .wordmark {
+    max-width: 10vh;
+    display: block; }
+  .banner-logos .logo {
+    max-width: 30vh; }
+
+.banner-prompt {
+  position: relative;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end; }
+  .banner-prompt .icon {
+    width: 1.1rem;
+    height: 1.1rem; }
+
+.banner-prompt-text {
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 0.825rem;
+  margin-bottom: 0; }
 
 .footer.-site {
   background-color: #000000;
@@ -1800,92 +1884,6 @@ img {
   position: relative;
   height: 100vh; }
 
-.banner {
-  height: 85vh;
-  padding: 1.98rem;
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-image: url(../img/util/trees-sml.png);
-  color: #FFFFFF;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .banner {
-      background-image: url(../img/util/trees-med.png); } }
-  @media (min-width: 960px) {
-    .banner {
-      background-image: url(../img/util/trees-large.png); } }
-  .banner svg {
-    fill: white; }
-
-.banner-wrap {
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  max-width: 560px;
-  padding-top: 10vh; }
-
-.banner-border {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  position: relative;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #916300;
-  padding-bottom: 0.825rem; }
-
-.banner-title {
-  margin-top: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.825rem;
-  font-family: "ltc-bodoni-175", "Georgia", serif; }
-
-.banner-tagline {
-  font-size: 0.825rem; }
-
-.banner-logos {
-  margin-bottom: 1.43rem; }
-  .banner-logos svg {
-    display: block;
-    margin: 0 auto; }
-  .banner-logos .wordmark {
-    max-width: 10vh;
-    display: block; }
-  .banner-logos .logo {
-    max-width: 30vh; }
-
-.banner-prompt {
-  position: relative;
-  padding-left: 0.55rem;
-  padding-right: 0.55rem;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100%;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  max-width: 100%;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end; }
-  .banner-prompt .icon {
-    width: 1.1rem;
-    height: 1.1rem; }
-
-.banner-prompt-text {
-  font-family: "ltc-bodoni-175", "Georgia", serif;
-  font-style: italic;
-  margin: 0;
-  font-size: 0.825rem;
-  margin-bottom: 0; }
-
 .archive-quote {
   pointer-events: none;
   text-align: center;
@@ -2035,6 +2033,162 @@ img {
 .block_list-list {
   list-style-type: none;
   padding-left: 0; }
+
+.home-section.-about {
+  max-width: 1152px;
+  margin: 0 auto; }
+
+@media (min-width: 768px) {
+  .home-section {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-flex-basis: 90%;
+        -ms-flex-preferred-size: 90%;
+            flex-basis: 90%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; } }
+
+.home-section.-collections {
+  background: #000000;
+  color: #FFFFFF; }
+
+.home-section-inner {
+  max-width: 1152px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .home-section-inner {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row;
+          -ms-flex-flow: row;
+              flex-flow: row;
+      -webkit-flex-basis: 90%;
+          -ms-flex-preferred-size: 90%;
+              flex-basis: 90%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.home-section-text {
+  padding: 0 1.98rem 1.98rem 1.98rem; }
+  @media (min-width: 560px) {
+    .home-section-text {
+      padding: 2.75rem; } }
+
+@media (min-width: 768px) {
+  .home-section-text,
+  .home-section-img {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%; } }
+
+.home-img.-collections {
+  height: 50vh;
+  background-image: url(../img/util/trees-sml.png);
+  color: #FFFFFF;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media (min-width: 768px) {
+    .home-img.-collections {
+      background-image: url(../img/util/trees-med.png); } }
+  @media (min-width: 960px) {
+    .home-img.-collections {
+      background-image: url(../img/util/trees-large.png); } }
+
+.home-img .wordmark {
+  width: 15%;
+  fill: #fff; }
+
+.home-img .logo {
+  width: 50%;
+  fill: #fff; }
+
+.home-section-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .home-section-text.-about {
+    padding: 2.75rem; }
+
+.home-link {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.825rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif; }
+  .home-link.-collections {
+    color: #FFFFFF; }
+    .home-link.-collections:hover,
+    .home-link.-collections:focus {
+      color: #999999; }
+  .home-link.-about {
+    color: #000000; }
+    .home-link.-about:hover,
+    .home-link.-about:focus {
+      color: #999999; }
+
+.home-quote.-about {
+  font-size: 1.98rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic;
+  color: #000000; }
+
+.home-quote.-collections {
+  font-size: 1.43rem;
+  font-family: "ltc-bodoni-175", "Georgia", serif;
+  font-style: italic;
+  color: #FFFFFF; }
+
+.social-list.-about {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .social-list.-about svg {
+    fill: #000000; }
+    .social-list.-about svg:hover {
+      fill: #916300; }
 
 .spotlight {
   background-color: #000000;
