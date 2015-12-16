@@ -27,13 +27,39 @@
     {% for item in menu.items %}
         <li class="nav-item -site{{ item.get_children ? ' has-subnav' }}">
             <a href="{{item.link}}" class="nav-item-link">{{item.title}}</a>
+            
             {% if item.get_children %}
-                <div class="subnav-wrapper -site">
-                    <ul class="subnav-list -site {{'-special' in item.classes ? '-special'}}">
-                    {% for child in item.get_children %}
-                       {% include 'partials/subnav-item.twig' %}
-                    {% endfor %}
-                    </ul>
+                <div class="subnav-main">
+                    <div class="subnav-wrapper -site">
+                        <ul class="subnav-list -site {{'-special' in item.classes ? '-special'}}">
+                            {% for child in item.get_children %}
+                               {% include 'partials/subnav-item.twig' %}
+                            {% endfor %}
+                        </ul>
+                        {# TODO: Remove this hardcoded-ness #}
+                        {% if item.title == "Collections" %}
+                            <div class="subnav-highlight">
+                                {% set all = TimberPost(all_collections_page) %}
+                                {% set img = all.thumbnail %}
+                                <a href="{{all.link}}" class="subnav-item-link">
+                                    <div class="subnav-item-inner -highlight">
+                                        <div class="subnav-item-part -img">
+                                            {% if img %}
+                                                <img data-src="{{img.src|resize(400, 400)}}" src="{{img.src|resize(100, 100)}}" class="tease-img lazyload" alt="{{all.title}} Thumbnail">
+                                            {% else %}
+                                                <img src="http://placehold.it/200x200" class="tease-img lazyload" alt="{{all.title}} Thumbnail">
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="subnav-item-part -text">
+                                            <h4 class="subnav-item-title">{{all.title}}</h4>
+                                            <p class="subnav-item-desc">{{all.thumbnail_blurb}}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             {% endif %}
         </li>
