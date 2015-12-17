@@ -101,11 +101,17 @@
 
 .home-quote {
 	&.-about {
-		@include header-fancy-meta($color: $color-body-text, $size: $size-h3);
+		@include header-fancy-meta($color: $color-body-text);
+		@include bp(md) {
+			font-size: $size-h3;
+		}
 	}
 
 	&.-collections {
-		@include header-fancy-meta($color: $color-rotate-text, $size: $size-h4);
+		@include header-fancy-meta($color: $color-rotate-text);
+		@include bp(md) {
+			font-size: $size-h4;
+		}
 	}
 }
 
