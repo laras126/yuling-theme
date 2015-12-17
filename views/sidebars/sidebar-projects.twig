@@ -9,4 +9,13 @@
 			{% endfor %}
 		</ul>
 	</li>
+	<li class="widget widget_categories -sidebar">
+		<h4 class="widget-title -sidebar">Industries</h4>		
+		<ul>
+			{# <li><a href="{{link}}">All</li> #}
+			{% for c in cats %}
+				<li><a href="{{c.link}}?post_type=project">{{c.name}}</a></li>
+			{% endfor %}
+		</ul>
+	</li>
 </ul>
