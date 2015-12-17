@@ -89,7 +89,10 @@ blockquote {
 }
 
 p {
-	font-size: $size-p;
+	font-size: $size-sml;
 	margin-top: $size-base;
 	margin-bottom: $size-base;
+	@include bp(md) {
+		font-size: $size-p;
+	}
 }

@@ -852,9 +852,12 @@ blockquote {
   font-style: italic; }
 
 p {
-  font-size: 0.9625rem;
+  font-size: 0.88rem;
   margin-top: 1.1rem;
   margin-bottom: 1.1rem; }
+  @media (min-width: 768px) {
+    p {
+      font-size: 0.9625rem; } }
 
 .btn {
   display: inline-block;
