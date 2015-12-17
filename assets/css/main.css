@@ -2282,7 +2282,7 @@ img {
             justify-content: center; } }
 
 .gallery-thumb.-block {
-  padding: 0.715rem;
+  padding: 0 0.715rem;
   display: block;
   text-align: center; }
   @media (min-width: 560px) {
