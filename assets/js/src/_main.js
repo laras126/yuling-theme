@@ -287,16 +287,17 @@ $(document).ready(function() {
 
 			// Update or remove quantity value
 			$('.edit-label').on('click', function(e) {
+
 				var targetID = $(this).closest('form').attr('id');
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
+
 				// Populate input with current quantity
 
 				// Show select
 				var targetSelect = $(this).closest('tr')
 						.find('.quantity-select')
 						.fadeIn(300);
-
-				// var prevValue = $(this).closest('tr').find('.quantity-value').html();
+				$(this).closest('tr').find('.quantity-value').hide();
 			
 				// Show Save Changes btn
 				// Add data-target with a value of targeted localstorage entry
@@ -334,15 +335,23 @@ $(document).ready(function() {
 				targetEntry.quantity = newQuantity;
 
 				var newEntry = targetEntry;
+
+				// Save the new quantity
+				window.localStorage.setItem(targetID, JSON.stringify(newEntry));
+				
+				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected');
+
+				var $targetSelect = $('#quantity_' + targetEntry.id);
+
+				var $targetSpan = $targetSelect.closest('form').find('.quantity-value');
+
+				$targetSelect.fadeOut(300);
+				$targetSpan.html(newQuantity.val()).fadeIn(300);
+				
 				// Reset the target on Save Changes button
 				// Ideally this would happen when you start editing another item
-				// $('#saveChanges').attr('data-target', '');
-
-				// console.log(targetEntry.quantity);
-				console.log(window.localStorage.setItem(targetID, JSON.stringify(newEntry)));
-
-				console.log(newEntry);
-
+				$('#saveChanges').attr('data-target', '');
+				
 			});
 
 
