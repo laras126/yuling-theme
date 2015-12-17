@@ -191,14 +191,6 @@ $(document).ready(function() {
 
 	$('.main').fitVids();
 
-	// $('.slider').flickity({
-	// 	imagesLoaded: true,
-	// 	pageDots: false,
-	// 	wrapAround: true,
-	// 	lazyload: true
-	// 	// percentPosition: false
-	// });
-
 	$('.thumb-slider').flickity({
 		contain: true,
 		wrapAround: true,
