@@ -1522,7 +1522,6 @@ img {
     width: 100%; }
 
 .banner {
-  height: 85vh;
   width: 100%;
   padding: 1.1rem;
   -webkit-background-size: cover;
@@ -1530,6 +1529,9 @@ img {
   background-image: url(../img/util/trees-sml.png);
   color: #FFFFFF;
   text-align: center; }
+  @media (min-width: 560px) {
+    .banner {
+      height: 80vh; } }
   @media (min-width: 768px) {
     .banner {
       background-image: url(../img/util/trees-med.png); } }
