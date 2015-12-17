@@ -10,6 +10,11 @@
 .title {
 	&.-page {
 		text-align: center;
+		font-size: $size-h2;
+
+		@include bp(sm) {
+			font-size: $size-h1;
+		}
 	}
 }
 
