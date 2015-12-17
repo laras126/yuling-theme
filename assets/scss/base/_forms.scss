@@ -44,7 +44,7 @@ input[type="url"],
 input[type="tel"] {
 	padding: $size-xsml $size-sml;
 	width: 100%;
-	border: $border-accent;
+	border: 1px solid $color-accent-vlight;
 	background-color: $color-table-rotate;
 	transition: 0.15s ease all;
 
