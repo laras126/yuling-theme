@@ -820,14 +820,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3; }
 
 h1 {
-  font-size: 3.3rem;
-  margin-top: 2.42rem; }
+  font-size: 3.08rem;
+  margin-top: 2.2rem; }
 
 h2 {
-  font-size: 3.08rem; }
+  font-size: 2.53rem; }
 
 h3 {
-  font-size: 2.42rem; }
+  font-size: 2.2rem; }
 
 h4 {
   font-size: 1.98rem; }
@@ -1107,8 +1107,8 @@ fieldset {
 table {
   width: 100%;
   font-family: "source-sans-pro", sans-serif;
-  margin-bottom: 2.42rem;
-  margin-top: 2.42rem;
+  margin-bottom: 2.2rem;
+  margin-top: 2.2rem;
   font-size: 0.88rem; }
   table caption {
     margin: 0 0 7px;
@@ -1469,14 +1469,18 @@ img {
   z-index: 4; }
 
 .title.-page {
-  text-align: center; }
+  text-align: center;
+  font-size: 2.53rem; }
+  @media (min-width: 560px) {
+    .title.-page {
+      font-size: 3.08rem; } }
 
 .header-picture {
   display: block;
   text-align: center; }
 
 .logo-text-logo {
-  max-width: 16.5rem;
+  max-width: 15.4rem;
   padding: 0.715rem;
   display: block;
   margin: 0 auto; }
@@ -1500,7 +1504,7 @@ img {
   opacity: 1; }
 
 .thumb {
-  padding-top: 2.42rem;
+  padding-top: 2.2rem;
   width: 75%; }
   @media (min-width: 560px) {
     .thumb {
@@ -1600,7 +1604,7 @@ img {
 
 .footer.-site {
   background-color: #000000;
-  margin-top: 3.3rem;
+  margin-top: 3.08rem;
   position: relative;
   z-index: 4; }
 
@@ -1803,7 +1807,7 @@ img {
               flex: 0 0 33.333333%;
       max-width: 33.333333%; } }
   .tease.-piece {
-    padding-bottom: 2.42rem; }
+    padding-bottom: 2.2rem; }
   .tease.-collection {
     position: relative;
     padding-left: 0.55rem;
@@ -1813,7 +1817,7 @@ img {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%;
-    padding-bottom: 2.42rem; }
+    padding-bottom: 2.2rem; }
     @media (min-width: 768px) {
       .tease.-collection {
         position: relative;
@@ -1863,7 +1867,8 @@ img {
   margin: 0; }
   .tease-meta.-footer {
     text-align: center;
-    margin-top: 1.98rem; }
+    margin-top: 1.98rem;
+    margin-bottom: 1.98rem; }
 
 .tease-meta-link {
   background-color: #b3b3b3;
@@ -1967,8 +1972,8 @@ img {
   pointer-events: none;
   text-align: center;
   background-color: white;
-  padding-top: 2.42rem;
-  padding-bottom: 2.42rem;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2045,8 +2050,8 @@ img {
       font-size: 1.1rem; } }
   @media (min-width: 768px) {
     .archive-quote-content {
-      padding: 2.42rem;
-      font-size: 2.42rem; } }
+      padding: 2.2rem;
+      font-size: 2.2rem; } }
   .archive-quote-content:before {
     content: "\201C"; }
   .archive-quote-content:after {
@@ -2101,7 +2106,7 @@ img {
 
 .archive-images-inspiration.-last {
   background-color: #FFFFFF;
-  margin-bottom: -2.42rem; }
+  margin-bottom: -2.2rem; }
 
 .archive-sidebar {
   -webkit-box-ordinal-group: 2;
@@ -2159,10 +2164,10 @@ img {
               align-items: center; } }
 
 .home-section-text {
-  padding: 0 2.42rem 2.42rem 2.42rem; }
+  padding: 0 2.2rem 2.2rem 2.2rem; }
   @media (min-width: 560px) {
     .home-section-text {
-      padding: 3.3rem; } }
+      padding: 3.08rem; } }
 
 @media (min-width: 768px) {
   .home-section-text,
@@ -2229,7 +2234,7 @@ img {
       -ms-flex-align: center;
           align-items: center; }
   .home-section-text.-about {
-    padding: 3.3rem; }
+    padding: 3.08rem; }
 
 .home-link {
   text-transform: uppercase;
@@ -2254,7 +2259,7 @@ img {
   color: #000000; }
   @media (min-width: 768px) {
     .home-quote.-about {
-      font-size: 2.42rem; } }
+      font-size: 2.2rem; } }
 
 .home-quote.-collections {
   font-size: 1.32rem;
@@ -2282,7 +2287,7 @@ img {
 .spotlight-title {
   color: #FFFFFF;
   margin-top: 0;
-  font-size: 2.42rem;
+  font-size: 2.2rem;
   padding-top: 1.98rem; }
 
 .spotlight-title-compliment {
@@ -2591,7 +2596,7 @@ img {
   -webkit-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding-right: 2.42rem; }
+  padding-right: 2.2rem; }
 
 .footer .icon {
   fill: #999999; }
@@ -2627,7 +2632,7 @@ img {
 .single-piece .main,
 .single-post .main,
 .page .main {
-  padding-top: 3.08rem; }
+  padding-top: 2.53rem; }
 
 .page-template-page-collections .main,
 .home .main {
@@ -2710,4 +2715,4 @@ img {
   background-color: #000000;
   border: 0;
   padding: 0.715rem;
-  max-width: 6.6rem; }
+  max-width: 6.16rem; }
