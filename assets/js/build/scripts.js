@@ -458,7 +458,7 @@ $(document).ready(function() {
 	// If localStorage is supported AND php_vars exists, otherwise print a message
 	if (!supportsStorage) {
 	
-		alert('Sorry, your browser sucks.');
+		alert('Please enable JavaScript to use the Wish List feature.');
 	
 	} else {
 
@@ -519,31 +519,30 @@ $(document).ready(function() {
 		// If there are Wish List items
 		if (window.localStorage.length != 0) {
 			
+			// This should only be called on Concierge page, ideally
 			for(var i in window.localStorage) {
 				var item = JSON.parse(window.localStorage[i]);
 				populateWishListTable(item);
 			}
 
-			// $('#wishListItems').on('click', function() {
-			// 	$('.save-changes').fadeIn(300);
-			// });
-
-			$('#saveChangesBtn').on('click', function() {
-				// console.log('hi');
-				
-			});
-
 			// Update or remove quantity value
 			$('.edit-label').on('click', function(e) {
-				var prevValue = $(this).closest('tr').find('.quantity-value').html();
-				
-				// Populate input with current quantity
-				$(this).closest('tr')
-						.find('.quantity-value')
-						// .html('<input type="number" class="edit-quantity-field" value="' + prevValue + '"><span id="updateQuantity">Update</span>');
-						.html('<input type="number" class="edit-quantity-field" value="' + prevValue + '">');
 
-				$('#saveChanges').fadeIn(300);
+				var targetID = $(this).closest('form').attr('id');
+				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
+
+				// Populate input with current quantity
+
+				// Show select
+				var targetSelect = $(this).closest('tr')
+						.find('.quantity-select')
+						.fadeIn(300);
+				$(this).closest('tr').find('.quantity-value').hide();
+			
+				// Show Save Changes btn
+				// Add data-target with a value of targeted localstorage entry
+				$('#saveChanges').fadeIn(300)
+								.attr('data-target', targetID);
 
 				// Hide the current quantity
 				// $(this).closest('tr')
@@ -558,18 +557,55 @@ $(document).ready(function() {
 				// 	.find('.edit-quantity-form')
 				// 	.html(editingHTML);
 
+				console.log(targetID);
+				// return targetID;
 				e.preventDefault();
 			});
 
+			$('#saveChanges').on('click', function() {
+				
+				// Get the ID value from the data attribute on Save Changes
+				var targetID = $('#saveChanges').attr('data-target');
+				
+				// Get the associated localstorage entry
+				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
+	
+				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected').val();
+				// Update targetEntry quantity
+				targetEntry.quantity = newQuantity;
 
-			// $('#updateQuantity').on('click', function() {
-			// 	var targetID = $(this).closest('form').attr('id');
-			// 	var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
-			// 	targetEntry.quantity = $('.edit-quantity-field').val();
+				var newEntry = targetEntry;
+
+				// Save the new quantity
+				window.localStorage.setItem(targetID, JSON.stringify(newEntry));
 				
-			// 	console.log('targetEntry'); 
+				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected');
+
+				var $targetSelect = $('#quantity_' + targetEntry.id);
+
+				var $targetSpan = $targetSelect.closest('form').find('.quantity-value');
+
+				$targetSelect.fadeOut(300);
+				$targetSpan.html(newQuantity.val()).fadeIn(300);
 				
-			// });
+				updateTexarea();
+				updateWishListCount();
+
+				// Reset the target on Save Changes button
+				// Ideally this would happen when you start editing another item
+				$('#saveChanges').attr('data-target', '');
+				
+			});
+
+
+			// // $('#updateQuantity').on('click', function() {
+			// // 	var targetID = $(this).closest('form').attr('id');
+			// // 	var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
+			// // 	targetEntry.quantity = $('.edit-quantity-field').val();
+				
+			// // 	console.log('targetEntry'); 
+				
+			// // });
 
 
 			$('.remove-label').on('click', function(e) {
@@ -577,7 +613,7 @@ $(document).ready(function() {
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
 
 				// Remove item from localStorage
-				window.localStorage.removeItem(targetID);					
+				window.localStorage.removeItem(targetID);
 				
 				// Update the UI to indicate row removed
 				$(this).closest('tr').addClass('row-removed');
@@ -657,6 +693,10 @@ function populateWishListTable(item) {
 		// Markup for editing the item's quantity or removing it from localStorage
 		var editFormMarkup = '<form class="edit-quantity-form" id="wishListItem_' + item.id + '">';
 
+			// Quantity select
+			editFormMarkup += '<span class="quantity-value">' + item.quantity + '</span>';
+			editFormMarkup += '<select id="quantity_' + item.id + '" class="quantity-select"><option value="25">25</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="125">125</option><option value="150">150</option><option value="175">175</option><option value="200">200</option><option value="225">225</option><option value="250">250</option><option value="275">275</option><option value="300">300</option><option value="325">325</option><option value="350">350</option><option value="375">375</option><option value="400+">400+</option></select>';
+
 			// Edit Radio
 			editFormMarkup += '<input type="radio" name="edit_quantity_' + item.id + '" id="editRadio_' + item.id + '">';
 			editFormMarkup += '<label class="edit-label" for="editRadio_' + item.id + '">Edit</label>'
@@ -668,11 +708,11 @@ function populateWishListTable(item) {
 
 		// var isEditingMarkup = '<span id="isEditing"><input type="number" class="edit-quantity-field" value="">';
 		// 	isEditingMarkup += '<span id="updateValue" class="editing-update">Update</span> <span id="cancelUpdate" class="editing-cancel">Cancel</span></span>';
-				
+		
 
 		var title = '<td class="item-title">' + item.title + '</td>',
 			collection = '<td class="item-collection">' + item.collection + '</td>',
-			quantity = '<td class="item-quantity"><span class="quantity-value">' + item.quantity + '</span>' + editFormMarkup + '</td>';
+			quantity = '<td class="item-quantity">' + editFormMarkup + '</td>';
 
 		// Update the Wish List header text to indicate there are items
 		$('#wishListTitle').html('In Your Wish List');
