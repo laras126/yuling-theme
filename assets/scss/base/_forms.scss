@@ -6,7 +6,7 @@
 
 // Replace blue chrome outline with something nicer
 *:focus {
-    outline: thin solid;
+    outline: thin dotted $color-accent-vlight;
 }
 
 label, select {
