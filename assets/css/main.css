@@ -927,7 +927,7 @@ p {
       background: black; }
 
 *:focus {
-  outline: thin solid; }
+  outline: thin dotted #b3b3b3; }
 
 label {
   margin-bottom: 0.715rem;
@@ -1836,6 +1836,7 @@ img {
   color: #000000; }
 
 .tease-img {
+  display: block;
   width: 100%; }
   @media (min-width: 768px) {
     .tease-img {
@@ -1860,6 +1861,9 @@ img {
   color: #999999;
   font-size: 0.88rem;
   margin: 0; }
+  .tease-meta.-footer {
+    text-align: center;
+    margin-top: 1.98rem; }
 
 .tease-meta-link {
   background-color: #b3b3b3;
@@ -2342,10 +2346,16 @@ img {
             justify-content: center; } }
 
 .gallery-thumb.-block {
-  padding: 0 0.715rem;
+  padding: 0.715rem;
   display: block;
   text-align: center; }
   @media (min-width: 560px) {
+    .gallery-thumb.-block img {
+      height: 45vh; } }
+  @media (min-width: 768px) {
+    .gallery-thumb.-block img {
+      height: 57vh; } }
+  @media (min-width: 960px) {
     .gallery-thumb.-block img {
       height: 70vh; } }
 
