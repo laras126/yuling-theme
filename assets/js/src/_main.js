@@ -328,31 +328,20 @@ $(document).ready(function() {
 				
 				// Get the associated localstorage entry
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
-				
-				// var piece = {
-				// 	'id': targetEntry.id, 
-				// 	'title': targetEntry.title, 
-				// 	'collection': targetEntry.collection[0].name
-				// };
+	
+				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected').val();
+				// Update targetEntry quantity
+				targetEntry.quantity = newQuantity;
 
-				// // Update piece quantity in dropdown
-				// piece.quantity = targetSelect.find('option:selected');
-
+				var newEntry = targetEntry;
 				// Reset the target on Save Changes button
 				// Ideally this would happen when you start editing another item
-				$('#saveChanges').attr('data-target', '');
+				// $('#saveChanges').attr('data-target', '');
 
-				// Remove item from localStorage
-				// window.localStorage.removeItem(targetID);
-				
+				// console.log(targetEntry.quantity);
+				console.log(window.localStorage.setItem(targetID, JSON.stringify(newEntry)));
 
-				// console.log(targetID);
-
-
-				// var updatedEntry = window.localStorage.setItem( targetEntry, piece );
-				
-				// console.log(updatedEntry);
-
+				console.log(newEntry);
 
 			});
 
@@ -454,7 +443,7 @@ function populateWishListTable(item) {
 
 			// Quantity select
 			editFormMarkup += '<span class="quantity-value">' + item.quantity + '</span>';
-			editFormMarkup += '<select name="quantity_' + item.id + '" class="quantity-select"><option value="25">25</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="125">125</option><option value="150">150</option><option value="175">175</option><option value="200">200</option><option value="225">225</option><option value="250">250</option><option value="275">275</option><option value="300">300</option><option value="325">325</option><option value="350">350</option><option value="375">375</option><option value="400+">400+</option></select>';
+			editFormMarkup += '<select id="quantity_' + item.id + '" class="quantity-select"><option value="25">25</option><option value="50">50</option><option value="75">75</option><option value="100">100</option><option value="125">125</option><option value="150">150</option><option value="175">175</option><option value="200">200</option><option value="225">225</option><option value="250">250</option><option value="275">275</option><option value="300">300</option><option value="325">325</option><option value="350">350</option><option value="375">375</option><option value="400+">400+</option></select>';
 
 			// Edit Radio
 			editFormMarkup += '<input type="radio" name="edit_quantity_' + item.id + '" id="editRadio_' + item.id + '">';
