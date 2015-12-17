@@ -76,7 +76,7 @@ h6 {
 }
 
 small {
-	font-size: $size-sml;
+	font-size: $size-xsml;
 }
 
 strong {
@@ -89,6 +89,7 @@ blockquote {
 }
 
 p {
+	font-size: $size-p;
 	margin-top: $size-base;
 	margin-bottom: $size-base;
 }

@@ -526,29 +526,29 @@ http://flickity.metafizzy.co
 
 .meta {
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0;
   line-height: 1.3; }
 
 .meta-light {
   line-height: 1.3;
   color: #FFFFFF;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
 
 .meta-dark {
   line-height: 1.3;
   color: #000000;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
 
 .meta-upper {
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.66rem;
+  font-size: 0.715rem;
   font-weight: bold; }
 
 .text-center {
@@ -561,7 +561,7 @@ http://flickity.metafizzy.co
   text-align: right; }
 
 .edit-link {
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -569,7 +569,7 @@ http://flickity.metafizzy.co
 
 .helper-text {
   color: #000000;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
   .helper-text.-piece {
     display: none;
@@ -771,8 +771,8 @@ http://flickity.metafizzy.co
     -webkit-transition: 0.25s ease all;
          -o-transition: 0.25s ease all;
             transition: 0.25s ease all;
-    height: 0.66rem;
-    width: 0.66rem;
+    height: 0.715rem;
+    width: 0.715rem;
     background: url(../img/svg-min/arrow-up.min.svg) center no-repeat; }
   .accordion-trigger.active:after {
     -webkit-transform: rotate(0);
@@ -820,47 +820,48 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3; }
 
 h1 {
-  font-size: 2.75rem;
-  margin-top: 1.98rem; }
+  font-size: 3.3rem;
+  margin-top: 2.42rem; }
 
 h2 {
-  font-size: 2.53rem; }
+  font-size: 3.08rem; }
 
 h3 {
-  font-size: 1.98rem; }
+  font-size: 2.42rem; }
 
 h4 {
-  font-size: 1.43rem; }
+  font-size: 1.98rem; }
 
 h5 {
-  font-size: 1.21rem; }
+  font-size: 1.32rem; }
 
 h6 {
   font-family: "source-sans-pro", sans-serif;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
 
 small {
-  font-size: 0.825rem; }
+  font-size: 0.715rem; }
 
 strong {
   font-weight: 700; }
 
 blockquote {
-  font-size: 1.43rem;
+  font-size: 1.98rem;
   font-style: italic; }
 
 p {
+  font-size: 0.9625rem;
   margin-top: 1.1rem;
   margin-bottom: 1.1rem; }
 
 .btn {
   display: inline-block;
-  padding: 0.66rem 1.1rem;
-  margin-top: 0.825rem;
-  margin-bottom: 0.825rem;
-  font-size: 0.825rem;
+  padding: 0.715rem 1.1rem;
+  margin-top: 0.88rem;
+  margin-bottom: 0.88rem;
+  font-size: 0.88rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -921,7 +922,7 @@ p {
   outline: thin dotted; }
 
 label {
-  margin-bottom: 0.66rem;
+  margin-bottom: 0.715rem;
   font-family: "source-sans-pro", sans-serif; }
 
 input[type="search"]::-webkit-search-decoration,
@@ -951,7 +952,7 @@ input[type="tel"] {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-right: 0.66rem;
+  margin-right: 0.715rem;
   margin-top: 1px \9;
   *margin-top: 0;
   line-height: normal;
@@ -981,8 +982,8 @@ fieldset {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 0.825rem;
-  margin-left: 0.66rem;
+  font-size: 0.88rem;
+  margin-left: 0.715rem;
   color: #916300;
   opacity: 0; }
 
@@ -999,13 +1000,13 @@ fieldset {
 
 .edit-quantity-form > label {
   display: inline-block;
-  margin-right: 0.66rem;
+  margin-right: 0.715rem;
   margin-bottom: 0;
   padding-left: 3px;
   padding-right: 3px;
   cursor: pointer;
   color: #FFFFFF;
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .edit-label {
   background-color: #1C7FA6; }
@@ -1047,11 +1048,11 @@ fieldset {
 table {
   width: 100%;
   font-family: "source-sans-pro", sans-serif;
-  margin-bottom: 1.98rem;
-  margin-top: 1.98rem; }
+  margin-bottom: 2.42rem;
+  margin-top: 2.42rem; }
   table caption {
     margin: 0 0 7px;
-    font-size: 0.66rem;
+    font-size: 0.715rem;
     color: #FFFFFF; }
 
 tr {
@@ -1069,7 +1070,7 @@ th {
   border-bottom: 1px solid #999999;
   border-right: 1px solid #999999;
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -1077,8 +1078,8 @@ th {
     border-right: 0; }
 
 .icon {
-  width: 0.825rem;
-  height: 0.825rem;
+  width: 0.88rem;
+  height: 0.88rem;
   display: block;
   margin: 0 auto; }
 
@@ -1117,8 +1118,8 @@ img {
   color: #FFFFFF;
   text-align: center;
   display: block;
-  padding-top: 0.66rem;
-  padding-bottom: 0.66rem;
+  padding-top: 0.715rem;
+  padding-bottom: 0.715rem;
   position: relative; }
   #navOpenLink:hover,
   #navOpenLink:focus {
@@ -1142,7 +1143,7 @@ img {
   max-width: 90%;
   color: #FFFFFF;
   font-family: "ltc-bodoni-175", "Georgia", serif;
-  padding: 0.66rem; }
+  padding: 0.715rem; }
   @media (min-width: 768px) {
     .nav-item-link,
     .subnav-item-link {
@@ -1163,7 +1164,7 @@ img {
 .subnav-item-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin-top: 0; }
 
 @media (min-width: 768px) {
@@ -1285,12 +1286,12 @@ img {
         display: block; } }
 
 .subnav-item-part {
-  margin-bottom: 0.66rem; }
+  margin-bottom: 0.715rem; }
   .subnav-item-part.-text {
     -webkit-flex-basis: 75%;
         -ms-flex-preferred-size: 75%;
             flex-basis: 75%;
-    padding-left: 0.825rem; }
+    padding-left: 0.88rem; }
     @media (min-width: 560px) {
       .subnav-item-part.-text {
         -webkit-flex-basis: calc( 100% / 3*2 );
@@ -1345,7 +1346,7 @@ img {
 
 .subnav-item-desc {
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0;
   font-family: "source-sans-pro", sans-serif; }
 
@@ -1358,9 +1359,9 @@ img {
       -ms-flex: 1;
           flex: 1;
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0;
-  padding-top: 0.825rem;
+  padding-top: 0.88rem;
   color: #999999; }
   .wishlist-link:hover {
     color: #916300; }
@@ -1381,7 +1382,7 @@ img {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .prevnext-title {
   text-transform: uppercase;
@@ -1415,8 +1416,8 @@ img {
   text-align: center; }
 
 .logo-text-logo {
-  max-width: 13.75rem;
-  padding: 0.66rem;
+  max-width: 16.5rem;
+  padding: 0.715rem;
   display: block;
   margin: 0 auto; }
 
@@ -1429,7 +1430,7 @@ img {
   -webkit-transition: opacity 0.4s;
        -o-transition: opacity 0.4s;
           transition: opacity 0.4s;
-  margin-left: 0.33rem; }
+  margin-left: 0.3575rem; }
   @media (min-width: 960px) {
     .gallery-cell-image {
       height: 70vh; } }
@@ -1439,7 +1440,7 @@ img {
   opacity: 1; }
 
 .thumb {
-  padding-top: 1.98rem;
+  padding-top: 2.42rem;
   width: 75%; }
   @media (min-width: 560px) {
     .thumb {
@@ -1453,7 +1454,7 @@ img {
 .banner {
   height: 85vh;
   width: 100%;
-  padding: 1.98rem;
+  padding: 2.42rem;
   -webkit-background-size: cover;
           background-size: cover;
   background-image: url(../img/util/trees-sml.png);
@@ -1491,20 +1492,20 @@ img {
   width: 100%;
   height: 100%;
   border: 1px solid #916300;
-  padding-bottom: 0.825rem; }
+  padding-bottom: 0.88rem; }
 
 .banner-title {
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   font-family: "ltc-bodoni-175", "Georgia", serif; }
 
 .banner-tagline {
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .banner-logos {
-  margin-bottom: 1.43rem; }
+  margin-bottom: 1.98rem; }
   .banner-logos svg {
     display: block;
     margin: 0 auto; }
@@ -1534,12 +1535,12 @@ img {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin-bottom: 0; }
 
 .footer.-site {
   background-color: #000000;
-  margin-top: 2.75rem;
+  margin-top: 3.3rem;
   position: relative;
   z-index: 4; }
 
@@ -1573,7 +1574,7 @@ img {
 .credits {
   display: inline-block;
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
   .colophon a,
   .credits a {
@@ -1598,18 +1599,18 @@ img {
     margin-left: -0.55rem;
     margin-right: -0.55rem;
     color: #999999;
-    font-size: 0.825rem;
+    font-size: 0.88rem;
     margin: 0; }
   .widget-list.-sidebar {
     color: #000000;
-    font-size: 0.825rem;
+    font-size: 0.88rem;
     margin: 0; }
   .widget-list ul {
     list-style-type: none;
     padding-left: 0; }
 
 .widget {
-  padding-top: 0.825rem;
+  padding-top: 0.88rem;
   padding-bottom: 1.1rem; }
   .widget.-right {
     position: relative;
@@ -1646,11 +1647,11 @@ img {
 .widget-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
   .widget-title.-footer {
     color: #999999;
     margin-top: 0;
-    margin-bottom: 0.66rem; }
+    margin-bottom: 0.715rem; }
 
 .widget a {
   color: #999999; }
@@ -1742,7 +1743,7 @@ img {
               flex: 0 0 33.333333%;
       max-width: 33.333333%; } }
   .tease.-piece {
-    padding-bottom: 1.98rem; }
+    padding-bottom: 2.42rem; }
   .tease.-collection {
     position: relative;
     padding-left: 0.55rem;
@@ -1752,7 +1753,7 @@ img {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%;
-    padding-bottom: 1.98rem; }
+    padding-bottom: 2.42rem; }
     @media (min-width: 768px) {
       .tease.-collection {
         position: relative;
@@ -1771,7 +1772,7 @@ img {
 .tease-title.-collection {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   color: #000000; }
 
 .tease-img {
@@ -1797,13 +1798,13 @@ img {
 
 .tease-meta {
   color: #999999;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
 
 .tease-meta-link {
   background-color: #b3b3b3;
   color: #000000;
-  padding: 0.33rem 0.66rem; }
+  padding: 0.3575rem 0.715rem; }
 
 .archive-main {
   display: -webkit-box;
@@ -1853,10 +1854,10 @@ img {
       max-width: 16.66666667%; } }
 
 .archive-title {
-  margin-bottom: 0.825rem; }
+  margin-bottom: 0.88rem; }
 
 .archive-desc {
-  font-size: 1.98rem;
+  font-size: 1.32rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   color: #916300; }
@@ -1866,7 +1867,7 @@ img {
   letter-spacing: 1px;
   font-size: 1.1rem;
   border-top: 1px solid;
-  padding-top: 0.825rem;
+  padding-top: 0.88rem;
   font-size: 1.1rem;
   margin: 4.4rem 0 1.1rem; }
 
@@ -1890,8 +1891,8 @@ img {
   pointer-events: none;
   text-align: center;
   background-color: white;
-  padding-top: 1.98rem;
-  padding-bottom: 1.98rem;
+  padding-top: 2.42rem;
+  padding-bottom: 2.42rem;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1954,8 +1955,8 @@ img {
   opacity: 0;
   font-style: normal;
   font-family: "ltc-bodoni-175", "Georgia", serif;
-  padding: 0.825rem;
-  font-size: 0.825rem;
+  padding: 0.88rem;
+  font-size: 0.88rem;
   margin: 1.1rem 0;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -1968,8 +1969,8 @@ img {
       font-size: 1.1rem; } }
   @media (min-width: 768px) {
     .archive-quote-content {
-      padding: 1.98rem;
-      font-size: 1.98rem; } }
+      padding: 2.42rem;
+      font-size: 2.42rem; } }
   .archive-quote-content:before {
     content: "\201C"; }
   .archive-quote-content:after {
@@ -2024,7 +2025,7 @@ img {
 
 .archive-images-inspiration.-last {
   background-color: #FFFFFF;
-  margin-bottom: -1.98rem; }
+  margin-bottom: -2.42rem; }
 
 .archive-sidebar {
   -webkit-box-ordinal-group: 2;
@@ -2082,10 +2083,10 @@ img {
               align-items: center; } }
 
 .home-section-text {
-  padding: 0 1.98rem 1.98rem 1.98rem; }
+  padding: 0 2.42rem 2.42rem 2.42rem; }
   @media (min-width: 560px) {
     .home-section-text {
-      padding: 2.75rem; } }
+      padding: 3.3rem; } }
 
 @media (min-width: 768px) {
   .home-section-text,
@@ -2152,12 +2153,12 @@ img {
       -ms-flex-align: center;
           align-items: center; }
   .home-section-text.-about {
-    padding: 2.75rem; }
+    padding: 3.3rem; }
 
 .home-link {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   font-family: "ltc-bodoni-175", "Georgia", serif; }
   .home-link.-collections {
     color: #FFFFFF; }
@@ -2171,13 +2172,13 @@ img {
       color: #999999; }
 
 .home-quote.-about {
-  font-size: 1.98rem;
+  font-size: 2.42rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   color: #000000; }
 
 .home-quote.-collections {
-  font-size: 1.43rem;
+  font-size: 1.98rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   color: #FFFFFF; }
@@ -2199,14 +2200,14 @@ img {
 .spotlight-title {
   color: #FFFFFF;
   margin-top: 0;
-  font-size: 1.98rem;
-  padding-top: 1.43rem; }
+  font-size: 2.42rem;
+  padding-top: 1.98rem; }
 
 .spotlight-title-compliment {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 1.43rem;
+  font-size: 1.98rem;
   display: block; }
 
 .spotlight-title-main {
@@ -2218,7 +2219,7 @@ img {
   padding-left: 0; }
 
 .spotlight-tab {
-  padding-bottom: 0.825rem;
+  padding-bottom: 0.88rem;
   border-bottom: 1px solid #999999; }
   .spotlight-tab > a {
     color: #FFFFFF; }
@@ -2247,14 +2248,14 @@ img {
     opacity: 1; }
 
 .spotlight-sidebar-compliment {
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
 
 .spotlight-sidebar-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .gallery.-inspiration {
   display: -webkit-box;
@@ -2281,7 +2282,7 @@ img {
             justify-content: center; } }
 
 .gallery-thumb.-block {
-  padding: 0.66rem;
+  padding: 0.715rem;
   display: block;
   text-align: center; }
   @media (min-width: 560px) {
@@ -2301,26 +2302,26 @@ img {
 .single-title.-piece {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.43rem;
+  font-size: 1.98rem;
   margin-top: 0; }
 
 .single-title-compliment.-piece {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .single-meta {
-  font-size: 1.98rem;
+  font-size: 1.32rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   color: #916300; }
 
 .single-sidebar-text {
-  font-size: 0.825rem; }
+  font-size: 0.88rem; }
 
 .single-sidebar-list {
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   list-style-type: none;
   padding-left: 0; }
   .single-sidebar-list p {
@@ -2329,9 +2330,9 @@ img {
 .single-sidebar-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   border-top: 1px solid;
-  padding-top: 0.825rem;
+  padding-top: 0.88rem;
   font-family: "ltc-bodoni-175", "Georgia", serif; }
   .single-sidebar-title.-plain {
     border-top: 0;
@@ -2359,9 +2360,9 @@ img {
 .single-footer-title {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   border-bottom: 1px solid;
-  padding-bottom: 0.825rem; }
+  padding-bottom: 0.88rem; }
 
 .magnify {
   width: 100%; }
@@ -2502,7 +2503,7 @@ img {
   -webkit-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding-right: 1.98rem; }
+  padding-right: 2.42rem; }
 
 .footer .icon {
   fill: #999999; }
@@ -2518,7 +2519,7 @@ img {
 .share-trigger {
   float: left;
   padding-right: 1.1rem;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic; }
   .share-trigger:before {
@@ -2538,7 +2539,7 @@ img {
 .single-piece .main,
 .single-post .main,
 .page .main {
-  padding-top: 2.53rem; }
+  padding-top: 3.08rem; }
 
 .page-template-page-collections .main,
 .home .main {
@@ -2551,7 +2552,7 @@ img {
 @media (max-width: 768px) {
   .has-subnav > a:after {
     content: '+';
-    padding-left: 0.33rem;
+    padding-left: 0.3575rem;
     font-size: 1.1rem; }
   .has-subnav > .active:after {
     content: '-'; } }
@@ -2571,7 +2572,7 @@ img {
           align-items: center; }
 
 .util-cell {
-  font-size: 0.66rem;
+  font-size: 0.715rem;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -2594,22 +2595,22 @@ img {
   border: none;
   text-align: left;
   color: #FFFFFF;
-  font-size: 0.825rem;
+  font-size: 0.88rem;
   margin: 0; }
   .search-form:focus,
   .search .search-form {
     width: auto; }
 
 .search-label {
-  margin-top: 0.66rem;
+  margin-top: 0.715rem;
   margin-bottom: 0;
   border-right: 1px solid #999999;
-  padding-right: 0.33rem;
-  width: 1.43rem; }
+  padding-right: 0.3575rem;
+  width: 1.98rem; }
 
 .search-icon {
   fill: #999999;
-  max-width: 0.825rem; }
+  max-width: 0.88rem; }
 
 .search-submit {
   position: absolute;
@@ -2620,5 +2621,5 @@ img {
   font-family: "source-sans-pro", sans-serif;
   background-color: #000000;
   border: 0;
-  padding: 0.66rem;
-  max-width: 5.5rem; }
+  padding: 0.715rem;
+  max-width: 6.6rem; }

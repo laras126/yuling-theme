@@ -86,7 +86,7 @@
     font-size: $size;
 }
 
-@mixin header-fancy-meta($color: $color-accent-med, $size: $size-h3) {
+@mixin header-fancy-meta($color: $color-accent-med, $size: $size-h5) {
     font-size: $size;
     font-family: $font-heading;
     font-style: italic;
