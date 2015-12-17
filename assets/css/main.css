@@ -1487,7 +1487,7 @@ img {
 
 .gallery-cell-image {
   display: block;
-  height: 50vh;
+  height: 40vh;
   min-width: 200px;
   max-width: none;
   opacity: 0;
@@ -1495,7 +1495,13 @@ img {
        -o-transition: opacity 0.4s;
           transition: opacity 0.4s;
   margin-left: 0.3575rem; }
+  @media (min-width: 768px) {
+    .gallery-cell-image {
+      height: 50vh; } }
   @media (min-width: 960px) {
+    .gallery-cell-image {
+      height: 60vh; } }
+  @media (min-width: 1152px) {
     .gallery-cell-image {
       height: 70vh; } }
 
@@ -2369,9 +2375,7 @@ img {
             justify-content: center; } }
 
 .gallery-thumb.-block {
-  padding: 0.715rem;
-  display: block;
-  text-align: center; }
+  padding: 0.715rem; }
   @media (min-width: 560px) {
     .gallery-thumb.-block img {
       height: 45vh; } }
