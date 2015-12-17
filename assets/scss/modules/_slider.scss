@@ -4,9 +4,17 @@
 
 .gallery-cell-image {
 	display: block;
-	height: 50vh;
+	height: 40vh;
+	
+	@include bp(md) {
+		height: 50vh;
+	}
 
 	@include bp(lg) {
+		height: 60vh;
+	}
+	
+	@include bp(xl) {
 		height: 70vh;
 	}
 	
