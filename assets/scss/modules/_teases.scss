@@ -50,7 +50,7 @@
 }
 
 .tease-img {
-
+	display: block;
 	@include bp(md) {
 		transform: translateZ(0);
 		&:hover {
@@ -65,9 +65,6 @@
 	}
 	
 	width: 100%;
-	// &.-post {
-	// 	@include cell(third);
-	// }
 }
 
 .tease-info {
@@ -79,6 +76,10 @@
 
 .tease-meta {
 	@include meta($color-text-med);
+	&.-footer {
+		text-align: center;
+		margin-top: $size-h4;
+	}
 }
 
 .tease-meta-link {
