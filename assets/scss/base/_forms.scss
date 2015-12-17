@@ -6,7 +6,7 @@
 
 // Replace blue chrome outline with something nicer
 *:focus {
-    outline: thin dotted;
+    outline: thin solid;
 }
 
 label, select {
@@ -42,13 +42,15 @@ input[type="number"],
 input[type="email"],
 input[type="url"],
 input[type="tel"] {
-	
+	padding: $size-xsml $size-sml;
 	width: 100%;
 	border: $border-accent;
+	background-color: $color-table-rotate;
+	transition: 0.15s ease all;
 
 	&:focus {
-		// border-color: $color-alert-info;
-		// background-color: $color-accent-vlight;
+		border-color: $color-accent-light;
+		background-color: $color-body-bkgd;
 	}
 }
 
@@ -120,13 +122,45 @@ fieldset {
 
 // Concierge
 
+.frm_forms {
+	font-size: $size-sml;
+}
+
+.frm_primary_label {
+	@include meta;
+    @include upperspace;
+    display: inline-block;
+    font-weight: $font-weight-strong;
+    margin-top: $size-base;
+}
+
+.frm_required {
+	color: $color-link;
+}
+
+.frm_submit {
+	@include clearfix;
+	input[type="submit"] {
+		@extend .btn;
+		float: right;
+        border: 0;
+		@include button($color-accent-med);
+	}
+}
+
+.frm_hidden_container label {
+	@media(max-width: 600px) {
+		margin-top: 0;
+	}
+}
+
 .wishlist-fill {
 	// display: none;
 }
 
 .edit-quantity-form {
 	width: 100%;
-	
+
 	@include bp(md) {
 		display: inline-block;
 		float: right;
