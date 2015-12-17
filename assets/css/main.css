@@ -1488,7 +1488,7 @@ img {
 .gallery-cell-image {
   display: block;
   height: 40vh;
-  min-width: 200px;
+  min-width: 100px;
   max-width: none;
   opacity: 0;
   -webkit-transition: opacity 0.4s;
