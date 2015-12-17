@@ -6,7 +6,7 @@
 .banner {
 	height: 85vh;
 	width: 100%;
-	padding: $size-h3;
+	padding: $size-base;
 	background-size: cover;
     background-image: url(../img/util/trees-sml.png);
 	color: $color-rotate-text;	
@@ -29,7 +29,7 @@
 .banner-wrap {
 	align-self: center;
 	max-width: $screen-sm;
-	padding-top: 10vh;
+	padding: 10vh $size-base $size-base $size-base;
 }
 
 .banner-border {
@@ -70,12 +70,8 @@
 }
 
 .banner-prompt {
-	// position: absolute;
-	// bottom: 0;
-	// width: 100%;
 	@include cell(full);
 	align-self: flex-end;
-	// text-align: center;
 
 	.icon {
 		width: $size-base;
