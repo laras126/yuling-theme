@@ -4,6 +4,7 @@ table {
     font-family: $font-form;
     margin-bottom: $size-h3;
     margin-top: $size-h3;
+    font-size: $size-sml;
 
     caption {
         margin: 0 0 7px;
@@ -21,7 +22,7 @@ tr {
 }
 
 td {
-    padding: 7px;
+    padding: $size-xsml;
     border-right: 1px solid $color-accent-vlight;
 
     &:last-child {
