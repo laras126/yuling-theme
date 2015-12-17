@@ -125,7 +125,8 @@ fieldset {
 }
 
 .edit-quantity-form {
-
+	width: 100%;
+	
 	@include bp(md) {
 		display: inline-block;
 		float: right;
@@ -140,6 +141,7 @@ fieldset {
 
 	& > label {
 		display: inline-block;
+		float: right;
 		margin-right: $size-xsml;
 		margin-bottom: 0;
 		padding-left: 3px;
@@ -153,19 +155,19 @@ fieldset {
 	background-color: $color-alert-info;
 }
 
-.expects-save {
-	background-color: $color-alert-warning;
-}
+// .expects-save {
+// 	background-color: $color-alert-warning;
+// }
 
 .remove-label {
 	background-color: $color-alert-danger	
 }
 
-.edit-quantity-field {
-	display: inline-block;
-	text-align: center;
-	max-width: 70px; 
-}
+// .edit-quantity-field {
+// 	display: inline-block;
+// 	text-align: center;
+// 	max-width: 70px; 
+// }
 
 .row-removed {
 	font-style: italic;
@@ -183,10 +185,17 @@ fieldset {
 	}
 }
 
-.editing-update {
-	color: red;
-}
+// .editing-update {
+// 	color: red;
+// }
 
-#isEditing {
+// #isEditing {
+// 	display: none;
+// }
+
+.quantity-select {
 	display: none;
 }
+
+
+
