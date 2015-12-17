@@ -348,6 +348,9 @@ $(document).ready(function() {
 				$targetSelect.fadeOut(300);
 				$targetSpan.html(newQuantity.val()).fadeIn(300);
 				
+				updateTexarea();
+				updateWishListCount();
+
 				// Reset the target on Save Changes button
 				// Ideally this would happen when you start editing another item
 				$('#saveChanges').attr('data-target', '');
