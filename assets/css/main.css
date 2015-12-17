@@ -547,7 +547,9 @@ http://flickity.metafizzy.co
   font-size: 0.825rem;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  font-size: 0.66rem;
+  font-weight: bold; }
 
 .text-center {
   text-align: center; }
