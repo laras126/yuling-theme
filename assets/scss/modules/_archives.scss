@@ -14,6 +14,12 @@
 
 }
 
+.archive {
+	&.-search {
+		@include grid;
+	}
+}
+
 .archive-sidebar {
 	@include cell(full);
 

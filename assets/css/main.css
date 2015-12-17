@@ -1900,6 +1900,18 @@ img {
             -ms-flex-order: 2;
                 order: 2; } }
 
+.archive.-search {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem; }
+
 .archive-sidebar {
   position: relative;
   padding-left: 0.55rem;
