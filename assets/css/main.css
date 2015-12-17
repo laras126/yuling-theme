@@ -830,7 +830,7 @@ h3 {
   font-size: 2.2rem; }
 
 h4 {
-  font-size: 1.98rem; }
+  font-size: 1.76rem; }
 
 h5 {
   font-size: 1.32rem; }
@@ -848,7 +848,7 @@ strong {
   font-weight: 700; }
 
 blockquote {
-  font-size: 1.98rem;
+  font-size: 1.76rem;
   font-style: italic; }
 
 p {
@@ -956,7 +956,7 @@ input[type="url"],
 input[type="tel"] {
   padding: 0.715rem 0.88rem;
   width: 100%;
-  border: 1px solid #916300;
+  border: 1px solid #b3b3b3;
   background-color: #ededed;
   -webkit-transition: 0.15s ease all;
        -o-transition: 0.15s ease all;
@@ -1569,7 +1569,7 @@ img {
   font-size: 0.88rem; }
 
 .banner-logos {
-  margin-bottom: 1.98rem; }
+  margin-bottom: 1.76rem; }
   .banner-logos svg {
     display: block;
     margin: 0 auto; }
@@ -1867,8 +1867,8 @@ img {
   margin: 0; }
   .tease-meta.-footer {
     text-align: center;
-    margin-top: 1.98rem;
-    margin-bottom: 1.98rem; }
+    margin-top: 1.76rem;
+    margin-bottom: 1.76rem; }
 
 .tease-meta-link {
   background-color: #b3b3b3;
@@ -2268,7 +2268,7 @@ img {
   color: #FFFFFF; }
   @media (min-width: 768px) {
     .home-quote.-collections {
-      font-size: 1.98rem; } }
+      font-size: 1.76rem; } }
 
 .social-list.-about {
   -webkit-box-pack: center;
@@ -2288,13 +2288,13 @@ img {
   color: #FFFFFF;
   margin-top: 0;
   font-size: 2.2rem;
-  padding-top: 1.98rem; }
+  padding-top: 1.76rem; }
 
 .spotlight-title-compliment {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
   margin: 0;
-  font-size: 1.98rem;
+  font-size: 1.76rem;
   display: block; }
 
 .spotlight-title-main {
@@ -2395,7 +2395,7 @@ img {
 .single-title.-piece {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.98rem;
+  font-size: 1.76rem;
   margin-top: 0; }
 
 .single-title-compliment.-piece {
@@ -2699,7 +2699,7 @@ img {
   margin-bottom: 0;
   border-right: 1px solid #999999;
   padding-right: 0.3575rem;
-  width: 1.98rem; }
+  width: 1.76rem; }
 
 .search-icon {
   fill: #999999;
