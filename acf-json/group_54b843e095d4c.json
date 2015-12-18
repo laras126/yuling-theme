@@ -196,7 +196,7 @@
                     "key": "field_5674717c30099",
                     "label": "Connected Post\/Project",
                     "name": "connected_post",
-                    "type": "relationship",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -214,19 +214,14 @@
                         "id": ""
                     },
                     "post_type": [
-                        "post",
-                        "project"
+                        "project",
+                        "post"
                     ],
                     "taxonomy": [],
-                    "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
-                    ],
-                    "elements": "",
-                    "min": "",
-                    "max": "",
-                    "return_format": "id"
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
                 }
             ]
         }
@@ -263,5 +258,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450472469
+    "modified": 1450473945
 }
