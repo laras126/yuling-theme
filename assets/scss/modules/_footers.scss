@@ -23,17 +23,10 @@
 
 	margin-top: $size-base;
 
-	&.-left {
-	}
-
-	// &.-right {
-	// 	border-left: 1px solid lighten($color-text-dark, 40%);
-	// 	padding-left: $size-base;
-	// }
 }
 
-
 .colophon, 
+.credits,
 .credits p {
 	display: inline-block;
 	@include meta($color-accent-light);
