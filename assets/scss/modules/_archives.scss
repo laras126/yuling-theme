@@ -152,7 +152,7 @@
 	position: relative;
 	z-index: $z-mid;
 	pointer-events: none;
-	padding-top: 80vh;
+	padding-top: 90vh;
 	
 	img {
 		display: block;
@@ -183,7 +183,7 @@
 }
 
 .archive-images-inspiration.-second {
-
+	width: 100%;
 	.gallery {
 		@include bp(sm) {
 			@include cell(half, $guttered: false);
