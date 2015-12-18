@@ -413,8 +413,8 @@ http://flickity.metafizzy.co
 
 .flickity-prev-next-button:focus {
   outline: none;
-  -webkit-box-shadow: 0 0 0 5px #09F;
-          box-shadow: 0 0 0 5px #09F; }
+  -webkit-box-shadow: 0 0 0 2px #999;
+          box-shadow: 0 0 0 2px #999; }
 
 .flickity-prev-next-button:active {
   filter: alpha(opacity=60);
@@ -2324,10 +2324,14 @@ img {
     .spotlight-tab > a:hover,
     .spotlight-tab > a:focus {
       color: #999999; }
+  .spotlight-tab.active {
+    background-color: yellow; }
+
+.spotlight-header {
+  position: relative; }
 
 .spotlight-main {
   position: relative;
-  height: 60vh;
   width: 100%;
   -webkit-transition: 0.25s all ease;
        -o-transition: 0.25s all ease;
@@ -2336,14 +2340,10 @@ img {
   .spotlight-main img {
     display: block;
     margin: 0 auto;
-    max-width: none;
-    height: 100%; }
+    width: 100%; }
 
 .spotlight-tab-content {
-  opacity: 0;
   height: 100%; }
-  .spotlight-tab-content.active {
-    opacity: 1; }
 
 .spotlight-sidebar-compliment {
   font-size: 0.88rem;
@@ -2761,8 +2761,11 @@ img {
   left: -999999px; }
 
 .search-field {
+  width: 60%;
   font-family: "source-sans-pro", sans-serif;
   background-color: #000000;
   border: 0;
-  padding: 0.715rem;
-  max-width: 6.16rem; }
+  padding: 0.715rem; }
+  @media (min-width: 560px) {
+    .search-field {
+      max-width: 6.16rem; } }
