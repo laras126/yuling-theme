@@ -21,6 +21,7 @@
 		@include cell(full);
 		@include bp(lg) { 
 			@include cell(half, $is_first: false); 
+			padding-right: $size-h4;
 		}
 	}
 	

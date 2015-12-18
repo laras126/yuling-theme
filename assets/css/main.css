@@ -1704,7 +1704,8 @@ img {
         -webkit-flex: 0 0 50%;
             -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
-        max-width: 50%; } }
+        max-width: 50%;
+        padding-right: 1.76rem; } }
   .widget.-left {
     position: relative;
     padding-left: 0.55rem;
