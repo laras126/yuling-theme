@@ -189,15 +189,24 @@ $(document).ready(function() {
 
 	});
 
+
 	// Very redundant here: 
 
 	$('.spotlight-prev').on('click', function() {
 		var $active_tab = $('.spotlight-tab.active');
+
+		// Show the nav for next
+		$('.spotlight-next').fadeIn(200);
+		
+		// If there are previous tabs, toggle the class active
 		if($active_tab.prev().length) {
 			$active_tab.toggleClass('active');
 			$active_tab.prev().addClass('active');
 
 			switchSpotlightContent($active_tab.prev());
+		} else {
+			// Fade out if there are no previous posts
+			$(this).fadeOut(200);
 		}
 		
 		return false;
@@ -205,10 +214,18 @@ $(document).ready(function() {
 
 	$('.spotlight-next').on('click', function() {
 		var $active_tab = $('.spotlight-tab.active');
+
+		// Show the nav for previous
+		$('.spotlight-prev').fadeIn(200);
+
+		// If there are next tabs, toggle the class active
 		if($active_tab.next().length) {
 			$active_tab.toggleClass('active');
 			$active_tab.next().addClass('active');
 			switchSpotlightContent($active_tab.next());
+		} else {
+			// Fade out if there are no next posts
+			$(this).fadeOut(200);
 		}
 
 		return false;
@@ -370,16 +387,6 @@ $(document).ready(function() {
 			});
 
 
-			// // $('#updateQuantity').on('click', function() {
-			// // 	var targetID = $(this).closest('form').attr('id');
-			// // 	var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
-			// // 	targetEntry.quantity = $('.edit-quantity-field').val();
-				
-			// // 	console.log('targetEntry'); 
-				
-			// // });
-
-
 			$('.remove-label').on('click', function(e) {
 				var targetID = $(this).closest('form').attr('id');
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
@@ -398,20 +405,6 @@ $(document).ready(function() {
 				
 				e.preventDefault();
 			});
-
-			// $('.expects-save').on('click', function(e) {
-			// 	var targetID = $(this).closest('form').attr('id');
-			// 	var targetEntry = window.localStorage.getItem(targetID);
-
-
-			// 	$(this).html('Edit').attr('class', 'edit-label');
-			// 	;
-
-			// 	// $(this).closest('tr').find('.quantity-value').css('background','green');
-			// 	console.log('saved');
-
-			// 	e.preventDefault();
-			// });
 
 		} // END Wish List length check
 
@@ -441,7 +434,7 @@ $(document).ready(function() {
 function switchSpotlightContent($target) {
 	// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
 	var src = $target.find('.spotlight-tab-link').attr('data-src');
-	var href = $target.find('.spotlight-tab-link').attr('href');
+	var href = $target.find('.spotlight-tab-link').attr('data-target');
 	var $target_content = $(href);
 
 	// May want to integrate this with lazyload instead
