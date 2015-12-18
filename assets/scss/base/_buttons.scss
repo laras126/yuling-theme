@@ -30,7 +30,8 @@
     &.-readmore {
         @include button($color-body-bkgd, $text-color: $color-body-text);
         border: 1px solid $color-body-text;
-    }
+        margin-bottom: $size-h1;
+}
 
     &.-danger {
         @include button($color-alert-danger);

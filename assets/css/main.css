@@ -872,7 +872,8 @@ p {
     background: #FFFFFF;
     font-weight: 700;
     color: #000000;
-    border: 1px solid #000000; }
+    border: 1px solid #000000;
+    margin-bottom: 3.08rem; }
     .btn.-readmore:hover,
     .frm_submit input.-readmore[type="submit"]:hover,
     .btn.-readmore:focus, .frm_submit input.-readmore[type="submit"]:focus {
@@ -2015,6 +2016,9 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.1rem; }
+  @media (min-width: 560px) {
+    .archive-quote-title {
+      margin-top: 2.53rem; } }
 
 .archive-quote-inner {
   border: 2px solid #000000;
@@ -2044,7 +2048,7 @@ img {
   opacity: 0;
   font-style: normal;
   font-family: "ltc-bodoni-175", "Georgia", serif;
-  padding: 0.88rem;
+  padding: 0.88rem 1.76rem;
   font-size: 0.88rem;
   margin: 1.1rem 0;
   text-transform: uppercase;
@@ -2055,7 +2059,8 @@ img {
             transition: 0.25s all ease; }
   @media (min-width: 560px) {
     .archive-quote-content {
-      font-size: 1.1rem; } }
+      font-size: 1.1rem;
+      margin: 0; } }
   @media (min-width: 768px) {
     .archive-quote-content {
       padding: 2.2rem;
@@ -2377,7 +2382,9 @@ img {
             justify-content: center; } }
 
 .gallery-thumb.-block {
-  padding: 0.715rem; }
+  padding: 0.715rem;
+  display: block;
+  text-align: center; }
   @media (min-width: 560px) {
     .gallery-thumb.-block img {
       height: 45vh; } }
