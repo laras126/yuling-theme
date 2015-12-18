@@ -24,7 +24,6 @@
 }
 
 .single-sidebar-list {
-	@include detail-text;
 	@include unstyle-list;
 
 	p {
