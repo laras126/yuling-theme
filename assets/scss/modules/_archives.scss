@@ -152,15 +152,8 @@
 	position: relative;
 	z-index: $z-mid;
 	pointer-events: none;
-
-	* {
-		pointer-events: none;
-	}
+	padding-top: 80vh;
 	
-	// @include bp(md) {
-		padding-top: 80vh;
-	// }
-
 	img {
 		display: block;
 		width: 100%;
