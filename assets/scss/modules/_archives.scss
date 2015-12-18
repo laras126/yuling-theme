@@ -11,9 +11,8 @@
 			order: 2;
 		}
 	}
-
 }
-
+	
 .archive {
 	&.-search {
 		@include grid;
@@ -66,25 +65,25 @@
 	pointer-events: none;
 	text-align: center;
 	background-color: white;
-	padding-top: $size-h3;
-	padding-bottom: $size-h3;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
 
-	// @include bp(md) {
-		padding: 0;
-		@include grid();
-		height: 100vh;
+	height: 100vh;
+	
+	& > .cell {
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10vh;
+		flex-direction: column;
+		max-height: 95vh;
+	}
 
-		& > .cell {
-			justify-content: center;
-			padding-top: 10vh;
-			max-height: 95vh;
-		}
-		width: 100%;	
-		top: 100%;
-		// transition: 0.25s all ease;
-		left: 0;
-	    position: fixed;
-	// }
+	width: 100%;	
+	top: 100%;
+	left: 0;
+    position: fixed;
 
 	&.active {
 		top: 0;
@@ -102,7 +101,9 @@
 
 .archive-quote-inner {
 	border: 2px solid $color-body-text;
-	@include contain(xl);
+	margin: 0 auto;
+	max-width: $screen-xl;
+
 	height: 100%;
 
 	display: flex;
