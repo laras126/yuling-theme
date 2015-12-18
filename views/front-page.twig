@@ -10,21 +10,39 @@
 			<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
 			<div class="spotlight-main">
 				<div class="spotlight-tab-content">
-					<img src="{{placeholder|resize(800,530)}}" alt="">
+					<img src="{{placeholder}}" alt="">
 				</div>
 			</div>
 			<a href="#" class="spotlight-next">Next</a>
 			<a href="#" class="spotlight-prev">Prev</a>
 			<nav>
 				<ul class="spotlight-tabs">
+					{% for row in post.get_field('connected_content') %}
+						<li class="spotlight-tab">
 
-					<li class="spotlight-tab active">
-						<a href="#post-slug" class="spotlight-tab-link" data-src="http://placehold.it/800x530/00ddff">
-							<p class="spotlight-sidebar-compliment">Stories</p>
-							<h5 class="spotlight-sidebar-title">Jennifer Winfrey Photography and Stuff</h5>
-						</a>
-					</li>
-					
+						{% if row.connected_content_type == 'collection' %}
+
+							{% set c = TimberTerm(row.connected_collection) %}
+							<a href="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.featured_image).src|resize(800,530)}}">
+								<p class="spotlight-sidebar-compliment">COLLECTION</p>
+								<h5 class="spotlight-sidebar-compliment">{{c.title}}</h5>
+							</a>
+						
+						{% elseif row.connected_content_type == 'post_project' %}
+
+							{% set p = TimberPost(row.connected_post) %}
+							<a href="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(800,530)}}">
+								{# <pre style="color:white">{{dump(p)}}</pre> #}
+								<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? 'Stories' : 'Bespoke'}}</p>
+								<h5 class="spotlight-sidebar-compliment">{{p.title}}</h5>
+							</a>
+
+						{% endif %}
+
+						</li>
+					{% endfor %}
+
+					{# 
 					<li class="spotlight-tab">
 						<a href="#post-slug-1" class="spotlight-tab-link" data-src="http://placehold.it/800x530/8899dd">
 							<p class="spotlight-sidebar-compliment">Bespoke Project</p>
@@ -38,7 +56,7 @@
 							<h5 class="spotlight-sidebar-title">Antheria Jewelry</h5>
 						</a>
 					</li>
-					
+					 #}
 					{# <li class="spotlight-tab">
 					<p>Collection</p>
 					<p>Emma</p>
