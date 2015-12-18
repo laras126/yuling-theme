@@ -92,6 +92,7 @@ $(document).ready(function() {
 
 
 
+
     // ----
 	// Reveal and Rotate Quotes on Scroll (Collections page)
 	// ----
@@ -127,6 +128,15 @@ $(document).ready(function() {
 
 	});
 
+   	// ----
+	// Collections archive hover captions
+	// ----
+
+	$('.gallery-thumb').hover( function() {
+		$(this).find('.-hoverable').animate({opacity: 1}, 300);
+	}, function() {
+		$(this).find('.-hoverable').animate({opacity: 0}, 300);
+	});
 
 
     // ----
@@ -185,6 +195,8 @@ $(document).ready(function() {
 
 
 
+
+
 	// ----
 	// Plugins
 	// ----
@@ -197,6 +209,8 @@ $(document).ready(function() {
 		imagesLoaded: true,
 		pageDots: false
 	});
+
+
 
 
 
