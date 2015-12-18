@@ -174,26 +174,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_567199385fa5b",
-            "label": "All Collections Page",
-            "name": "all_collections_page",
-            "type": "post_object",
-            "instructions": "Select the page to display all collections. This will appear as the highlighted item at the right of the dropdown menu for Collections. It should not be included in the menu list in WordPress.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "post_type": [],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_5632a3d0a4305",
             "label": "Concierge Text",
             "name": "concierge_text",
@@ -212,6 +192,26 @@
             "media_upload": 0
         },
         {
+            "key": "field_567199385fa5b",
+            "label": "All Collections Page",
+            "name": "all_collections_page",
+            "type": "post_object",
+            "instructions": "Select the page to display all collections. This will appear as the highlighted item at the right of the dropdown menu for Collections. It should not be included in the menu list in WordPress.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_566726e91760e",
             "label": "Wishlist Page Link",
             "name": "wishlist_page_link",
@@ -220,7 +220,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 33,
                 "class": "",
                 "id": ""
             },
@@ -238,7 +238,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 33,
                 "class": "",
                 "id": ""
             },
@@ -348,5 +348,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1450455883
+    "modified": 1450456197
 }
