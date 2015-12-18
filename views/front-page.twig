@@ -7,17 +7,18 @@
 {% block content %}
 	<section class="spotlight">
 		<div class="contain--xl">
+			<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
 			<div class="spotlight-main">
 				<div class="spotlight-tab-content">
 					<img src="{{placeholder|resize(800,530)}}" alt="">
 				</div>
 			</div>
+			<a href="#" class="spotlight-next">Next</a>
+			<a href="#" class="spotlight-prev">Prev</a>
 			<nav>
-				<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
-
 				<ul class="spotlight-tabs">
 
-					<li class="spotlight-tab">
+					<li class="spotlight-tab active">
 						<a href="#post-slug" class="spotlight-tab-link" data-src="http://placehold.it/800x530/00ddff">
 							<p class="spotlight-sidebar-compliment">Stories</p>
 							<h5 class="spotlight-sidebar-title">Jennifer Winfrey Photography and Stuff</h5>
@@ -55,6 +56,7 @@
 
 				</ul>
 			</nav>
+			
 		</div>
 	</section>
 	
