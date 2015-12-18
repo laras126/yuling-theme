@@ -1,3 +1,4 @@
+
 {# NOTE: Index is not being used anywhere #}
 
 {% extends "base.twig" %}
@@ -7,32 +8,38 @@
 {% block content %}
 	<section class="spotlight">
 		<div class="contain--xl">
-			<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
+			<header class="spotlight-header">
+				<a href="#" class="spotlight-next flickity-prev-next-button next">
+					{% include 'utility/svg.twig' with { file: 'arrow-right' } %}
+				</a>
+				<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
+				<a href="#" class="spotlight-prev flickity-prev-next-button previous">
+					{% include 'utility/svg.twig' with { file: 'arrow-left' } %}
+					
+				</a>
+			</header>
 			<div class="spotlight-main">
 				<div class="spotlight-tab-content">
-					<img src="{{placeholder}}" alt="">
+					<img data-src="{{placeholder}}">
 				</div>
 			</div>
-			<a href="#" class="spotlight-next">Next</a>
-			<a href="#" class="spotlight-prev">Prev</a>
 			<nav>
 				<ul class="spotlight-tabs">
 					{% for row in post.get_field('connected_content') %}
-						<li class="spotlight-tab">
+						<li class="spotlight-tab{{ loop.first ? ' active' }}">
 
 						{% if row.connected_content_type == 'collection' %}
 
 							{% set c = TimberTerm(row.connected_collection) %}
-							<a href="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.featured_image).src|resize(800,530)}}">
-								<p class="spotlight-sidebar-compliment">COLLECTION</p>
+							<a href="{{c.link}}" data-target="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.featured_image).src|resize(800,530)}}">
+								<p class="spotlight-sidebar-compliment">Collection</p>
 								<h5 class="spotlight-sidebar-compliment">{{c.title}}</h5>
 							</a>
 						
 						{% elseif row.connected_content_type == 'post_project' %}
 
 							{% set p = TimberPost(row.connected_post) %}
-							<a href="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(800,530)}}">
-								{# <pre style="color:white">{{dump(p)}}</pre> #}
+							<a href="{{p.link}}" data-target="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(800,530)}}">
 								<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? 'Stories' : 'Bespoke'}}</p>
 								<h5 class="spotlight-sidebar-compliment">{{p.title}}</h5>
 							</a>
