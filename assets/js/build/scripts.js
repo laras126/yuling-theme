@@ -442,7 +442,6 @@ $(document).ready(function() {
 		if($active_tab.prev().length) {
 			$active_tab.toggleClass('active');
 			$active_tab.prev().addClass('active');
-
 			switchSpotlightContent($active_tab.prev());
 		} else {
 			// Fade out if there are no previous posts
