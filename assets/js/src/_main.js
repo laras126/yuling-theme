@@ -139,6 +139,8 @@ $(document).ready(function() {
 	});
 
 
+
+
     // ----
 	// Single Piece Detail Image Swap
 	// ----
@@ -191,6 +193,28 @@ $(document).ready(function() {
 
 		return false;
 
+	});
+
+	// Very redundant here: 
+
+	$('.spotlight-prev').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+		if($active_tab.prev().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.prev().addClass('active');
+		}
+
+		return false;
+	});
+
+	$('.spotlight-next').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+		if($active_tab.next().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.next().addClass('active');
+		}
+
+		return false;
 	});
 
 
