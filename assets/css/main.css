@@ -1980,30 +1980,37 @@ img {
   pointer-events: none;
   text-align: center;
   background-color: white;
-  padding-top: 2.2rem;
-  padding-bottom: 2.2rem;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  position: relative;
-  margin-left: -0.55rem;
-  margin-right: -0.55rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
   width: 100%;
   top: 100%;
   left: 0;
   position: fixed; }
   .archive-quote > .cell {
+    width: 100%;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-top: 10vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     max-height: 95vh; }
   .archive-quote.active {
     top: 0;
@@ -2019,8 +2026,7 @@ img {
 .archive-quote-inner {
   border: 2px solid #000000;
   margin: 0 auto;
-  width: 90%;
-  position: relative;
+  max-width: 1152px;
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
