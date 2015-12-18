@@ -310,21 +310,6 @@ $(document).ready(function() {
 				$('#saveChanges').fadeIn(300)
 								.attr('data-target', targetID);
 
-				// Hide the current quantity
-				// $(this).closest('tr')
-				// 	.find('.quantity-value')
-				// 	.hide();
-
-				// // Show the editing options
-				// var editingHTML = $(this).closest('tr')
-				// 	.find('#isEditing').html();
-
-				// $(this).closest('tr')
-				// 	.find('.edit-quantity-form')
-				// 	.html(editingHTML);
-
-				console.log(targetID);
-				// return targetID;
 				e.preventDefault();
 			});
 
@@ -481,8 +466,11 @@ function populateWishListTable(item) {
 			quantity = '<td class="item-quantity">' + editFormMarkup + '</td>';
 
 		// Update the Wish List header text to indicate there are items
-		$('#wishListTitle').html('In Your Wish List');
-		$('#wishListPrompt').html('Complete the email form below to receive a price quote for these items.');
+		var has_items_title = $('#wishListTitle').attr('data-has-items');
+		var has_items_prompt = $('#wishListPrompt').attr('data-has-items');
+
+		$('#wishListTitle').html(has_items_title);
+		$('#wishListPrompt').html(has_items_prompt);
 
 		// Add item to table
 		$('#wishListItems').append('<tr>' + collection + title + quantity + '</tr>');
