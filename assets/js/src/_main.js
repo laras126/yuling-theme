@@ -175,7 +175,7 @@ $(document).ready(function() {
 
 	// Spotlight tabbed thing on the home page
 	// This click stuff if pretty similar to above - maybe consolidate those somehow.
-	$('.spotlight-tab').on('click', function() {
+	$('.spotlight-tab').on('mouseover', function() {
 
 		// Mark it as active
 		$('.spotlight-tab').removeClass('active');
