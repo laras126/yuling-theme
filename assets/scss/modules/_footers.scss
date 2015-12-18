@@ -29,7 +29,8 @@
 .credits,
 .credits p {
 	display: inline-block;
-	@include meta($color-accent-light);
+	color: $color-accent-light;
+	font-size: $size-xsml;
 
 	a {
 		color: $color-accent-light;
