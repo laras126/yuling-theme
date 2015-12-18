@@ -379,6 +379,8 @@ $(document).ready(function() {
 	});
 
 
+
+
     // ----
 	// Single Piece Detail Image Swap
 	// ----
@@ -416,21 +418,40 @@ $(document).ready(function() {
 	$('.spotlight-tab').on('click', function() {
 
 		// Mark it as active
-		$('.spotlight-tab-content').removeClass('active');
+		$('.spotlight-tab').removeClass('active');
 		$(this).addClass('active');
 
-		// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
-		var src = $(this).find('.spotlight-tab-link').attr('data-src');
-		var href = $(this).find('.spotlight-tab-link').attr('href');
-		var $target_content = $(href);
-
-		// May want to integrate this with lazyload instead
-		$('.spotlight-main').html('<img src="' + src + '">');
-
+		
+		switchSpotlightContent($(this));
 		$(this).addClass('active');
 
 		return false;
 
+	});
+
+	// Very redundant here: 
+
+	$('.spotlight-prev').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+		if($active_tab.prev().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.prev().addClass('active');
+
+			switchSpotlightContent($active_tab);
+		}
+		
+		return false;
+	});
+
+	$('.spotlight-next').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+		if($active_tab.next().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.next().addClass('active');
+			switchSpotlightContent($active_tab);
+		}
+
+		return false;
 	});
 
 
@@ -653,10 +674,19 @@ $(document).ready(function() {
 
 
 
+// ----
+// Spotlight Content Switcher
+// ----
 
+function switchSpotlightContent($target) {
+	// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
+	var src = $target.find('.spotlight-tab-link').attr('data-src');
+	var href = $target.find('.spotlight-tab-link').attr('href');
+	var $target_content = $(href);
 
-
-
+	// May want to integrate this with lazyload instead
+	$('.spotlight-main').html('<img src="' + src + '">');
+}
 
 
 
