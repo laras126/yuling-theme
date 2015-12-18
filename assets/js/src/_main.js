@@ -197,7 +197,7 @@ $(document).ready(function() {
 			$active_tab.toggleClass('active');
 			$active_tab.prev().addClass('active');
 
-			switchSpotlightContent($active_tab);
+			switchSpotlightContent($active_tab.prev());
 		}
 		
 		return false;
@@ -208,7 +208,7 @@ $(document).ready(function() {
 		if($active_tab.next().length) {
 			$active_tab.toggleClass('active');
 			$active_tab.next().addClass('active');
-			switchSpotlightContent($active_tab);
+			switchSpotlightContent($active_tab.next());
 		}
 
 		return false;
