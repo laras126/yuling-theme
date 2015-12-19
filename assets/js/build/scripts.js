@@ -415,19 +415,23 @@ $(document).ready(function() {
 
 	// Spotlight tabbed thing on the home page
 	// This click stuff if pretty similar to above - maybe consolidate those somehow.
-	$('.spotlight-tab').on('mouseover', function() {
 
-		// Mark it as active
-		$('.spotlight-tab').removeClass('active');
-		$(this).addClass('active');
+	if ($(window).width() > 960) {
+	
+		$('.spotlight-tab').on('mouseover', function() {
 
-		
-		switchSpotlightContent($(this));
-		$(this).addClass('active');
+			// Mark it as active
+			$('.spotlight-tab').removeClass('active');
+			$(this).addClass('active');
 
-		return false;
+			
+			switchSpotlightContent($(this));
 
-	});
+			return false;
+
+		});
+
+	}
 
 
 	// Very redundant here: 
