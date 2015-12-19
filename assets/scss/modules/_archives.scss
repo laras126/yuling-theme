@@ -31,6 +31,10 @@
 	margin-bottom: $size-sml;
 }
 
+.archive-desc {
+	font-size: $size-base;
+}
+
 .archive-below-title {
 	@include header-fancy-meta;
 }
