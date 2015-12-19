@@ -13,8 +13,29 @@
 	}
 
 	&.-collections {
-		background: $color-rotate-bkgd;
+		//background: $color-rotate-bkgd;
+		position: relative;
 		color: $color-rotate-text;
+		background-image: url(../img/util/trees-sml.png);
+
+		@include bp(md) {
+			background-image: url(../img/util/trees-med.png);
+
+			&:before {
+				content: "";
+				display: block;
+				background-color: #000;
+				position: absolute;
+				left: 50%;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		@include bp(lg) {
+			background-image: url(../img/util/trees-large.png);
+		}
 	}
 }
 
@@ -32,6 +53,11 @@
 
 .home-section-text {
 	padding: 0 $size-h3 $size-h3 $size-h3;
+	position: relative;
+
+	&.-collections {
+		background: $color-rotate-bkgd;
+	}
 
 	@include bp(sm) {
 		padding: $size-h1;
@@ -47,7 +73,7 @@
 .home-img {
 	&.-collections {
 		height: 50vh;
-		background-image: url(../img/util/trees-sml.png);
+		//background-image: url(../img/util/trees-sml.png);
 		color: $color-rotate-text;	
 		text-align: center;
 
@@ -55,14 +81,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		@include bp(md) {
-			background-image: url(../img/util/trees-med.png);
-		}
-
-		@include bp(lg) {
-			background-image: url(../img/util/trees-large.png);
-		}
 	}
 
 	.wordmark {
