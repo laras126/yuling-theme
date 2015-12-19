@@ -8,50 +8,76 @@
 {% block content %}
 	<section class="spotlight">
 		<div class="contain--xl">
-			<header class="spotlight-header">
-				<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
-			</header>
-			<div class="spotlight-main">
-				<div class="spotlight-tab-content">
-					<img data-src="{{placeholder}}">
-				</div>
-			</div>
-			<nav class="spotlight-nav">
+			<div class="spotlight-wrap">
 			
-				<a href="#" class="spotlight-next flickity-prev-next-button next">
-					{% include 'utility/svg.twig' with { file: 'arrow-right' } %}
-				</a>
+				<header class="spotlight-header -small">
+					<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
+				</header>
 
-				<ul class="spotlight-tabs">
-					{% for row in post.get_field('connected_content') %}
-						<li class="spotlight-tab{{ loop.first ? ' active' }}">
+				<div class="spotlight-main">
+					<div class="spotlight-tab-content teaser lazyload">
+						{% for row in post.get_field('connected_content')|slice(0,1) %}
+							
+							{% if row.connected_content_type == 'collection' %}
+								{% set c = TimberTerm(row.connected_collection) %}
+								{% set image = TimberImage(c.spotlight_image).src %}
+							{% elseif row.connected_content_type == 'post_project' %}
+								{% set p = TimberPost(row.connected_post) %}
+								{% set image = TimberImage(p.thumbnail).src %}
+							{% endif %}
+							<img 
+								data-sizes="auto"
+								class="lazyload"
+								data-srcset="{{image|resize(500)}} 500w,
+									{{image|resize(800)}} 640w,
+									{{image|resize(1200)}} 1024w"
+									class="lazyload" 
+									src="{{placeholder|resize(800,444)}}" alt="Spotlight Image">
+						{% endfor %}
+					</div>
+				</div>
 
-						{% if row.connected_content_type == 'collection' %}
+				<nav class="spotlight-nav">
+					<header class="spotlight-header -large">
+						<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
+					</header>
 
-							{% set c = TimberTerm(row.connected_collection) %}
-							<a href="{{c.link}}" data-target="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.featured_image).src|resize(800,530)}}">
-								<p class="spotlight-sidebar-compliment">Collection</p>
-								<h5 class="spotlight-sidebar-title">{{c.title}}</h5>
-							</a>
-						
-						{% elseif row.connected_content_type == 'post_project' %}
+					<a href="#" class="spotlight-next flickity-prev-next-button next">
+						{% include 'utility/svg.twig' with { file: 'arrow-right' } %}
+					</a>
 
-							{% set p = TimberPost(row.connected_post) %}
-							<a href="{{p.link}}" data-target="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(800,530)}}">
-								<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? 'Stories' : 'Bespoke'}}</p>
-								<h5 class="spotlight-sidebar-title">{{p.title}}</h5>
-							</a>
+					<ul class="spotlight-tabs">
+						{% for row in post.get_field('connected_content') %}
+							<li class="spotlight-tab{{ loop.first ? ' active' }}">
 
-						{% endif %}
+							{% if row.connected_content_type == 'collection' %}
 
-						</li>
-					{% endfor %}
-				</ul>
-			</nav>
-			<a href="#" class="spotlight-prev flickity-prev-next-button previous">
-				{% include 'utility/svg.twig' with { file: 'arrow-left' } %}
-				
-			</a>
+								{% set c = TimberTerm(row.connected_collection) %}
+								<a href="{{c.link}}" data-target="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.spotlight_image).src|resize(800,530)}}">
+									<p class="spotlight-sidebar-compliment">Collection</p>
+									<h5 class="spotlight-sidebar-title">{{c.title}}</h5>
+								</a>
+							
+							{% elseif row.connected_content_type == 'post_project' %}
+
+								{% set p = TimberPost(row.connected_post) %}
+								<a href="{{p.link}}" data-target="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(800,530)}}">
+									<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? 'Stories' : 'Bespoke'}}</p>
+									<h5 class="spotlight-sidebar-title">{{p.title}}</h5>
+								</a>
+
+							{% endif %}
+
+							</li>
+						{% endfor %}
+					</ul>
+
+					<a href="#" class="spotlight-prev flickity-prev-next-button previous">
+						{% include 'utility/svg.twig' with { file: 'arrow-left' } %}
+					</a>
+				</nav>
+
+			</div>
 		</div>
 	</section>
 	
@@ -67,7 +93,6 @@
 			<a href="{{post.explore_work_link}}" class="home-link -about">{{post.explore_link_text}}</a>
 			{% include 'partials/_social-list.twig' with { class : '-about' } %}
 		</div>
-
 	</section>
 
 	<section class="home-section -collections" style="background-image: url({{TimberImage(post.home_bkgd_image).src|resize(800)}})">
@@ -90,7 +115,7 @@
 		</div>
 	</section>
 
-	<seciton class="home-section -slider">
+	<section class="home-section -slider">
 		<div class="contain--lg">
 
 			<h4 class="single-footer-title">{{post.connected_pieces_text}}</h4>
@@ -110,7 +135,8 @@
 			</div>
 		
 		</div>
-	</seciton>
+	</section>
+</div>
 
 {% endblock %}
 
