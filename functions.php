@@ -51,6 +51,7 @@
 			$context['menu'] = new TimberMenu('Main Menu');
 			$context['site'] = $this;
 			$context['placeholder'] = get_stylesheet_directory_uri() . '/assets/img/util/ripple.svg';
+			$context['placeholder_light'] = get_stylesheet_directory_uri() . '/assets/img/util/ripple-light.svg';
 			$context['footer_left'] = Timber::get_sidebar('sidebar-footer_left.php');
 			$context['footer_right'] = Timber::get_sidebar('sidebar-footer_right.php');
 			
@@ -122,13 +123,15 @@
 	// Enqueue scripts
 	function tsk_scripts() {
 
-		// Use jQuery from CDN, enqueue in footer
 		if (!is_admin()) {
-			// wp_deregister_script('jquery');
+			wp_deregister_script('jquery');
 			
+			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+
 			wp_register_script('picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), null);
 			wp_register_script('lazysizes', get_template_directory_uri() . '/assets/js/vendor/lazysizes.min.js', array(), null);
 			
+			wp_enqueue_script('jquery');
 			wp_enqueue_script('picturefill');
 			wp_enqueue_script('lazysizes');
 		}
@@ -139,7 +142,7 @@
 			wp_enqueue_script( 'tsk-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.min.js', array('jquery'), '1.0.0', true );
 		} else {
 			wp_enqueue_style( 'tsk-styles', get_stylesheet_directory_uri() . '/assets/css/main.css', 1.0);
-			wp_enqueue_script( 'tsk-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', '1.0.0', true );
+			wp_enqueue_script( 'tsk-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', array('jquery'), '1.0.0', true );
 		}		
 
 		// Localize variables for single pieces
