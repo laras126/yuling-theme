@@ -2465,8 +2465,9 @@ img {
     width: auto;
     height: auto;
     color: #999999; }
-  .spotlight-tab:last-child {
-    border-bottom: none; }
+  @media (min-width: 960px) {
+    .spotlight-tab:last-child {
+      border-bottom: none; } }
 
 .spotlight-wrap {
   min-height: 320px; }
@@ -2529,8 +2530,11 @@ img {
               order: 0; } }
   .spotlight-main img {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 0 auto; }
+    @media (min-width: 960px) {
+      .spotlight-main img {
+        width: 90%; } }
 
 .spotlight-tab-content {
   position: absolute;
