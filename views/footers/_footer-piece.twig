@@ -11,7 +11,7 @@
 						<img data-src="{{piece.thumbnail.src|resize(500, 500)}}" alt="{{piece.post_title}} Thumbnail" src="{{placeholder}}" class="lazyload">
 					{% else %}
 						{# TODO: replace this with something we serve. #}
-						<img src="http://placehold.it/500x500" alt="Default Thumbnail">
+						<img src="{{piece.thumbnail.src|resize(100,100)}}" alt="Thumbnail">
 					{% endif %}
 					<div class="tease-info -{{piece.post_type}}">
 						<h4 class="tease-title -{{piece.post_type}}">{{piece.post_title}}</h4>
