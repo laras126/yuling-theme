@@ -767,9 +767,7 @@ http://flickity.metafizzy.co
     /* Hide the lens by default */
     display: none;
     /* Place the lens on top of other elements */
-    z-index: 100;
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0); }
+    z-index: 100; }
   .magnify .magnify-lens.loading {
     background: #333 !important;
     opacity: .75; }
@@ -1043,6 +1041,10 @@ fieldset {
 .frm_ajax_loading {
   display: none; }
 
+.frm_checkbox {
+  margin-top: 0.88rem;
+  margin-bottom: 0.88rem; }
+
 .form-status.-wishlist {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
@@ -1315,9 +1317,7 @@ img {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  z-index: 103;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+  z-index: 4;
   background-color: rgba(0, 0, 0, 0.9); }
   @media (max-width: 768px) {
     .subnav-main.active {
@@ -2355,7 +2355,7 @@ img {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 99;
+  z-index: 4;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   padding: 0 2.2rem 2.2rem 2.2rem; }
