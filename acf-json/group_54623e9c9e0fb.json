@@ -181,7 +181,7 @@
                                             "label": "Two Images",
                                             "name": "two_images",
                                             "type": "gallery",
-                                            "instructions": "Select two images for this row.",
+                                            "instructions": "Select two images for this row. Each should be the same dimensions to preserve the layout.",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -328,6 +328,7 @@
                             "max": "",
                             "layout": "block",
                             "button_label": "Add Item",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_545a7dc339b3e",
@@ -429,8 +430,7 @@
                                     "toolbar": "text_based",
                                     "media_upload": 0
                                 }
-                            ],
-                            "collapsed": ""
+                            ]
                         },
                         {
                             "key": "field_545fae2b2e782",
@@ -839,5 +839,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450557172
+    "modified": 1450562001
 }
