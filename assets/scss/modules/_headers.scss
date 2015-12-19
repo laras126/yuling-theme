@@ -24,9 +24,14 @@
 }
 
 .logo-text-logo {
-	max-width: $size-h1*5;
+	width: $size-h1*4;
 	padding: $size-xsml;
 	display: block;
 	margin: 0 auto;
+
+	@include bp(sm) {
+		width: auto;
+		max-width: $size-h1*5;
+	}
 }
 

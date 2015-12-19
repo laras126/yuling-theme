@@ -3,12 +3,12 @@
 @import 'variables';
 @import 'mixins';
 
-// Third Party
-@import 'normalize';
-@import 'vendor';
-
 // Dynamic
 @import 'helpers';
 @import 'layout';
 @import 'animations';
 @import 'accordion';
+
+// Third Party
+@import 'normalize';
+@import 'vendor';

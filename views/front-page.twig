@@ -59,7 +59,7 @@
 		{# <div class="contain--lg"> #}
 				{% set about_img = TimberImage(post.about_image) %}
 				<div class="home-section-img -about">
-					<img class="about-image" src="{{about_img.src}}" alt="{{about_img.title}}">
+					<img class="about-image" src="{{about_img.src|resize(500)}}" alt="{{about_img.title}}">
 				</div>
 				<div class="home-section-text -about">
 					<p class="home-quote -about">{{post.about_tagline}}</p>

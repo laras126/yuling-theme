@@ -188,3 +188,48 @@ http://flickity.metafizzy.co
     text-transform: none;
   }
 }
+
+
+/* ----------------------------------------------
+MailChimp styling
+---------------------------------------------- */
+
+#mc_embed_signup {
+  @include grid($guttered: false);
+
+  h2 {
+    font-family: $font-body;
+    font-size: $size-sml;
+    margin: $size-base 0 $size-sml;
+  }
+
+  label {
+    @include visually-hidden;
+  }
+
+  input {
+      padding: $size-xsml/2 $size-sml/2;
+  }
+
+  .mc-field-group {
+    float: left;
+    width: 68%;
+    margin-right: 2%;
+  
+    input {
+        border: 1px solid $color-accent-light;
+        background-color: $color-accent-light;
+        color: $white;
+    }
+  }
+
+  .clear {
+    float: left;
+    width: 30%;
+
+    input {
+      border: 1px solid $color-accent-vlight;
+      background: none;
+    }
+  }
+}

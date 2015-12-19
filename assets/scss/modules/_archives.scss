@@ -97,6 +97,10 @@
 
 .archive-quote-title {
 	@include detail-title($border-pos: false, $size: $size-base);
+
+	@include bp(sm) {
+		margin-top: $size-h2;
+	}
 }
 
 .archive-quote-inner {
@@ -121,11 +125,12 @@
 	opacity: 0;
 	font-style: normal;
 	font-family: $font-heading;
-	padding: $size-sml;
+	padding: $size-sml $size-h4;
 	font-size: $size-sml;
 	
 	@include bp(sm) {
 		font-size: $size-base;
+		margin: 0;
 	}
 	
 	@include bp(md) {

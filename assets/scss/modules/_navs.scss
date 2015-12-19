@@ -21,6 +21,23 @@
 	&.open {
 		max-height: none;
 	}
+
+	.nav-item:first-child {
+		.nav-item-link {
+			border-top: 1px solid lighten($color-rotate-bkgd, 30%);
+			@include bp(md) {
+				border-top: 0;
+			}
+		}	
+	}
+
+	.nav-item-link {
+		border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
+			
+		@include bp(md) {
+			border-bottom: 0;
+		}
+	}
 }
 
 #navOpenLink {
@@ -76,14 +93,6 @@
 	@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	font-family: $font-nav;
 	padding: $size-xsml;
-}
-
-.nav-item-link {
-	border-bottom: 1px solid lighten($color-rotate-bkgd, 30%);
-	
-	@include bp(md) {
-		border-bottom: 0;
-	}
 }
 
 .nav-item-link,
