@@ -1,4 +1,5 @@
 .home-section {
+	text-align: center;
 
 	&.-about {
 		max-width: $screen-xl;
@@ -15,11 +16,8 @@
 	&.-collections {
 		position: relative;
 		color: $color-rotate-text;
-		text-align: center;
-		// background-image: url(../img/util/trees-sml.png);
 
 		@include bp(md) {
-			// background-image: url(../img/util/trees-med.png);
 
 			&:before {
 				content: "";
@@ -31,10 +29,6 @@
 				top: 0;
 				bottom: 0;
 			}
-		}
-
-		@include bp(lg) {
-			background-image: url(../img/util/trees-large.png);
 		}
 	}
 }
@@ -51,18 +45,18 @@
 	}
 }
 
-// .home-section-text {
-// 	padding: 0 $size-h3 $size-h3 $size-h3;
-// 	position: relative;
+.home-section-text {
+	padding: 0 $size-h3 $size-h3 $size-h3;
+	position: relative;
 
-// 	&.-collections {
-// 		background: $color-rotate-bkgd;
-// 	}
+	&.-collections {
+		background: $color-rotate-bkgd;
+	}
 
-// 	@include bp(sm) {
-// 		padding: $size-h1;
-// 	}
-// }
+	@include bp(sm) {
+		padding: $size-h1;
+	}
+}
 
 .home-section-text,
 .home-section-img {
@@ -102,7 +96,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	
+	z-index: $z-top;
 	padding: 0 $size-h3 $size-h3 $size-h3;
 
 	@include bp(sm) {
