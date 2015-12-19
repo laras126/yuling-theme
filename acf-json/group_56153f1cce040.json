@@ -85,6 +85,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_567581e9af975",
+            "label": "Spotlight Image",
+            "name": "spotlight_image",
+            "type": "image",
+            "instructions": "This image will display if the Collection is included in the spotlight. It should be 1200px x 800px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5615443f14ffb",
             "label": "Featured Image",
             "name": "featured_image",
@@ -218,5 +242,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1450451051
+    "modified": 1450541669
 }
