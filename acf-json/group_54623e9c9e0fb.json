@@ -487,7 +487,8 @@
                                     "toolbar": "text_based",
                                     "media_upload": 0
                                 }
-                            ]
+                            ],
+                            "collapsed": ""
                         },
                         {
                             "key": "field_545fae2b2e782",
@@ -982,9 +983,19 @@
                 "value": "page-long_form.php"
             },
             {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-collections.php"
+            },
+            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "217"
             }
         ],
         [
@@ -998,21 +1009,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "piece"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "project"
-            }
-        ],
-        [
-            {
-                "param": "taxonomy",
-                "operator": "==",
-                "value": "collection"
             }
         ]
     ],
@@ -1034,5 +1031,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1444940405
+    "modified": 1450539384
 }
