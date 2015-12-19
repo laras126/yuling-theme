@@ -2756,7 +2756,20 @@ img {
 
 .page-template-page-collections .main,
 .home .main {
-  padding-top: 0; }
+  padding-top: 0;
+  background-image: url(../img/util/trees-light-sml.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover; }
+  @media (min-width: 768px) {
+    .page-template-page-collections .main,
+    .home .main {
+      background-image: url(../img/util/trees-light-med.png); } }
+  @media (min-width: 960px) {
+    .page-template-page-collections .main,
+    .home .main {
+      background-image: url(../img/util/trees-light-large.png); } }
 
 .page-template-page-collections .footer,
 .home .footer {

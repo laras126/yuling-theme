@@ -9,6 +9,18 @@
 .home {
 	.main {
 		padding-top: 0;
+	    background-image: url(../img/util/trees-light-sml.png);
+	    background-attachment: fixed;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+
+		@include bp(md) {
+			background-image: url(../img/util/trees-light-med.png);
+		}
+
+		@include bp(lg) {
+			background-image: url(../img/util/trees-light-large.png);
+		}
 	}
 
 	.footer {
