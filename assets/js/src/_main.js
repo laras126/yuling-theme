@@ -439,7 +439,7 @@ function switchSpotlightContent($target) {
 	var $target_content = $(href);
 
 	// May want to integrate this with lazyload instead
-	$('.spotlight-main').html('<img src="' + src + '">');
+	$('.spotlight-tab-content').html('<img src="' + src + '">');
 }
 
 
