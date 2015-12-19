@@ -34,7 +34,7 @@
 // Related pieces slider thumb cells. Loaded with Lazysizes.
 
 .thumb {
-	padding-top: $size-h3;
+	padding: $size-h3 $size-h4 0;
 	width: 100%;
 	
 	@include bp(sm) {

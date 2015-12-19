@@ -1555,7 +1555,7 @@ img {
   opacity: 1; }
 
 .thumb {
-  padding-top: 2.1rem;
+  padding: 2.1rem 1.47rem 0;
   width: 100%; }
   @media (min-width: 560px) {
     .thumb {
