@@ -17,7 +17,7 @@
 
 	{% if post.header_display == 'image' %}
 
-		<div class="{% if post.post_type == 'post' %}contain--md{% else %}contain--lg{% endif %}">
+		<div class="{% if post.post_type == 'post' %}contain--lg{% else %}contain--lg{% endif %}">
 			{% set desktop = TimberImage(post.header_image_desktop).src %}
 			{% set tablet = TimberImage(post.header_image_tablet).src %}
 			{% set mobile = TimberImage(post.header_image_mobile).src %}
