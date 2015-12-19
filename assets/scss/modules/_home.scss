@@ -30,13 +30,6 @@
 	}
 }
 
-.home-section-text {
-	padding: 0 $size-h3 $size-h3 $size-h3;
-
-	@include bp(sm) {
-		padding: $size-h1;
-	}
-}
 .home-section-text,
 .home-section-img {
 	@include bp(md) {
@@ -80,6 +73,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	
+	padding: 0 $size-h3 $size-h3 $size-h3;
+
+	@include bp(sm) {
+		padding: $size-h1;
+	}
 
 	&.-about {
 		padding: $size-h1;
