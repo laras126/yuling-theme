@@ -17,18 +17,27 @@
 
 	{% if post.header_display == 'image' %}
 
-		<div class="{% if post.post_type == 'post' %}contain--md{% else %}contain--lg{% endif %}">
-			{% set desktop = TimberImage(post.header_image_desktop).src %}
-			{% set tablet = TimberImage(post.header_image_tablet).src %}
-			{% set mobile = TimberImage(post.header_image_mobile).src %}
+		<div class="teaser lazyload {% if post.post_type == 'post' %}contain--md{% else %}contain--lg{% endif %}">
+			{% set image = TimberImage(post.header_image_desktop).src %}
+			{# {% set tablet = TimberImage(post.header_image_tablet).src %} #}
+			{# {% set mobile = TimberImage(post.header_image_mobile).src %} #}
 
 			{# TODO: Adjust dimensions once we decide on them #}
-			<picture class="header-picture">
-				<source srcset="{{desktop|resize(960)}}" media="(min-width: 1100px)">
-				<source srcset="{{tablet ? tablet|resize(900) : desktop|resize(900)}}" media="(min-width: 736px)">
+			{# <picture class="header-picture lazyload">
+				<source data-srcset="{{desktop|resize(960)}}" media="(min-width: 1100px)">
+				<source data-srcset="{{tablet ? tablet|resize(900) : desktop|resize(900)}}" media="(min-width: 736px)"> #}
 				{# TODO: Better placeholder #}
-				<img srcset="{{mobile ? mobile|resize(600) : desktop|resize(600)}}" src="{{placeholder}}" alt="{{post.post_title}}">
-			</picture>
+				{# <img data-srcset="{{mobile ? mobile|resize(600) : desktop|resize(600)}}" src="{{placeholder}}" alt="{{post.post_title}}">
+			</picture> #}
+
+			<img 
+				data-sizes="auto"
+				class="lazyload header-picture"
+				data-srcset="{{image|resize(500)}} 500w,
+					{{image|resize(800)}} 640w,
+					{{image|resize(1200)}} 1024w"
+					class="lazyload" 
+					src="{{image|resize(300)}}" alt="Header Image">
 		</div>
 	{% elseif post.header_display == 'text'%}
 		{# TODO: there will probably be some unique stuff here, maybe a different display of the header info #}
