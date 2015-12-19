@@ -145,7 +145,7 @@
                                         {
                                             "key": "field_5675af5966325",
                                             "label": "Single Image",
-                                            "name": "image",
+                                            "name": "single_image",
                                             "type": "image",
                                             "instructions": "This image will take up the full width of the page.",
                                             "required": 0,
@@ -155,16 +155,16 @@
                                                 "class": "",
                                                 "id": ""
                                             },
+                                            "return_format": "array",
                                             "preview_size": "thumbnail",
+                                            "library": "all",
                                             "min_width": "",
                                             "min_height": "",
                                             "min_size": "",
                                             "max_width": "",
                                             "max_height": "",
                                             "max_size": "",
-                                            "mime_types": "",
-                                            "return_format": "array",
-                                            "library": "all"
+                                            "mime_types": ""
                                         }
                                     ],
                                     "min": "",
@@ -839,5 +839,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450553445
+    "modified": 1450557172
 }
