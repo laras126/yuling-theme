@@ -115,16 +115,16 @@
                 },
                 {
                     "key": "545a739c3eed9",
-                    "name": "block_textimage",
-                    "label": "Text and Image",
+                    "name": "block_image_rows",
+                    "label": "Image Rows",
                     "display": "row",
                     "sub_fields": [
                         {
                             "key": "field_545a74693eedc",
-                            "label": "Text Format",
-                            "name": "textimage_format",
-                            "type": "radio",
-                            "instructions": "What format should the text be?",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "flexible_content",
+                            "instructions": "How many images will be in this row?",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -132,138 +132,80 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "caption": "Caption",
-                                "paragraph": "Paragraph"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "",
-                            "layout": "vertical"
-                        },
-                        {
-                            "key": "field_545a73ad3eeda",
-                            "label": "Text",
-                            "name": "textimage_paragraph",
-                            "type": "wysiwyg",
-                            "instructions": "The text will display in a paragraph format next to the image. The paragraph text should be related to any text above and below.",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_545a74693eedc",
-                                        "operator": "==",
-                                        "value": "paragraph"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "text_based",
-                            "media_upload": 0
-                        },
-                        {
-                            "key": "field_5485990b20199",
-                            "label": "Caption",
-                            "name": "textimage_caption",
-                            "type": "textarea",
-                            "instructions": "The caption to be displayed next to the image.",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_545a74693eedc",
-                                        "operator": "==",
-                                        "value": "caption"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "new_lines": "br",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_545a74233eedb",
-                            "label": "Image",
-                            "name": "textimage_image",
-                            "type": "image",
-                            "instructions": "Upload an image. If a caption format, it's dimensions should be approximately 800x600. If paragraph, it is best to be the height of the text, likely taller than wide.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_561540cb0ee92",
-                            "label": "Container",
-                            "name": "container",
-                            "type": "radio",
-                            "instructions": "Select a size for this block. Medium is recommended for text.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 66,
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "sm": "Small",
-                                "md": "Medium",
-                                "lg": "Large",
-                                "full": "Full"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "md",
-                            "layout": "horizontal"
-                        },
-                        {
-                            "key": "field_561540d10ee93",
-                            "label": "Class",
-                            "name": "class",
-                            "type": "text",
-                            "instructions": "Add any extra classes here.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 33,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "button_label": "Add Row",
+                            "min": "",
+                            "max": "",
+                            "layouts": [
+                                {
+                                    "key": "5675af4cbdff9",
+                                    "name": "single_image",
+                                    "label": "Single Image",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5675af5966325",
+                                            "label": "Single Image",
+                                            "name": "image",
+                                            "type": "image",
+                                            "instructions": "This image will take up the full width of the page.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "preview_size": "thumbnail",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "return_format": "array",
+                                            "library": "all"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                {
+                                    "key": "5675affa2c9e9",
+                                    "name": "two_images",
+                                    "label": "Two Images",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5675affa2c9eb",
+                                            "label": "Two Images",
+                                            "name": "two_images",
+                                            "type": "gallery",
+                                            "instructions": "Select two images for this row.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "min": 2,
+                                            "max": 2,
+                                            "preview_size": "thumbnail",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -837,140 +779,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                {
-                    "key": "548af71041913",
-                    "name": "block_cta",
-                    "label": "Call to Action",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_55935077ac513",
-                            "label": "Heading",
-                            "name": "cta_heading",
-                            "type": "text",
-                            "instructions": "A heading for the call to action.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_548af71041917",
-                            "label": "Text",
-                            "name": "cta_text",
-                            "type": "textarea",
-                            "instructions": "Something like \"Get in touch to request a quote or just to say hi.\" Tweet length.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "wysiwg-short",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 5,
-                            "new_lines": "wpautop",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_558ae470bcbc6",
-                            "label": "Button Text",
-                            "name": "cta_btn_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        },
-                        {
-                            "key": "field_558ae495bcbc7",
-                            "label": "Button URL",
-                            "name": "cta_btn_url",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 50,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5615416f0ee9a",
-                            "label": "Container",
-                            "name": "container",
-                            "type": "radio",
-                            "instructions": "Select a size for this block. Medium is recommended for text.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 66,
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "sm": "Small",
-                                "md": "Medium",
-                                "lg": "Large",
-                                "full": "Full"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "md",
-                            "layout": "horizontal"
-                        },
-                        {
-                            "key": "field_561541720ee9b",
-                            "label": "Class",
-                            "name": "class",
-                            "type": "text",
-                            "instructions": "Add any extra classes here.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 33,
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             ]
         }
@@ -1031,5 +839,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450539384
+    "modified": 1450553445
 }
