@@ -2618,6 +2618,34 @@ img {
   .thumb-caption.-collection {
     font-size: 2.2rem; } }
 
+.image-row {
+  margin-bottom: 1.1rem; }
+  .image-row.-double {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    position: relative;
+    margin-left: -0.55rem;
+    margin-right: -0.55rem; }
+
+.image-wrap.-single img {
+  width: 100%; }
+
+@media (min-width: 560px) {
+  .image-wrap.-double {
+    position: relative;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%; } }
+
 .single-title.-piece {
   text-transform: uppercase;
   letter-spacing: 1px;

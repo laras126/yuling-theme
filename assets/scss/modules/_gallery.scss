@@ -84,3 +84,26 @@
 		}
 	}
 }
+
+
+// Text Image block
+
+.image-row {
+	margin-bottom: $gutter;
+	&.-double {
+		@include grid;
+	}
+}
+
+.image-wrap {
+	
+	&.-single img {
+		width: 100%;
+	}
+
+	&.-double {
+		@include bp(sm) {
+			@include cell(half);
+		}
+	}	
+}
