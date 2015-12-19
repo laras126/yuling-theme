@@ -16,13 +16,16 @@
 	&.-collections {
 		position: relative;
 		color: $color-rotate-text;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 
 		@include bp(md) {
 
 			&:before {
 				content: "";
 				display: block;
-				background-color: #000;
+				background-color: $color-rotate-bkgd;
 				position: absolute;
 				left: 50%;
 				right: 0;
