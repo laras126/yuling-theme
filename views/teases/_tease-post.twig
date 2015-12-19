@@ -5,7 +5,13 @@
 		{% if post.thumbnail.src %}
 		<div class="tease-img -post">
 			<a href="{{post.link}}">
-				<img src="{{post.thumbnail.src|resize(400, 400)}}" alt="{{post.title}} Thumbnail">
+				<img 
+				data-srcset="{{post.thumbnail.src|resize(500, 500)}} 500w,
+					{{post.thumbnail.src|resize(700, 700)}} 640w,
+					{{post.thumbnail.src|resize(900, 900)}} 1024w"
+				src="{{placeholder_light}}"
+				class="lazyload tease-img" 
+				alt="{{post.title}} Thumbnail" />
 			</a>
 		</div>
 		{% endif %}

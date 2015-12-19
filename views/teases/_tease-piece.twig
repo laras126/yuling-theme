@@ -3,17 +3,20 @@
 {% block content %}
 	<a href="{{post.link}}">
 		{% if post.thumbnail %}
-			{# TODO: find a different idea for the placeholder sizing #}
-			<img data-src="{{post.thumbnail.src|resize(600, 600)}}" alt="{{post.post_title}} Thumbnail" src="{{post.thumbnail.src|resize(100,100)}}" class="lazyload tease-img -piece">
-		{% else %}
-			{# TODO: replace this with something we serve. #}
-			<img src="http://placehold.it/500x500" alt="Default Thumbnail">
+
+			<img 
+				data-srcset="{{post.thumbnail.src|resize(500, 500)}} 500w,
+					{{post.thumbnail.src|resize(700, 700)}} 640w,
+					{{post.thumbnail.src|resize(900, 900)}} 1024w"
+				src="{{placeholder_light}}"
+				class="lazyload tease-img -piece" 
+				alt="{{post.title}} Thumbnail"/>
+
 		{% endif %}
 		<div class="tease-info -{{post.post_type}}">
 			<h4 class="tease-title -{{post.post_type}}">{{post.post_title}}</h4>
 			{% if post.header_tagline %}<p>{{post.header_tagline}}</p>{% endif %}
 		</div>
-		{# {% include 'utility/svg.twig' with { prefix: 'icon', file: 'arrow-right' } %} #}
 	</a>
 	{% include 'utility/edit-link.twig' %}
 {% endblock %}
