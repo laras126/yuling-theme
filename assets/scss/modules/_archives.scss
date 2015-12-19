@@ -155,7 +155,8 @@
 
 .archive-images {
 	position: relative;
-	z-index: $z-mid;
+	z-index: 5;
+	transform: translateZ(0);
 	pointer-events: none;
 	padding-top: 90vh;
 	
@@ -199,7 +200,6 @@
 
 .archive-images-inspiration.-last {
 	background-color: $color-body-bkgd;
-	margin-bottom: -$size-h3;
 }
 
 // Archive Sidebar
