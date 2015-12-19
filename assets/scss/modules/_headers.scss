@@ -3,7 +3,12 @@
 		background-color: rgba($color-rotate-bkgd, 1);
 		position: relative;
 		width: 100%;
-		z-index: $z-top;
+		// z-index: 101;
+		// transform: translateZ(0);
+	}
+
+	&.-page {
+		padding-top: $size-h4;
 	}
 }
 
@@ -21,6 +26,7 @@
 
 .header-picture {
 	@include center;
+	width: 100%;
 }
 
 .logo-text-logo {
