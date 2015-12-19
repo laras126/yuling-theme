@@ -248,6 +248,121 @@
                     "ui": 1
                 }
             ]
+        },
+        {
+            "key": "field_56756d349bc2f",
+            "label": "Links",
+            "name": "links",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56756d469bc30",
+            "label": "Collections Link Text (left)",
+            "name": "collections_link_text_left",
+            "type": "text",
+            "instructions": "The text overlaying the logo on the right of the home page Collections Section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56756da49bc33",
+            "label": "Collections Link Text (right)",
+            "name": "collections_link_text_right",
+            "type": "text",
+            "instructions": "Text link appearing below the Collections description quote.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Signature Collections",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56756db09bc34",
+            "label": "Collections Link",
+            "name": "collections_link",
+            "type": "page_link",
+            "instructions": "Select where to connect the links on the right and left in the Collections block on the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_56756d529bc31",
+            "label": "Explore Work Text",
+            "name": "explore_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Explore Our Work",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56756d789bc32",
+            "label": "Explore Work Link",
+            "name": "explore_work_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
         }
     ],
     "location": [
@@ -282,5 +397,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450536162
+    "modified": 1450536799
 }
