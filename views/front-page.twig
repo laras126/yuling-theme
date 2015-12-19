@@ -32,7 +32,7 @@
 									{{image|resize(800)}} 640w,
 									{{image|resize(1200,800)}} 1024w"
 									class="lazyload" 
-									src="{{placeholder|resize(800,444)}}" alt="Spotlight Image">
+									src="{{placeholder}}" alt="Spotlight Image">
 						{% endfor %}
 					</div>
 					<div class="spotlight-holder">
@@ -56,7 +56,7 @@
 							{% if row.connected_content_type == 'collection' %}
 
 								{% set c = TimberTerm(row.connected_collection) %}
-								<a href="{{c.link}}" data-target="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.spotlight_image).src|resize(800,530)}}">
+								<a href="{{c.link}}" data-target="#{{c.title|sanitize}}" class="spotlight-tab-link" data-src="{{TimberImage(c.spotlight_image).src|resize(1200,800)}}">
 									<p class="spotlight-sidebar-compliment">Collection</p>
 									<h5 class="spotlight-sidebar-title">{{c.title}}</h5>
 								</a>
