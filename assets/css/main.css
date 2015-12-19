@@ -2294,7 +2294,13 @@ img {
       padding: 3.08rem; } }
 
 .home-section-img.-about {
-  padding: 4% 8%; }
+  padding-bottom: 0;
+  padding-top: 4%;
+  padding-right: 8%;
+  padding-left: 8%; }
+  @media (min-width: 768px) {
+    .home-section-img.-about {
+      padding-bottom: 4%; } }
 
 @media (min-width: 768px) {
   .home-section-text,
