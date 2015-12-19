@@ -6,16 +6,18 @@
 .spotlight-title {
 	color: $color-rotate-text;
 	margin-top: 0;
-	font-size: $size-h3;
 	padding-top: $size-h4;
+	padding-bottom: $size-h4;
+	line-height: 1;
 }
 
 .spotlight-title-compliment {
-	@include detail-compliment($size: $size-h4);
+	@include detail-compliment($size: $size-base);
 	display: block;
 }
 
 .spotlight-title-main {
+	font-size: $size-h4;
 	@include upperspace;
 }
 
@@ -24,17 +26,31 @@
 }
 
 .spotlight-tab {
+	// opacity: 0;
+	// width: 0;
+	// height: 0;
 	padding-bottom: $size-sml;
 	border-bottom: 1px solid $color-accent-light;
 
 	& > a {
 		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	}
+
+	&.active {
+		// opacity: 1;
+		// width: auto;
+		// height: auto;
+		color: $color-accent-light;
+	}
+}
+
+.spotlight-nav {
+	position: relative;
 }
 
 .spotlight-main {
 	position: relative;
-	height: 60vh;
+	// height: 60vh;
 
 	// position: absolute;
 	width: 100%;
@@ -46,25 +62,23 @@
 	img {
 		display: block;
 		margin: 0 auto;
-		max-width: none;
-		height: 100%;
+		// max-width: none;
+		width: 100%;
+		// height: 100%;
 	}
 
 }
 .spotlight-tab-content {
-	opacity: 0;
 	height: 100%;
-
-	&.active {
-		opacity: 1;
-	}
 }
 
 .spotlight-sidebar-compliment {
-	@include detail-text;
+	font-size: $size-xsml;
 	@include upperspace;
+	margin-bottom: $size-xsml/2;
 }
 
 .spotlight-sidebar-title {
 	@include detail-title($border-pos: false, $size: $size-sml);
+	margin-top: 0;
 }
