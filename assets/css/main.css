@@ -1556,10 +1556,10 @@ img {
 
 .thumb {
   padding-top: 2.1rem;
-  width: 75%; }
+  width: 100%; }
   @media (min-width: 560px) {
     .thumb {
-      width: 40%; } }
+      width: 50%; } }
   @media (min-width: 960px) {
     .thumb {
       width: 25%; } }

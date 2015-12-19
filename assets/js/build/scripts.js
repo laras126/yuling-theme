@@ -485,6 +485,7 @@ $(document).ready(function() {
 	$('.main').fitVids();
 
 	$('.thumb-slider').flickity({
+		cellAlign: "left",
 		contain: true,
 		wrapAround: true,
 		imagesLoaded: true,

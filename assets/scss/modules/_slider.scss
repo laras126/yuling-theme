@@ -35,10 +35,10 @@
 
 .thumb {
 	padding-top: $size-h3;
-	width: 75%;
+	width: 100%;
 	
 	@include bp(sm) {
-		width: 40%;
+		width: 50%;
 	}
 
 	@include bp(lg) {
