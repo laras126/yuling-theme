@@ -2413,7 +2413,8 @@ img {
 .spotlight {
   background-color: #000000;
   text-align: center;
-  padding-bottom: 1.54rem; }
+  padding-bottom: 1.54rem;
+  padding-top: 1.54rem; }
 
 .spotlight-title {
   color: #FFFFFF;
@@ -2464,6 +2465,8 @@ img {
     width: auto;
     height: auto;
     color: #999999; }
+  .spotlight-tab:last-child {
+    border-bottom: none; }
 
 .spotlight-wrap {
   min-height: 320px; }
@@ -2512,6 +2515,7 @@ img {
       display: none; } }
 
 .spotlight-main {
+  position: relative;
   width: 100%;
   -webkit-transition: 0.25s all ease;
        -o-transition: 0.25s all ease;
@@ -2529,7 +2533,9 @@ img {
     margin: 0 auto; }
 
 .spotlight-tab-content {
-  height: 100%; }
+  position: absolute;
+  left: 0;
+  width: 100%; }
 
 .spotlight-sidebar-compliment {
   font-size: 0.715rem;
