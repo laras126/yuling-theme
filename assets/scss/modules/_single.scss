@@ -77,6 +77,17 @@
 }
 
 
+// Single Post
+
+.block_list,
+.block_text {
+	p, li {
+		font-size: $size-base;
+	}
+}
+
+
+
 // Single Piece
 
 .magnify {

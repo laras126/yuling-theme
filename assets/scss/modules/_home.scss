@@ -66,6 +66,12 @@
 	}
 }
 
+.home-section-img {
+	&.-about {
+		padding: 4% 8%;
+	}
+}
+
 .home-section-text,
 .home-section-img {
 	@include bp(md) {
@@ -97,6 +103,7 @@
 		width: 50%;
 		fill: #fff;
 	}
+
 }
 
 .home-section-text {
