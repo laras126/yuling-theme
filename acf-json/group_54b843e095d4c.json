@@ -363,6 +363,70 @@
             "taxonomy": [],
             "allow_null": 0,
             "multiple": 0
+        },
+        {
+            "key": "field_567578cc47849",
+            "label": "Pieces Slider",
+            "name": "pieces_slider",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_567578ec4784b",
+            "label": "Connected Pieces Text",
+            "name": "connected_pieces_text",
+            "type": "text",
+            "instructions": "The text to appear above the pieces slider. Something like \"Browse the Invitations\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Browse the Invitations",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_567578db4784a",
+            "label": "Connected Pieces",
+            "name": "connected_pieces",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "piece"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -397,5 +461,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450537891
+    "modified": 1450539555
 }
