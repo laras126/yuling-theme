@@ -251,6 +251,27 @@
             "disabled": 0
         },
         {
+            "key": "field_5675758c1ccc8",
+            "label": "Subscribe to Mailchimp Text",
+            "name": "subscribe_to_mailchimp",
+            "type": "text",
+            "instructions": "The text prompting people to sign up for the mailing list in the footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Subscribe to our mailing list",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_567432df40c92",
             "label": "Projects Sidebar",
             "name": "",
@@ -348,5 +369,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1450456197
+    "modified": 1450538451
 }
