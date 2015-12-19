@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="212 -74 600 400" style="enable-background:new 212 -74 600 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#666666;stroke-width:2;stroke-linecap:round;}
+	.st2{fill:none;stroke:#333333;stroke-width:2;stroke-linecap:round;}
+</style>
+<rect x="480" y="82.6" class="st0" width="74" height="74"/>
+<g>
+	
+		<animate  fill="remove" accumulate="none" additive="replace" restart="always" calcMode="linear" values="1;1;0" attributeName="opacity" repeatCount="indefinite" dur="2s" begin="0s" keyTimes="0;0.33;1">
+		</animate>
+	<circle class="st1" cx="517" cy="119.6" r="29.6">
+	
+		<animate  fill="remove" accumulate="none" additive="replace" restart="always" calcMode="linear" values="0;22;44" attributeName="r" repeatCount="indefinite" dur="2s" begin="0s" keyTimes="0;0.33;1">
+		</animate>
+	</circle>
+</g>
+<g>
+	
+		<animate  fill="remove" accumulate="none" additive="replace" restart="always" calcMode="linear" values="1;1;0" attributeName="opacity" repeatCount="indefinite" dur="2s" begin="1s" keyTimes="0;0.33;1">
+		</animate>
+	<circle class="st2" cx="517" cy="119.6" r="29.6">
+	
+		<animate  fill="remove" accumulate="none" additive="replace" restart="always" calcMode="linear" values="0;22;44" attributeName="r" repeatCount="indefinite" dur="2s" begin="1s" keyTimes="0;0.33;1">
+		</animate>
+	</circle>
+</g>
+</svg>
