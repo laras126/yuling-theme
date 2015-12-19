@@ -56,22 +56,21 @@
 	</section>
 	
 	<section class="home-section -about text-center">
-		{# <div class="contain--lg"> #}
-				{% set about_img = TimberImage(post.about_image) %}
-				<div class="home-section-img -about">
-					<img class="about-image" src="{{about_img.src|resize(500)}}" alt="{{about_img.title}}">
-				</div>
-				<div class="home-section-text -about">
-					<p class="home-quote -about">{{post.about_tagline}}</p>
-					<p>{{post.about_description}}</p>
-					<a href="" class="home-link -about">Explore our work</a>
-					{% include 'partials/_social-list.twig' with { class : '-about' } %}
-				</div>	
+		{% set about_img = TimberImage(post.about_image) %}
 
-		{# </div> #}
+		<div class="home-section-img -about">
+			<img class="about-image" src="{{about_img.src|resize(500)}}" alt="{{about_img.title}}">
+		</div>
+		<div class="home-section-text -about">
+			<p class="home-quote -about">{{post.about_tagline}}</p>
+			<p>{{post.about_description}}</p>
+			<a href="" class="home-link -about">Explore our work</a>
+			{% include 'partials/_social-list.twig' with { class : '-about' } %}
+		</div>
+
 	</section>
 
-	<section class="home-section -collections text-center">
+	<section class="home-section -collections">
 		<div class="home-section-inner">
 
 				<div class="home-section-img -collections">
@@ -94,7 +93,6 @@
 
 {% block after_content %}
 	<footer>
-		{# <div id="instafeed"></div> #}
 		<script src="//instansive.com/widget/js/instansive.js"></script><iframe src="//instansive.com/widgets/f3ee2eb5dded2e2446663f1a34172188d3a56cac.html" id="instansive_f3ee2eb5dd" name="instansive_f3ee2eb5dd"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 	</footer>
 {% endblock %}
