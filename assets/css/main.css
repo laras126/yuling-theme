@@ -2247,29 +2247,7 @@ img {
     .home-section-text {
       padding: 2.94rem; } }
   .home-section-text.-about {
-    padding: 2.94rem;
-    -webkit-box-ordinal-group: 1;
-    -webkit-order: 0;
-        -ms-flex-order: 0;
-            order: 0; }
-    @media (min-width: 768px) {
-      .home-section-text.-about {
-        -webkit-box-ordinal-group: 2;
-        -webkit-order: 1;
-            -ms-flex-order: 1;
-                order: 1; } }
-
-.home-section-img.-about {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-      -ms-flex-order: 1;
-          order: 1; }
-  @media (min-width: 768px) {
-    .home-section-img.-about {
-      -webkit-box-ordinal-group: 1;
-      -webkit-order: 0;
-          -ms-flex-order: 0;
-              order: 0; } }
+    padding: 2.94rem; }
 
 .home-link {
   text-transform: uppercase;
