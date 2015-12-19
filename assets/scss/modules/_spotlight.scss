@@ -2,6 +2,7 @@
 	background-color: $color-rotate-bkgd;
 	text-align: center;
 	padding-bottom: $size-h4;
+	padding-top: $size-h4;
 }
 
 .spotlight-title {
@@ -33,6 +34,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	padding-bottom: $size-sml;
+	border-bottom: 1px solid $color-accent-light;
 	
 	@include bp(lg) {
 		position: relative;
@@ -40,9 +43,6 @@
 		width: auto;
 		height: auto;
 	}
-
-	padding-bottom: $size-sml;
-	border-bottom: 1px solid $color-accent-light;
 
 	& > a {
 		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
@@ -62,6 +62,7 @@
 }
 
 .spotlight-wrap {
+
 	// All kinds of shameful min-height values... **shudder**
 
 	min-height: 320px;
@@ -127,14 +128,13 @@
 }
 
 .spotlight-main {
-	
+	position: relative;
 	@include bp(lg) {	
 		order: 0;
 	}
 	
 	width: 100%;
 	transition: 0.25s all ease;
-	// max-height: 75%;
 
 	overflow: hidden;
 
@@ -142,13 +142,14 @@
 		display: block;
 		width: 90%;
 		margin: 0 auto;
-		// width: auto;
 	}
 
 }
 
 .spotlight-tab-content {
-	height: 100%;
+	position: absolute;
+	left: 0;
+	width: 100%;
 }
 
 .spotlight-sidebar-compliment {
