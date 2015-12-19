@@ -157,7 +157,7 @@
 
 .subnav-list {
 	@include unstyle-list;
-	order: 1;
+	// order: 1;
 
 	@include bp(sm) {
 		display: flex;
@@ -169,7 +169,7 @@
 	}
 
 	@include bp(md) {
-		order: 0;
+		// order: 0;
 	}
 
 	@include bp(lg) {
