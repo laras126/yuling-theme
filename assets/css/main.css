@@ -1041,6 +1041,10 @@ fieldset {
 .frm_ajax_loading {
   display: none; }
 
+.frm_checkbox {
+  margin-top: 0.88rem;
+  margin-bottom: 0.88rem; }
+
 .form-status.-wishlist {
   font-family: "ltc-bodoni-175", "Georgia", serif;
   font-style: italic;
