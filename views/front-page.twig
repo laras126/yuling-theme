@@ -90,6 +90,28 @@
 		</div>
 	</section>
 
+	<seciton class="home-section -slider">
+		<div class="contain--lg">
+
+			<h4 class="single-footer-title">{{post.connected_pieces_text}}</h4>
+			<div class="thumb-slider teaser lazyload" data-expand="-20">
+				{% for piece in post.connected_pieces %}
+					{% set piece = TimberPost(piece) %}
+					<div class="thumb">
+						<a href="{{piece.link}}">
+						{% if piece.thumbnail %}
+							<img data-src="{{piece.thumbnail.src|resize(500, 500)}}" alt="{{piece.post_title}} Thumbnail" src="{{piece.thumbnail.src|resize(100,100)}}" class="lazyload">
+						{% else %}
+							<img src="{{placeholder}}" alt="Thumbnail">
+						{% endif %}
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		
+		</div>
+	</seciton>
+
 {% endblock %}
 
 {% block after_content %}
