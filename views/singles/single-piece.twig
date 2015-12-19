@@ -9,7 +9,7 @@
 		<div class="grid">
 
 			<div class="piece-images">
-				<div class="piece-thumbs">
+				<div class="piece-thumbs lazyload teaser">
 					{% for img in post.gallery %}
 						{% set img = TimberImage(img) %}
 						<div class="piece-thumb-wrap">
@@ -17,13 +17,13 @@
 								src="{{img|resize(300)}}" 
 								data-swap="{{img|resize(500)}}"
 								data-zoom="{{img|resize(1024)}}"
-								class="piece-thumb"
+								class="piece-thumb lazyload"
 								alt="{{post.title}} Thumbnail" />
 						</div>
 					{% endfor %}
 				</div>
 
-				<div class="piece-image">
+				<div class="piece-image teaser lazyload">
 					{% for img in post.gallery|slice(0,1) %}
 						{% set img = TimberImage(img) %}
 						<img 
