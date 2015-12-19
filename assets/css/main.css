@@ -2259,6 +2259,9 @@ img {
             flex: 0 0 50%;
     max-width: 50%; } }
 
+.about-image {
+  padding: 1.05rem; }
+
 .home-img.-collections {
   height: 50vh;
   color: #FFFFFF;
