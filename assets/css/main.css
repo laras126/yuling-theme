@@ -1208,6 +1208,16 @@ img {
       max-height: none; } }
   .nav-list.open {
     max-height: none; }
+  .nav-list .nav-item:first-child .nav-item-link {
+    border-top: 1px solid #4d4d4d; }
+    @media (min-width: 768px) {
+      .nav-list .nav-item:first-child .nav-item-link {
+        border-top: 0; } }
+  .nav-list .nav-item-link {
+    border-bottom: 1px solid #4d4d4d; }
+    @media (min-width: 768px) {
+      .nav-list .nav-item-link {
+        border-bottom: 0; } }
 
 #navOpenLink {
   color: #FFFFFF;
@@ -1248,12 +1258,6 @@ img {
   .subnav-item-link:hover,
   .subnav-item-link:focus {
     color: #999999; }
-
-.nav-item-link {
-  border-bottom: 1px solid #4d4d4d; }
-  @media (min-width: 768px) {
-    .nav-item-link {
-      border-bottom: 0; } }
 
 .nav-item-link,
 .subnav-item-title {
