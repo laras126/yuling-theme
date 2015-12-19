@@ -187,7 +187,7 @@
 		flex-basis: 50%;
 	}
 	
-	@include bp(md) {
+	@include bp(lg) {
 		flex-basis: calc( 100% / 3);
 	}
 }

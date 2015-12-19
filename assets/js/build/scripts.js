@@ -289,16 +289,13 @@ $(document).ready(function() {
 		$target =  $this.next('.accordion-target');
 
 		$this.toggleClass('active');
-		$('.accordion-trigger').not($this).removeClass('active');
 
 		if ($target.hasClass('active')) {
 	    	$target.removeClass('active').animate({
 	    		'max-height' : '0'
 	    	}, 300); 
 	  	} else {
-	    
-	    allTargets.removeClass('active');
-	    
+	    	    
 	    $target.addClass('active').animate({
 	    	'max-height' : '100em'
 	    }, 500); 
@@ -485,6 +482,7 @@ $(document).ready(function() {
 	$('.main').fitVids();
 
 	$('.thumb-slider').flickity({
+		cellAlign: "left",
 		contain: true,
 		wrapAround: true,
 		imagesLoaded: true,

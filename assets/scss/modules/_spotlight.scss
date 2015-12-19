@@ -1,6 +1,7 @@
 .spotlight {
 	background-color: $color-rotate-bkgd;
 	text-align: center;
+	padding-bottom: $size-h4;
 }
 
 .spotlight-title {
@@ -57,11 +58,26 @@
 }
 
 .spotlight-wrap {
+	// All kinds of shameful min-height values... **shudder**
+
+	min-height: 320px;
+
+	@include bp(sm) {
+		min-height: 420px;
+	}
+
+	@include bp(md) {
+		min-height: 530px;
+	}
 
 	@include bp(lg) {
+		min-height: 480px;
 		display: flex;
 	}
 
+	@include bp(xl) {
+		min-height: 600px;
+	}
 }
 
 .spotlight-header {
