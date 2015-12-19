@@ -48,7 +48,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -72,7 +72,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -85,6 +85,30 @@
             "disabled": 0
         },
         {
+            "key": "field_56756bd374039",
+            "label": "Collections Background Image",
+            "name": "home_bkgd_image",
+            "type": "image",
+            "instructions": "The background image under the logo in the Collections section on the home page (formerly dark trees). Should be 800 x 444.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5670cb89280aa",
             "label": "Collections Description",
             "name": "collections_description",
@@ -93,7 +117,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -258,5 +282,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450473945
+    "modified": 1450536162
 }
