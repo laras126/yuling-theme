@@ -2756,6 +2756,13 @@ img {
 
 .page-template-page-collections .main,
 .home .main {
+  padding-top: 0; }
+
+.page-template-page-collections .footer,
+.home .footer {
+  margin-top: 0; }
+
+.page-template-page-collections .main {
   padding-top: 0;
   background-image: url(../img/util/trees-light-sml.png);
   background-attachment: fixed;
@@ -2763,17 +2770,11 @@ img {
   -webkit-background-size: cover;
           background-size: cover; }
   @media (min-width: 768px) {
-    .page-template-page-collections .main,
-    .home .main {
+    .page-template-page-collections .main {
       background-image: url(../img/util/trees-light-med.png); } }
   @media (min-width: 960px) {
-    .page-template-page-collections .main,
-    .home .main {
+    .page-template-page-collections .main {
       background-image: url(../img/util/trees-light-large.png); } }
-
-.page-template-page-collections .footer,
-.home .footer {
-  margin-top: 0; }
 
 @media (max-width: 768px) {
   .has-subnav > a:after {
