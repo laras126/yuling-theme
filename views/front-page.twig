@@ -64,26 +64,27 @@
 		<div class="home-section-text -about">
 			<p class="home-quote -about">{{post.about_tagline}}</p>
 			<p>{{post.about_description}}</p>
-			<a href="" class="home-link -about">Explore our work</a>
+			<a href="{{post.explore_work_link}}" class="home-link -about">{{post.explore_link_text}}</a>
 			{% include 'partials/_social-list.twig' with { class : '-about' } %}
 		</div>
 
 	</section>
 
-	<section class="home-section -collections" style="background-image: {{site.theme.link}}/assets/img/util/trees-med.png">
+	<section class="home-section -collections" style="background-image: url({{TimberImage(post.home_bkgd_image).src|resize(600)}})">
 		<div class="home-section-inner">
 
 				<div class="home-section-img -collections">
+					<a href="{{TimberPost(post.collections_link).link}}">
 					<div class="home-img -collections">
 						{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
 			            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
-						<p class="home-title home-link -collections">Signature Collections</p>
+						<p class="home-title home-link -collections">{{post.collections_link_text_left}}</p>
 			        </div>
+			    </a>	
 				</div>
-				{# <h3>Signature Collections</h3> #}
 				<div class="home-section-text -collections">
 					<p class="home-quote -collections">{{post.collections_description}}</p>
-					<a href="" class="home-link -collections">Experience the collections</a>
+					<a href="{{TimberPost(post.collections_link).link}}" class="home-link -collections">{{post.collections_link_text_right}}</a>
 				</div>
 
 		</div>
