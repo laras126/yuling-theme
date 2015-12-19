@@ -31,11 +31,7 @@
             {% if item.get_children %}
                 <div class="subnav-main">
                     <div class="subnav-wrapper -site">
-                        <ul class="subnav-list -site {{'-special' in item.classes ? '-special'}}">
-                            {% for child in item.get_children %}
-                               {% include 'partials/subnav-item.twig' %}
-                            {% endfor %}
-                        </ul>
+                        
                         {# TODO: Remove this hardcoded-ness #}
                         {% if item.title == "Collections" %}
                             <div class="subnav-highlight">
@@ -59,6 +55,12 @@
                                 </a>
                             </div>
                         {% endif %}
+
+                        <ul class="subnav-list -site {{'-special' in item.classes ? '-special'}}">
+                            {% for child in item.get_children %}
+                               {% include 'partials/subnav-item.twig' %}
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             {% endif %}
