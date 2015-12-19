@@ -8,7 +8,8 @@
 }
 
 .title {
-	&.-page {
+	&.-page,
+	&.-post {
 		text-align: center;
 		font-size: $size-h2;
 

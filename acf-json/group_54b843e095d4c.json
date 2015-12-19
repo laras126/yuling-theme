@@ -3,6 +3,22 @@
     "title": "Homepage Content",
     "fields": [
         {
+            "key": "field_567471cfab5eb",
+            "label": "Text Content",
+            "name": "_copy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_5670c7de37892",
             "label": "About Tagline",
             "name": "about_tagline",
@@ -90,55 +106,124 @@
             "disabled": 0
         },
         {
-            "key": "field_56731b2530e52",
-            "label": "Spotlight Posts",
-            "name": "spotlight_posts",
-            "type": "relationship",
-            "instructions": "Select posts to be linked to in the Spotlight section. Each will have the same formatting, and use the featured image set on that post or collection.",
+            "key": "field_567471baab5ea",
+            "label": "Spotlight",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post",
-                "piece",
-                "project"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "id"
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_567324d230e53",
-            "label": "Spotlight Collection",
-            "name": "spotlight_collection",
-            "type": "taxonomy",
-            "instructions": "Select the Collection to be displayed in the Spotlight area. ",
+            "key": "field_567470b130096",
+            "label": "Connected Content",
+            "name": "connected_content",
+            "type": "repeater",
+            "instructions": "Click \"Add Row\" to add a post, project, or collection to the Spotlight area. You can reorder them by hovering over the left side of row and dragging it up or down.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "collection",
-            "field_type": "select",
-            "allow_null": 0,
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "multiple": 0
+            "collapsed": "",
+            "min": "",
+            "max": 5,
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_567472c144a7b",
+                    "label": "Connected Content Type",
+                    "name": "connected_content_type",
+                    "type": "radio",
+                    "instructions": "Select the type of content to add to the Spotlight.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "collection": "Collection",
+                        "post_project": "Post or Project"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_5674715e30098",
+                    "label": "Connected Collection",
+                    "name": "connected_collection",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_567472c144a7b",
+                                "operator": "==",
+                                "value": "collection"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "collection",
+                    "field_type": "radio",
+                    "allow_null": 0,
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5674717c30099",
+                    "label": "Connected Post\/Project",
+                    "name": "connected_post",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_567472c144a7b",
+                                "operator": "==",
+                                "value": "post_project"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "project",
+                        "post"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -173,5 +258,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450386819
+    "modified": 1450473945
 }

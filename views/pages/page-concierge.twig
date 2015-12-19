@@ -12,9 +12,8 @@
 
 	<section class="contain--md">
 		<header id="wishListHeader">
-			<h3 id="wishListTitle">There are no items in your Wish List.</h3>
-			{# TODO: do not hard code link #}
-			<p id="wishListPrompt">Browse our <a href="/collections/">Signature Collections</a> to add some, or feel free to inquire using the form below.</p>
+			<h3 id="wishListTitle" data-has-items="{{post.has_items_title}}">{{post.no_items_title}}</h3>
+			<p id="wishListPrompt" data-has-items="{{post.has_items_prompt}}">{{post.no_items_prompt}}</p>
 		</header>
 		<table id="wishListItems">
 		  <tr>

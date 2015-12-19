@@ -41,17 +41,31 @@
 			<div class="archive-images-inner">
 
 				<div class="archive-images-featured">
-					{% include 'partials/_large-feat-img.twig' with { img : feat } %}
+
+						<figure class="gallery-thumb">
+							{% include 'partials/_large-feat-img.twig' with { img : feat } %}
+							<figcaption class="thumb-caption -hoverable -collection">
+								<a href="{{c.link}}">
+								See the entire {{c.title}} Collection	
+								</a>
+							</figcaption>
+						</figure>
+
 				</div>
 				
 				<div class="archive-images-inspiration -first">
 					
-					<div class="gallery -inspiration teaser">
+					<div class="gallery -inspiration">
 						{% set gallery = c.inspiration_gallery %}
 						{% for image in gallery|slice(0,2) %}
-							<div class="gallery-thumb -inspiration">
-								<img data-src="{{image.url|resize(1000)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
-							</div>
+							<figure class="gallery-thumb -inspiration">
+								<img data-src="{{image.url|resize(600)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
+								<figcaption class="thumb-caption -hoverable">
+									<a href="{{c.link_to_pinterest_board}}" target="blank">
+										See the Pinterest Board that Inspired the Collection
+									</a>
+								</figcaption>
+							</figure>
 						{% endfor %}
 					</div>
 				</div>
@@ -59,11 +73,15 @@
 				<div class="archive-images-inspiration -second{{ loop.last ? ' -last' }}">
 					{# <h4 class="detail-title">Inspiration on Pinterest</h4> #}
 					
-					<div class="gallery -inspiration teaser">
+					<div class="gallery -inspiration">
 						{% for image in gallery|slice(2,4) %}
-							<div class="gallery-thumb -inspiration">
-								<img data-src="{{image.url|resize(1000)}}" src="{{image.url|resize(100, 100)}}" class="lazyload" alt="{{image.title}}">
-							</div>
+							<figure class="gallery-thumb -inspiration">
+								<img data-src="{{image.url|resize(600)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
+								<figcaption class="thumb-caption -hoverable">
+									<a href="{{c.link_to_pinterest_board}}" target="blank">See the Pinterest Board the inspired the Collection
+									</a>
+								</figcaption>
+							</figure>
 						{% endfor %}
 					</div>
 

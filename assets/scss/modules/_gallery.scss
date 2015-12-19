@@ -16,10 +16,9 @@
 
 .gallery-thumb {	
 
-
 	&.-block {
 		padding: $size-xsml;
-		@include center;
+		// @include center;
 
 		img {
 			// Boo.
@@ -44,4 +43,44 @@
 		}
 	}
 	
+}
+
+
+// Hover effect on Inspiration gallery and Collection image in Collections Archive
+
+.archive-images .gallery-thumb {
+	pointer-events: auto;
+	position: relative;
+	margin: 0;
+}
+
+.thumb-caption {
+
+	&.-hoverable {
+		opacity: 0;
+		position: absolute;
+		background-color: rgba($color-rotate-bkgd, 0.8);
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;	
+		padding: $size-h3;
+		@include upperspace;
+		font-weight: $font-weight-strong;
+		line-height: 1.2;
+		text-align: center;	
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		a {
+			color: $color-rotate-text;
+		}
+	}
+
+	&.-collection {
+		@include bp(lg) {
+			font-size: $size-h3;
+		}
+	}
 }

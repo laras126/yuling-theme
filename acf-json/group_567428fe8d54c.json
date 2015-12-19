@@ -1,0 +1,114 @@
+{
+    "key": "group_567428fe8d54c",
+    "title": "Wish List Form Text",
+    "fields": [
+        {
+            "key": "field_567429013f6ea",
+            "label": "No Items Title",
+            "name": "no_items_title",
+            "type": "text",
+            "instructions": "The title above the Wish List when there are <strong>no<\/strong> items. Something like \"There are no items in your Wish List.\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56742be7c03d7",
+            "label": "Has Items Title",
+            "name": "has_items_title",
+            "type": "text",
+            "instructions": "The title above the Wish List when <strong>are<\/strong> items. Something like \"In your Wish List\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_567429253f6eb",
+            "label": "No Items Prompt",
+            "name": "no_items_prompt",
+            "type": "wysiwyg",
+            "instructions": "If there are <strong>no<\/strong> items in the Wish List, a prompt to either leave a message or add items to the Wish List. Something like, \"Leave a message or browse our Signature Collections.\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "wysiwyg-short",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "links_only",
+            "media_upload": 1
+        },
+        {
+            "key": "field_56742c00c03d8",
+            "label": "Has Items Prompt",
+            "name": "has_items_prompt",
+            "type": "wysiwyg",
+            "instructions": "If there are <strong>are<\/strong> items in the Wish List, a prompt to complete the form below. Something like \"Complete the form below to receive a quote for your order\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "wysiwyg-short",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "links_only",
+            "media_upload": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-concierge.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1450454113
+}

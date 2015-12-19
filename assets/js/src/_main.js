@@ -92,6 +92,7 @@ $(document).ready(function() {
 
 
 
+
     // ----
 	// Reveal and Rotate Quotes on Scroll (Collections page)
 	// ----
@@ -126,6 +127,17 @@ $(document).ready(function() {
 		});
 
 	});
+
+   	// ----
+	// Collections archive hover captions
+	// ----
+
+	$('.gallery-thumb').hover( function() {
+		$(this).find('.-hoverable').animate({opacity: 1}, 300);
+	}, function() {
+		$(this).find('.-hoverable').animate({opacity: 0}, 300);
+	});
+
 
 
 
@@ -163,25 +175,63 @@ $(document).ready(function() {
 
 	// Spotlight tabbed thing on the home page
 	// This click stuff if pretty similar to above - maybe consolidate those somehow.
-	$('.spotlight-tab').on('click', function() {
+	$('.spotlight-tab').on('mouseover', function() {
 
 		// Mark it as active
-		$('.spotlight-tab-content').removeClass('active');
+		$('.spotlight-tab').removeClass('active');
 		$(this).addClass('active');
 
-		// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
-		var src = $(this).find('.spotlight-tab-link').attr('data-src');
-		var href = $(this).find('.spotlight-tab-link').attr('href');
-		var $target_content = $(href);
-
-		// May want to integrate this with lazyload instead
-		$('.spotlight-main').html('<img src="' + src + '">');
-
+		
+		switchSpotlightContent($(this));
 		$(this).addClass('active');
 
 		return false;
 
 	});
+
+
+	// Very redundant here: 
+
+	$('.spotlight-prev').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+
+		// Show the nav for next
+		$('.spotlight-next').fadeIn(200);
+		
+		// If there are previous tabs, toggle the class active
+		if($active_tab.prev().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.prev().addClass('active');
+
+			switchSpotlightContent($active_tab.prev());
+		} else {
+			// Fade out if there are no previous posts
+			$(this).fadeOut(200);
+		}
+		
+		return false;
+	});
+
+	$('.spotlight-next').on('click', function() {
+		var $active_tab = $('.spotlight-tab.active');
+
+		// Show the nav for previous
+		$('.spotlight-prev').fadeIn(200);
+
+		// If there are next tabs, toggle the class active
+		if($active_tab.next().length) {
+			$active_tab.toggleClass('active');
+			$active_tab.next().addClass('active');
+			switchSpotlightContent($active_tab.next());
+		} else {
+			// Fade out if there are no next posts
+			$(this).fadeOut(200);
+		}
+
+		return false;
+	});
+
+
 
 
 
@@ -197,6 +247,8 @@ $(document).ready(function() {
 		imagesLoaded: true,
 		pageDots: false
 	});
+
+
 
 
 
@@ -296,21 +348,6 @@ $(document).ready(function() {
 				$('#saveChanges').fadeIn(300)
 								.attr('data-target', targetID);
 
-				// Hide the current quantity
-				// $(this).closest('tr')
-				// 	.find('.quantity-value')
-				// 	.hide();
-
-				// // Show the editing options
-				// var editingHTML = $(this).closest('tr')
-				// 	.find('#isEditing').html();
-
-				// $(this).closest('tr')
-				// 	.find('.edit-quantity-form')
-				// 	.html(editingHTML);
-
-				console.log(targetID);
-				// return targetID;
 				e.preventDefault();
 			});
 
@@ -350,16 +387,6 @@ $(document).ready(function() {
 			});
 
 
-			// // $('#updateQuantity').on('click', function() {
-			// // 	var targetID = $(this).closest('form').attr('id');
-			// // 	var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
-			// // 	targetEntry.quantity = $('.edit-quantity-field').val();
-				
-			// // 	console.log('targetEntry'); 
-				
-			// // });
-
-
 			$('.remove-label').on('click', function(e) {
 				var targetID = $(this).closest('form').attr('id');
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
@@ -378,20 +405,6 @@ $(document).ready(function() {
 				
 				e.preventDefault();
 			});
-
-			// $('.expects-save').on('click', function(e) {
-			// 	var targetID = $(this).closest('form').attr('id');
-			// 	var targetEntry = window.localStorage.getItem(targetID);
-
-
-			// 	$(this).html('Edit').attr('class', 'edit-label');
-			// 	;
-
-			// 	// $(this).closest('tr').find('.quantity-value').css('background','green');
-			// 	console.log('saved');
-
-			// 	e.preventDefault();
-			// });
 
 		} // END Wish List length check
 
@@ -414,10 +427,19 @@ $(document).ready(function() {
 
 
 
+// ----
+// Spotlight Content Switcher
+// ----
 
+function switchSpotlightContent($target) {
+	// Replace the srcset value of the main image with that of the thumbnail's data-swap attribute
+	var src = $target.find('.spotlight-tab-link').attr('data-src');
+	var href = $target.find('.spotlight-tab-link').attr('data-target');
+	var $target_content = $(href);
 
-
-
+	// May want to integrate this with lazyload instead
+	$('.spotlight-main').html('<img src="' + src + '">');
+}
 
 
 
@@ -467,8 +489,11 @@ function populateWishListTable(item) {
 			quantity = '<td class="item-quantity">' + editFormMarkup + '</td>';
 
 		// Update the Wish List header text to indicate there are items
-		$('#wishListTitle').html('In Your Wish List');
-		$('#wishListPrompt').html('Complete the email form below to receive a price quote for these items.');
+		var has_items_title = $('#wishListTitle').attr('data-has-items');
+		var has_items_prompt = $('#wishListPrompt').attr('data-has-items');
+
+		$('#wishListTitle').html(has_items_title);
+		$('#wishListPrompt').html(has_items_prompt);
 
 		// Add item to table
 		$('#wishListItems').append('<tr>' + collection + title + quantity + '</tr>');

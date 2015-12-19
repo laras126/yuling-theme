@@ -19,7 +19,7 @@ html {
 
 body {
 	font-family: $font-body;
-	font-size: $size-base; 
+	font-size: $size-sml; 
 	color: $color-text-dark;
 }
 
@@ -92,7 +92,4 @@ p {
 	font-size: $size-sml;
 	margin-top: $size-base;
 	margin-bottom: $size-base;
-	@include bp(md) {
-		font-size: $size-p;
-	}
 }
