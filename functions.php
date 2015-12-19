@@ -63,7 +63,13 @@
 			$context['wishlist_page_link'] = get_field('wishlist_page_link', 'options');
 			$context['wishlist_page_text'] = get_field('wishlist_page_text', 'options');
 			$context['all_collections_page'] = get_field('all_collections_page', 'options');
-			
+						
+			// Social
+			$context['pinterest'] = get_field('pinterest', 'options');
+			$context['twitter'] = get_field('twitter', 'options');
+			$context['facebook'] = get_field('facebook', 'options');
+			$context['instagram'] = get_field('instagram', 'options');
+
 
 			return $context;
 		}
@@ -167,16 +173,14 @@
 	// (You'll need to register the types, of course)
 
 	function tsk_title_placeholder_text ( $title ) {
-		if ( get_post_type() == 'service' ) {
-			$title = __( 'Service Name' );
-		} else if ( get_post_type() == 'cast-study' ) {
-	        $title = __( 'Case Study Name' );
-		} else if ( get_post_type() == 'testimonial' ) {
-	        $title = __( 'Testimonial Nickname' );
+		if ( get_post_type() == 'project' ) {
+			$title = __( 'Project Name' );
+		} else if ( get_post_type() == 'piece' ) {
+	        $title = __( 'Piece Name' );
 		}
 		return $title;
 	} 
-	// add_filter( 'enter_title_here', 'tsk_title_placeholder_text' );
+	add_filter( 'enter_title_here', 'tsk_title_placeholder_text' );
 
 
 
@@ -229,35 +233,6 @@
 
 
 
-
-	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
-	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
-
-	// if ( is_admin() ) { // check to make sure we aren't on the front end
-	// 	add_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast');
-
-	// 	function nl_add_custom_to_yoast( $content ) {
-	// 		global $post;
-	// 		$pid = $post->ID;
-			
-	// 		$custom = get_post_custom($pid);
-	// 		unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
-
-	// 		foreach( $custom as $key => $value ) {
-	// 			if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
-	// 			  $custom_content .= $value[0] . ' ';
-	// 			}
-	// 		}
-
-	// 		$content = $content . ' ' . $custom_content;
-	// 		return $content;
-
-	// 		remove_filter('wpseo_pre_analysis_post_content', 'tsk_add_custom_to_yoast'); // don't let WP execute this twice
-	// 	}
-	// }
-
-
-
 	// Google Analytics snippet from HTML5 Boilerplate
 	// Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
 
@@ -285,36 +260,6 @@
 	}
 
 
-
-
-
-
-	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
-	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
-	// if ( is_admin() ) { // check to make sure we aren't on the front end
-	// 	add_filter('wpseo_pre_analysis_post_content', 'yld_add_custom_to_yoast');
-
-	// 	function yld_add_custom_to_yoast( $content ) {
-	// 		global $post;
-	// 		$pid = $post->ID;
-			
-	// 		$custom_content = '';
-
-	// 		$custom = get_post_custom($pid);
-	// 		unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
-
-	// 		foreach( $custom as $key => $value ) {
-	// 			if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
-	// 			  $custom_content .= $value[0] . ' ';
-	// 			}
-	// 		}
-
-	// 		$content = $content . ' ' . $custom_content;
-	// 		return $content;
-
-	// 		remove_filter('wpseo_pre_analysis_post_content', 'mtn_add_custom_to_yoast'); // don't let WP execute this twice
-	// 	}
-	// }
 
 
 	// Extend WordPress search to include custom fields
