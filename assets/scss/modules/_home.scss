@@ -68,7 +68,15 @@
 
 .home-section-img {
 	&.-about {
-		padding: 4% 8%;
+		padding-bottom: 0;
+
+		padding-top: 4%;
+		padding-right: 8%;
+		padding-left: 8%;
+
+		@include bp(md) {
+			padding-bottom: 4%;
+		}
 	}
 }
 
