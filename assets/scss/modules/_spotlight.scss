@@ -55,6 +55,10 @@
 		height: auto;
 		color: $color-accent-light;
 	}
+
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
 .spotlight-wrap {
