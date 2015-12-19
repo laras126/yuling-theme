@@ -1335,6 +1335,7 @@ img {
       margin-top: -2px; } }
 
 .subnav-wrapper {
+  padding-top: 0.715rem;
   max-width: 1152px;
   margin: 0 auto;
   display: -webkit-box;
