@@ -15,11 +15,11 @@
 	&.-collections {
 		position: relative;
 		color: $color-rotate-text;
-		background-image: url(../img/util/trees-sml.png);
 		text-align: center;
+		// background-image: url(../img/util/trees-sml.png);
 
 		@include bp(md) {
-			background-image: url(../img/util/trees-med.png);
+			// background-image: url(../img/util/trees-med.png);
 
 			&:before {
 				content: "";
