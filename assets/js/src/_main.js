@@ -300,7 +300,9 @@ $(document).ready(function() {
 					window.localStorage.setItem('wishListItem_' + piece.id, JSON.stringify(piece));
 					
 					// UI Notification
-					$('#wishListNotify').html('Updated').animate({opacity:1}, 300);
+					$('#wishListNotify').animate({opacity:0}, 10)
+										.html('Updated')
+										.animate({opacity:1}, 300);
 
 					// Update the Wish List number in the header
 					updateWishListCount();
@@ -360,8 +362,10 @@ $(document).ready(function() {
 				// Get the associated localstorage entry
 				var targetEntry = JSON.parse(window.localStorage.getItem(targetID));
 	
+				// Get new number selection
 				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected').val();
-				// Update targetEntry quantity
+
+				// Update targetEntry quantity with new selection
 				targetEntry.quantity = newQuantity;
 
 				var newEntry = targetEntry;
