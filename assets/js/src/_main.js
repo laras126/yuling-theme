@@ -312,6 +312,7 @@ $(document).ready(function() {
 				});
 
 				if ( currentItem !== null) {
+
 					// If current item is in the Wish List, update it's status
 					var retrievedObj = JSON.parse(window.localStorage.getItem('wishListItem_' + php_vars.id));
 					markActiveWishList(retrievedObj);
@@ -368,20 +369,26 @@ $(document).ready(function() {
 				// Update targetEntry quantity with new selection
 				targetEntry.quantity = newQuantity;
 
+				// Assign new targetEntry to a different variable - necessary, not sure why.
 				var newEntry = targetEntry;
 
 				// Save the new quantity
 				window.localStorage.setItem(targetID, JSON.stringify(newEntry));
 				
+				// Get the selected option
 				var newQuantity = $('#quantity_' + targetEntry.id + ' option:selected');
 
+				// Get the associated quanitity select element
 				var $targetSelect = $('#quantity_' + targetEntry.id);
 
+				// Get the closes quantitiy value
 				var $targetSpan = $targetSelect.closest('form').find('.quantity-value');
 
+				// Hide the targeted select element and show the new quantity value
 				$targetSelect.fadeOut(300);
 				$targetSpan.html(newQuantity.val()).fadeIn(300);
 				
+				// Update the text area with the new count and the wishlist number in the top menu
 				updateTexarea();
 				updateWishListCount();
 
@@ -454,6 +461,7 @@ function switchSpotlightContent($target) {
 
 function updateWishListCount() {
 
+	// Show the number of items in localStorage in the header wishlist number
 	if (window.localStorage.length != 0) {
 		$('#wishListCount').html(window.localStorage.length);
 	}
