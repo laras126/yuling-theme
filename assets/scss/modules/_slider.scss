@@ -48,4 +48,7 @@
 	img {
 		width: 100%;
 	}
+
+	.flickity-prev-next-button.previous { left: -10px; }
+	.flickity-prev-next-button.next { right: -10px; }
 }
