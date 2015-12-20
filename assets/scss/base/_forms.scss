@@ -164,9 +164,9 @@ fieldset {
 }
 
 .item-quantity {
-	width: 40%;
+
 	@include bp(sm) {
-		width: auto;
+		width: 40%;
 	}
 }
 
@@ -174,7 +174,7 @@ fieldset {
 	width: 100%;
 	text-align: center;
 	
-	@include bp($screen-xs) {
+	@include bp(sm) {
 		text-align: left;
 	}
 	
@@ -191,7 +191,7 @@ fieldset {
 		display: block;
 		margin-top: $size-xsml/2;
 
-		@include bp($screen-xs) {
+		@include bp(sm) {
 			display: inline-block;
 			float: right;
 			margin-top: 0;
@@ -251,10 +251,13 @@ fieldset {
 
 .quantity-select,
 .quantity-value {
-	@include bp(md) {	
+	@include bp(sm) {	
 		position: absolute;
 	}
 }
+
+
+
 
 // ---
 // Search
