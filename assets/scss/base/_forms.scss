@@ -14,7 +14,6 @@ label, select {
 }
 
 label {
-	// margin-top: $size-h4;
 	margin-bottom: $size-xsml;
 	font-family: $font-form;
 }
@@ -166,28 +165,40 @@ fieldset {
 
 .edit-quantity-form {
 	width: 100%;
+	text-align: center;
 
 	@include bp(md) {
+		text-align: left;
 		display: inline-block;
 		float: right;
 	}
 
 	& > input[type=radio] {
-		opacity: 0;
-		width: 0;
-		height: 0;
-		margin: 0;
+		@include visually-hidden;
 	}
 
 	& > label {
-		display: inline-block;
-		float: right;
-		margin-right: $size-xsml;
+		display: block;
+		margin-top: $size-xsml/2;
+
+		@include bp($screen-xs) {
+			display: inline-block;
+			float: right;
+			margin-top: 0;
+			padding-left: 3px;
+			padding-right: 3px;
+			margin-right: $size-xsml;
+		}
+
 		margin-bottom: 0;
-		padding-left: 3px;
-		padding-right: 3px;
 		cursor: pointer;
 		@include meta($color: $color-rotate-text, $margin: true);	
+		
+		// @media(max-width:$screen-xs) {
+		// 	// padding: 0 2%;
+		// 	@include center;
+		// 	// margin-top: $size-xsml/2;
+		// }
 	}
 }
 
@@ -195,25 +206,24 @@ fieldset {
 	background-color: $color-alert-info;
 }
 
-// .expects-save {
-// 	background-color: $color-alert-warning;
-// }
-
 .remove-label {
-	background-color: $color-alert-danger	
+	background-color: $color-alert-danger;
 }
-
-// .edit-quantity-field {
-// 	display: inline-block;
-// 	text-align: center;
-// 	max-width: 70px; 
-// }
 
 .row-removed {
 	font-style: italic;
 	text-decoration: line-through;
 	background-color: $color-table-rotate;
 	color: $color-accent-light;
+
+	label {
+		text-decoration: line-through;
+		background-color: $color-accent-light;
+	}
+
+	.quantity-value {
+		text-decoration: line-through;
+	}
 }
 
 .save-changes {
@@ -225,19 +235,14 @@ fieldset {
 	}
 }
 
-// .editing-update {
-// 	color: red;
-// }
-
-// #isEditing {
-// 	display: none;
-// }
-
 .quantity-select {
 	display: none;
 }
 
-
+.quantity-select,
+.quantity-value {
+	// max-width: 40%;
+}
 
 // ---
 // Search
