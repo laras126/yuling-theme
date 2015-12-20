@@ -160,15 +160,25 @@ fieldset {
 }
 
 .wishlist-fill {
-	// display: none;
+	display: none;
+}
+
+.item-quantity {
+	width: 40%;
+	@include bp(sm) {
+		width: auto;
+	}
 }
 
 .edit-quantity-form {
 	width: 100%;
 	text-align: center;
-
-	@include bp(md) {
+	
+	@include bp($screen-xs) {
 		text-align: left;
+	}
+	
+	@include bp(md) {
 		display: inline-block;
 		float: right;
 	}
@@ -241,7 +251,9 @@ fieldset {
 
 .quantity-select,
 .quantity-value {
-	// max-width: 40%;
+	@include bp(md) {	
+		position: absolute;
+	}
 }
 
 // ---
