@@ -304,3 +304,67 @@ fieldset {
 		max-width: $size-h1*2;
 	}
 }
+
+
+
+
+
+// ----
+// MailChimp
+// ----
+
+.mc_title {
+	font-family: $font-body;
+	font-size: $size-sml;
+	margin: $size-base 0 $size-sml;
+}
+
+.mc-field-group {
+	float: left;
+	width: 68%;
+	margin-right: 2%;
+
+	input {
+	    border: 1px solid $color-accent-light;
+	    background-color: $color-accent-light;
+	    transition: 0.25s ease background-color;
+
+	    &:focus {
+	    	background: $color-body-bkgd;
+	    }
+	}
+}
+
+#mc_embed_signup {
+  	
+  	@include grid($guttered: false);
+
+
+	label {
+		@include visually-hidden;
+	}
+
+	input {
+	  	padding: $size-xsml/2 $size-sml/2;
+	}
+
+	.clear {
+		float: left;
+		width: 30%;
+
+		input {
+			border: 1px solid $color-accent-vlight;
+			background: none;
+			
+			&:hover {
+				border-color: $color-rotate-text;
+				color: $color-rotate-text;
+			}
+
+			&:active {
+				border-color: $color-accent-light;
+				color: $color-accent-light;
+			}
+		}
+  	}
+}
