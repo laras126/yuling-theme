@@ -658,8 +658,8 @@ http://flickity.metafizzy.co
 .flickity-prev-next-button {
   position: absolute;
   top: 50%;
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 50%;
   background: white;
@@ -685,19 +685,19 @@ http://flickity.metafizzy.co
   opacity: 0.6; }
 
 .flickity-prev-next-button.previous {
-  left: 10px; }
+  left: 0; }
 
 .flickity-prev-next-button.next {
-  right: 10px; }
+  right: 0; }
 
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
   left: auto;
-  right: 10px; }
+  right: 0; }
 
 .flickity-rtl .flickity-prev-next-button.next {
   right: auto;
-  left: 10px; }
+  left: 0; }
 
 .flickity-prev-next-button:disabled {
   filter: alpha(opacity=30);
@@ -709,8 +709,8 @@ http://flickity.metafizzy.co
   position: absolute;
   left: 20%;
   top: 20%;
-  width: 60%;
-  height: 60%; }
+  width: 70%;
+  height: 70%; }
 
 .flickity-prev-next-button .arrow {
   fill: #333; }
