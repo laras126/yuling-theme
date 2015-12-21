@@ -210,6 +210,16 @@
 
 
 
+	function yld_exclude_home_from_search($query) {
+		$frontpage_id = get_option('page_on_front');
+	    if ($query->is_search) {
+	        $excludeId = $frontpage_id;
+	        $query->set('post__not_in', array($excludeId));
+	    }
+	    return $query;
+	}
+	add_filter('pre_get_posts','yld_exclude_home_from_search');
+
 
 
 	/*
