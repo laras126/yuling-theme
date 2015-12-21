@@ -129,6 +129,10 @@
 	@include bp(lg) {
 		display: none;
 	}
+
+	svg {
+		fill: $color-rotate-text;
+	}
 }
 
 .spotlight-main {
