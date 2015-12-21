@@ -8,14 +8,14 @@
 
 	<div class="contain--xl">
 		<div class="grid">
-			<div class="archive-sidebar">
-				{{sidebar}}
-			</div>
 			<div class="archive-main -has-sidebar">
 				{% for post in posts %}
 					{% set post = TimberPost(post) %}
 					{% include ['teases/_tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
 				{% endfor %}
+			</div>
+			<div class="archive-sidebar">
+				{{sidebar}}
 			</div>
 		</div>	
 	</div>

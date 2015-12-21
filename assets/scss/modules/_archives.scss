@@ -3,19 +3,11 @@
 
 .archive-main {
 	@include grid;
-	
 	&.-has-sidebar {
-		order: 1;
 		@include bp(md) {
 			@include cell();
-			order: 2;
+			order: 1;
 		}
-	}
-}
-	
-.archive {
-	&.-search {
-		@include grid;
 	}
 }
 
@@ -23,7 +15,14 @@
 	@include cell(full);
 
 	@include bp(md) {
+		order: -1;
 		@include cell(sixth, $is_first: false);
+	}
+}
+	
+.archive {
+	&.-search {
+		@include grid;
 	}
 }
 
@@ -204,10 +203,4 @@
 
 .archive-images-inspiration.-last {
 	background-color: $color-body-bkgd;
-}
-
-// Archive Sidebar
-
-.archive-sidebar {
-	order: 1;
 }
