@@ -171,5 +171,12 @@
 				fill: $color-accent-med;
 			}
 		}
+
+		.social-item {
+			padding-left: $size-base;
+			&:last-child {
+				// padding-right: 0;
+			}
+		}
 	}
 }
