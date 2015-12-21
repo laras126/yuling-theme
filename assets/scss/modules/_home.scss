@@ -142,12 +142,14 @@
 
 	&.-about {
 		@include restyle-link($default: $color-body-text, $hover: $color-text-med);
+		margin-bottom: $size-base;
 	}
 }
 
 .home-quote {
 	&.-about {
 		@include header-fancy-meta($color: $color-body-text);
+		margin-bottom: 0;
 		@include bp(md) {
 			font-size: $size-h3;
 		}
