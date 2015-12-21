@@ -249,7 +249,7 @@
 	// Google Analytics snippet from HTML5 Boilerplate
 	// Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
 
-	define('GOOGLE_ANALYTICS_ID', 'UA-XXXXXX-X');
+	define('GOOGLE_ANALYTICS_ID', 'UA-71623175-1');
 	function mtn_google_analytics() { ?>
 	<script>
 	  <?php if (WP_ENV === 'production') : ?>
