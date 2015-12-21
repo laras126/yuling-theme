@@ -1652,7 +1652,7 @@ img {
   text-align: center; }
   @media (min-width: 768px) {
     .banner {
-      min-height: 80vh; } }
+      height: 80vh; } }
   @media (min-width: 768px) {
     .banner {
       background-image: url(../img/util/trees-med.png); } }
