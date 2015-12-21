@@ -47,12 +47,11 @@ http://flickity.metafizzy.co
 .flickity-prev-next-button {
   position: absolute;
   top: 50%;
+  background: none;
   width: 30px;
   height: 30px;
   border: none;
   border-radius: 50%;
-  background: white;
-  background: hsla(0, 0%, 100%, 0.25);
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
@@ -61,12 +60,12 @@ http://flickity.metafizzy.co
 }
 
 .flickity-prev-next-button:hover { 
-  background: hsla(0, 0%, 100%, 0.75);
+  // background: hsla(0, 0%, 100%, 0.5);
 }
 
 .flickity-prev-next-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #999;
+  // box-shadow: 0 0 0 1px #333;
 }
 
 .flickity-prev-next-button:active {
