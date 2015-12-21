@@ -1609,6 +1609,9 @@ img {
        -o-transition: opacity 0.4s;
           transition: opacity 0.4s;
   margin-left: 0.34125rem; }
+  @media screen and (orientation: landscape) {
+    .gallery-cell-image {
+      height: 100vh; } }
   @media (min-width: 768px) {
     .gallery-cell-image {
       height: 50vh; } }
@@ -1647,9 +1650,9 @@ img {
   background-image: url(../img/util/trees-sml.png);
   color: #FFFFFF;
   text-align: center; }
-  @media (min-width: 560px) {
+  @media (min-width: 768px) {
     .banner {
-      height: 80vh; } }
+      min-height: 80vh; } }
   @media (min-width: 768px) {
     .banner {
       background-image: url(../img/util/trees-med.png); } }
