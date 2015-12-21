@@ -25,7 +25,7 @@
 		
 		{% if post.get_terms('post_tag') %}
 			<div class="meta-wrap">
-				<p class="meta-upper">Tagged</p>
+				<p class="meta-upper">Tags</p>
 				{% for c in post.get_terms('post_tag') %}
 					<a class="tease-meta" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
 				{% endfor %}
