@@ -18,7 +18,15 @@
 
 		$data = Timber::get_context();
 
-		$data['title'] = 'Projects';
+		if (is_category()) {
+			$data['title'] = 'Projects: ' . single_cat_title('', false);
+		} elseif (is_tax()) {
+			$term = get_queried_object(); // Is this the appropriate way to do it? 
+			$data['title'] = 'Projects: ' . $term->name;
+
+		} else {
+			$data['title'] = 'Projects';
+		}
 		$data['link'] = get_post_type_archive_link('project');
 		$data['sidebar'] = Timber::get_sidebar('sidebar-projects.php');
 
