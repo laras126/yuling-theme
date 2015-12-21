@@ -6,6 +6,7 @@
 }
 
 .spotlight-title {
+	border-top: 1px solid $color-accent-light;
 	color: $color-rotate-text;
 	margin-top: 0;
 	padding-top: $size-h4;
@@ -35,9 +36,9 @@
 	top: 0;
 	left: 0;
 	padding-bottom: $size-sml;
-	border-bottom: 1px solid $color-accent-light;
-	
+
 	@include bp(lg) {
+		border-bottom: 1px solid $color-accent-light;
 		position: relative;
 		opacity: 1;
 		width: auto;
