@@ -658,12 +658,11 @@ http://flickity.metafizzy.co
 .flickity-prev-next-button {
   position: absolute;
   top: 50%;
+  background: none;
   width: 30px;
   height: 30px;
   border: none;
   border-radius: 50%;
-  background: white;
-  background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
@@ -671,13 +670,8 @@ http://flickity.metafizzy.co
   -o-transform: translateY(-50%);
      transform: translateY(-50%); }
 
-.flickity-prev-next-button:hover {
-  background: rgba(255, 255, 255, 0.75); }
-
 .flickity-prev-next-button:focus {
-  outline: none;
-  -webkit-box-shadow: 0 0 0 2px #999;
-          box-shadow: 0 0 0 2px #999; }
+  outline: none; }
 
 .flickity-prev-next-button:active {
   filter: alpha(opacity=60);
@@ -2565,6 +2559,9 @@ img {
     .spotlight-prev,
     .spotlight-next {
       display: none; } }
+  .spotlight-prev svg,
+  .spotlight-next svg {
+    fill: #FFFFFF; }
 
 .spotlight-main {
   position: relative;
