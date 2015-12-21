@@ -38,13 +38,4 @@ register_sidebar( array(
     'after_title'   => '</h4>',
 ) );
 
-register_sidebar( array(
-    'name' => __( 'Projects Sidebar', 'yld' ),
-    'id' => 'sidebar_projects',
-    'description' => __( 'The sidebar on the projects archive.', 'yld' ),
-    'before_widget' => '<li id="%1$s" class="widget %2$s -sidebar">',
-    'after_widget'  => '</li>',
-    'before_title'  => '<h4 class="widget-title -sidebar">',
-    'after_title'   => '</h4>',
-) );
 
