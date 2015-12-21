@@ -15,22 +15,30 @@
 	<div class="tease-meta -footer -post">
 
 		{% if post.get_terms('category') %}
-			<p class="meta-upper">Filed under: </p>
-			{% for c in post.get_terms('category') %}
-				<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
-			{% endfor %}
+			<div class="meta-wrap">
+				<p class="meta-upper">{{post.post_type == 'project' ? 'Services' : 'Featured In' }}</p>
+				{% for c in post.get_terms('category') %}
+					<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+				{% endfor %}
+			</div>
 		{% endif %}
 		
-		<!-- bad -->
-		<br>
-		<br>
-		<!-- end bad -->
-		
+		{% if post.get_terms('post_tag') %}
+			<div class="meta-wrap">
+				<p class="meta-upper">Tagged</p>
+				{% for c in post.get_terms('post_tag') %}
+					<a class="tease-meta" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
+
 		{% if post.get_terms('industry') %}
-			<p class="meta-upper">Filed under: </p>
-			{% for c in post.get_terms('industry') %}
-				<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
-			{% endfor %}
+			<div class="meta-wrap">
+				<p class="meta-upper">Industry</p>
+				{% for c in post.get_terms('industry') %}
+					<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+				{% endfor %}
+			</div>
 		{% endif %}
 
 	</div>
