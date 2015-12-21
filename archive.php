@@ -29,7 +29,7 @@
 		} else if (is_tag()){
 			$data['title'] = 'Tagged: '.single_tag_title('', false);
 		} else if (is_category()){
-			$data['title'] = 'Category: '.single_cat_title('', false);
+			$data['title'] = 'Stories: '.single_cat_title('', false);
 			array_unshift($templates, 'archives/archive-'.get_query_var('cat').'.twig');
 		} else if (is_tax()){
 		    $term = get_queried_object(); // Is this the appropriate way to do it?
