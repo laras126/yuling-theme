@@ -5,8 +5,8 @@
 
 .banner {
 
-	@include bp(sm) {
-		height: 80vh;
+	@include bp(md) {
+		min-height: 80vh;
 	}
 
 	width: 100%;

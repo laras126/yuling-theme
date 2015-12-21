@@ -6,6 +6,11 @@
 	display: block;
 	height: 40vh;
 	
+	@media screen 
+	  and (orientation: landscape) {
+		height: 100vh;
+	}
+
 	@include bp(md) {
 		height: 50vh;
 	}
