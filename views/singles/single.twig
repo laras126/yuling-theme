@@ -11,27 +11,30 @@
 {% endblock %}
 
 {% block after_content %}
-	{# Not a great way to do this #}
+	
 	<div class="tease-meta -footer -post">
+
 		{% if post.get_terms('category') %}
 			<p class="meta-upper">Filed under: </p>
 			{% for c in post.get_terms('category') %}
-				<a class="tease-meta" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+				<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
 			{% endfor %}
 		{% endif %}
+		
 		<!-- bad -->
 		<br>
 		<br>
 		<!-- end bad -->
-		{# {% if post.type == 'project' %} #}
-			{% if post.get_terms('industry') %}
-				<p class="meta-upper">Filed under: </p>
-				{% for c in post.get_terms('industry') %}
-					<a class="tease-meta" href="{{c.link}}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
-				{% endfor %}
-			{% endif %}
-		{# {% endif %} #}
+		
+		{% if post.get_terms('industry') %}
+			<p class="meta-upper">Filed under: </p>
+			{% for c in post.get_terms('industry') %}
+				<a class="tease-meta" href="{{c.link}}{{post.post_type == 'project' ? '?post_type=project' }}">{{c.name}}</a>{% if not loop.last %}, {% endif %}
+			{% endfor %}
+		{% endif %}
+
 	</div>
+	
 	{% if post.post_type != 'piece' %}
 		{% include 'navs/_nav-prevnext.twig' with { n_class: 'contain--md' } %}
 	{% endif %}
