@@ -79,8 +79,8 @@
 		justify-content: center;
 		align-items: center;
 		padding-top: 10vh;
+		height: 100%;
 		flex-direction: column;
-		max-height: 95vh;
 	}
 
 	width: 100%;	
@@ -111,12 +111,10 @@
 	margin: 0 auto;
 	max-width: $screen-xl;
 
-	height: 100%;
-
+	flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 }
 
 .archive-quote-content {
@@ -203,4 +201,8 @@
 
 .archive-images-inspiration.-last {
 	background-color: $color-body-bkgd;
+	margin-bottom: -$size-base;
+	@include bp(md) {
+		margin-bottom: 0;
+	}
 }
