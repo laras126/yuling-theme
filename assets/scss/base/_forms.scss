@@ -190,13 +190,13 @@ fieldset {
 	& > label {
 		display: block;
 		margin-top: $size-xsml/2;
+		padding-left: 3px;
+		padding-right: 3px;
 
 		@include bp(sm) {
 			display: inline-block;
 			float: right;
 			margin-top: 0;
-			padding-left: 3px;
-			padding-right: 3px;
 			margin-right: $size-xsml;
 		}
 
