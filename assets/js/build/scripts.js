@@ -241,7 +241,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 $(document).ready(function() {
 	
-	// console.log('Check it: https://github.com/laras126/yuling-theme');
+	console.log('Check it: https://github.com/laras126/yuling-theme');
 
 
 
@@ -522,7 +522,7 @@ $(document).ready(function() {
 
 				// Populate the hidden fields with piece and collection names
 				$('#pieceName').val(php_vars.title);
-				$('#pieceCollection').val(php_vars.collection[0].name);
+				$('#pieceCollection').val(php_vars.collection);
 				
 				// Store piece number and name on submit
 				$('#wishListForm').on('submit', function(e) {
@@ -530,7 +530,7 @@ $(document).ready(function() {
 					var piece = {
 						'id': php_vars.id, 
 						'title': php_vars.title, 
-						'collection': php_vars.collection[0].name
+						'collection': php_vars.collection
 					};
 
 					// Update piece quantity in dropdown
@@ -568,9 +568,9 @@ $(document).ready(function() {
 		if (window.localStorage.length != 0) {
 			
 			// This should only be called on Concierge page, ideally
-			for(var i in window.localStorage) {
-				var item = JSON.parse(window.localStorage[i]);
-				populateWishListTable(item);
+			for(var i=0; i < window.localStorage.length; i++) {
+				var item = window.localStorage.getItem(localStorage.key(i));
+				populateWishListTable(JSON.parse(item));
 			}
 
 			// Update or remove quantity value
@@ -629,7 +629,7 @@ $(document).ready(function() {
 				$targetSpan.html(newQuantity.val()).fadeIn(300);
 				
 				// Update the text area with the new count and the wishlist number in the top menu
-				updateTexarea();
+				updateTextArea();
 				updateWishListCount();
 
 				// Reset the target on Save Changes button
@@ -650,10 +650,10 @@ $(document).ready(function() {
 				$(this).closest('tr').addClass('row-removed');
 
 				// Update the value of hidden textarea and header count
-				updateTexarea();
+				updateTextArea();
 				updateWishListCount();
 
-				console.log(window.localStorage);
+				// console.log(window.localStorage);
 				
 				e.preventDefault();
 			});
@@ -709,14 +709,14 @@ function updateWishListCount() {
 }
 
 
-
 // ---
 // Populate the Wish List table
 // ---
 
 function populateWishListTable(item) {
+
 	if (window.localStorage.length != 0) {
-		
+
 		// Markup for editing the item's quantity or removing it from localStorage
 		var editFormMarkup = '<form class="edit-quantity-form" id="wishListItem_' + item.id + '">';
 
@@ -733,15 +733,13 @@ function populateWishListTable(item) {
 			editFormMarkup += '<label class="remove-label" for="removeRadio_' + item.id +'">Remove</label></form>';
 		
 
-		// var isEditingMarkup = '<span id="isEditing"><input type="number" class="edit-quantity-field" value="">';
-		// 	isEditingMarkup += '<span id="updateValue" class="editing-update">Update</span> <span id="cancelUpdate" class="editing-cancel">Cancel</span></span>';
-		
-
+		// Assemble the table markup
 		var title = '<td class="item-title">' + item.title + '</td>',
 			collection = '<td class="item-collection">' + item.collection + '</td>',
 			quantity = '<td class="item-quantity">' + editFormMarkup + '</td>';
 
-		// Update the Wish List header text to indicate there are items
+		// Update the Wish List header text to indicate there are items. 
+		// These values come from fields in the CMS and are printed inside a data attr.
 		var has_items_title = $('#wishListTitle').attr('data-has-items');
 		var has_items_prompt = $('#wishListPrompt').attr('data-has-items');
 
@@ -765,12 +763,17 @@ function populateWishListTable(item) {
 // Update the hidden text area to record values on form submission
 // ---
 
-function updateTexarea() {
+function updateTextArea() {
+	
 	$('.wishlist-fill textarea').html('');
-	for(var i in window.localStorage) {
-		var item = JSON.parse(window.localStorage[i]);
+	
+	for(var i=0; i < window.localStorage.length; i++) {
+		
+		var item = JSON.parse(window.localStorage.getItem(localStorage.key(i)));
 		$('.wishlist-fill textarea').append(item.collection + ': ' + item.title + ', ' + item.quantity + ' || ');
+	
 	}
+	
 }
 
 

@@ -784,43 +784,6 @@ http://flickity.metafizzy.co
     text-shadow: 0 0 2px rgba(51, 51, 51, 0.8);
     text-transform: none; } }
 
-/* ----------------------------------------------
-MailChimp styling
----------------------------------------------- */
-#mc_embed_signup {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  position: relative; }
-  #mc_embed_signup h2 {
-    font-family: "source-sans-pro", sans-serif;
-    font-size: 0.88rem;
-    margin: 1.1rem 0 0.88rem; }
-  #mc_embed_signup label {
-    position: absolute;
-    top: -9999999px;
-    left: -999999px; }
-  #mc_embed_signup input {
-    padding: 0.3575rem 0.44rem; }
-  #mc_embed_signup .mc-field-group {
-    float: left;
-    width: 68%;
-    margin-right: 2%; }
-    #mc_embed_signup .mc-field-group input {
-      border: 1px solid #999999;
-      background-color: #999999;
-      color: #FFFFFF; }
-  #mc_embed_signup .clear {
-    float: left;
-    width: 30%; }
-    #mc_embed_signup .clear input {
-      border: 1px solid #b3b3b3;
-      background: none; }
-
 html {
   font-size: 100%;
   line-height: 1.5;
@@ -1119,6 +1082,8 @@ fieldset {
   .edit-quantity-form > label {
     display: block;
     margin-top: 0.3575rem;
+    padding-left: 3px;
+    padding-right: 3px;
     margin-bottom: 0;
     cursor: pointer;
     color: #FFFFFF;
@@ -1128,8 +1093,6 @@ fieldset {
         display: inline-block;
         float: right;
         margin-top: 0;
-        padding-left: 3px;
-        padding-right: 3px;
         margin-right: 0.715rem; } }
 
 .edit-label {
@@ -1204,6 +1167,52 @@ fieldset {
   @media (min-width: 560px) {
     .search-field {
       max-width: 6.16rem; } }
+
+.mc_title {
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 0.88rem;
+  margin: 1.1rem 0 0.88rem; }
+
+.mc-field-group {
+  float: left;
+  width: 68%;
+  margin-right: 2%; }
+  .mc-field-group input {
+    border: 1px solid #999999;
+    background-color: #999999;
+    -webkit-transition: 0.25s ease background-color;
+         -o-transition: 0.25s ease background-color;
+            transition: 0.25s ease background-color; }
+    .mc-field-group input:focus {
+      background: #FFFFFF; }
+
+#mc_embed_signup {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative; }
+  #mc_embed_signup label {
+    position: absolute;
+    top: -9999999px;
+    left: -999999px; }
+  #mc_embed_signup input {
+    padding: 0.3575rem 0.44rem; }
+  #mc_embed_signup .clear {
+    float: left;
+    width: 30%; }
+    #mc_embed_signup .clear input {
+      border: 1px solid #b3b3b3;
+      background: none; }
+      #mc_embed_signup .clear input:hover {
+        border-color: #FFFFFF;
+        color: #FFFFFF; }
+      #mc_embed_signup .clear input:active {
+        border-color: #999999;
+        color: #999999; }
 
 table {
   width: 100%;
