@@ -86,6 +86,13 @@
 	}
 }
 
+// Single footer
+
+.meta-wrap {
+	@include contain(sm);
+	margin-top: $size-h4;
+	margin-bottom: $size-h4;
+}
 
 
 // Single Piece
