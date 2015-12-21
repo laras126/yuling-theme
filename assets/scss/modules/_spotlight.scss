@@ -7,11 +7,16 @@
 
 .spotlight-title {
 	border-top: 1px solid $color-accent-light;
+
+	@include bp(md) {
+		border-top: none;
+	} 
+
 	color: $color-rotate-text;
 	margin-top: 0;
 	padding-top: $size-h4;
 	padding-bottom: $size-h4;
-	line-height: 1;
+	line-height: 0.8;
 }
 
 .spotlight-title-compliment {
