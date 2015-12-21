@@ -93,10 +93,6 @@
 	 */ 
 
 
-	// Localize Piece data
-
-
-
 
 	// Add filter to post_type_link to add taxonomy name in front of permalink
 	// NOTE: Possibly could use Timber routes for this
@@ -150,11 +146,15 @@
 			
 			global $post;
 			
-			$terms = wp_get_post_terms($post->ID, 'collection');
+			$terms = get_the_terms($post->ID, 'collection');
+			$term = array_pop($terms);
+			$name = $term->name;
+
+
 			$dataToBePassed = array(
 			    	'title'  	 => (string) $post->post_title,
 			    	'id'		 => $post->id,
-			    	'collection' => $terms
+			    	'collection' => (string) $name
 			);
 
 			wp_localize_script( 'tsk-js', 'php_vars', $dataToBePassed );
