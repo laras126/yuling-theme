@@ -241,7 +241,7 @@
     content: '';
     position: absolute;
     right: 1%;
-    top: 50%;
+    top: 20%;
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
@@ -249,14 +249,15 @@
     -webkit-transition: 0.25s ease all;
          -o-transition: 0.25s ease all;
             transition: 0.25s ease all;
-    height: 0.6825rem;
-    width: 0.6825rem;
-    background: url(../img/svg-min/arrow-up.min.svg) center no-repeat; }
+    height: 1.05rem;
+    width: 1.05rem;
+    background: url("../img/svg-min/arrow-up.min.svg") center no-repeat; }
   .accordion-trigger.active:after {
     -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
          -o-transform: rotate(0);
-            transform: rotate(0); }
+            transform: rotate(0);
+    top: 30%; }
 
 .accordion-target {
   max-height: 0;
