@@ -115,15 +115,12 @@
 	position: relative;
 
 	@include bp(lg) {	
-		// position: relative;
-		// width: auto;
 		order: 2;
 	}
 }
 
 .spotlight-prev,
 .spotlight-next, {
-	// position: relative;
 	z-index: 100;
 
 	@include bp(lg) {
@@ -137,6 +134,7 @@
 
 .spotlight-main {
 	position: relative;
+	
 	@include bp(lg) {	
 		order: 0;
 	}
