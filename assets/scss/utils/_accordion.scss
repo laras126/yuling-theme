@@ -6,17 +6,18 @@
 		content: '';
 		position: absolute;
 		right: 1%;
-		top: 50%;
+		top: 20%;
 		transform: rotate(180deg);
 		transition: 0.25s ease all;
-		height: $size-xsml;
-		width: $size-xsml;
-		background: url(../img/svg-min/arrow-up.min.svg) center no-repeat;
+		height: $size-base;
+		width: $size-base;
+		background: url("../img/svg-min/arrow-up.min.svg") center no-repeat;
 	}
 
 	&.active {
 		&:after {
 			transform: rotate(0);
+			top: 30%;
 		}
 	}
 }
