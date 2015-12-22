@@ -757,7 +757,7 @@ function populateWishListTable(item) {
 		$('#wishListItems').append('<tr>' + collection + title + quantity + '</tr>');
 
 		// Fill hidden Wish List text area with content
-		$('.wishlist-fill textarea').append(item.collection + ': ' + item.title + ', ' + item.quantity + ' || ');
+		$('.wishlist-fill textarea').append(item.collection + ': ' + item.title + ', ' + item.quantity + '; ');
 
 	} else {
 		$('#wishListItems').remove();
