@@ -134,7 +134,7 @@
 
 .spotlight-main {
 	position: relative;
-	
+
 	@include bp(lg) {	
 		order: 0;
 	}
@@ -154,6 +154,10 @@
 		}
 	}
 
+}
+
+.spotlight-img {
+	opacity: 0;
 }
 
 .spotlight-tab-content {
