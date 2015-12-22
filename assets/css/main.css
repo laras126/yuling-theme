@@ -2584,6 +2584,9 @@ img {
       .spotlight-main img {
         width: 90%; } }
 
+.spotlight-img {
+  opacity: 0; }
+
 .spotlight-tab-content {
   position: absolute;
   left: 0;
