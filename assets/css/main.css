@@ -1339,7 +1339,10 @@ img {
   .has-subnav:hover .subnav-main {
     max-height: none;
     opacity: 1;
-    overflow: visible; } }
+    overflow: visible;
+    -webkit-transition: 0.2s ease-in-out all;
+         -o-transition: 0.2s ease-in-out all;
+            transition: 0.2s ease-in-out all; } }
 
 .subnav-main {
   max-height: 0;
@@ -1351,7 +1354,10 @@ img {
     .subnav-main.active {
       max-height: none;
       opacity: 1;
-      overflow: visible; } }
+      overflow: visible;
+      -webkit-transition: 0.2s ease-in-out all;
+           -o-transition: 0.2s ease-in-out all;
+              transition: 0.2s ease-in-out all; } }
   @media (min-width: 768px) {
     .subnav-main {
       position: absolute;

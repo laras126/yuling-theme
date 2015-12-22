@@ -696,7 +696,7 @@ function switchSpotlightContent($target) {
 	// May want to integrate this with lazyload instead
 	$('.spotlight-tab-content').html('<img class="spotlight-img" src="' + src + '">');
 	$('.spotlight-img').load(function() {
-		$(this).animate({opacity: 1}, 200);
+		$(this).animate({opacity: 1}, 150);
 	})
 }
 
