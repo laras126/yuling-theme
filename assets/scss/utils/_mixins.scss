@@ -141,6 +141,7 @@ $MQs: true;
     max-height: none;
     opacity: 1;
     overflow: visible;
+    transition: 0.2s ease-in-out all;
 }
 
 @mixin visually-hidden {
