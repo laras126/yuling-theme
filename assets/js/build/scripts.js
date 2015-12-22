@@ -365,6 +365,9 @@ $(document).ready(function() {
 
 	});
 
+
+
+
    	// ----
 	// Collections archive hover captions
 	// ----
@@ -435,37 +438,32 @@ $(document).ready(function() {
 
 	$('.spotlight-prev').on('click', function() {
 		var $active_tab = $('.spotlight-tab.active');
+			$active_tab.toggleClass('active');
 
-		// Show the nav for next
-		$('.spotlight-next').fadeIn(200);
-		
 		// If there are previous tabs, toggle the class active
 		if($active_tab.prev().length) {
-			$active_tab.toggleClass('active');
 			$active_tab.prev().addClass('active');
 			switchSpotlightContent($active_tab.prev());
 		} else {
-			// Fade out if there are no previous posts
-			$(this).fadeOut(200);
+			// Otherwise go back to the first item
+			$('.spotlight-tab').last().addClass('active');
+			switchSpotlightContent($('.spotlight-tab').last());
 		}
-		
 		return false;
 	});
 
 	$('.spotlight-next').on('click', function() {
 		var $active_tab = $('.spotlight-tab.active');
-
-		// Show the nav for previous
-		$('.spotlight-prev').fadeIn(200);
+			$active_tab.toggleClass('active');
 
 		// If there are next tabs, toggle the class active
 		if($active_tab.next().length) {
-			$active_tab.toggleClass('active');
 			$active_tab.next().addClass('active');
 			switchSpotlightContent($active_tab.next());
 		} else {
-			// Fade out if there are no next posts
-			$(this).fadeOut(200);
+			// Otherwise go back to the last item
+			$('.spotlight-tab').first().addClass('active');
+			switchSpotlightContent($('.spotlight-tab').first());
 		}
 
 		return false;
