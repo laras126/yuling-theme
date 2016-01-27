@@ -251,6 +251,27 @@
             "disabled": 0
         },
         {
+            "key": "field_56a8f317d83c1",
+            "label": "Instagram Section Title",
+            "name": "instagram_section_title",
+            "type": "text",
+            "instructions": "The text appearing above the Instagram section on the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "See the Latest on Instagram",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_5675758c1ccc8",
             "label": "Subscribe to Mailchimp Text",
             "name": "subscribe_to_mailchimp",
@@ -259,11 +280,53 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 100,
+                "width": 33,
                 "class": "",
                 "id": ""
             },
             "default_value": "Subscribe to our mailing list",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56a8f445692a9",
+            "label": "Piece Footer Text",
+            "name": "piece_footer_text",
+            "type": "text",
+            "instructions": "The text above the Pieces slider in the footer of a single Piece.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "In this Collection",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56a8f64e0fa10",
+            "label": "Blog Page Title Text",
+            "name": "blog_page_title_text",
+            "type": "text",
+            "instructions": "The title of the blog page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Stories",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -363,11 +426,11 @@
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1450538451
+    "modified": 1453917642
 }
