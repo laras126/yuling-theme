@@ -31,16 +31,7 @@
 		$data['sidebar'] = Timber::get_sidebar('sidebar-projects.php');
 
 		array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
-
-		$cat_args = array(
-			'orderby' => 'name',
-			'order' => 'ASC'
-		);
-
-		$categories = get_categories();
 		
-		// http://stackoverflow.com/questions/1780386/looping-through-wordpress-categories
-
 		$data['posts'] = Timber::get_posts();
 
 		Timber::render($templates, $data);
