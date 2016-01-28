@@ -2,9 +2,8 @@
 
 {% block content %}
 
-	{# {% include 'headers/_header-page.twig' with { h_class: 'header--page' } %} #}
+	<header class="banner" style="background-image: url('{{TimberImage(cover_image).src|resize(800)}}');">
 
-	<header class="banner">
 		<div class="banner-border">
 			<div class="banner-wrap">
 				<div class="banner-logos">
@@ -58,14 +57,7 @@
 					<div class="gallery -inspiration">
 						{% set gallery = c.inspiration_gallery %}
 						{% for image in gallery|slice(0,2) %}
-							<figure class="gallery-thumb -inspiration">
-								<img data-src="{{image.url|resize(600)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
-								<figcaption class="thumb-caption -hoverable">
-									<a href="{{c.link_to_pinterest_board}}" target="blank">
-										See the Pinterest Board that Inspired the Collection
-									</a>
-								</figcaption>
-							</figure>
+							{% include 'partials/gallery-thumb.twig' %}
 						{% endfor %}
 					</div>
 				</div>
@@ -74,13 +66,7 @@
 					
 					<div class="gallery -inspiration">
 						{% for image in gallery|slice(2,4) %}
-							<figure class="gallery-thumb -inspiration">
-								<img data-src="{{image.url|resize(600)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
-								<figcaption class="thumb-caption -hoverable">
-									<a href="{{c.link_to_pinterest_board}}" target="blank">See the Pinterest Board the inspired the Collection
-									</a>
-								</figcaption>
-							</figure>
+							{% include 'partials/gallery-thumb.twig' %}
 						{% endfor %}
 					</div>
 
