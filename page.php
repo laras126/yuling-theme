@@ -24,4 +24,11 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+
+if (is_home()) {
+	$context['blog_page_title'] = get_field('blog_page_title_text');
+} elseif ( is_post_type_archive('project')) {
+	$context['project_page_title'] = get_field('project_page_title_text');
+}
+
 Timber::render(array('pages/page-' . $post->post_name . '.twig', 'pages/page.twig'), $context);
