@@ -12,17 +12,8 @@
 	width: 100%;
 	padding: $size-base;
 	background-size: cover;
-    background-image: url(../img/util/trees-sml.png);
 	color: $color-rotate-text;	
 	text-align: center;
-
-	@include bp(md) {
-		background-image: url(../img/util/trees-med.png);
-	}
-
-	@include bp(lg) {
-		background-image: url(../img/util/trees-large.png);
-	}
 
 	svg {
 		fill: white;
