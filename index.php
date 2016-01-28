@@ -20,7 +20,8 @@
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
 	$context['sidebar'] = Timber::get_sidebar('sidebar-blog.php');
-	$context['title'] = 'Stories';
+	$context['title'] = get_field('blog_page_title_text', 'options');
+    $context['pagination'] = Timber::get_pagination();
 
 	$templates = array('blog.twig', 'index.twig');
 	
