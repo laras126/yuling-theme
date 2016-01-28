@@ -25,6 +25,7 @@
 								{% set p = TimberPost(row.connected_post) %}
 								{% set image = TimberImage(p.thumbnail).src %}
 							{% endif %}
+							
 							<img 
 								data-sizes="auto"
 								class="lazyload"
@@ -143,7 +144,13 @@
 {% endblock %}
 
 {% block after_content %}
-	<footer>
+	<footer class="home-section">
+		<header class="contain--lg">
+			<h4 class="single-footer-title">{{instagram_section_title}}</h4>
+			<!-- lazy -->
+			<br>
+			<!-- end lazy -->
+		</header>
 		<script src="//instansive.com/widget/js/instansive.js"></script><iframe src="//instansive.com/widgets/f3ee2eb5dded2e2446663f1a34172188d3a56cac.html" id="instansive_f3ee2eb5dd" name="instansive_f3ee2eb5dd"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 	</footer>
 {% endblock %}
