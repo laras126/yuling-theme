@@ -17,6 +17,13 @@
 		echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
 		return;
 	}
+	
+	// Limit posts per page
+	// http://www.wprecipes.com/how-to-define-how-many-post-to-display-per-page
+	$page_num = $paged;
+	if ($pagenum='') $pagenum =1;
+	query_posts('showposts=12&amp;paged='.$page_num);
+	           
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
 	$context['sidebar'] = Timber::get_sidebar('sidebar-blog.php');
