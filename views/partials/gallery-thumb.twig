@@ -1,0 +1,14 @@
+{% set image = TimberImage(image) %}
+<figure class="gallery-thumb -inspiration">
+	<img data-src="{{image.url|resize(600)}}" src="{{image.url|resize(100)}}" class="lazyload" alt="{{image.title}}">
+	<figcaption class="thumb-caption -hoverable">
+		<a class="thumb-caption-link" href="{{c.link_to_pinterest_board}}" target="blank">
+			See the Pinterest Board that Inspired the Collection
+		</a>
+
+		{% if image.photo_credit %}
+			<p class="thumb-credit">Image credit: {{image.credit_link ? '<a href="' ~ image.credit_link ~ '" class="thumb-credit-link" target="blank">'}}{{image.photo_credit}}{{image.credit_link ? '</a>'}}</p>
+		{% endif %}
+
+	</figcaption>
+</figure>
