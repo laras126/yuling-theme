@@ -335,6 +335,27 @@
             "disabled": 0
         },
         {
+            "key": "field_56aa731c65e13",
+            "label": "Pinterest Prompt",
+            "name": "pinterest_prompt",
+            "type": "text",
+            "instructions": "The text shown when hovering over collection inspiration images.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "See the Pinterest Board that Inspired the Collection",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_567432df40c92",
             "label": "Projects Sidebar",
             "name": "",
@@ -472,5 +493,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1453946672
+    "modified": 1454011194
 }
