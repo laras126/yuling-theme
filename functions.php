@@ -61,6 +61,7 @@
 			$context['site_footer_copyright'] = get_field('site_footer_copyright', 'options');
 			$context['site_footer_credits'] = get_field('site_footer_credits', 'options');
 
+			$context['instagram_home_text'] = get_field('instagram_home_text', 'options');
 			$context['wishlist_page_link'] = get_field('wishlist_page_link', 'options');
 			$context['wishlist_page_text'] = get_field('wishlist_page_text', 'options');
 			$context['all_collections_page'] = get_field('all_collections_page', 'options');
