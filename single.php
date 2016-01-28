@@ -41,6 +41,10 @@ if ( get_post_type() == 'piece') {
 	
 }
 
+if(is_single('piece')) {
+	$context['piece_footer_text'] = get_field('piece_footer_text', 'options');
+}
+
 if (post_password_required($post->ID)){
 	Timber::render('single-password.twig', $context);
 } else {
