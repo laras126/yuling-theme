@@ -47,12 +47,10 @@
 
 .thumb-credit {
 	position: absolute;
-	color: $color-text-med;
 	bottom: 0;
 	right: 0;
 	font-size: $size-xsml;
-	font-style: italic;
-	text-transform: none;
+	color: $color-text-med;
 	padding: $size-xsml $size-xsml 0 $size-xsml;
 }
 
@@ -79,9 +77,6 @@
 		top: 0;
 		left: 0;	
 		padding: $size-h3;
-		@include upperspace;
-		font-weight: $font-weight-strong;
-		line-height: 1.2;
 		text-align: center;	
 		display: flex;
 		flex-direction: column;
@@ -99,6 +94,9 @@
 
 .thumb-caption-link {
 	color: $color-rotate-text;
+	font-weight: $font-weight-strong;
+	line-height: 1.2;
+	@include upperspace;
 
 	&:hover {
 		color: $color-rotate-text;
