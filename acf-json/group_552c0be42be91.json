@@ -193,7 +193,7 @@
         },
         {
             "key": "field_567199385fa5b",
-            "label": "All Collections Page",
+            "label": "Collections Passport Page",
             "name": "all_collections_page",
             "type": "post_object",
             "instructions": "Select the page to display all collections. This will appear as the highlighted item at the right of the dropdown menu for Collections. It should not be included in the menu list in WordPress.",
@@ -413,6 +413,46 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_56a97718803ca",
+            "label": "Collections Passport",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56a976de803c9",
+            "label": "Collections Cover Image",
+            "name": "collections_cover_image",
+            "type": "image",
+            "instructions": "The cover image for the top of the Collections Passport page (initially the tree image).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -432,5 +472,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1453917642
+    "modified": 1453946672
 }
