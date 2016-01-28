@@ -2444,6 +2444,10 @@ img {
   .social-list.-about .social-item {
     padding-left: 0.84rem; }
 
+.single-footer-title.-instagram {
+  border-bottom: 0;
+  text-align: center; }
+
 .spotlight {
   background-color: #000000;
   text-align: center;
