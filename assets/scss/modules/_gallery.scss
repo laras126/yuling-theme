@@ -45,6 +45,20 @@
 	
 }
 
+.thumb-credit {
+	position: absolute;
+	color: $color-text-med;
+	bottom: 0;
+	right: 0;
+	font-size: $size-xsml;
+	font-style: italic;
+	text-transform: none;
+	padding: $size-xsml $size-xsml 0 $size-xsml;
+}
+
+.thumb-credit-link {
+	color: $color-text-med;
+}
 
 // Hover effect on Inspiration gallery and Collection image in Collections Archive
 
@@ -73,15 +87,21 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		a {
-			color: $color-rotate-text;
-		}
 	}
+
 
 	&.-collection {
 		@include bp(lg) {
 			font-size: $size-h3;
 		}
+	}
+}
+
+.thumb-caption-link {
+	color: $color-rotate-text;
+
+	&:hover {
+		color: $color-rotate-text;
 	}
 }
 
