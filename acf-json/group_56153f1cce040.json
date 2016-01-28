@@ -204,7 +204,7 @@
             "label": "Inspiration Gallery",
             "name": "inspiration_gallery",
             "type": "gallery",
-            "instructions": "Add inspirational images from Pinterest.",
+            "instructions": "Add inspirational images from Pinterest. Photo credits will display if added.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -242,5 +242,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1450541669
+    "modified": 1453947888
 }
