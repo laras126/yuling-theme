@@ -8,4 +8,5 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['terms'] = Timber::get_terms('collection');
+$context['cover_image'] = get_field('collections_cover_image', 'options');
 Timber::render('pages/page-collections.twig', $context);
