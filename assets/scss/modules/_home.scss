@@ -61,7 +61,7 @@
 		background: $color-rotate-bkgd;
 	}
 
-	@include bp(sm) {
+	@include bp(md) {
 		padding: $size-h1;
 	}
 }
@@ -128,7 +128,7 @@
 	}
 
 	&.-about {
-		padding: $size-h1;
+		// padding: $size-h1;
 	}
 }
 
