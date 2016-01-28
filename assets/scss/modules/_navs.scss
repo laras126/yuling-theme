@@ -266,7 +266,8 @@
 
 // Prev Next on Singles
 
-.prevnext {
+.prevnext,
+.pagination {
 	@include grid;
 }
 
@@ -278,10 +279,28 @@
 	@include detail-title($border-pos: false);
 }
 
-.prev-cell, .next-cell {
-	@include cell(half);
+.prev-cell, 
+.next-cell {
+	@include cell;
 }
 
 .next-cell {
 	text-align: right;
+}
+
+.pagination {
+	align-items: center;
+}
+
+.pages-list {
+	@include unstyle-list;
+	justify-content: center;
+	li {
+		display: inline-block;
+		padding: $size-xsml/2;
+	}
+}
+
+.pagination-link {	
+	@include detail-compliment;
 }
