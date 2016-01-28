@@ -1,1 +1,30 @@
 {% extends 'archives/archive.twig' %}
+
+
+{% block after_content %}
+	<div class="contain--lg">
+		<nav class="pagination">
+	    	<div class="prev-cell">
+			    {% if pagination.prev %}
+			        <a href="{{pagination.prev.link}}" class="pagination-link {{pagination.prev.link|length ? '' : 'invisible'}}">&larr; Previous</a>
+			    {% endif %}
+	        </div>
+		    <ul class="pages-list">
+		        {% for page in pagination.pages %}
+		            <li>
+		                {% if page.link %}
+		                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+		                {% else %}
+		                    <span class="{{page.class}}">{{page.title}}</span>
+		                {% endif %}
+		            </li>
+		        {% endfor %}
+		    </ul>
+	    	<div class="next-cell">
+			    {% if pagination.next %}
+			        <a href="{{pagination.next.link}}" class="{{pagination.next.link|length ? '' : 'invisible'}} pagination-link">Next &rarr;</a>
+			    {% endif %}
+	        </div>
+		</nav>
+	</div>
+{% endblock %}
