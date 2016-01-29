@@ -2648,12 +2648,10 @@ img {
 
 .thumb-credit {
   position: absolute;
-  color: #999999;
   bottom: 0;
   right: 0;
   font-size: 0.6825rem;
-  font-style: italic;
-  text-transform: none;
+  color: #999999;
   padding: 0.6825rem 0.6825rem 0 0.6825rem; }
 
 .thumb-credit-link {
@@ -2673,10 +2671,6 @@ img {
   top: 0;
   left: 0;
   padding: 2.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  line-height: 1.2;
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2701,7 +2695,11 @@ img {
     font-size: 2.1rem; } }
 
 .thumb-caption-link {
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
   .thumb-caption-link:hover {
     color: #FFFFFF; }
 
