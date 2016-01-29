@@ -94,6 +94,19 @@
 	 */ 
 
 
+	// Change posts per page for blog
+	// https://github.com/jarednova/timber/wiki/Pagination#the-pre_get_posts-way
+	function yld_home_query( $query ) {
+      	if ( $query->is_main_query() && !is_admin() ) {
+      		if (is_home()) {
+      			# code...
+				$query->set( 'posts_per_page', 12 );
+			}
+		}
+    }
+    add_action( 'pre_get_posts', 'yld_home_query' );
+
+
 
 	// Add filter to post_type_link to add taxonomy name in front of permalink
 	// NOTE: Possibly could use Timber routes for this
