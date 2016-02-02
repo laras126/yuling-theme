@@ -24,6 +24,7 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['instagram_section_title'] = get_field('instagram_section_title', 'options');
+$context['blog_title'] = get_field('blog_page_title_text', 'options');
 $context['post'] = $post;
-$context['post'] = $post;
+
 Timber::render(array('front-page.twig'), $context);

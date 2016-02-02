@@ -65,7 +65,7 @@
 
 								{% set p = TimberPost(row.connected_post) %}
 								<a href="{{p.link}}" data-target="#{{p.title|sanitize}}" class="spotlight-tab-link" data-src="{{p.thumbnail.src|resize(1200,800)}}">
-									<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? 'Stories' : 'Bespoke'}}</p>
+									<p class="spotlight-sidebar-compliment">{{p.post_type == 'post' ? blog_title : 'Bespoke'}}</p>
 									<h5 class="spotlight-sidebar-title">{{p.title}}</h5>
 								</a>
 
