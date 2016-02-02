@@ -33,7 +33,7 @@
                     <div class="subnav-wrapper -site">
                         
                         {# TODO: Remove this hardcoded-ness #}
-                        {% if item.title == "Collections" %}
+                        {% if '-special' in item.classes|keys %}
                             <div class="subnav-highlight">
                                 {% set all = TimberPost(all_collections_page) %}
                                 {% set img = all.thumbnail %}
