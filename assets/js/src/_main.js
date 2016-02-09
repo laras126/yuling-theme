@@ -334,7 +334,11 @@ $(document).ready(function() {
 			// This should only be called on Concierge page, ideally
 			for(var i=0; i < window.localStorage.length; i++) {
 				var item = window.localStorage.getItem(localStorage.key(i));
-				populateWishListTable(JSON.parse(item));
+				
+				// If not null, add it to the Wish List table
+				if (typeof item !== 'undefined' && item !== null) {
+					populateWishListTable(JSON.parse(item));
+				}
 			}
 
 			// Update or remove quantity value
@@ -423,6 +427,22 @@ $(document).ready(function() {
 			});
 
 		} // END Wish List length check
+
+
+		// Reset the localStorage every 48 hours	
+		// http://apassant.net/2012/01/16/timeout-for-html5-localstorage/
+		// var hours = 24; 
+		// var now = new Date().getTime();
+		// var setupTime = localStorage.getItem('setupTime');
+		// if (setupTime == null) {
+		//     localStorage.setItem('setupTime', now)
+		// } else {
+		//     if(now-setupTime > hours*60*60*1000) {
+		//         localStorage.clear()
+		//         localStorage.setItem('setupTime', now);
+		//     }
+		// }
+		
 
 	} // END localStorage check
 });
