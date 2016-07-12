@@ -8,8 +8,8 @@
 			<div class="banner-wrap">
 				<div class="banner-logos">
 					{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
-		            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
-	            </div>
+            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+          </div>
 				<h1 class="banner-title">{{post.title}}</h1>
 				<p class="banner-tagline">{{post.header_summary}}</p>
 			</div>
@@ -21,9 +21,9 @@
 	</header>
 
 	{% for c in terms %}
-	
+
 		{% set feat = TimberImage(c.featured_image) %}
-	
+
 		<section class="archive-quote" data-title="{{c.title}}">
 			<div class="cell">
 				<div class="archive-quote-inner">
@@ -45,15 +45,15 @@
 							{% include 'partials/_large-feat-img.twig' with { img : feat } %}
 							<figcaption class="thumb-caption -hoverable -collection">
 								<a href="{{c.link}}" class="thumb-caption-link">
-								See the entire {{c.title}} Collection	
+								See the entire {{c.title}} Collection
 								</a>
 							</figcaption>
 						</figure>
 
 				</div>
-				
+
 				<div class="archive-images-inspiration -first">
-					
+
 					<div class="gallery -inspiration">
 						{% set gallery = c.inspiration_gallery %}
 						{% for image in gallery|slice(0,2) %}
@@ -63,7 +63,7 @@
 				</div>
 
 				<div class="archive-images-inspiration -second{{ loop.last ? ' -last' }}">
-					
+
 					<div class="gallery -inspiration">
 						{% for image in gallery|slice(2,4) %}
 							{% include 'partials/gallery-thumb.twig' %}
@@ -76,5 +76,5 @@
 		</section> <!-- /.archive-images -->
 
 	{% endfor %}
-	
+
 {% endblock %}
