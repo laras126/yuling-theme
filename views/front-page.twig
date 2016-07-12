@@ -9,7 +9,7 @@
 	<section class="spotlight">
 		<div class="contain--xl">
 			<div class="spotlight-wrap">
-			
+
 				<header class="spotlight-header -small">
 					<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
 				</header>
@@ -17,7 +17,7 @@
 				<div class="spotlight-main">
 					<div class="spotlight-tab-content teaser lazyload">
 						{% for row in post.get_field('connected_content')|slice(0,1) %}
-							
+
 							{% if row.connected_content_type == 'collection' %}
 								{% set c = TimberTerm(row.connected_collection) %}
 								{% set image = TimberImage(c.spotlight_image).src %}
@@ -25,8 +25,8 @@
 								{% set p = TimberPost(row.connected_post) %}
 								{% set image = TimberImage(p.thumbnail).src %}
 							{% endif %}
-							
-							<img 
+
+							<img
 								data-sizes="auto"
 								class="lazyload"
 								data-srcset="{{image|resize(500)}} 500w,
@@ -60,7 +60,7 @@
 									<p class="spotlight-sidebar-compliment">Collection</p>
 									<h5 class="spotlight-sidebar-title">{{c.title}}</h5>
 								</a>
-							
+
 							{% elseif row.connected_content_type == 'post_project' %}
 
 								{% set p = TimberPost(row.connected_post) %}
@@ -83,7 +83,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="home-section -about text-center">
 		{% set about_img = TimberImage(post.about_image) %}
 
@@ -103,12 +103,12 @@
 
 				<div class="home-section-img -collections">
 					<a href="{{TimberPost(post.collections_link).link}}">
-					<div class="home-img -collections">
-						{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
-			            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
-						<p class="home-title home-link -collections">{{post.collections_link_text_left}}</p>
-			        </div>
-			    </a>	
+						<div class="home-img -collections">
+							{% include 'utility/svg.twig' with { file : 'wordmark', prefix : 'wordmark' } %}
+				            {% include 'utility/svg.twig' with { file: 'text-logo', prefix: 'logo' } %}
+							<p class="home-title home-link -collections">{{post.collections_link_text_left}}</p>
+						</div>
+			    	</a>
 				</div>
 				<div class="home-section-text -collections">
 					<p class="home-quote -collections">{{post.collections_description}}</p>
@@ -136,7 +136,7 @@
 					</div>
 				{% endfor %}
 			</div>
-		
+
 		</div>
 	</section>
 </div>
@@ -148,7 +148,7 @@
 		<header class="contain--lg">
 			<h4 class="single-footer-title -instagram">{{instagram_section_title}}</h4>
 		</header>
-		<script src="//instansive.com/widget/js/instansive.js"></script><iframe src="//instansive.com/widgets/f3ee2eb5dded2e2446663f1a34172188d3a56cac.html" id="instansive_f3ee2eb5dd" name="instansive_f3ee2eb5dd"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+		<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ae21708d22815c428ec00785cf63cb7a.html" id="lightwidget_ae21708d22" name="lightwidget_ae21708d22"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 	</footer>
 {% endblock %}
 
