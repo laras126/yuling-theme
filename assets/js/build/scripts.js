@@ -430,8 +430,31 @@ $(document).ready(function() {
 
 		});
 
+		var $tabs = $('.spotlight-tab'),
+		    tabs_length = $tabs.length,
+		    is_first = true;
+
+		function cycleSpotlight(index, interval){
+	    var $tab = $tabs.eq(index%tabs_length);
+
+	    if (is_first == true) {
+	    	$tab = $tabs.eq(1);
+	    }
+
+	    setTimeout(function(){
+		    is_first = false;
+	      $('.spotlight-tab.active').removeClass('active');
+	      console.log($tab.find('a').attr('data-target'));
+	      $tab.addClass('active')
+				switchSpotlightContent($tab);
+	      cycleSpotlight(++index, interval);
+	    }, interval)
+		}
+
+
 	}
 
+	cycleSpotlight(0, 2500);
 
 	// Very redundant here:
 

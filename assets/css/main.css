@@ -2505,12 +2505,13 @@ img {
     color: #FFFFFF; }
     .spotlight-tab > a:hover, .spotlight-tab > a:focus {
       color: #999999; }
-  .spotlight-tab.active {
+  .spotlight-tab.active,
+  .spotlight-tab.active > a {
     position: relative;
     opacity: 1;
     width: auto;
     height: auto;
-    color: #999999; }
+    color: #999999 !important; }
   @media (min-width: 960px) {
     .spotlight-tab:last-child {
       border-bottom: none; } }

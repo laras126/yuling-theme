@@ -63,12 +63,13 @@
 		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	}
 
-	&.active {
+	&.active,
+	&.active > a {
 		position: relative;
 		opacity: 1;
 		width: auto;
 		height: auto;
-		color: $color-accent-light;
+		color: $color-accent-light !important;
 	}
 
 	&:last-child {
