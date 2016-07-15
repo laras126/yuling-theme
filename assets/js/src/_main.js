@@ -199,6 +199,7 @@ $(document).ready(function() {
 
 	    if (is_first == true) {
 	    	$tab = $tabs.eq(1);
+	    	index += 1;
 	    }
 
 	    setTimeout(function(){
