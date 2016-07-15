@@ -2487,8 +2487,7 @@ img {
   height: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  padding-bottom: 0.84rem; }
+  left: 0; }
   @media (min-width: 960px) {
     .spotlight-tab {
       border-bottom: 1px solid #999999;
@@ -2496,7 +2495,13 @@ img {
       opacity: 1;
       width: auto;
       height: auto; } }
+  .spotlight-tab h5 {
+    padding-bottom: 0.84rem; }
+  .spotlight-tab .spotlight-sidebar-compliment {
+    margin-top: 0;
+    padding-top: 0.84rem; }
   .spotlight-tab > a {
+    display: block;
     color: #FFFFFF; }
     .spotlight-tab > a:hover, .spotlight-tab > a:focus {
       color: #999999; }

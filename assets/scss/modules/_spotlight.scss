@@ -10,7 +10,7 @@
 
 	@include bp(md) {
 		border-top: none;
-	} 
+	}
 
 	color: $color-rotate-text;
 	margin-top: 0;
@@ -40,7 +40,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding-bottom: $size-sml;
 
 	@include bp(lg) {
 		border-bottom: 1px solid $color-accent-light;
@@ -50,7 +49,17 @@
 		height: auto;
 	}
 
+	h5 {
+		padding-bottom: $size-sml;
+	}
+
+	.spotlight-sidebar-compliment {
+		margin-top: 0;
+		padding-top: $size-sml;
+	}
+
 	& > a {
+		display: block;
 		@include restyle-link($default: $color-rotate-text, $hover: $color-accent-light);
 	}
 
@@ -94,17 +103,17 @@
 }
 
 .spotlight-header {
-	// Bad to hide and show this, but too bad.	
-	
+	// Bad to hide and show this, but too bad.
+
 	&.-small {
-		@include bp(lg) {	
+		@include bp(lg) {
 			display: none;
 		}
 	}
 
 	&.-large {
 		display: none;
-		@include bp(lg) {	
+		@include bp(lg) {
 			display: block;
 		}
 	}
@@ -114,7 +123,7 @@
 
 	position: relative;
 
-	@include bp(lg) {	
+	@include bp(lg) {
 		order: 2;
 	}
 }
@@ -135,10 +144,10 @@
 .spotlight-main {
 	position: relative;
 
-	@include bp(lg) {	
+	@include bp(lg) {
 		order: 0;
 	}
-	
+
 	width: 100%;
 	transition: 0.25s all ease;
 
