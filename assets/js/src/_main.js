@@ -189,33 +189,34 @@ $(document).ready(function() {
 			return false;
 
 		});
-
-		var $tabs = $('.spotlight-tab'),
-		    tabs_length = $tabs.length,
-		    is_first = true;
-
-		function cycleSpotlight(index, interval){
-	    var $tab = $tabs.eq(index%tabs_length);
-
-	    if (is_first == true) {
-	    	$tab = $tabs.eq(1);
-	    	index += 1;
-	    }
-
-	    setTimeout(function(){
-		    is_first = false;
-	      $('.spotlight-tab.active').removeClass('active');
-	      console.log($tab.find('a').attr('data-target'));
-	      $tab.addClass('active')
-				switchSpotlightContent($tab);
-	      cycleSpotlight(++index, interval);
-	    }, interval)
-		}
-
-
 	}
 
-	cycleSpotlight(0, 2500);
+	var $tabs = $('.spotlight-tab'),
+	    tabs_length = $tabs.length,
+	    is_first = true;
+
+	// Automatically cycle spotlight
+	function cycleSpotlight(index, interval){
+
+	  var $tab = $tabs.eq(index%tabs_length);
+
+	  if (is_first == true) {
+	  	$tab = $tabs.eq(1);
+	  	index += 1;
+	  }
+
+	  setTimeout(function(){
+	    is_first = false;
+	    $('.spotlight-tab.active').removeClass('active');
+	    console.log($tab.find('a').attr('data-target'));
+	    $tab.addClass('active')
+			switchSpotlightContent($tab);
+	    cycleSpotlight(++index, interval);
+	  }, interval)
+	}
+
+	var speed = parseInt($('.spotlight-main').attr('data-speed'));
+	cycleSpotlight(0, speed);
 
 	// Very redundant here:
 
@@ -273,7 +274,7 @@ $(document).ready(function() {
 			x1: 60, y1: 50,
 			x2: 65, y2: 45,
 			x3: 20
-	    }
+	  }
 	});
 
 
@@ -491,7 +492,6 @@ function switchSpotlightContent($target) {
 
 
 
-
 // ---
 // Update the Wish List count in header
 // ---
@@ -504,6 +504,8 @@ function updateWishListCount() {
 	}
 
 }
+
+
 
 
 // ---
@@ -568,7 +570,6 @@ function updateTextArea() {
 
 		var item = JSON.parse(window.localStorage.getItem(localStorage.key(i)));
 		$('.wishlist-fill textarea').append(item.collection + ': ' + item.title + ', ' + item.quantity + ' || ');
-
 	}
 
 }
@@ -584,5 +585,4 @@ function markActiveWishList(obj) {
 	$('#wishListSubmit').val('Update wishList');
 	$('#wishListNotify').css('opacity', 1);
 }
-
 

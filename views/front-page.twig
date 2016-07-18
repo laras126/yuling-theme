@@ -14,7 +14,7 @@
 					<h1 class="spotlight-title"><span class="spotlight-title-compliment">In the</span> <span class="spotlight-title-main">Spotlight</span></h1>
 				</header>
 
-				<div class="spotlight-main">
+				<div class="spotlight-main" data-speed="{{post.slideshow_speed ? post.slideshow_speed : 2500}}">
 					<div class="spotlight-tab-content teaser lazyload">
 						{% for row in post.get_field('connected_content')|slice(0,1) %}
 

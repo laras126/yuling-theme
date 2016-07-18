@@ -146,6 +146,29 @@
             "endpoint": 0
         },
         {
+            "key": "field_578d230ff8d5a",
+            "label": "Slideshow Speed",
+            "name": "slideshow_speed",
+            "type": "number",
+            "instructions": "Enter the speed between images in the slideshow. In milliseconds e.g. 2000 = 2 seconds.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_567470b130096",
             "label": "Connected Content",
             "name": "connected_content",
@@ -461,5 +484,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1450539555
+    "modified": 1468867409
 }
