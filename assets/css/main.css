@@ -2568,9 +2568,9 @@ img {
 .spotlight-main {
   position: relative;
   width: 100%;
-  -webkit-transition: 0.25s all ease;
-       -o-transition: 0.25s all ease;
-          transition: 0.25s all ease;
+  -webkit-transition: 0.5s all ease;
+       -o-transition: 0.5s all ease;
+          transition: 0.5s all ease;
   overflow: hidden; }
   @media (min-width: 960px) {
     .spotlight-main {
@@ -2587,7 +2587,10 @@ img {
         width: 90%; } }
 
 .spotlight-img {
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transition: 0.5s all ease;
+       -o-transition: 0.5s all ease;
+          transition: 0.5s all ease; }
 
 .spotlight-tab-content {
   position: absolute;

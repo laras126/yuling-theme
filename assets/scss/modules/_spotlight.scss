@@ -150,7 +150,7 @@
 	}
 
 	width: 100%;
-	transition: 0.25s all ease;
+	transition: 0.5s all ease;
 
 	overflow: hidden;
 
@@ -167,6 +167,7 @@
 
 .spotlight-img {
 	opacity: 0;
+	transition: 0.5s all ease;
 }
 
 .spotlight-tab-content {
