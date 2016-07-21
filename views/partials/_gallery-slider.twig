@@ -2,6 +2,6 @@
    data-flickity-options='{ "lazyLoad": 1, "wrapAround": true, "pageDots": false }'>
 
 	{% for image in gallery %}
-	  <img class="gallery-cell-image" data-flickity-lazyload="{{image.url|resize(1200)}}" alt="Slideshow Image" /> 	
+	  <img class="gallery-cell-image" data-flickity-lazyload="{{image.src|resize(1200)}}" alt="Slideshow Image" />
 	{% endfor %}
 </div>

@@ -4,7 +4,7 @@
 
 <div class="contain--md">
 	<div class="teaser lazyload">
-		
+
 		{% for row in block.images %}
 
 			{% if row.acf_fc_layout == 'single_image' %}
@@ -12,13 +12,13 @@
 					{% set image = TimberImage(row.single_image) %}
 
 					<div class="image-wrap -single">
-					<img 
+					<img
 						data-sizes="auto"
-						data-srcset="{{image.url|resize(500)}} 500w,
-							{{image.url|resize(800)}} 640w,
-							{{image.url|resize(1200)}} 1024w"
-							class="lazyload" 
-							src="{{image.url|resize(500)}}" alt="{{image.title}}">
+						data-srcset="{{image.src|resize(500)}} 500w,
+							{{image.src|resize(800)}} 640w,
+							{{image.src|resize(1200)}} 1024w"
+							class="lazyload"
+							src="{{image.src|resize(500)}}" alt="{{image.title}}">
 					</div>
 				</div>
 			{% else %}
@@ -26,28 +26,18 @@
 					{% for image in row.two_images %}
 						<div class="image-wrap -double">
 						{% set image = TimberImage(image) %}
-						<img 
+						<img
 							data-sizes="auto"
 							data-srcset="{{image.src|resize(500)}} 500w,
 								{{image.src|resize(800)}} 640w,
 								{{image.src|resize(1200)}} 1024w"
-								class="lazyload" 
+								class="lazyload"
 								src="{{image.src|resize(500)}}" alt="{{image.title}}">
 						</div>
 					{% endfor %}
 				</div>
 		{% endif %}
 	{% endfor %}
-			{# <div class="gallery-thumb -block">
-				<img 
-					data-sizes="auto"
-					data-srcset="{{image.url|resize(500)}} 500w,
-						{{image.url|resize(800)}} 640w,
-						{{image.url|resize(1200)}} 1024w"
-						class="lazyload" 
-						src="{{image.url|resize(500)}}" alt="{{image.title}}">
-			</div> #}
-		{# {% endfor %} #}
 
 	</div>
 </div>

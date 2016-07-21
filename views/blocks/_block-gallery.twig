@@ -7,13 +7,13 @@
 
 		{% for image in block.gallery %}
 			<div class="gallery-thumb -block">
-				<img 
+				<img
 					data-sizes="auto"
-					data-srcset="{{image.url|resize(500)}} 500w,
-						{{image.url|resize(800)}} 640w,
-						{{image.url|resize(1200)}} 1024w"
-						class="lazyload" 
-						src="{{image.url|resize(500)}}" alt="{{image.title}}">
+					data-srcset="{{image.src|resize(500)}} 500w,
+						{{image.src|resize(800)}} 640w,
+						{{image.src|resize(1200)}} 1024w"
+						class="lazyload"
+						src="{{image.src|resize(500)}}" alt="{{image.title}}">
 			</div>
 		{% endfor %}
 
