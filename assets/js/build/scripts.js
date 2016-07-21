@@ -448,7 +448,6 @@ $(document).ready(function() {
 	  setTimeout(function(){
 	    is_first = false;
 	    $('.spotlight-tab.active').removeClass('active');
-	    console.log($tab.find('a').attr('data-target'));
 	    $tab.addClass('active')
 			switchSpotlightContent($tab);
 	    cycleSpotlight(++index, interval);
