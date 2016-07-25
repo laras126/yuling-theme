@@ -21,17 +21,20 @@
 		if (is_category()) {
 			$data['title'] = 'Projects: ' . single_cat_title('', false);
 		} elseif (is_tax()) {
-			$term = get_queried_object(); // Is this the appropriate way to do it? 
+			$term = get_queried_object(); // Is this the appropriate way to do it?
 			$data['title'] = 'Projects: ' . $term->name;
 
 		} else {
 			$data['title'] = 'Projects';
 		}
+
+		$data['projects_desc'] = get_field('projects_page_description', 'options');
+
 		$data['link'] = get_post_type_archive_link('project');
 		$data['sidebar'] = Timber::get_sidebar('sidebar-projects.php');
 
 		array_unshift($templates, 'archives/archive-'.get_post_type().'.twig');
-		
+
 		$data['posts'] = Timber::get_posts();
 
 		Timber::render($templates, $data);
