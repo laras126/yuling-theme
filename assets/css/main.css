@@ -2058,7 +2058,8 @@ img {
 .archive-title {
   margin-bottom: 0.84rem; }
 
-.archive-desc {
+.archive-desc,
+.archive-desc p {
   font-size: 1.05rem; }
 
 .archive-below-title {

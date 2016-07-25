@@ -19,7 +19,7 @@
 		@include cell(sixth, $is_first: false);
 	}
 }
-	
+
 .archive {
 	&.-search {
 		@include grid;
@@ -30,7 +30,8 @@
 	margin-bottom: $size-sml;
 }
 
-.archive-desc {
+.archive-desc,
+.archive-desc p {
 	font-size: $size-base;
 }
 
@@ -73,7 +74,7 @@
 	flex-direction: column;
 
 	height: 100vh;
-	
+
 	& > .cell {
 		width: 100%;
 		justify-content: center;
@@ -83,7 +84,7 @@
 		flex-direction: column;
 	}
 
-	width: 100%;	
+	width: 100%;
 	top: 100%;
 	left: 0;
     position: fixed;
@@ -91,7 +92,7 @@
 	&.active {
 		top: 0;
 		pointer-events: all;
-		
+
 		& .archive-quote-content {
 			opacity: 1;
 		}
@@ -128,18 +129,18 @@
 	font-family: $font-heading;
 	padding: $size-sml $size-h4;
 	font-size: $size-sml;
-	
+
 	@include bp(sm) {
 		font-size: $size-base;
 		margin: 0;
 	}
-	
+
 	@include bp(md) {
 	    padding: $size-h3;
 		font-size: $size-h3;
 	}
-	
-	margin: $size-base 0; 
+
+	margin: $size-base 0;
 	@include upperspace;
 
 	&:before {
@@ -160,19 +161,19 @@
 	transform: translateZ(0);
 	pointer-events: none;
 	padding-top: 90vh;
-	
+
 	img {
 		display: block;
 		width: 100%;
 	}
-	
+
 }
 
 
 // Inspiration Images
 
 .archive-images-inner {
-	
+
 	@include bp(sm) {
 		@include grid($guttered: false);
 	}
@@ -186,7 +187,7 @@
 	@include bp(sm) {
 		@include cell($size: half, $guttered: false);
 		align-self: flex-end;
-	}	
+	}
 }
 
 .archive-images-inspiration.-second {
