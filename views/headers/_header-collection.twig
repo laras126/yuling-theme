@@ -3,7 +3,7 @@
 {% block before_header_content %}{% endblock %}
 
 {% block header_content %}
-	
+
 	{% include 'partials/_gallery-slider.twig' with { gallery: term.collection_gallery, desc: term.description } %}
 	<div class="contain--sm text-center">
 		<h1 class="archive-title">{{term.name}}</h1>
