@@ -182,7 +182,25 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "text_based",
+            "media_upload": 0
+        },
+        {
+            "key": "field_579688cce2a17",
+            "label": "Projects Page Description",
+            "name": "projects_page_description",
+            "type": "wysiwyg",
+            "instructions": "This text appears under below the title on the Bespoke Projects archive.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -493,5 +511,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1454011194
+    "modified": 1469483339
 }
