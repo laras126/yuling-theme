@@ -2715,17 +2715,18 @@ img {
 
 .image-row {
   margin-bottom: 1.05rem; }
-  .image-row.-double {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    position: relative;
-    margin-left: -0.525rem;
-    margin-right: -0.525rem; }
+  @media (min-width: 560px) {
+    .image-row.-double {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      position: relative;
+      margin-left: -0.525rem;
+      margin-right: -0.525rem; } }
 
 .image-wrap.-single img {
   width: 100%; }

@@ -5,7 +5,7 @@
 	}
 
 	&.-block {
-		
+
 		@include bp(sm) {
 			display: flex;
 			flex-flow: row wrap;
@@ -14,7 +14,7 @@
 	}
 }
 
-.gallery-thumb {	
+.gallery-thumb {
 
 	&.-block {
 		padding: $size-xsml;
@@ -42,7 +42,7 @@
 			width: 100%;
 		}
 	}
-	
+
 }
 
 .thumb-credit {
@@ -75,9 +75,9 @@
 		height: 100%;
 		width: 100%;
 		top: 0;
-		left: 0;	
+		left: 0;
 		padding: $size-h3;
-		text-align: center;	
+		text-align: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -109,12 +109,14 @@
 .image-row {
 	margin-bottom: $gutter;
 	&.-double {
-		@include grid;
+		@include bp(sm) {
+			@include grid;
+		}
 	}
 }
 
 .image-wrap {
-	
+
 	&.-single img {
 		width: 100%;
 	}
@@ -123,5 +125,5 @@
 		@include bp(sm) {
 			@include cell(half);
 		}
-	}	
+	}
 }
